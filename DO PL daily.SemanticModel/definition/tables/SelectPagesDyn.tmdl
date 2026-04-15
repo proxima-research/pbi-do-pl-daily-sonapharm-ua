@@ -1,0 +1,20 @@
+table SelectPagesDyn
+	isHidden
+	lineageTag: 33d41349-1d8c-441b-9d1e-804c70839be0
+
+	column Value
+		isHidden
+		formatString: 0
+		lineageTag: 18cd8bae-8b35-450f-b6fe-d35bab48a45c
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Value]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition SelectPagesDyn = calculated
+		mode: import
+		source = GENERATESERIES(1,100,1)
+
+	annotation PBI_Id = 1590901fd0ef43a4a9470deb2e48f395
+

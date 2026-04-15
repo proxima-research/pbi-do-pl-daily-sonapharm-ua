@@ -1,0 +1,30 @@
+table AggrDim
+	isHidden
+	lineageTag: ccea7b26-af8e-4dfa-9b83-83512636b658
+
+	column AGGR_TYPE
+		isHidden
+		lineageTag: ee6898d6-15c1-4552-9bea-b1fa5293cf5d
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [AGGR_TYPE]
+		sortByColumn: Idx
+
+		annotation SummarizationSetBy = Automatic
+
+	column Idx
+		isHidden
+		formatString: 0
+		lineageTag: 5001a7a8-df1c-47a9-9de0-b6abcb2437e6
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Idx]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition AggrDim = calculated
+		mode: import
+		source = DATATABLE("AGGR_TYPE",STRING,"Idx",INTEGER,{{"Week",1},{"YTD",2},{"MAT",3}})
+
+	annotation PBI_Id = 31f82addf4d64bb3b134dbe7f25e7e9a
+

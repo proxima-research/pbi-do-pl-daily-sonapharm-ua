@@ -1,0 +1,46 @@
+table SelectExpr
+	isHidden
+	lineageTag: abda1406-bc88-45cc-b5ae-d97563c45c37
+
+	column ExprType
+		isHidden
+		lineageTag: 9b7dd170-38ac-44c0-ad57-6dbf0048cafb
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [ExprType]
+		sortByColumn: Sort
+
+		annotation SummarizationSetBy = Automatic
+
+	column Sort
+		isHidden
+		formatString: 0
+		lineageTag: fe5737e0-ad78-428d-bd27-4fc939493686
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Sort]
+
+		annotation SummarizationSetBy = Automatic
+
+	column ResultType
+		lineageTag: fbe9972f-7cce-4b03-ac0b-efbdbf64f1fd
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [ResultType]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition SelectExpr = calculated
+		mode: import
+		source =
+				DATATABLE("ExprType",STRING,"Sort",INTEGER,"ResultType",STRING,
+				    {
+				        {"SO",1,"N"},
+				        {"MS",2,"%"},
+				        {"EI",3,"I"},
+				        {"GR",4,"%"}
+				    }
+				)
+
+	annotation PBI_Id = 4e6f923ec8d146bd81f4f9f1bb2e373b
+

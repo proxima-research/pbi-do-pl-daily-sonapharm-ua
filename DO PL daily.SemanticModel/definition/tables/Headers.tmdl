@@ -1,0 +1,539 @@
+table Headers
+	isHidden
+	lineageTag: d432c26b-ad17-4dbc-b6d3-ed7b92116e7f
+
+	measure Header_Rating_Main =
+			
+			var dimName=SELECTEDVALUE('Dimensions'[DimName])
+			var measureName=SELECTEDVALUE(SelectMeasures[MeasureName])
+			var aggrType=SELECTEDVALUE(Aggr[AGGR_TYPE])
+			var periodName=[Selected_Periods_List]
+			var s="{DATA_TYPE} market sales in {MEASURE}, by {DIM_NAME}"
+			var ss=CALCULATE(SELECTEDVALUE(T[dst],s),T[src]=s)
+			var sss=SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(ss,"{DATA_TYPE}",[Current_Data_Type]),"{DIM_NAME}",dimName),"{MEASURE}",measureName)
+			return sss&", "&aggrType&", "&periodName
+		isHidden
+		lineageTag: 6a8a1da1-4133-425a-9b4e-a2f19a53bdf7
+
+	measure Header_Filters = [Current_Filters]
+		isHidden
+		lineageTag: 4dd4a566-3740-4a4b-b9ae-faadc83b4c39
+
+	measure Header_Dynamic_Main =
+			
+			var measureName=SELECTEDVALUE(SelectMeasures[MeasureName])
+			var aggrType=SELECTEDVALUE(Aggr[AGGR_TYPE])
+			var periodName=[Selected_Periods_List]
+			var s="{DATA_TYPE} market sales in {MEASURE}"
+			var ss=CALCULATE(SELECTEDVALUE(T[dst],s),T[src]=s)
+			var sss=SUBSTITUTE(SUBSTITUTE(ss,"{DATA_TYPE}",[Current_Data_Type]),"{MEASURE}",measureName)
+			return sss&", "&aggrType&", "&[Years_Range]
+		isHidden
+		lineageTag: 43f41f5e-c570-4667-bd1f-05f71b15faba
+
+	measure Header_Dynamic_Currency_Main =
+			
+			var dimName=SELECTEDVALUE('Dimensions'[DimName])
+			var measureName=SELECTEDVALUE(SelectMeasures[MeasureName])
+			var aggrType=SELECTEDVALUE(Periods[AGGR_TYPE])
+			var periodName=[Selected_Periods_List]
+			var selCurrency=SELECTEDVALUE(SelectCurrency[CurrencyName])
+			return "Market SO sales in "&selCurrency&", "&[Current_Year]&", "&aggrType
+		isHidden
+		lineageTag: 6b46f984-473b-4fdd-9b81-4bf36a2fd42e
+
+	measure Header_Dynamic_PCS_Main =
+			
+			var aggrType=SELECTEDVALUE(Periods[AGGR_TYPE])
+			var s="{DATA_TYPE} in {MEASURE}, forecast"
+			var ss=CALCULATE(SELECTEDVALUE(T[dst],s),T[src]=s)
+			return SUBSTITUTE(SUBSTITUTE(ss,"{DATA_TYPE}",[Current_Data_Type]),"{MEASURE}","PCS")&" "&[Current_Year]&", "&aggrType
+		isHidden
+		lineageTag: 37681c6e-b4cd-4d4c-a5c6-1be8eee2a616
+
+	measure Header_Dynamic_RxOTC_Main =
+			
+			var measureName=SELECTEDVALUE(SelectMeasures[MeasureName])
+			var aggrType=SELECTEDVALUE(Periods[AGGR_TYPE])
+			var expr=SELECTEDVALUE(SelectExpr[ExprType])
+			var exprName=SWITCH(expr,"SO","Market SO sales","MS","MS%","EI","EI")
+			return exprName&" in "&measureName&" by Rx/OTC, "&[Years_List]&", "&aggrType
+		isHidden
+		lineageTag: 4e0a7a72-1e28-4f96-8ccf-514eaa6630a7
+
+	measure Header_Dynamic_DomesticForeign_Main =
+			
+			var measureName=SELECTEDVALUE(SelectMeasures[MeasureName])
+			var aggrType=SELECTEDVALUE(Periods[AGGR_TYPE])
+			var expr=SELECTEDVALUE(SelectExpr[ExprType])
+			var exprName=SWITCH(expr,"SO","Market SO sales","MS","MS%","EI","EI")
+			return exprName&" in "&measureName&" by Dom/For, "&[Years_List]&", "&aggrType
+		isHidden
+		lineageTag: 09921360-5778-4ec7-b32c-41bd960a9fe6
+
+	measure Header_Dynamic_Cat_Main =
+			
+			var measureName=SELECTEDVALUE(SelectMeasures[MeasureName])
+			var aggrType=SELECTEDVALUE(Periods[AGGR_TYPE])
+			var expr=SELECTEDVALUE(SelectExpr[ExprType])
+			var exprName=SWITCH(expr,"SO","Market SO sales","MS","MS%","EI","EI")
+			return exprName&" in "&measureName&" by Cat., "&[Years_List]&", "&aggrType
+		isHidden
+		lineageTag: f1a0cfc6-a43b-478a-95c0-54967a81d819
+
+	measure Header_Dynamic_By_Dim_Main =
+			
+			var measureName=SELECTEDVALUE(SelectMeasures[MeasureName])
+			var aggrType=SELECTEDVALUE(Aggr[AGGR_TYPE])
+			var selectedDim=SELECTEDVALUE('Dimensions'[DimName])
+			var s="{DATA_TYPE} market {EXPR} in {MEASURE} by {DIM_NAME}"
+			var e=SWITCH(SELECTEDVALUE(SelectExpr[ExprType]),"SO","sales","MS","MS%","EI","EI")
+			var ss=CALCULATE(SELECTEDVALUE(T[dst],s),T[src]=s)
+			var ee=CALCULATE(SELECTEDVALUE(T[dst],e),T[src]=e)
+			var sss=SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(ss,"{DATA_TYPE}",[Current_Data_Type]),"{EXPR}",ee),"{MEASURE}",measureName),"{DIM_NAME}",selectedDim)
+			return sss&", "&aggrType&", "&[Years_List]
+		isHidden
+		lineageTag: 79006849-4566-4a48-9761-7aa2e370f356
+
+	measure Header_GR_Indexes_Main =
+			
+			var dimName=SELECTEDVALUE('Dimensions'[DimName])
+			var measureName=SELECTEDVALUE(SelectMeasures[MeasureName])
+			var aggrType=SELECTEDVALUE(Periods[AGGR_TYPE])
+			var periodName=[Selected_Periods_List]
+			var s="GR Indexes, rating by {DIM_NAME}, {DATA_TYPE} in {MEASURE}"
+			var ss=CALCULATE(SELECTEDVALUE(T[dst],s),T[src]=s)
+			return SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(ss,"{DATA_TYPE}",[Current_Data_Type_SM]),"{MEASURE}",measureName),"{DIM_NAME}",dimName)&", "&aggrType&", "&periodName
+		isHidden
+		lineageTag: 1db76ba6-f779-41a2-a97f-f75662a472a4
+
+	measure Header_GR_Indexes_Total_Main =
+			
+			var measureName=SELECTEDVALUE(SelectMeasures[MeasureName])
+			var aggrType=SELECTEDVALUE(Periods[AGGR_TYPE])
+			var periodName=[Selected_Periods_List]
+			var s="GR Indexes, {DATA_TYPE} market sales in {MEASURE}"
+			var ss=CALCULATE(SELECTEDVALUE(T[dst],s),T[src]=s)
+			return SUBSTITUTE(SUBSTITUTE(ss,"{DATA_TYPE}",[Current_Data_Type_SM]),"{MEASURE}",measureName)&", "&aggrType&", "&periodName
+		isHidden
+		lineageTag: 5d0a5f5d-b8b1-4f5f-a745-8e0cb3d8a975
+
+	measure Header_Dynamic_Self_Main =
+			
+			var measureName=SELECTEDVALUE(SelectMeasures[MeasureName])
+			var aggrType=SELECTEDVALUE(Aggr[AGGR_TYPE])
+			var s="{DATA_TYPE} self sales in {MEASURE}"
+			var ss=CALCULATE(SELECTEDVALUE(T[dst],s),T[src]=s)
+			var sss=SUBSTITUTE(SUBSTITUTE(ss,"{DATA_TYPE}",[Current_Data_Type]),"{MEASURE}",measureName)
+			return sss&", "&aggrType&", "&[Current_Year]
+		isHidden
+		lineageTag: 33dc8543-8711-4d3f-bca7-96f36cc33da6
+
+	measure Header_Dynamic_SelfMO_Main =
+			
+			var measureName=SELECTEDVALUE(SelectMeasures[MeasureName])
+			var aggrType=SELECTEDVALUE(Aggr[AGGR_TYPE])
+			var s="{DATA_TYPE} {SELF} sales in {MEASURE}"
+			var ss=CALCULATE(SELECTEDVALUE(T[dst],s),T[src]=s)
+			var sss=SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(ss,"{DATA_TYPE}",[Current_Data_Type]),"{SELF}",[SelfMO_Name_For_Header]),"{MEASURE}",measureName)
+			return sss&", "&aggrType&", "&[Current_Year]
+		isHidden
+		lineageTag: d17bae44-d7e8-416b-80b7-aa22c022cb5e
+
+	measure Header_SelfMO_GR_Indexes_Total_Main =
+			
+			var measureName=SELECTEDVALUE(SelectMeasures[MeasureName])
+			var aggrType=SELECTEDVALUE(Periods[AGGR_TYPE])
+			var periodName=[Selected_Periods_List]
+			var moname=[SelfMO_Name_For_Header]
+			return moname&" GR Indexes, "&[Current_Data_Type]&" in "&measureName&", "&aggrType&", "&periodName
+		isHidden
+		lineageTag: bee617ff-677e-4853-a44d-6dec80745b9b
+
+	measure Header_Forecast_Dynamic_Vol_Main = ```
+			
+			var s="{DATA_TYPE} in {MEASURE}, forecast" 
+			var ss=CALCULATE(SELECTEDVALUE(T[dst],s),T[src]=s)
+			return SUBSTITUTE(SUBSTITUTE(ss,"{DATA_TYPE}",[Current_Data_Type]),"{MEASURE}",[Main_Currency_Name])&" "&[Years_List_All]
+			```
+		isHidden
+		lineageTag: 7676a980-fa31-4af3-98f4-6381e88c5177
+
+	measure Header_Forecast_Dynamic_EUR_Main = ```
+			
+			var s="{DATA_TYPE} in {MEASURE}, forecast" 
+			var ss=CALCULATE(SELECTEDVALUE(T[dst],s),T[src]=s)
+			return SUBSTITUTE(SUBSTITUTE(ss,"{DATA_TYPE}",[Current_Data_Type]),"{MEASURE}","EUR")&" "&[Years_List_All]
+			```
+		isHidden
+		lineageTag: a6b1262c-6401-4eaa-aa73-f18c963ca971
+
+	measure Header_Forecast_Dynamic_USD_Main = ```
+			
+			var s="{DATA_TYPE} in {MEASURE}, forecast" 
+			var ss=CALCULATE(SELECTEDVALUE(T[dst],s),T[src]=s)
+			return SUBSTITUTE(SUBSTITUTE(ss,"{DATA_TYPE}",[Current_Data_Type]),"{MEASURE}","USD")&" "&[Years_List_All]
+			```
+		isHidden
+		lineageTag: 08d386ce-f954-4796-aa71-c2271f1c4e46
+
+	measure Header_Forecast_Dynamic_PCS_Main = ```
+			
+			var s="{DATA_TYPE} in {MEASURE}, forecast" 
+			var ss=CALCULATE(SELECTEDVALUE(T[dst],s),T[src]=s)
+			return SUBSTITUTE(SUBSTITUTE(ss,"{DATA_TYPE}",[Current_Data_Type]),"{MEASURE}","PCS")&" "&[Years_List_All]
+			```
+		isHidden
+		lineageTag: 182379e4-a63d-4ac1-b2dd-a985fd277813
+
+	measure Header_Dynamic_USD_Main =
+			
+			var aggrType=SELECTEDVALUE(Periods[AGGR_TYPE])
+			var s="{DATA_TYPE} in {MEASURE}, forecast"
+			var ss=CALCULATE(SELECTEDVALUE(T[dst],s),T[src]=s)
+			return SUBSTITUTE(SUBSTITUTE(ss,"{DATA_TYPE}",[Current_Data_Type]),"{MEASURE}","USD")&" "&[Current_Year]&", "&aggrType
+		isHidden
+		lineageTag: 6f51f605-8e66-409a-9a60-6aa5e171d6c5
+
+	measure Header_Dynamic_EUR_Main =
+			
+			var aggrType=SELECTEDVALUE(Periods[AGGR_TYPE])
+			var s="{DATA_TYPE} in {MEASURE}, forecast"
+			var ss=CALCULATE(SELECTEDVALUE(T[dst],s),T[src]=s)
+			return SUBSTITUTE(SUBSTITUTE(ss,"{DATA_TYPE}",[Current_Data_Type]),"{MEASURE}","EUR")&" "&[Current_Year]&", "&aggrType
+		isHidden
+		lineageTag: 38a88253-0f9a-4987-ad3a-6abd6a31fe4e
+
+	measure Header_Rating_Main_Brand =
+			
+			var measureName=SELECTEDVALUE(SelectMeasures[MeasureName])
+			var aggrType=SELECTEDVALUE(Aggr[AGGR_TYPE])
+			var periodName=[Selected_Periods_List]
+			return "Market "&[Current_Data_Type]&" in "&measureName&", by Brand, "&aggrType&", "&periodName
+		isHidden
+		lineageTag: 205f246a-eaa2-436c-9ef2-eaf65d4929c1
+
+	measure Header_Rating_Main_SelfMO_Brand =
+			
+			var measureName=SELECTEDVALUE(SelectMeasures[MeasureName])
+			var aggrType=SELECTEDVALUE(Aggr[AGGR_TYPE])
+			var periodName=[Selected_Periods_List]
+			var moName=[SelfMO_Name_For_Header]
+			var dimName=SELECTEDVALUE('Dimensions'[DimName])
+			var s="{DATA_TYPE} {SELF} sales in {MEASURE}, Growth by Brand"
+			var ss=CALCULATE(SELECTEDVALUE(T[dst],s),T[src]=s)
+			var sss=SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(ss,"{DATA_TYPE}",[Current_Data_Type]),"{SELF}",moName),"{MEASURE}",measureName)
+			return sss&", "&aggrType&", "&periodName
+		isHidden
+		lineageTag: 135a7bb4-f0e3-4950-b3ec-e1e7b178d49b
+
+	measure Header_Bubbles_Main =
+			
+			var dName=SELECTEDVALUE('Dimensions'[DimName])
+			var measureName=SELECTEDVALUE(SelectMeasures[MeasureName])
+			var aggrType=SELECTEDVALUE(Aggr[AGGR_TYPE])
+			var periodName=[Selected_Periods_List]
+			var s="Quadrant analysis of {DATA_TYPE} in {MEASURE}, by {DIM_NAME}"
+			var ss=CALCULATE(SELECTEDVALUE(T[dst],s),T[src]=s)
+			return SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(ss,"{DATA_TYPE}",[Current_Data_Type_SM]),"{MEASURE}",measureName),"{DIM_NAME}",dName)&", "&aggrType&", "&periodName
+		isHidden
+		lineageTag: 0d8bfb0e-4fd0-4c29-bdb9-26c42b2bc5c9
+
+	measure Header_WinLoss_Main =
+			
+			var dName=SELECTEDVALUE('Dimensions'[DimName])
+			var measureName=SELECTEDVALUE(SelectMeasures[MeasureName])
+			var aggrType=SELECTEDVALUE(Aggr[AGGR_TYPE])
+			var periodName=[Selected_Periods_List]
+			var s="WinLoss analysis of {DATA_TYPE} in {MEASURE}, by {DIM_NAME}"
+			var ss=CALCULATE(SELECTEDVALUE(T[dst],s),T[src]=s)
+			return SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(ss,"{DATA_TYPE}",[Current_Data_Type_SM]),"{MEASURE}",measureName),"{DIM_NAME}",dName)&", "&aggrType&", "&periodName
+		isHidden
+		lineageTag: 63f85dcd-47b9-43ab-8758-7d94f2d6c066
+
+	measure Header_Rating_Main_SelfMO_Brand_Aggr_Month =
+			
+			var measureName=SELECTEDVALUE(SelectMeasures[MeasureName])
+			var aggrType="Month"
+			var periodName=[Selected_Periods_List]
+			var moName=[SelfMO_Name_For_Header]
+			var s="{DATA_TYPE} {SELF} sales in {MEASURE}, Growth by Brand"
+			var ss=CALCULATE(SELECTEDVALUE(T[dst],s),T[src]=s)
+			return SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(ss,"{DATA_TYPE}",[Current_Data_Type]),"{SELF}",moName),"{MEASURE}",measureName)&", "&aggrType&", "&periodName
+		isHidden
+		lineageTag: 96ff0e57-3ad5-4e35-837c-5c272146a0dc
+
+	measure Header_Rating_Main_SelfMO_Brand_Aggr_YTD =
+			
+			var measureName=SELECTEDVALUE(SelectMeasures[MeasureName])
+			var aggrType="YTD"
+			var periodName=[Selected_Periods_List]
+			var moName=[SelfMO_Name_For_Header]
+			var s="{DATA_TYPE} {SELF} sales in {MEASURE}, Growth by Brand"
+			var ss=CALCULATE(SELECTEDVALUE(T[dst],s),T[src]=s)
+			return SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(ss,"{DATA_TYPE}",[Current_Data_Type]),"{SELF}",moName),"{MEASURE}",measureName)&", "&aggrType&", "&periodName
+		isHidden
+		lineageTag: 35e204cd-a32d-4735-9b3e-f8de3b2f95dd
+
+	measure Header_Rating_Main_SelfMO_Brand_Aggr_MAT =
+			
+			var measureName=SELECTEDVALUE(SelectMeasures[MeasureName])
+			var aggrType="MAT"
+			var periodName=[Selected_Periods_List]
+			var moName=[SelfMO_Name_For_Header]
+			var s="{DATA_TYPE} {SELF} sales in {MEASURE}, Growth by Brand"
+			var ss=CALCULATE(SELECTEDVALUE(T[dst],s),T[src]=s)
+			return SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(ss,"{DATA_TYPE}",[Current_Data_Type]),"{SELF}",moName),"{MEASURE}",measureName)&", "&aggrType&", "&periodName
+		isHidden
+		lineageTag: 0a9f687b-9715-4d83-bec6-bf7c523a2f4a
+
+	measure Header_GR_Indexes_Total_Pct_Main =
+			
+			var measureName=SELECTEDVALUE(SelectMeasures[MeasureName])
+			var aggrType=SELECTEDVALUE(Periods[AGGR_TYPE])
+			var periodName=[Selected_Periods_List]
+			var s="GR Indexes %, {DATA_TYPE} market sales in {MEASURE}"
+			var ss=CALCULATE(SELECTEDVALUE(T[dst],s),T[src]=s)
+			return SUBSTITUTE(SUBSTITUTE(ss,"{DATA_TYPE}",[Current_Data_Type_SM]),"{MEASURE}",measureName)&", "&aggrType&", "&periodName
+		isHidden
+		lineageTag: 2fbd586e-6b60-448d-b71e-0315bea00b31
+
+	measure Header_GR_Indexes_Pct_Main =
+			
+			var dimName=SELECTEDVALUE('Dimensions'[DimName])
+			var measureName=SELECTEDVALUE(SelectMeasures[MeasureName])
+			var aggrType=SELECTEDVALUE(Periods[AGGR_TYPE])
+			var periodName=[Selected_Periods_List]
+			var s="GR Indexes %, rating by {DIM_NAME}, {DATA_TYPE} in {MEASURE}"
+			var ss=CALCULATE(SELECTEDVALUE(T[dst],s),T[src]=s)
+			return SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(ss,"{DATA_TYPE}",[Current_Data_Type_SM]),"{MEASURE}",measureName),"{DIM_NAME}",dimName)&", "&aggrType&", "&periodName
+		isHidden
+		lineageTag: 6fa97a60-8db2-4faa-b7d8-08cd08d1211c
+
+	measure Header_Dynamic_Vol_Forecast_Main =
+			
+			var aggrType=SELECTEDVALUE(Periods[AGGR_TYPE])
+			var s="{DATA_TYPE} in {MEASURE}, forecast"
+			var ss=CALCULATE(SELECTEDVALUE(T[dst],s),T[src]=s)
+			return SUBSTITUTE(SUBSTITUTE(ss,"{DATA_TYPE}",[Current_Data_Type]),"{MEASURE}",[Main_Currency_Name])&" "&[Current_Year]&", "&aggrType
+		isHidden
+		lineageTag: e205e492-4f05-486d-964e-a20c0c1fbeaf
+
+	measure Header_Export_Main =
+			
+			var isShowData=[IsExportFieldSelected]+[IsExportExprSelected]
+			var aggrType=SELECTEDVALUE(Periods[AGGR_TYPE])
+			var fields=if([IsExportFieldSelected]>0,CONCATENATEX(VALUES(ExportFields[ExportFieldName]),ExportFields[ExportFieldName],", "),BLANK())
+			var s=switch(isShowData,
+			    0,"Please select at least one value in 'Export fields' and 'Export measures' selectоrs",
+			    1,"Please select at least one value in 'Export measures' selectоr",
+			    2,"Please select at least one value in 'Export fields' selectоr",
+			    3,"Export {DATA_TYPE}, by {FIELDS}"
+			)
+			var ss=CALCULATE(SELECTEDVALUE(T[dst],s),T[src]=s)
+			return if(isShowData=3,SUBSTITUTE(SUBSTITUTE(ss,"{DATA_TYPE}",[Current_Data_Type]),"{FIELDS}",fields)&", "&aggrType&", "&[Years_List],ss)
+		isHidden
+		lineageTag: 48030bdf-585c-4b7f-b2d1-3452778bb14b
+
+	measure Header_SelfMO_GR_Indexes_Total_Pct_Main =
+			
+			var measureName=SELECTEDVALUE(SelectMeasures[MeasureName])
+			var aggrType=SELECTEDVALUE(Periods[AGGR_TYPE])
+			var periodName=[Selected_Periods_List]
+			var moname=[SelfMO_Name_For_Header]
+			var dt=[Current_Data_Type_SM]
+			var s="GR Indexes %, {DATA_TYPE} {SELF} sales in {MEASURE}"
+			var ss=CALCULATE(SELECTEDVALUE(T[dst],s),T[src]=s)
+			return SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(ss,"{SELF}",moname),"{DATA_TYPE}",dt),"{MEASURE}",measureName)&", "&aggrType&", "&periodName
+		isHidden
+		lineageTag: 790aa3fe-63d4-4a73-950b-1143d88e5129
+
+	measure Header_Forecast_Dynamic_Measure_Main = "Retail SO sales in "&SELECTEDVALUE(SelectMeasures[MeasureName])&", forecast "&[Years_List_All]
+		isHidden
+		lineageTag: 6b2ca636-a413-428a-8bd3-ba83c3342735
+
+	measure Header_Dynamic_Measure_Main =
+			
+			var aggrType=SELECTEDVALUE(Periods[AGGR_TYPE])
+			VAR measName=SELECTEDVALUE(SelectMeasures[MeasureName])
+			return [Current_Data_Type]&" in "&measName&", "&[Current_Year]&", "&aggrType
+		isHidden
+		lineageTag: d93d9d7c-5e83-42a7-be01-34a281b058d6
+
+	measure Header_Rating_Main_SelfMO =
+			
+			var measureName=SELECTEDVALUE(SelectMeasures[MeasureName])
+			var aggrType=SELECTEDVALUE(Aggr[AGGR_TYPE])
+			var periodName=[Selected_Periods_List]
+			var moName=[SelfMO_Name_For_Header]
+			var dimName=SELECTEDVALUE('Dimensions'[DimName])
+			var s="{DATA_TYPE} {SELF} sales in {MEASURE}, by {DIM_NAME}"
+			var ss=CALCULATE(SELECTEDVALUE(T[dst],s),T[src]=s)
+			var sss=SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(ss,"{DATA_TYPE}",[Current_Data_Type]),"{SELF}",moName),"{DIM_NAME}",dimName),"{MEASURE}",measureName)
+			return sss&", "&aggrType&", "&periodName
+		isHidden
+		lineageTag: 32ecca36-3d5b-4275-8ace-a680746b6aaf
+
+	measure Header_Dynamic_By_Dim_Sub =
+			
+			var cf=[Current_Filters]
+			return if(len(cf)>0,cf&", ","")&[Paginated_Top]
+		isHidden
+		lineageTag: b25f71d0-9ea0-45cd-9cb0-840f7363575a
+
+	measure Header_Dynamic_PRT_By_SKU_Main =
+			
+			var aggrType=SELECTEDVALUE(Periods[AGGR_TYPE])
+			var selectedDim="SKU"
+			var expr=SELECTEDVALUE(SelectPRT[PRTType])
+			var s="{PRT_TYPE} ,% by {DIM_NAME}"
+			var ss=CALCULATE(SELECTEDVALUE(T[dst],s),t[src]=s)
+			return SUBSTITUTE(SUBSTITUTE(ss,"{PRT_TYPE}",expr),"{DIM_NAME}",selectedDim)&", "&[Years_List]
+		isHidden
+		lineageTag: 64c2df41-1708-4f7f-8fa4-e451ed172a95
+
+	measure Header_Dynamic_PRT_By_SKU_Sub =
+			
+			var cf=[Current_Filters]
+			return if(len(cf)>0,cf&", ","")&[Paginated_Top_Dyn_SKU]
+		isHidden
+		lineageTag: 36f1819f-0bf0-473b-b296-fcec8ab8589b
+
+	measure Header_Dynamic_Ecom_Main =
+			
+			var measureName=SELECTEDVALUE(SelectMeasures[MeasureName])
+			var aggrType=SELECTEDVALUE(Periods[AGGR_TYPE])
+			var dimName=SELECTEDVALUE('Dimensions'[DimName])
+			var expr=SELECTEDVALUE(SelectExprOnlineOffline[OnlineExprType])
+			var s1="Online {DATA_TYPE} sales"
+			var s2="Offline {DATA_TYPE} sales"
+			var s3="Online {DATA_TYPE} sales in total {DATA_TYPE} sales"
+			var e=SWITCH(expr,"Online",s1,"Offline",s2,"MS",s3)
+			var ee=CALCULATE(SELECTEDVALUE(T[dst],e),T[src]=e)
+			var eee=SUBSTITUTE(ee,"{DATA_TYPE}",[Current_Data_Type_SM])
+			var s="{EXPR_TYPE} in {MEASURE}, by {DIM_NAME}"
+			var ss=CALCULATE(SELECTEDVALUE(T[dst],s),T[src]=s)
+			return SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(ss,"{EXPR_TYPE}",eee),"{MEASURE}",measureName),"{DIM_NAME}",dimName)&", "&[Years_List]&", "&aggrType
+		isHidden
+		lineageTag: eb5058d9-ae5a-4930-9e41-ca3d6ac1b870
+
+	measure Header_Ecom_Main =
+			
+			var dName=SELECTEDVALUE('Dimensions'[DimName])
+			var measureName=SELECTEDVALUE(SelectMeasures[MeasureName])
+			var aggrType=SELECTEDVALUE(Periods[AGGR_TYPE])
+			var periodName=[Selected_Periods_List]
+			var s="Online and Offline {DATA_TYPE} sales in {MEASURE}, by {DIM_NAME}"
+			var ss=CALCULATE(SELECTEDVALUE(T[dst],s),T[src]=s)
+			return SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(ss,"{DATA_TYPE}",[Current_Data_Type_SM]),"{MEASURE}",measureName),"{DIM_NAME}",dName)&", "&aggrType&", "&periodName
+		isHidden
+		lineageTag: 73f85d76-902f-4527-85f6-eb969b6116e5
+
+	measure Header_Dynamic_Ecom_MS_Main =
+			
+			var measureName=SELECTEDVALUE(SelectMeasures[MeasureName])
+			var aggrType=SELECTEDVALUE(Periods[AGGR_TYPE])
+			var dimName=SELECTEDVALUE('Dimensions'[DimName])
+			return "Offline and Online Retail Sales SO in % "&" in "&measureName&" by "&dimName&", "&[Years_List]&", "&aggrType
+		isHidden
+		lineageTag: 9f712f87-6468-453c-bfc2-2a6fd416a4a4
+
+	measure Header_Bubbles_Price =
+			
+			var dName=SELECTEDVALUE('Dimensions'[DimName])
+			var measureName=SELECTEDVALUE(SelectMeasures[MeasureName])
+			var aggrType=SELECTEDVALUE(Aggr[AGGR_TYPE])
+			var periodName=[Selected_Periods_List]
+			var s="Weighted cost analysis of {DATA_TYPE} in {MEASURE}, by {DIM_NAME}"
+			var ss=CALCULATE(SELECTEDVALUE(T[dst],s),T[src]=s)
+			return SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(ss,"{DATA_TYPE}",[Current_Data_Type_SM]),"{MEASURE}",measureName),"{DIM_NAME}",dName)&", "&aggrType&", "&periodName
+		isHidden
+		lineageTag: 69105507-2eb2-42cb-b75f-4ea99b5113d6
+
+	measure Header_Rating_Price =
+			
+			var dName=SELECTEDVALUE('Dimensions'[DimName])
+			var measureName=SELECTEDVALUE(SelectMeasures[MeasureName])
+			var aggrType=SELECTEDVALUE(Aggr[AGGR_TYPE])
+			var periodName=[Selected_Periods_List]
+			var s="Weighted cost {DATA_TYPE} in {MEASURE}, by {DIM_NAME}"
+			var ss=CALCULATE(SELECTEDVALUE(T[dst],s),T[src]=s)
+			return SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(ss,"{DATA_TYPE}",[Current_Data_Type_SM]),"{MEASURE}",measureName),"{DIM_NAME}",dName)&", "&aggrType&", "&periodName
+		isHidden
+		lineageTag: aee4b34b-415f-471d-b7d5-d23bb9eefc26
+
+	measure Header_Dynamic_Price_Main =
+			
+			var measureName=SELECTEDVALUE(SelectMeasures[MeasureName])
+			var aggrType=SELECTEDVALUE(Aggr[AGGR_TYPE])
+			var dimName=SELECTEDVALUE('Dimensions'[DimName])
+			var dt=SELECTEDVALUE(DataTypes[DataType])
+			var s="Weighted cost dynamic {DATA_TYPE} in {MEASURE}, by {DIM_NAME}"
+			var ss=CALCULATE(SELECTEDVALUE(T[dst],s),T[src]=s)
+			return SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(ss,"{DATA_TYPE}",[Current_Data_Type_SM]),"{MEASURE}",measureName),"{DIM_NAME}",dimName)&", "&[Years_List]&", "&aggrType
+		isHidden
+		lineageTag: cb717842-666c-4557-8dc6-1b7a67276f80
+
+	measure Header_Rating_Main_Visits =
+			
+			var dimName=SELECTEDVALUE('Dimensions'[DimName])
+			var aggrType=SELECTEDVALUE(Aggr[AGGR_TYPE])
+			var periodName=[Selected_Periods_List]
+			var s="Promotions by {DIM_NAME}"
+			var ss=CALCULATE(SELECTEDVALUE(T[dst],s),T[src]=s)
+			var sss=SUBSTITUTE(ss,"{DIM_NAME}",dimName)
+			return sss&", "&aggrType&", "&periodName
+		lineageTag: 4e91832e-dacf-4ae9-a2f9-bd25db6c996a
+
+	measure Header_Dynamic_Main_Visits =
+			
+			var measureName=SELECTEDVALUE(SelectMeasures[MeasureName])
+			var aggrType=SELECTEDVALUE(Aggr[AGGR_TYPE])
+			var periodName=[Selected_Periods_List]
+			var s="Promotions"
+			var ss=CALCULATE(SELECTEDVALUE(T[dst],s),T[src]=s)
+			var sss=SUBSTITUTE(SUBSTITUTE(ss,"{DATA_TYPE}",[Current_Data_Type]),"{MEASURE}",measureName)
+			return sss&", "&aggrType&", "&[Years_Range]
+		lineageTag: 9b5f2925-6fe2-4a71-b086-62762a2f2c34
+
+	measure Header_Show_Columns = var s="Show columns" return CALCULATE(SELECTEDVALUE(T[dst],s),T[src]=s)
+		lineageTag: e2ad50be-b24a-412b-9178-675162ecf99b
+
+	measure Header_Dynamic_Main_Stock =
+			
+			var measureName=SELECTEDVALUE(SelectMeasures[MeasureName])
+			var aggrType=SELECTEDVALUE(Aggr[AGGR_TYPE])
+			var periodName=[Selected_Periods_List]
+			var s="Stock"
+			var ss=CALCULATE(SELECTEDVALUE(T[dst],s),T[src]=s)
+			var sss=SUBSTITUTE(SUBSTITUTE(ss,"{DATA_TYPE}",[Current_Data_Type]),"{MEASURE}",measureName)
+			return sss&", "&aggrType&", "&[Years_Range]
+		lineageTag: 3f69b027-3f13-4506-8e7d-94b8e83491ab
+
+	measure Header_Rating_Main_Stock =
+			
+			var dimName=SELECTEDVALUE('Dimensions'[DimName])
+			var aggrType=SELECTEDVALUE(Aggr[AGGR_TYPE])
+			var periodName=[Selected_Periods_List]
+			var s="Stock by {DIM_NAME}"
+			var ss=CALCULATE(SELECTEDVALUE(T[dst],s),T[src]=s)
+			var sss=SUBSTITUTE(ss,"{DIM_NAME}",dimName)
+			return sss&", "&aggrType&", "&periodName
+		lineageTag: d2693141-8204-44c4-a6cc-e34058b6c91b
+
+	column Value
+		isHidden
+		formatString: 0
+		lineageTag: b59c80e7-0673-46b4-976d-7f0a92aebd0c
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Value]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Headers = calculated
+		mode: import
+		source = {{BLANK()}}
+
+	annotation PBI_Id = 6b72fcf8c9814131a944cb47e1f16906
+

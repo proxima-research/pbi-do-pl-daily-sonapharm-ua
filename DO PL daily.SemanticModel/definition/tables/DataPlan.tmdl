@@ -1,0 +1,123 @@
+table DataPlan
+	lineageTag: be3e3061-3efa-427f-9e5e-3c79749dca5b
+
+	column DRUGS_ID
+		dataType: int64
+		formatString: 0
+		lineageTag: 147026c9-d0ab-4429-8280-2ecbc5b4a76f
+		summarizeBy: none
+		sourceColumn: DRUGS_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column Q
+		dataType: double
+		lineageTag: f4b78397-5beb-4f4e-a8b3-5d53951142f8
+		summarizeBy: sum
+		sourceColumn: Q
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column V
+		dataType: double
+		lineageTag: 7829a711-6beb-41f5-a5d9-2e76757ab02c
+		summarizeBy: sum
+		sourceColumn: V
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column V_USD
+		dataType: double
+		lineageTag: 03e6dc30-6252-4cc6-87d2-eaad3e01ed66
+		summarizeBy: sum
+		sourceColumn: V_USD
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column V_EUR
+		dataType: double
+		lineageTag: 0fe2f67f-981a-4efe-b7e3-3eca558c093b
+		summarizeBy: sum
+		sourceColumn: V_EUR
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column AREA_ID
+		dataType: double
+		formatString: 0
+		lineageTag: 4beedd95-2b18-4091-b04e-d4aa27e2da57
+		summarizeBy: count
+		sourceColumn: AREA_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column PERIOD_ID
+		dataType: double
+		formatString: 0
+		lineageTag: 32a74bf7-5bc6-4424-b3ed-41a42da25828
+		summarizeBy: none
+		sourceColumn: PERIOD_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column DT
+		dataType: int64
+		formatString: 0
+		lineageTag: 456e27f6-0be2-40af-a244-04d374512765
+		summarizeBy: sum
+		sourceColumn: DT
+
+		annotation SummarizationSetBy = Automatic
+
+	column TABS
+		dataType: double
+		lineageTag: 299e5190-e012-46f1-ac93-bea7c3a6ba1c
+		summarizeBy: sum
+		sourceColumn: TABS
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column DDD
+		dataType: double
+		lineageTag: d5ec2824-2c1f-4f76-b92d-0f8c695577ae
+		summarizeBy: sum
+		sourceColumn: DDD
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition DataPlan = m
+		mode: import
+		source =
+				let
+				    Source = PowerPlatform.Dataflows(null),
+				    SO_MONTHLY_ = Source{[Id="Workspaces"]}[Data]{[workspaceId=_WS_ID_]}[Data]{[dataflowId=_DATA_FLOW_ID_]}[Data]{[entity="DO_PLAN_DAILY",version=""]}[Data],
+				    MP=GetMinPeriodID,
+				    SO_MONTHLY_1= Table.SelectRows(SO_MONTHLY_, each [PERIOD_ID] >= MP),
+				    #"Added Custom" = Table.AddColumn(SO_MONTHLY_1, "DT", each 2),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Added Custom",{{"DT", Int64.Type}}),
+				    DistinctDrugs=Table.Distinct(Table.SelectColumns(Drugs,{"DRUGS_ID","DRUG_FORM_NUMBER","DDD_AMOUNT"}),"DRUGS_ID"),
+				    #"Merged Queries" = Table.NestedJoin(#"Changed Type", {"DRUGS_ID"}, DistinctDrugs, {"DRUGS_ID"}, "Drugs", JoinKind.Inner),
+				    #"Expanded Drugs" = Table.ExpandTableColumn(#"Merged Queries", "Drugs", {"DRUG_FORM_NUMBER", "DDD_AMOUNT"}, {"Drugs.DRUG_FORM_NUMBER", "Drugs.DDD_AMOUNT"}),
+				    #"Added Custom2" = Table.AddColumn(#"Expanded Drugs", "TABS", each [Q]*[Drugs.DRUG_FORM_NUMBER]),
+				    #"Added Custom1" = Table.AddColumn(#"Added Custom2", "DDD", each [Q]*[Drugs.DDD_AMOUNT]),
+				    #"Changed Type2" = Table.TransformColumnTypes(#"Added Custom1",{{"TABS", type number}, {"DDD", type number}}),
+				    #"Removed Columns" = Table.RemoveColumns(#"Changed Type2",{"Drugs.DRUG_FORM_NUMBER", "Drugs.DDD_AMOUNT"})
+				in
+				    #"Removed Columns"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,56 @@
+table SinglePeriod
+	isHidden
+	lineageTag: 88c6f084-8504-4560-8103-06e5cde7abc1
+
+	column Period
+		isHidden
+		formatString: dd/mm/yyyy
+		lineageTag: 3807fc4c-6a7a-4527-99b8-6420d6999730
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Period]
+		sortByColumn: PERIOD_ID
+
+		variation Variation
+			isDefault
+			relationship: 082142b6-c3e2-4306-a46b-68469cfb4d16
+			defaultHierarchy: LocalDateTable_588139d9-9a54-4784-8570-c37cdf6f9939.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	column PERIOD_ID
+		isHidden
+		formatString: 0
+		lineageTag: 27dd1ba7-4fa8-47ca-bac4-c15e1a1b5223
+		summarizeBy: count
+		isNameInferred
+		sourceColumn: [PERIOD_ID]
+
+		annotation SummarizationSetBy = Automatic
+
+	column PeriodMonth
+		formatString: 0
+		lineageTag: fe08698a-2e52-4ce8-afa9-9b7f1137d5a1
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [PeriodMonth]
+
+		annotation SummarizationSetBy = Automatic
+
+	column FP
+		formatString: 0
+		lineageTag: 7debcae0-f16b-41b1-82a5-97be0f5c2921
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [FP]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition SinglePeriod = calculated
+		mode: import
+		source = DISTINCT(SELECTCOLUMNS(Periods,"Period",[Period],"PERIOD_ID",Periods[PERIOD_ID],"PeriodMonth",Periods[PeriodMonth],"FP",Periods[FP]))
+
+	annotation PBI_Id = f65822f8d8024535b6fdb2e71193391f
+

@@ -1,0 +1,420 @@
+expression DRUGS_EXISTS =
+		let
+		    Source = PowerPlatform.Dataflows(null),
+		    DO_DRUGS_EXISTS_=Table.Distinct(Source{[Id="Workspaces"]}[Data]{[workspaceId=_WS_ID_]}[Data]{[dataflowId=_DATA_FLOW_ID_]}[Data]{[entity="DO_DRUGS_EXISTS",version=""]}[Data])
+		in
+		    DO_DRUGS_EXISTS_
+	lineageTag: 3aebafc7-3fd2-4661-9115-e2904c17389c
+	queryGroup: Restricts
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+
+expression Cat =
+		let
+		    Source = CatSRC,
+		    #"Removed Columns" = Table.RemoveColumns(Source,{"UserCulture", "CategoryLongName"}),
+		    #"Removed Duplicates1" = Table.Distinct(#"Removed Columns")
+		in
+		    #"Removed Duplicates1"
+	lineageTag: e69b46d3-f9e7-484a-b207-b58b55fe0bd8
+	queryGroup: Restricts
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+
+expression _HISTORY_LENGTH_ = 3 meta [IsParameterQuery=true, Type="Number", IsParameterQueryRequired=true]
+	lineageTag: fe0357ce-8f82-4b6f-9660-35f19358a4ce
+	queryGroup: PARAMS
+
+	annotation PBI_ResultType = Number
+
+	annotation PBI_NavigationStepName = Navigation
+
+expression _WS_ID_ = "2a74471e-ccb6-416b-8514-ce3d76e1a78f" meta [IsParameterQuery=true, Type="Text", IsParameterQueryRequired=true]
+	lineageTag: f4eddc84-e3b5-42f5-b207-4f75a1a1843b
+	queryGroup: FLOW_ID
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Text
+
+expression _FLOWS_FLOW_ID_ = "a30a7da1-122a-4c27-a3eb-332539ab8547" meta [IsParameterQuery=true, Type="Text", IsParameterQueryRequired=true]
+	lineageTag: 3178f851-89bc-414f-ae82-3d788e910c45
+	queryGroup: FLOW_ID
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Text
+
+expression _PROJECT_ = "DO_PL_DAILY_SONAPHARM" meta [IsParameterQuery=true, Type="Text", IsParameterQueryRequired=true]
+	lineageTag: 9a1679d6-5406-4d83-adad-5f81f8f455f1
+	queryGroup: PARAMS
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Text
+
+expression _COUNTRY_ = "UA" meta [IsParameterQuery=true, Type="Text", IsParameterQueryRequired=true]
+	lineageTag: 7ec818ba-c9ec-4bd8-b95e-684ebe2165a0
+	queryGroup: PARAMS
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Text
+
+expression FLOWS =
+		let
+		    Source = PowerPlatform.Dataflows(null),
+		    FLOWS_ = Source{[Id="Workspaces"]}[Data]{[workspaceId=_WS_ID_]}[Data]{[dataflowId=_FLOWS_FLOW_ID_]}[Data]{[entity="FLOWS",version=""]}[Data]
+		in
+		    FLOWS_
+	lineageTag: 6920940a-a099-4089-a629-fe30fec51ede
+	queryGroup: FLOW_ID
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+
+expression _DATA_FLOW_ID_ =
+		let
+		    Result= if Table.RowCount(FLOWS)>0 then List.Single(Table.SelectRows(FLOWS, each [COUNTRY]=_COUNTRY_ and [PROJECT] = _PROJECT_ and [FLOW_TYPE]= "DATA_DO")[FLOW_ID]) else _FLOWS_FLOW_ID_
+		in
+		    Result
+	lineageTag: dd020cd1-bfa7-48fc-b30c-61d3c8d87fec
+	queryGroup: FLOW_ID
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Text
+
+expression _GROUPS_FLOW_ID_ =
+		let
+		    Result= if Table.RowCount(FLOWS)>0 then List.Single(Table.SelectRows(FLOWS, each [COUNTRY]=_COUNTRY_ and [PROJECT] = _PROJECT_ and [FLOW_TYPE]= "GROUPS")[FLOW_ID]) else _FLOWS_FLOW_ID_
+		in
+		    Result
+	lineageTag: 0f52964f-5f0d-495d-856c-a9f4d7e17f7b
+	queryGroup: FLOW_ID
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Text
+
+expression _DRUGS_FLOW_ID_ =
+		let
+		    Result= if Table.RowCount(FLOWS)>0 then List.Single(Table.SelectRows(FLOWS, each [COUNTRY]=_COUNTRY_ and [PROJECT] = _PROJECT_ and [FLOW_TYPE]= "DRUGS")[FLOW_ID]) else _FLOWS_FLOW_ID_
+		in
+		    Result
+	lineageTag: dfbe0ebd-8946-41ca-8468-2346b39cc980
+	queryGroup: FLOW_ID
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Text
+
+expression MAX_PERIOD_ID =
+		let
+		    Source = PowerPlatform.Dataflows(null),
+		    MAX_PERIOD_ID_ = Source{[Id="Workspaces"]}[Data]{[workspaceId=_WS_ID_]}[Data]{[dataflowId=_DATA_FLOW_ID_]}[Data]{[entity="MAX_PERIOD_ID_DO",version=""]}[Data]
+		in
+		    MAX_PERIOD_ID_
+	lineageTag: b6882327-20d0-45a9-a90d-99b3dedc4a79
+	queryGroup: Restricts
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+
+expression _MISC_FLOW_ID_ =
+		let
+		    Result= if Table.RowCount(FLOWS)>0 then List.Single(Table.SelectRows(FLOWS, each [PROJECT] = "COMMON" and [FLOW_TYPE]= "MISC")[FLOW_ID]) else _FLOWS_FLOW_ID_
+		in
+		    Result
+	lineageTag: 52ab320d-47ec-4909-af0a-aea4a8382474
+	queryGroup: FLOW_ID
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Text
+
+expression _MAIN_DATA_TYPE_ = "SO" meta [IsParameterQuery=true, Type="Text", IsParameterQueryRequired=true]
+	lineageTag: bc95c0a5-9f3a-4731-9079-b5617f5dd11f
+	queryGroup: PARAMS
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Text
+
+expression _ROLE_ = "donapharmexim" meta [IsParameterQuery=true, Type="Text", IsParameterQueryRequired=true]
+	lineageTag: 354a3060-c138-41fd-b407-72cca6ee26b3
+	queryGroup: PARAMS
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Text
+
+expression _RESTRICTS_FLOW_ID_ =
+		let
+		    Result= if Table.RowCount(FLOWS)>0 then List.Single(Table.SelectRows(FLOWS, each [PROJECT] = "COMMON" and [FLOW_TYPE]= "RESTRICTS")[FLOW_ID]) else _FLOWS_FLOW_ID_
+		in
+		    Result
+	lineageTag: ddbe70cd-a8aa-41a9-9ea3-96d2fa3e75d2
+	queryGroup: FLOW_ID
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Text
+
+expression Restricts = ```
+		let
+		    Source = PowerPlatform.Dataflows(null),
+		    RESTRICTS = Source{[Id="Workspaces"]}[Data]{[workspaceId=_WS_ID_]}[Data]{[dataflowId=_RESTRICTS_FLOW_ID_]}[Data]{[entity="RESTRICTS",version=""]}[Data],
+		    #"Filtered Rows" = Table.SelectRows(RESTRICTS, each [project_name] = _COUNTRY_&"_"&_PROJECT_ and [role_name]=_ROLE_)
+		    
+		in
+		    #"Filtered Rows"
+		```
+	lineageTag: f32c2492-026b-496c-aea0-c6e85d93defe
+	queryGroup: Restricts
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+
+expression DrugsSRC =
+		let
+		    Source = PowerPlatform.Dataflows(null),
+		    // load EN
+		    Drugs_eng = Source{[Id="Workspaces"]}[Data]{[workspaceId=_WS_ID_]}[Data]{[dataflowId=_DRUGS_FLOW_ID_]}[Data]{[entity="Drugs_eng",version=""]}[Data],
+		    // load UA
+		    Drugs_ukr = Source{[Id="Workspaces"]}[Data]{[workspaceId=_WS_ID_]}[Data]{[dataflowId=_DRUGS_FLOW_ID_]}[Data]{[entity="Drugs_ukr",version=""]}[Data],
+		    // load RU
+		    Drugs_rus = Source{[Id="Workspaces"]}[Data]{[workspaceId=_WS_ID_]}[Data]{[dataflowId=_DRUGS_FLOW_ID_]}[Data]{[entity="Drugs_rus",version=""]}[Data],
+		    Drugs_all=Table.Combine({Drugs_eng,Drugs_rus,Drugs_ukr}),
+		    // Merge all lang
+		    #"Merged Queries" = Table.NestedJoin(Drugs_all, {"Category"}, Cat, {"Category"}, "Cat", JoinKind.LeftOuter),
+		    // Merge with Cat Short
+		    #"Expanded Cat" = Table.ExpandTableColumn(#"Merged Queries", "Cat", {"CategoryShortName"}, {"Cat.CategoryShortName"}),
+		    #"Renamed Columns" = Table.RenameColumns(#"Expanded Cat",{{"Cat.CategoryShortName", "CategoryShortName"}}),
+		    // Save only drugs exists
+		    #"Merged Queries1" = Table.NestedJoin(#"Renamed Columns", {"DRUGS_ID"}, DRUGS_EXISTS, {"DRUGS_ID"}, "SO_DRUGS_EXISTS", JoinKind.Inner),
+		    #"Changed Type" = Table.TransformColumnTypes(#"Merged Queries1",{{"CategoryShortName", type text}}),
+		    #"Removed Columns" = Table.RemoveColumns(#"Changed Type",{"SO_DRUGS_EXISTS"}),
+		    #"Added Custom" = Table.AddColumn(#"Removed Columns", "Cat_RxOTC", each [CategoryShortName]&"_"&[#"Rx/OTC"],Text.Type),
+		    AddCat=Table.NestedJoin(#"Added Custom",{"Category","UserCulture"},CatSRC,{"Category","UserCulture"},"Cat",JoinKind.LeftOuter),
+		    #"Expanded Cat1" = Table.ExpandTableColumn(AddCat, "Cat", {"CategoryLongName"}, {"Cat.CategoryLongName"}),
+		    #"Renamed Columns1" = Table.RenameColumns(#"Expanded Cat1",{{"Cat.CategoryLongName", "CategoryLongName"}}),
+		    #"Merged Queries2" = Table.NestedJoin(#"Renamed Columns1", {"IS_STM", "UserCulture"}, VTMSRC, {"IS_STM", "UserCulture"}, "VTMSRC", JoinKind.LeftOuter),
+		    #"Expanded VTMSRC" = Table.ExpandTableColumn(#"Merged Queries2", "VTMSRC", {"VTM"}, {"VTM"})
+		in
+		    #"Expanded VTMSRC"
+	lineageTag: cb2cbc6f-bb07-44b8-8715-417721aad22e
+	queryGroup: Restricts
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+
+expression Restricts_Drugs_Category =
+		let
+		    Source = Table.SelectColumns(Restricts,{"table","field","value"}),
+		    #"Filtered Rows" = Table.SelectRows(Source, each ([table] = "Drugs") and [field]="Category"),
+		    #"Removed Columns" = Table.RemoveColumns(#"Filtered Rows",{"table", "field"}),
+		    #"Renamed Columns" = Table.RenameColumns(#"Removed Columns",{{"value", "Cat"}})
+		in
+		    #"Renamed Columns"
+	lineageTag: 53782028-1cb3-4275-91e1-2295deb0e06f
+	queryGroup: Restricts
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+
+expression Restricts_Groups_Organization =
+		let
+		    Result=Table.FromRows({{_SELF_MO_ID_}},{"ORGANIZATION"}),
+		    #"Changed Type" = Table.TransformColumnTypes(Result,{{"ORGANIZATION", Int64.Type}})
+		in
+		    #"Changed Type"
+	lineageTag: e75e9138-b4fc-40cb-abf6-ff049f9e1c97
+	queryGroup: Restricts
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+
+expression Restricts_Drugs_Custom = ```
+		let
+		    Source = PowerPlatform.Dataflows(null),
+		    TableName=if _RESTRICTS_FLOW_ID_=_RESTRICTS_CUSTOM_FLOW_ID_ then "RESTRICTS_CUSTOM" else "RESTRICTS",
+		    Rest=Source{[Id="Workspaces"]}[Data]{[workspaceId=_WS_ID_]}[Data]{[dataflowId=_RESTRICTS_CUSTOM_FLOW_ID_]}[Data]{[entity=TableName,version=""]}[Data],
+		    CustomOrgName=List.Max(Table.SelectRows(Restricts, each  ([table] = "Restricts") and ([field] = "ORG_NAME"))[value]),
+		    #"Filtered Rows" = Table.SelectRows(Rest, each [ORG_NAME] = CustomOrgName)
+		    
+		in
+		    #"Filtered Rows"
+		```
+	lineageTag: 8e08047b-0fcd-425f-a8c7-29d3158f3ab6
+	queryGroup: Restricts
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+
+expression _RESTRICTS_CUSTOM_FLOW_ID_ =
+		let
+		    Result= if Table.RowCount(FLOWS)>0 then List.Single(Table.SelectRows(FLOWS, each [PROJECT] = "COMMON" and [FLOW_TYPE]= "CUSTOM_RESTRICTS")[FLOW_ID]) else _FLOWS_FLOW_ID_
+		in
+		    Result
+	lineageTag: 4b3178a4-4ff6-4657-94f4-1ab4caf0349b
+	queryGroup: FLOW_ID
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Text
+
+expression Restricts_Drugs_RxOTC_Category =
+		let
+		    Source = Table.NestedJoin(Restricts_Drugs_Category, {"Cat"}, Restricts_Drugs_RxOTC, {"Cat"}, "Restricts_Drugs_RxOTC", JoinKind.LeftOuter),
+		    #"Expanded Restricts_Drugs_RxOTC" = Table.ExpandTableColumn(Source, "Restricts_Drugs_RxOTC", {"Rx/OTC"}, {"Restricts_Drugs_RxOTC.Rx/OTC"}),
+		    #"Renamed Columns" = Table.RenameColumns(#"Expanded Restricts_Drugs_RxOTC",{{"Restricts_Drugs_RxOTC.Rx/OTC", "Rx/OTC"}}),
+		    #"Replaced Value" = Table.ReplaceValue(#"Renamed Columns",null," -",Replacer.ReplaceValue,{"Rx/OTC"}),
+		    #"Added Custom" = Table.AddColumn(#"Replaced Value", "Cat_RxOTC", each [Cat]&"_"&[#"Rx/OTC"],Text.Type)
+		in
+		    #"Added Custom"
+	lineageTag: da017e86-9df3-44bb-8d56-65abcdc871de
+	queryGroup: Restricts
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+
+expression Restricts_Drugs_RxOTC =
+		let
+		    Source = Table.SelectColumns(Restricts,{"table","field","value"}),
+		    #"Filtered Rows" = Table.SelectRows(Source, each ([table] = "Drugs") and [field]="RxOTC"),
+		    #"Removed Columns" = Table.RemoveColumns(#"Filtered Rows",{"table", "field"}),
+		    #"Added Custom" = Table.AddColumn(#"Removed Columns", "Cat", each "D",Text.Type),
+		    #"Renamed Columns" = Table.RenameColumns(#"Added Custom",{{"value", "Rx/OTC"}})
+		in
+		    #"Renamed Columns"
+	lineageTag: 24301c0e-bebd-4ea7-97a6-143d13141074
+	queryGroup: Restricts
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+
+expression _TRANSLATIONS_FLOW_ID_ =
+		let
+		    Result= if Table.RowCount(FLOWS)>0 then List.Single(Table.SelectRows(FLOWS, each [PROJECT] = "COMMON" and [FLOW_TYPE]= "TRANSLATIONS" and [COUNTRY]=_COUNTRY_)[FLOW_ID]) else _FLOWS_FLOW_ID_
+		in
+		    Result
+	lineageTag: 58961749-6c4f-423d-9538-55a1442b872c
+	queryGroup: FLOW_ID
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Text
+
+expression CatSRC =
+		let
+		    Source = PowerPlatform.Dataflows(null),
+		    LABELS_ = Source{[Id="Workspaces"]}[Data]{[workspaceId=_WS_ID_]}[Data]{[dataflowId=_TRANSLATIONS_FLOW_ID_]}[Data]{[entity="CATEGORIES",version=""]}[Data],
+		    #"Renamed Columns" = Table.RenameColumns(LABELS_,{{"language", "UserCulture"}}),
+		    #"Changed Type" = Table.TransformColumnTypes(#"Renamed Columns",{{"Category", Int64.Type}})
+		in
+		    #"Changed Type"
+	lineageTag: c895bdb8-fbd8-40fa-b763-20a3c1665452
+	queryGroup: Restricts
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+
+expression Restricts_Drugs_Addr_Market =
+		let
+		    Source = Table.SelectColumns(Restricts,{"table","field","value"}),
+		    Addr = Table.SelectRows(Source, each ([table] = "Drugs") and [field]="AddrMarket"),
+		    IsRestrictExists=Table.RowCount(Addr)>0,
+		    Result=if IsRestrictExists then Table.Distinct(Table.SelectColumns(GroupsSRC,{"DRUGS_ID"})) else Table.TransformColumnTypes( Table.FromList({},Record.FieldValues,{"DRUGS_ID"}),{{"DRUGS_ID", Int64.Type}})
+		in
+		    Result
+	lineageTag: 5d606b0b-268b-41ce-9158-0053b40e8315
+	queryGroup: Restricts
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+
+expression GroupsSRC =
+		let
+		   Source = PowerPlatform.Dataflows(null),
+		    PRODUCTS_GM_DB_ = Source{[Id="Workspaces"]}[Data]{[workspaceId=_WS_ID_]}[Data]{[dataflowId=_GROUPS_FLOW_ID_]}[Data]{[entity="PRODUCTS_GM_STR_FIELDS",version=""]}[Data],
+		    _OrgId_=List.Min(GroupsOrgID[value]),
+		    #"Filtered Rows" = Table.SelectRows(PRODUCTS_GM_DB_, each [ORGANIZATION] = _OrgId_),
+		    #"Merged Queries" = Table.NestedJoin(#"Filtered Rows", {"DRUGS_ID"}, DRUGS_EXISTS, {"DRUGS_ID"}, "DRUGS_EXISTS", JoinKind.Inner),
+		    #"Removed Columns" = Table.RemoveColumns(#"Merged Queries",{"DRUGS_EXISTS"})
+		in
+		    #"Removed Columns"
+	lineageTag: 9346c320-cba2-4628-a9d2-69e078b305d2
+	queryGroup: Restricts
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+
+expression VTMSRC =
+		let
+		    Source = PowerPlatform.Dataflows(null),
+		    LABELS_ = Source{[Id="Workspaces"]}[Data]{[workspaceId=_WS_ID_]}[Data]{[dataflowId=_TRANSLATIONS_FLOW_ID_]}[Data]{[entity="VTM",version=""]}[Data]
+		in
+		    LABELS_
+	lineageTag: 6367c951-c2e4-47dd-977b-ea6b3b489b32
+	queryGroup: Restricts
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+
+expression PeriodsPYSameWD =
+		let
+		    Source = PowerPlatform.Dataflows(null),
+		    Workspaces = Source{[Id="Workspaces"]}[Data],
+		    WS = Workspaces{[workspaceId=_WS_ID_]}[Data],
+		    DF = WS{[dataflowId=_MISC_FLOW_ID_]}[Data],
+		    PERIODS_ = DF{[entity="PERIODS_PY_SAME_WEEKDAY",version=""]}[Data],
+		    #"Removed Columns" = Table.RemoveColumns(PERIODS_,{"wd", "wd_py"}),
+		    #"Changed Type" = Table.TransformColumnTypes(#"Removed Columns",{{"period", type date}, {"period_py", type date}})
+		in
+		    #"Changed Type"
+	lineageTag: 0adc4226-2161-4af7-a7b1-9a0c862dc64c
+	queryGroup: Restricts
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+
+expression _SELF_MO_ID_ = 1988308 meta [IsParameterQuery=true, Type="Number", IsParameterQueryRequired=true]
+	lineageTag: 6303576e-9c0d-4a0b-9cf9-88ff1685b3b9
+	queryGroup: PARAMS
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Number
+
+expression MIN_PERIOD_ID =
+		let
+		    Source = PowerPlatform.Dataflows(null),
+		    MAX_PERIOD_ID_ = Source{[Id="Workspaces"]}[Data]{[workspaceId=_WS_ID_]}[Data]{[dataflowId=_DATA_FLOW_ID_]}[Data]{[entity="MIN_PERIOD_ID_DO",version=""]}[Data]
+		in
+		    MAX_PERIOD_ID_
+	lineageTag: a9d50f31-cd45-403a-a6b5-a0619e0a94cd
+	queryGroup: Restricts
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

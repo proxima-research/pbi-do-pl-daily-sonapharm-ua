@@ -1,0 +1,29 @@
+{
+  "version": "3.6.4.2",
+  "author": {
+    "name": "Denys Chuprin",
+    "email": "denischuprin9619@gmail.com"
+  },
+  "resources": [
+    {
+      "resourceId": "rId0",
+      "sourceType": 5,
+      "file": "resources/CleverLineChart.pbiviz.json"
+    }
+  ],
+  "visual": {
+    "guid": "CleverLineChart",
+    "name": "CleverLineChart",
+    "displayName": "CleverLineChart",
+    "version": "3.6.4.2",
+    "description": "A CleverLineChart for me (Denys Chuprin)",
+    "supportUrl": "@dante4rungun",
+    "gitHubUrl": "https://github.com/Dante4Rungun",
+    "visualClassName": "Visual"
+  },
+  "metadata": {
+    "pbivizjson": {
+      "resourceId": "rId0"
+    }
+  }
+}

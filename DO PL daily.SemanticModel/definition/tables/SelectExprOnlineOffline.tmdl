@@ -1,0 +1,30 @@
+table SelectExprOnlineOffline
+	isHidden
+	lineageTag: 21c1cc80-360a-4403-9b67-c4da3b5fa552
+
+	column OnlineExprType
+		isHidden
+		lineageTag: 02d2e491-9a37-4b86-a351-da8eac3acd28
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [OnlineExprType]
+		sortByColumn: Idx
+
+		annotation SummarizationSetBy = Automatic
+
+	column Idx
+		isHidden
+		formatString: 0
+		lineageTag: efb242da-263f-4ac5-a669-eb1c11bdc4a9
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Idx]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition SelectExprOnlineOffline = calculated
+		mode: import
+		source = DATATABLE("OnlineExprType",STRING,"Idx",INTEGER,{{"Online",1},{"Offline",2},{"MS",3}})
+
+	annotation PBI_Id = 19efa867c0e64bb2908c35fa7af4fcca
+

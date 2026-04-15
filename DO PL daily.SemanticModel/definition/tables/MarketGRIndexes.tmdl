@@ -1,0 +1,211 @@
+table MarketGRIndexes
+	isHidden
+	lineageTag: 693d488d-7003-4f0c-a30a-9882473c2c3b
+
+	measure Market_GR_Price_Idx = SUMX(DrugsID, IF([Market_Price_AC]*[Market_Price_PY]<>0,([Market_Price_AC]-[Market_Price_PY]) * [Market_Sales_PCS_AC],0))
+		isHidden
+		lineageTag: 9e065a7c-688e-43fe-b192-9681e5e59e71
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure Market_GR_Price_Idx_Ranked = if([RankByVol]<=[TOP],[Market_GR_Price_Idx],BLANK())
+		isHidden
+		lineageTag: be982f2c-0a2f-4504-9b17-00f3a55a8dc8
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure Market_GR_Volume_Idx = if([Market_Sales_PCS_PY]*[Market_Sales_PCS_AC]<>0, ([Market_Sales_PCS_AC]-[Market_Sales_PCS_PY]) * [Market_Price_PY])
+		isHidden
+		lineageTag: fbb2b4b9-8eee-4107-9a52-381ad5c851d3
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure Market_GR_Volume_Idx_Ranked = if([RankByVol]<=[TOP],[Market_GR_Volume_Idx],BLANK())
+		isHidden
+		lineageTag: 0d020bde-9a43-472d-a956-fead26d32f80
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure Market_GR_New_Idx = SUMX(DrugsID, IF([Market_Price_PY]=0 && [Market_Price_AC]<>0, [Distr_Sales_AC], BLANK()))
+		isHidden
+		lineageTag: 9bc7a254-9410-4cd4-90cb-d8407f090f2d
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure Market_GR_New_Idx_Ranked = if([RankByVol]<=[TOP],[Market_GR_New_Idx],BLANK())
+		isHidden
+		lineageTag: 904ab541-b312-4f89-bbf0-842947faf1fe
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure Market_GR_Discontinued_Idx = SUMX(Drugs, IF([Market_Price_PY]<>0 && [Market_Price_AC]=0, -[Distr_Sales_PY], BLANK()))
+		isHidden
+		lineageTag: 0b8a9497-67b9-4a28-aaa8-106c60f82c51
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure Market_GR_Mix_Idx = ([Distr_Sales_AC]-[Distr_Sales_PY])-([Market_GR_Volume_Idx]+[Market_GR_Price_Idx]+[Market_GR_New_Idx]+[Market_GR_Discontinued_Idx])
+		isHidden
+		lineageTag: 1901d432-8cc2-4cad-9660-f411832a6cb3
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure Market_GR_Discontinued_Idx_Ranked = if([RankByVol]<=[TOP],[Market_GR_Discontinued_Idx],BLANK())
+		isHidden
+		lineageTag: 1962b370-62e0-4f06-9fc7-cbb5f988f18c
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure Market_GR_Mix_Idx_Ranked = if([RankByVol]<=[TOP],[Market_GR_Mix_Idx],BLANK())
+		isHidden
+		lineageTag: 6e4b5475-22ab-411d-be73-fd1401aff952
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure Market_GR_Indexes =
+			SWITCH(MAX(GRIndexes[ID]),
+			    1, [Distr_Sales_PY],
+			    2, [Market_GR_Price_Idx],
+			    3, [Market_GR_Volume_Idx],
+			    4, [Market_GR_Mix_Idx],
+			    5, [Market_GR_New_Idx],
+			    6, [Market_GR_Discontinued_Idx],
+			    7, [Distr_Sales_AC])
+		isHidden
+		lineageTag: b7e91976-86b2-480d-bc69-81c9f0ffa68e
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure Market_GR_Indexes_Ranked =
+			if([RankByVol]<=[TOP],
+			    SWITCH(MAX(GRIndexes[ID]),
+			        1, BLANK(),
+			        2, [Market_GR_Price_Idx],
+			        3, [Market_GR_Volume_Idx],
+			        4, [Market_GR_Mix_Idx],
+			        5, [Market_GR_New_Idx],
+			        6, [Market_GR_Discontinued_Idx],
+			        7, BLANK()),BLANK()
+			)
+		isHidden
+		lineageTag: 41078742-b91e-4c11-b814-ce198af0ac06
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure Market_GR_Indexes_Aux_Ranked = [Market_GR_Indexes_Ranked]
+		isHidden
+		lineageTag: 77880309-933c-4677-a6a8-4db9473bfc78
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure Market_GR_Indexes_Pct =
+			SWITCH(MAX(GRIndexes[ID]),
+			    1, 1,
+			    2, Divide([Market_GR_Price_Idx],[Distr_Sales_PY]),
+			    3, Divide([Market_GR_Volume_Idx],[Distr_Sales_PY]),
+			    4, Divide([Market_GR_Mix_Idx],[Distr_Sales_PY]),
+			    5, Divide([Market_GR_New_Idx],[Distr_Sales_PY]),
+			    6, Divide([Market_GR_Discontinued_Idx],[Distr_Sales_PY]),
+			    7, Divide([Distr_Sales_AC],[Distr_Sales_PY]))
+		isHidden
+		lineageTag: 3a67b457-e671-4afd-bc06-15bc873e67bb
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure Market_GR_Discontinued_Idx_Pct_Ranked = if([RankByVol]<=[TOP],DIVIDE([Market_GR_Discontinued_Idx],[Distr_Sales_PY]),BLANK())
+		formatString: 0.00%;-0.00%;0.00%
+		isHidden
+		lineageTag: 311c79fa-1403-4811-9205-f4612f108058
+
+	measure Market_GR_Mix_Idx_Pct_Ranked = if([RankByVol]<=[TOP],[Market_GR_Mix_Idx_Pct],BLANK())
+		formatString: 0.00%;-0.00%;0.00%
+		isHidden
+		lineageTag: 085aca59-f31d-4aa5-9593-01554769d1d7
+
+	measure Market_GR_New_Idx_Pct_Ranked = if([RankByVol]<=[TOP],Divide([Market_GR_New_Idx],[Distr_Sales_PY]),BLANK())
+		formatString: 0.00%;-0.00%;0.00%
+		isHidden
+		lineageTag: 902e24d5-1d6a-4bc8-909f-6a2704f87a79
+
+	measure Market_GR_Price_Idx_Pct_Ranked = if([RankByVol]<=[TOP],Divide([Market_GR_Price_Idx],[Distr_Sales_PY]),BLANK())
+		formatString: 0.00%;-0.00%;0.00%
+		isHidden
+		lineageTag: da73759b-7e95-4928-8664-6d72b78cab10
+
+	measure Market_GR_Volume_Idx_Pct_Ranked = if([RankByVol]<=[TOP],Divide([Market_GR_Volume_Idx],[Distr_Sales_PY]),BLANK())
+		formatString: 0.00%;-0.00%;0.00%
+		isHidden
+		lineageTag: 16c9ddf4-18f5-4494-8653-e1ccd5b0b5d2
+
+	measure Market_GR_Indexes_Pct_Ranked =
+			if([RankByVol]<=[TOP],
+			    SWITCH(MAX(GRIndexes[ID]),
+			        1, BLANK(),
+			        2, Divide([Market_GR_Price_Idx],[Distr_Sales_PY]),
+			        3, Divide([Market_GR_Volume_Idx],[Distr_Sales_PY]),
+			        4, Divide([Market_GR_Mix_Idx],[Distr_Sales_PY]),
+			        5, Divide([Market_GR_New_Idx],[Distr_Sales_PY]),
+			        6, Divide([Market_GR_Discontinued_Idx],[Distr_Sales_PY]),
+			        7, BLANK()),BLANK()
+			)
+		formatString: 0.00%;-0.00%;0.00%
+		isHidden
+		lineageTag: ab9145b1-f114-4d8d-8cf4-cfd0c243c4a7
+
+	measure Market_GR_Indexes_Pct_Aux_Ranked = [Market_GR_Indexes_Pct_Ranked]
+		formatString: 0.00%;-0.00%;0.00%
+		isHidden
+		lineageTag: 1b3e0aef-503f-4429-a9e2-5f50fa1080a4
+
+	measure Market_GR_Price_Idx_Pcs = SUMX(DrugsID, IF([Market_Price_AC]*[Market_Price_PY]<>0,([Market_Price_AC]-[Market_Price_PY]) * [Market_Sales_PCS_AC]/[Distr_Sales_PY],0))
+		isHidden
+		lineageTag: 3fe3d36b-dee1-48bd-b21f-99147e1e299a
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure Market_GR_Volume_Idx_Pct = if([Market_Sales_PCS_PY]*[Market_Sales_PCS_AC]<>0, ([Market_Sales_PCS_AC]-[Market_Sales_PCS_PY]) * [Market_Price_PY]/[Distr_Sales_PY])
+		isHidden
+		lineageTag: c00c6eb8-e05d-4135-803e-26fe73cb7154
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure Market_GR_Mix_Idx_Pct = (([Distr_Sales_AC]-[Distr_Sales_PY])-([Market_GR_Volume_Idx]+[Market_GR_Price_Idx]+[Market_GR_New_Idx]+[Market_GR_Discontinued_Idx]))/[Distr_Sales_PY]
+		isHidden
+		lineageTag: d80d063c-37e0-47fc-8814-aecbb94af4a3
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure Market_GR_New_Idx_Pct = SUMX(DrugsID, IF([Market_Price_PY]=0 && [Market_Price_AC]<>0, [Distr_Sales_AC]/[Distr_Sales_PY], BLANK()))
+		isHidden
+		lineageTag: 85bddf0d-3188-47aa-9584-9a1c2581a6ec
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure Market_GR_Discontinued_Idx_Pct = SUMX(Drugs, IF([Market_Price_PY]<>0 && [Market_Price_AC]=0, -[Distr_Sales_PY], BLANK()))/[Distr_Sales_PY]
+		isHidden
+		lineageTag: 38ebc707-b604-42f0-b8c7-6a7e5d8ea095
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure dPrice = ([Market_Price_AC]-[Market_Price_PY]) * [Market_Sales_PCS_AC]
+		isHidden
+		lineageTag: 0bf33ad5-d347-4906-900d-d357c41e629d
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Value
+		isHidden
+		formatString: 0
+		lineageTag: ca0881ae-c212-4658-8ecf-cc65b80f3814
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Value]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition MarketGRIndexes = calculated
+		mode: import
+		source = {{BLANK()}}
+
+	annotation PBI_Id = 39794aa67c4641cd9632aed32b626895
+

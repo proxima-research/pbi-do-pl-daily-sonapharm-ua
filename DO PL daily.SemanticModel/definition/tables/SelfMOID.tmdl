@@ -1,0 +1,31 @@
+table SelfMOID
+	isHidden
+	lineageTag: 2b7416e3-b3d4-4ba5-9ac7-456623e5b61c
+
+	column SelfMOID
+		dataType: double
+		lineageTag: ab9b423f-ef63-4483-862c-3b98b842ea84
+		summarizeBy: count
+		sourceColumn: SelfMOID
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition SelfMOID = m
+		mode: import
+		queryGroup: Restricts
+		source =
+				let
+				    Source = Table.SelectRows(Restricts, each [table]="Restricts" and [field]="SelfMOID"),
+				    #"Removed Columns" = Table.RemoveColumns(Source,{"project_name", "role_id", "role_name", "property_id", "table", "field"}),
+				    #"Changed Type" = _SELF_MO_ID_
+				in
+				    #"Changed Type"
+
+	changedProperty = IsHidden
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Number
+

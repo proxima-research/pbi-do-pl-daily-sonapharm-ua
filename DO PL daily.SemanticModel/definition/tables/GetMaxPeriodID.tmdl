@@ -1,0 +1,31 @@
+table GetMaxPeriodID
+	isHidden
+	lineageTag: 79ff1c48-5941-4da6-864a-fcf10bc272ed
+
+	column GetMaxPeriodID
+		dataType: double
+		isHidden
+		lineageTag: 7aa32ebc-6d27-4cb8-bc32-f1e82869bccc
+		summarizeBy: count
+		sourceColumn: GetMaxPeriodID
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition GetMaxPeriodID = m
+		mode: import
+		source =
+				let
+				    Source = List.Max(MAX_PERIOD_ID[Value])
+				in
+				    Source
+
+	changedProperty = IsHidden
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Number
+

@@ -1,0 +1,82 @@
+table SelfMOGRIndexes
+	isHidden
+	lineageTag: 3178d431-35d8-4eab-9687-36efe59e5917
+
+	measure SelfMO_GR_Indexes = ```
+			SWITCH(MAX(GRIndexes[ID]),
+			    1, [SelfMO_Sales_PY],
+			    2, [SelfMO_GR_Price_Idx],
+			    3, [SelfMO_GR_Volume_Idx],
+			    4, [SelfMO_GR_Mix_Idx],
+			    5, [SelfMO_GR_New_Idx],
+			    6, [SelfMO_GR_Discontinued_Idx],
+			    7, [SelfMO_Sales_AC]
+			)
+			
+			```
+		isHidden
+		lineageTag: 4eb72af2-8d05-4f7d-b0cd-dafcb2fb5bb3
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure SelfMO_GR_Price_Idx = SUMX(DrugsID, IF([SelfMO_Price_AC]*[SelfMO_Price_PY]<>0,([SelfMO_Price_AC]-[SelfMO_Price_PY]) * [SelfMO_Sales_PCS_AC],0))
+		isHidden
+		lineageTag: 54f4bdce-b457-4078-8850-b02c0da62f46
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure SelfMO_GR_Volume_Idx = if([SelfMO_Sales_PCS_PY]*[SelfMO_Sales_PCS_AC]<>0, ([SelfMO_Sales_PCS_AC]-[SelfMO_Sales_PCS_PY]) * [SelfMO_Price_PY])
+		isHidden
+		lineageTag: 8152c180-11b3-407f-a054-1168f85d1cb5
+
+	measure SelfMO_GR_New_Idx = SUMX(DrugsID, IF([SelfMO_Price_PY]=0 && [SelfMO_Price_AC]<>0, [SelfMO_Sales_AC], BLANK()))
+		isHidden
+		lineageTag: fab4b8d1-0200-497e-b497-f6ac63cf77f5
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure SelfMO_GR_Discontinued_Idx = SUMX(DrugsID, IF([SelfMO_Price_PY]<>0 && [SelfMO_Price_AC]=0, -[SelfMO_Sales_PY], BLANK()))
+		isHidden
+		lineageTag: b7e16472-7de9-4393-80c0-c6e4fcf5083b
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure SelfMO_GR_Mix_Idx = ([SelfMO_Sales_AC]-[SelfMO_Sales_PY])-([SelfMO_GR_Volume_Idx]+[SelfMO_GR_Price_Idx]+[SelfMO_GR_New_Idx]+[SelfMO_GR_Discontinued_Idx])
+		isHidden
+		lineageTag: 8e02f696-33d3-46b2-8633-0e6ca16d87ca
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure SelfMO_GR_Indexes_Pct =
+			
+			var PY=[SelfMO_Sales_PY]
+			return SWITCH(MAX(GRIndexes[ID]),
+			    1, 1,
+			    2, Divide([SelfMO_GR_Price_Idx],PY),
+			    3, Divide([SelfMO_GR_Volume_Idx],PY),
+			    4, Divide([SelfMO_GR_Mix_Idx],PY),
+			    5, Divide([SelfMO_GR_New_Idx],PY),
+			    6, Divide([SelfMO_GR_Discontinued_Idx],PY),
+			    7, Divide([SelfMO_Sales_AC],PY)
+			)
+		isHidden
+		lineageTag: 645de0db-0a12-49c2-86f1-78b7104ae7a2
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Value
+		isHidden
+		formatString: 0
+		lineageTag: 9510f37d-8590-4af8-b764-72fbff220dfb
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Value]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition SelfMOGRIndexes = calculated
+		mode: import
+		source = {{BLANK()}}
+
+	annotation PBI_Id = 9e9bbff236bf4254ab3e1473de074116
+

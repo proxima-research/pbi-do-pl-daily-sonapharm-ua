@@ -1,0 +1,179 @@
+table Data
+	isHidden
+	lineageTag: b382dfd2-6dea-47e6-aa31-e17b2a33749a
+
+	column PERIOD_ID
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 06155ffd-6143-4ca1-9634-fc438f7aee63
+		summarizeBy: none
+		sourceColumn: PERIOD_ID
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column DRUGS_ID
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: f9abeb36-c560-4f58-98e7-0ff20d76cee3
+		summarizeBy: none
+		sourceColumn: DRUGS_ID
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column V_USD
+		dataType: double
+		isHidden
+		lineageTag: 81e90b22-8aa7-40a9-8a36-eed922af04f8
+		summarizeBy: sum
+		sourceColumn: V_USD
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column V_EUR
+		dataType: double
+		isHidden
+		lineageTag: 7042a74d-d0f9-45c8-9ace-fc6e4a29bb31
+		summarizeBy: sum
+		sourceColumn: V_EUR
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Q
+		dataType: double
+		isHidden
+		lineageTag: ac031323-7fe8-454a-9352-9099a2665626
+		summarizeBy: sum
+		sourceColumn: Q
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column DT
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 686e2006-69a3-471d-9acc-2123c82cdcde
+		summarizeBy: sum
+		sourceColumn: DT
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column TABS
+		dataType: double
+		isHidden
+		lineageTag: e654d834-f273-4fbd-87c9-6d05e3ba8b18
+		summarizeBy: sum
+		sourceColumn: TABS
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column DDD
+		dataType: double
+		isHidden
+		lineageTag: 83985afe-1c55-4547-bdf2-323df12e10ba
+		summarizeBy: sum
+		sourceColumn: DDD
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column V
+		dataType: double
+		isHidden
+		lineageTag: e66e3f6c-e138-4e7f-a902-1be3bb1c8c3f
+		summarizeBy: sum
+		sourceColumn: V
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column DISTRIBUTOR_ID
+		dataType: int64
+		formatString: 0
+		lineageTag: 20991da3-2c7a-4d64-82bf-8f46e240d4f4
+		summarizeBy: count
+		sourceColumn: DISTRIBUTOR_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column CLIENT_ID
+		dataType: int64
+		formatString: 0
+		lineageTag: 58f65212-cc1b-43d9-852b-5f006dc931d5
+		summarizeBy: count
+		sourceColumn: CLIENT_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column AREA_ID
+		dataType: int64
+		formatString: 0
+		lineageTag: e13098b6-130f-4bfe-9f25-5f0361496663
+		summarizeBy: count
+		sourceColumn: AREA_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column period_id_src
+		dataType: string
+		lineageTag: 0af3dadb-bab1-47ca-b0a0-d3dac6b1fc01
+		summarizeBy: none
+		sourceColumn: period_id_src
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Data = m
+		mode: import
+		source =
+				let
+				    Source = PowerPlatform.Dataflows(null),
+				    SO_MONTHLY_ = Source{[Id="Workspaces"]}[Data]{[workspaceId=_WS_ID_]}[Data]{[dataflowId=_DATA_FLOW_ID_]}[Data]{[entity="DO_FACT_DAILY",version=""]}[Data],
+				    MP=GetMinPeriodID,
+				    SO_MONTHLY_1= Table.SelectRows(SO_MONTHLY_, each [PERIOD_ID] >= MP),
+				    #"Added Custom" = Table.AddColumn(SO_MONTHLY_1, "DT", each 1),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Added Custom",{{"DT", Int64.Type}}),
+				    DistinctDrugs=Table.Distinct(Table.SelectColumns(Drugs,{"DRUGS_ID","DRUG_FORM_NUMBER","DDD_AMOUNT"}),"DRUGS_ID"),
+				    #"Merged Queries" = Table.NestedJoin(#"Changed Type", {"DRUGS_ID"}, DistinctDrugs, {"DRUGS_ID"}, "Drugs", JoinKind.Inner),
+				    #"Expanded Drugs" = Table.ExpandTableColumn(#"Merged Queries", "Drugs", {"DRUG_FORM_NUMBER", "DDD_AMOUNT"}, {"Drugs.DRUG_FORM_NUMBER", "Drugs.DDD_AMOUNT"}),
+				    #"Added Custom2" = Table.AddColumn(#"Expanded Drugs", "TABS", each [Q]*[Drugs.DRUG_FORM_NUMBER]),
+				    #"Added Custom1" = Table.AddColumn(#"Added Custom2", "DDD", each [Q]*[Drugs.DDD_AMOUNT]),
+				    #"Changed Type2" = Table.TransformColumnTypes(#"Added Custom1",{{"TABS", type number}, {"DDD", type number}}),
+				    #"Removed Columns" = Table.RemoveColumns(#"Changed Type2",{"Drugs.DRUG_FORM_NUMBER", "Drugs.DDD_AMOUNT"})
+				in
+				    #"Removed Columns"
+
+	changedProperty = IsHidden
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

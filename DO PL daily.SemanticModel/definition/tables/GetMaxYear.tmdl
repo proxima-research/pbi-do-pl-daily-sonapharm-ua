@@ -1,0 +1,31 @@
+table GetMaxYear
+	isHidden
+	lineageTag: 1b01002d-75be-4b23-aef7-ca28f17e80b8
+
+	column GetMaxYear
+		dataType: double
+		isHidden
+		lineageTag: 6654db94-7609-4569-86d6-8459af3d8c5b
+		summarizeBy: sum
+		sourceColumn: GetMaxYear
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition GetMaxYear = m
+		mode: import
+		source =
+				let
+				    Source = Number.IntegerDivide(List.Max(MAX_PERIOD_ID[Value]),100000)
+				in
+				    Source
+
+	changedProperty = IsHidden
+
+	annotation PBI_ResultType = Null
+
+	annotation PBI_NavigationStepName = Navigation
+

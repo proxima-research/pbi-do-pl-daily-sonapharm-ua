@@ -1,0 +1,46 @@
+table VisitsPlan
+	lineageTag: 4b0c201d-80c7-4dd0-a508-c4279855a7f0
+
+	column BRAND_ID
+		dataType: int64
+		formatString: 0
+		lineageTag: ea709c0b-46af-4843-af84-4d9d31d20651
+		summarizeBy: none
+		sourceColumn: BRAND_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column VISITS_COUNT
+		dataType: double
+		lineageTag: d20dbe93-06a1-40a6-898b-4b2a742bbf14
+		summarizeBy: sum
+		sourceColumn: VISITS_COUNT
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column PERIOD_ID
+		dataType: int64
+		formatString: 0
+		lineageTag: 6b226855-3b09-415b-8317-fea25b81cd24
+		summarizeBy: none
+		sourceColumn: PERIOD_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	partition VisitsPlan = m
+		mode: import
+		source =
+				let
+				    Source = PowerPlatform.Dataflows(null),
+				    SO_MONTHLY_ = Source{[Id="Workspaces"]}[Data]{[workspaceId=_WS_ID_]}[Data]{[dataflowId=_DATA_FLOW_ID_]}[Data]{[entity="VISITS_PLAN_DAILY",version=""]}[Data],
+				    MP=GetMinPeriodID,
+				    SO_MONTHLY_1= Table.SelectRows(SO_MONTHLY_, each [PERIOD_ID] >= MP)
+				in
+				    SO_MONTHLY_1
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

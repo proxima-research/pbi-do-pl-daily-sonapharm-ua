@@ -1,0 +1,85 @@
+table Periods
+	lineageTag: 659c5d98-0bfc-41f6-a1ae-c251ed6cf0e3
+
+	column PERIOD_ID
+		isHidden
+		formatString: 0
+		lineageTag: 2a781b10-bcb2-44d3-880b-6510c98a71ce
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [PERIOD_ID]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Period
+		formatString: Short Date
+		lineageTag: 64faf5d0-004f-435e-9016-7c3fffdd9905
+		summarizeBy: none
+		sourceColumn: [Date]
+
+		variation Variation
+			isDefault
+			relationship: da9a5917-85c0-4ecd-b6d1-9b04e83e35f8
+			defaultHierarchy: LocalDateTable_0672a010-0988-40e1-bd34-07a9a058ae87.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column Year
+		dataType: int64
+		formatString: 0
+		lineageTag: 84b0fc7e-6a84-4ac3-960d-2a5ead9d5d0e
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Year]
+
+		annotation SummarizationSetBy = Automatic
+
+	column setperiod = [PERIOD_ID]
+		isHidden
+		formatString: 0
+		lineageTag: d2415e73-ce8c-4c87-865e-9addf1210690
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column DatePY
+		isHidden
+		formatString: Short Date
+		lineageTag: 6c7a503c-4011-4118-9889-341280437573
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [DatePY]
+
+		variation Variation
+			isDefault
+			relationship: 78145536-6d4e-4dc8-b3c8-ab2af6005493
+			defaultHierarchy: LocalDateTable_9edf90ce-aa71-4d19-8a6d-bd378c543b17.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column PeriodMonth = [Year]*100000+1000+MONTH([Period])
+		formatString: 0
+		lineageTag: cb91122e-8c10-4568-b75e-79a57bc89da4
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column FP
+		formatString: 0
+		lineageTag: bead967f-4102-4edb-acc0-c2cd022e7004
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [FP]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Periods = calculated
+		mode: import
+		source =
+				ADDCOLUMNS(
+				        SELECTCOLUMNS(PeriodsLinks,"PERIOD_ID",PeriodsLinks[PERIOD_ID],"Date",PeriodsLinks[Period],"DatePY",PeriodsLinks[PeriodPY],"FP",PeriodsLinks[FP]),
+				        "Year",FORMAT([Date],"YYYY")
+				    )
+
+	annotation PBI_Id = 08fea2e3e15144d280e0334487d3e254
+

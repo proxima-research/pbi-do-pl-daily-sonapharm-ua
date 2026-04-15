@@ -1,0 +1,20 @@
+table MarketOrgs
+	isHidden
+	lineageTag: 6aea452e-d54b-4ede-9098-e6d437721a95
+
+	column 'Market Org ID'
+		isHidden
+		formatString: 0
+		lineageTag: 417c88a8-5156-4010-a2ed-0fd3a45589a8
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: DrugsID[Market Org ID]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition MarketOrgs = calculated
+		mode: import
+		source = DISTINCT(DrugsID[Market Org ID])
+
+	annotation PBI_Id = c0ae03c087834ba88061ef6a80bbd9dd
+

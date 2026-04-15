@@ -1,0 +1,28 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainerMobileState/2.2.0/schema.json",
+  "position": {
+    "x": 58,
+    "y": 243,
+    "z": 11000,
+    "height": 232,
+    "width": 212,
+    "tabOrder": 11000
+  },
+  "objects": {
+    "general": [
+      {
+        "properties": {
+          "imageUrl": {
+            "expr": {
+              "ResourcePackageItem": {
+                "PackageName": "RegisteredResources",
+                "PackageType": 1,
+                "ItemName": "n30668116280164104.png"
+              }
+            }
+          }
+        }
+      }
+    ]
+  }
+}

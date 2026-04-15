@@ -1,0 +1,53 @@
+table TranslateLanguageList
+	isHidden
+	lineageTag: 9362324c-1fc0-43e6-9c49-488f47dfa347
+
+	column id
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 5fed5dbe-6748-41e8-8a58-af46741dbd76
+		summarizeBy: sum
+		sourceColumn: id
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Language
+		dataType: string
+		isHidden
+		lineageTag: 1e1e33e4-0559-4499-967f-5e4f7ae06e12
+		summarizeBy: none
+		sourceColumn: Language
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column UserCulture
+		dataType: string
+		isHidden
+		lineageTag: 77ef71a0-7b74-471e-9fa4-7276e9e21cbc
+		summarizeBy: none
+		sourceColumn: UserCulture
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	partition TranslateLanguageList = m
+		mode: import
+		source =
+				let
+				    Source = PowerPlatform.Dataflows(null),
+				    LABELS_ = Source{[Id="Workspaces"]}[Data]{[workspaceId=_WS_ID_]}[Data]{[dataflowId=_TRANSLATIONS_FLOW_ID_]}[Data]{[entity="LANGUAGES",version=""]}[Data]
+				in
+				    LABELS_
+
+	changedProperty = IsHidden
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

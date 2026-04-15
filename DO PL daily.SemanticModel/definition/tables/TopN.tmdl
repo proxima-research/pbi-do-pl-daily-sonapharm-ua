@@ -1,0 +1,30 @@
+table TopN
+	isHidden
+	lineageTag: 7019445a-ce78-43a4-804f-511b26e158ee
+
+	column Top
+		isHidden
+		lineageTag: c1edce8d-0f7a-4b4f-9098-bf0c289b12b6
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Top]
+		sortByColumn: TopN
+
+		annotation SummarizationSetBy = Automatic
+
+	column TopN
+		isHidden
+		formatString: 0
+		lineageTag: 542c4da9-63ae-49e4-9b80-4498a84414db
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [TopN]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition TopN = calculated
+		mode: import
+		source = DATATABLE("Top",STRING,"TopN",INTEGER,{{"1",1},{"5",5},{"10",10},{"20",20},{"50",50},{"100",100}})
+
+	annotation PBI_Id = 3f7487919a284037b41abbc0fe5f13b9
+

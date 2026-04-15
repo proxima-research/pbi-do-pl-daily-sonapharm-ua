@@ -1,0 +1,39 @@
+table DrugsID
+	isHidden
+	lineageTag: c41b3ca9-a284-463f-94d5-a336fc0ffd12
+
+	column DRUGS_ID
+		isHidden
+		formatString: 0
+		lineageTag: 1f6da7a0-f5ed-490a-a4a2-cd09efb1f945
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [DRUGS_ID]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Market Org ID'
+		isHidden
+		formatString: 0
+		lineageTag: a6f348f6-efe5-4891-8f9d-98918ad340dd
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Market Org ID]
+
+		annotation SummarizationSetBy = Automatic
+
+	column BRAND_ID
+		formatString: 0
+		lineageTag: 60014c4d-5ef0-4b4c-99f4-152e6dbab555
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [BRAND_ID]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition DrugsID = calculated
+		mode: import
+		source = DISTINCT(SELECTCOLUMNS(Drugs,"DRUGS_ID",Drugs[DRUGS_ID],"Market Org ID",Drugs[Market Org ID],"BRAND_ID",Drugs[BRAND_ID]))
+
+	annotation PBI_Id = befc1722174942688661de8c3206d279
+

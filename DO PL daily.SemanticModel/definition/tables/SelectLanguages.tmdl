@@ -1,0 +1,38 @@
+table SelectLanguages
+	lineageTag: d6e603be-4637-4794-bdc3-561f078e81b1
+
+	column id
+		isHidden
+		formatString: 0
+		lineageTag: 9dc2463d-25de-438a-8781-015f04c83c70
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: TranslateLanguageList[id]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Language
+		lineageTag: 0090afac-0225-4728-a6da-079ea6c267fd
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: TranslateLanguageList[Language]
+		sortByColumn: id
+
+		annotation SummarizationSetBy = Automatic
+
+	column UserCulture
+		isHidden
+		lineageTag: 4be4ed7b-b632-466e-9c97-65240c3a2582
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: TranslateLanguageList[UserCulture]
+		sortByColumn: id
+
+		annotation SummarizationSetBy = Automatic
+
+	partition SelectLanguages = calculated
+		mode: import
+		source = TranslateLanguageList
+
+	annotation PBI_Id = 96af373b54e74a208ceecfafc731b3b2
+

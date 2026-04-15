@@ -1,0 +1,144 @@
+relationship 5b9e5bdd-4ac1-6b14-c91e-cd6cf8ba9d93
+	toCardinality: many
+	fromColumn: Drugs.DRUGS_ID
+	toColumn: Groups.DRUGS_ID
+
+relationship 21ac627f-4f83-05aa-d697-1535dffd134c
+	fromColumn: T.UserCulture
+	toColumn: SelectLanguages.UserCulture
+
+relationship e8012e40-5dcc-0a74-e455-0fd26cee4593
+	fromColumn: Drugs.UserCulture
+	toColumn: SelectLanguages.UserCulture
+
+relationship e8f3b661-703d-456b-d105-23be6fcea96e
+	fromColumn: GRIndexes.UserCulture
+	toColumn: SelectLanguages.UserCulture
+
+relationship AutoDetected_0bf927e8-3a66-42b1-b854-c7267bd1fe45
+	fromColumn: Drugs.UserCulture
+	toColumn: TranslateAddrMarket.UserCulture
+
+relationship AutoDetected_185832ee-cd2d-4d8f-a7dd-c0140055d420
+	fromColumn: T.UserCulture
+	toColumn: TranslateAddrMarket.UserCulture
+
+relationship AutoDetected_0e420e9c-fabf-4251-9793-1d361ccd3049
+	fromColumn: TranslateGRIndexes.UserCulture
+	toColumn: TranslateAddrMarket.UserCulture
+
+relationship AutoDetected_8fb1eed8-2602-4c02-a666-75a7a8a6733a
+	crossFilteringBehavior: bothDirections
+	fromCardinality: one
+	fromColumn: TranslateLanguageList.UserCulture
+	toColumn: TranslateAddrMarket.UserCulture
+
+relationship 7332c19a-87ad-4182-a734-9ee9efe1fc7e
+	fromColumn: AddMarketFilterTable.UserCulture
+	toColumn: SelectLanguages.UserCulture
+
+relationship AutoDetected_9b5b0e92-1bbb-4087-b623-b14ba55627ac
+	fromColumn: Data.PERIOD_ID
+	toColumn: PeriodsLinks.PERIOD_ID
+
+relationship 7c3f7b8a-1d4f-4d14-b209-b378c317b4b3
+	joinOnDateBehavior: datePartOnly
+	fromColumn: PeriodsLinks.PeriodPY
+	toColumn: LocalDateTable_952d10cf-c69e-4dd7-8a70-50854290457a.Date
+
+relationship fe0706ad-b471-40a9-81c9-48a3e90a2b5c
+	joinOnDateBehavior: datePartOnly
+	fromColumn: PeriodsLinks.Period
+	toColumn: LocalDateTable_ce202fe6-3b82-4628-8266-ddc6cf2b3c87.Date
+
+relationship AutoDetected_c92b15b5-1003-4ca6-8e29-903bb6317c27
+	toCardinality: many
+	fromColumn: Groups.GROUP_ID
+	toColumn: Tags.GROUP_ID
+
+relationship 7416fe1f-31c5-1a9a-a275-97d09b2e4707
+	fromColumn: SelectSelfMO.UserCulture
+	toColumn: SelectLanguages.UserCulture
+
+relationship baff9a99-390b-9d8f-309e-75c4ed1e4051
+	fromColumn: Data.DRUGS_ID
+	toColumn: DrugsID.DRUGS_ID
+
+relationship c526faa7-3fd9-b74b-04be-ef6e68499901
+	crossFilteringBehavior: bothDirections
+	fromColumn: Drugs.DRUGS_ID
+	toColumn: DrugsID.DRUGS_ID
+
+relationship 7e12c0ca-cd83-960c-bb34-c95bd46dbeb5
+	fromColumn: DrugsID.'Market Org ID'
+	toColumn: MarketOrgs.'Market Org ID'
+
+relationship ac028d42-f47c-7143-f69f-38557f59e4f1
+	toCardinality: many
+	fromColumn: VisitsFact.BRAND_ID
+	toColumn: DrugsID.BRAND_ID
+
+relationship AutoDetected_54ecf5ff-7dc6-4684-b540-78738b0b8b22
+	fromColumn: DataPlan.PERIOD_ID
+	toColumn: PeriodsLinks.PERIOD_ID
+
+relationship 11c072c4-9de9-77dd-65be-df2686eebdb1
+	fromColumn: DataPlan.DRUGS_ID
+	toColumn: DrugsID.DRUGS_ID
+
+relationship AutoDetected_bb44b684-bf39-4dca-b28f-465fede70479
+	fromColumn: VisitsPlan.PERIOD_ID
+	toColumn: PeriodsLinks.PERIOD_ID
+
+relationship 4825cfad-8537-e008-3bf9-3ba955e91ac9
+	toCardinality: many
+	fromColumn: VisitsPlan.BRAND_ID
+	toColumn: DrugsID.BRAND_ID
+
+relationship f3ee761d-af49-68ba-5f75-d410fb8a9c26
+	fromColumn: Data.PERIOD_ID
+	toColumn: Periods.PERIOD_ID
+
+relationship 60e1b7ef-4dde-ae14-c8ad-25f734f26faf
+	fromColumn: VisitsFact.PERIOD_ID
+	toColumn: Periods.PERIOD_ID
+
+relationship 4135cfb6-f64f-d48a-a721-b2c5fbe41061
+	fromColumn: DataPlan.PERIOD_ID
+	toColumn: Periods.PERIOD_ID
+
+relationship 39327cd1-1c12-fbc4-5cb9-45b339cb90d9
+	fromColumn: VisitsPlan.PERIOD_ID
+	toColumn: Periods.PERIOD_ID
+
+relationship da9a5917-85c0-4ecd-b6d1-9b04e83e35f8
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Periods.Period
+	toColumn: LocalDateTable_0672a010-0988-40e1-bd34-07a9a058ae87.Date
+
+relationship 78145536-6d4e-4dc8-b3c8-ab2af6005493
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Periods.DatePY
+	toColumn: LocalDateTable_9edf90ce-aa71-4d19-8a6d-bd378c543b17.Date
+
+relationship 082142b6-c3e2-4306-a46b-68469cfb4d16
+	joinOnDateBehavior: datePartOnly
+	fromColumn: SinglePeriod.Period
+	toColumn: LocalDateTable_588139d9-9a54-4784-8570-c37cdf6f9939.Date
+
+relationship 3d24ebfd-748d-66b9-7b91-3530def955df
+	fromColumn: SinglePeriod.FP
+	toColumn: SinglePeriodFilter.FP
+
+relationship AutoDetected_e9e92833-e85f-417f-9af0-27fa264c3b36
+	fromColumn: DataStock.PERIOD_ID
+	toColumn: PeriodsLinks.PERIOD_ID
+
+relationship 450f58ee-e6a5-ddb3-8682-fdf71dc15d33
+	fromColumn: DataStock.PERIOD_ID
+	toColumn: Periods.PERIOD_ID
+
+relationship ba7c8731-db6a-0e2b-2a72-4bd5da1ed981
+	fromColumn: DataStock.DRUGS_ID
+	toColumn: DrugsID.DRUGS_ID
+

@@ -1,0 +1,46 @@
+table SelectColumns
+	lineageTag: 55fae5a4-da92-41ec-802d-2ddb4d4511fc
+
+	column ColumnName
+		lineageTag: 5d944513-fcd6-4898-93de-a17ba89add26
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [ColumnName]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Sort
+		formatString: 0
+		lineageTag: 6d6db8dc-d2fa-41b3-b70d-8b782d53d8dd
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Sort]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Sub
+		lineageTag: 16605958-aad6-4fc8-bcc1-750ef61aecbc
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Sub]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition SelectColumns = calculated
+		mode: import
+		source =
+				DATATABLE("ColumnName",STRING,"Sort",INTEGER,"Sub",STRING,
+				    {
+				        {"Distr Sales AC",16,"Distr"},
+				        {"Distr Sales ΔPY",17,"Distr"},
+				        {"Distr Sales ΔPY%",18,"Distr"},
+				        {"Distr Sales PL",19,"Distr"},
+				        {"Distr Sales PE%",20,"Distr"},
+				        {"Promo AC",21,"Promo"},
+				        {"Promo PL",22,"Promo"},
+				        {"Promo PE%",23,"Promo"}
+				    }
+				)
+
+	annotation PBI_Id = 9a10a825906b4fe99f1e6a7c538ca6b4
+

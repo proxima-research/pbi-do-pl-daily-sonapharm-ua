@@ -1,0 +1,103 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainerMobileState/2.2.0/schema.json",
+  "position": {
+    "x": 272,
+    "y": 42,
+    "z": 3000,
+    "height": 40,
+    "width": 40,
+    "tabOrder": 1000
+  },
+  "objects": {
+    "general": [
+      {
+        "properties": {
+          "imageUrl": {
+            "expr": {
+              "ResourcePackageItem": {
+                "PackageName": "RegisteredResources",
+                "PackageType": 1,
+                "ItemName": "settings08305894071317321.png"
+              }
+            }
+          }
+        }
+      }
+    ]
+  },
+  "visualContainerObjects": {
+    "lockAspect": [
+      {
+        "properties": {
+          "show": {
+            "expr": {
+              "Literal": {
+                "Value": "false"
+              }
+            }
+          }
+        }
+      }
+    ],
+    "visualLink": [
+      {
+        "properties": {
+          "show": {
+            "expr": {
+              "Literal": {
+                "Value": "true"
+              }
+            }
+          },
+          "type": {
+            "expr": {
+              "Literal": {
+                "Value": "'Bookmark'"
+              }
+            }
+          },
+          "bookmark": {
+            "expr": {
+              "Literal": {
+                "Value": "'Bookmark04ef47270e8bc615d42e'"
+              }
+            }
+          },
+          "showDefaultTooltip": {
+            "expr": {
+              "Literal": {
+                "Value": "false"
+              }
+            }
+          }
+        }
+      }
+    ],
+    "visualHeader": [
+      {
+        "properties": {
+          "show": {
+            "expr": {
+              "Literal": {
+                "Value": "false"
+              }
+            }
+          }
+        }
+      }
+    ],
+    "title": [
+      {
+        "properties": {
+          "text": {
+            "expr": {
+              "Literal": {
+                "Value": "'Image_Settings'"
+              }
+            }
+          }
+        }
+      }
+    ]
+  }
+}
