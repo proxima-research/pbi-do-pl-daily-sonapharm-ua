@@ -1,0 +1,15 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.8.0/schema.json",
+  "name": "8d3a86ba539080d0a24a",
+  "position": {
+    "x": 17,
+    "y": 533,
+    "z": 23750,
+    "height": 80,
+    "width": 252.76825969341749
+  },
+  "visualGroup": {
+    "displayName": "KPI_Pharm",
+    "groupMode": "ScaleMode"
+  }
+}

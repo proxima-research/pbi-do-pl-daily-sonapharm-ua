@@ -10,11 +10,6 @@ table PeriodsLinks
 		summarizeBy: none
 		sourceColumn: Period
 
-		variation Variation
-			isDefault
-			relationship: fe0706ad-b471-40a9-81c9-48a3e90a2b5c
-			defaultHierarchy: LocalDateTable_ce202fe6-3b82-4628-8266-ddc6cf2b3c87.'Date Hierarchy'
-
 		changedProperty = IsHidden
 
 		annotation SummarizationSetBy = Automatic
@@ -39,11 +34,6 @@ table PeriodsLinks
 		lineageTag: 1e396d61-e4f7-4aec-906e-81a6ac4a8e2c
 		summarizeBy: none
 		sourceColumn: PeriodPY
-
-		variation Variation
-			isDefault
-			relationship: 7c3f7b8a-1d4f-4d14-b209-b378c317b4b3
-			defaultHierarchy: LocalDateTable_952d10cf-c69e-4dd7-8a70-50854290457a.'Date Hierarchy'
 
 		annotation SummarizationSetBy = Automatic
 
@@ -81,5 +71,5 @@ table PeriodsLinks
 
 	annotation PBI_NavigationStepName = Navigation
 
-	annotation PBI_ResultType = Table
+	annotation PBI_ResultType = Exception
 

@@ -11,12 +11,11 @@
       "e87140480642064ecc8d",
       "3fda63658ae3347646a4",
       "a300625625a25890c8c6",
-      "0b619bf09caec7b0e792",
+      "0a8448749c2e0da59c87",
       "2097b71751a2026d21ac",
       "b89705abde2e386acdb2",
       "e91b38a3868dd3d19974",
       "03f154cbccb6b000d04d",
-      "702becb6621c4e86d329",
       "a4fc037de5ddee1bbe16",
       "0caed7700c5672d82339",
       "b396e7242d30795bc850",
@@ -833,7 +832,7 @@
               },
               "byExpr": [
                 {
-                  "name": "22dd09ba0f860025d275",
+                  "name": "674b4d842c060e5b39e5",
                   "type": "Categorical",
                   "expression": {
                     "Column": {
@@ -886,7 +885,7 @@
                                       [
                                         {
                                           "Literal": {
-                                            "Value": "'UAH'"
+                                            "Value": "'pcs'"
                                           }
                                         }
                                       ]
@@ -948,7 +947,7 @@
             "filters": {
               "byExpr": [
                 {
-                  "name": "3d8786db53b13bdc3bed",
+                  "name": "1148e7be11d40ba81c94",
                   "type": "Categorical",
                   "expression": {
                     "Column": {
@@ -1027,20 +1026,20 @@
               }
             }
           },
-          "0b619bf09caec7b0e792": {
+          "0a17db0553f905ec5112": {
             "filters": {
               "byExpr": [
                 {
-                  "name": "c938fad004671bcfb6de",
+                  "name": "66ac1b4ee53a1ccdd6e8",
                   "type": "Categorical",
                   "expression": {
                     "Column": {
                       "Expression": {
                         "SourceRef": {
-                          "Entity": "SelectSelfMO"
+                          "Entity": "SelectColumns"
                         }
                       },
-                      "Property": "Market Org"
+                      "Property": "ColumnName"
                     }
                   },
                   "howCreated": 0
@@ -1060,7 +1059,7 @@
                             "From": [
                               {
                                 "Name": "s",
-                                "Entity": "SelectSelfMO",
+                                "Entity": "SelectColumns",
                                 "Type": 0
                               }
                             ],
@@ -1076,7 +1075,7 @@
                                               "Source": "s"
                                             }
                                           },
-                                          "Property": "Market Org"
+                                          "Property": "ColumnName"
                                         }
                                       }
                                     ],
@@ -1084,7 +1083,14 @@
                                       [
                                         {
                                           "Literal": {
-                                            "Value": "'-- Disable --'"
+                                            "Value": "'Self Sales AC'"
+                                          }
+                                        }
+                                      ],
+                                      [
+                                        {
+                                          "Literal": {
+                                            "Value": "'Distr Sales AC'"
                                           }
                                         }
                                       ]
@@ -1117,7 +1123,7 @@
                         "strictSingleSelect": {
                           "expr": {
                             "Literal": {
-                              "Value": "true"
+                              "Value": "false"
                             }
                           }
                         }
@@ -1126,16 +1132,31 @@
                   ]
                 }
               },
+              "orderBy": [
+                {
+                  "Direction": 1,
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "SelectColumns"
+                        }
+                      },
+                      "Property": "ColumnName"
+                    }
+                  }
+                }
+              ],
               "activeProjections": {
                 "Values": [
                   {
                     "Column": {
                       "Expression": {
                         "SourceRef": {
-                          "Entity": "SelectSelfMO"
+                          "Entity": "SelectColumns"
                         }
                       },
-                      "Property": "Market Org"
+                      "Property": "ColumnName"
                     }
                   }
                 ]
@@ -1152,7 +1173,7 @@
             "filters": {
               "byExpr": [
                 {
-                  "name": "816455f94f8fd4fff21e",
+                  "name": "367d13027dd3301aa316",
                   "type": "Categorical",
                   "expression": {
                     "Column": {
@@ -1279,7 +1300,7 @@
             "filters": {
               "byExpr": [
                 {
-                  "name": "5a283d3bca096fbe2099",
+                  "name": "cdc292cb35305037c8ed",
                   "type": "Categorical",
                   "expression": {
                     "Column": {
@@ -1417,20 +1438,65 @@
               "objects": {}
             }
           },
-          "702becb6621c4e86d329": {
+          "7719bbd333614e6501df": {
             "filters": {
               "byExpr": [
                 {
-                  "name": "52b13a48baec9ff917e0",
+                  "name": "d947112c7eede16c83d6",
                   "type": "Categorical",
                   "expression": {
                     "Column": {
                       "Expression": {
                         "SourceRef": {
-                          "Entity": "SelectExpr"
+                          "Entity": "Areas"
                         }
                       },
-                      "Property": "ExprType"
+                      "Property": "LEVEL_1"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "a841148b795580c8ea30",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Areas"
+                        }
+                      },
+                      "Property": "LEVEL_2"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "24bf6141c405580542a0",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Areas"
+                        }
+                      },
+                      "Property": "LEVEL_3"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "e1a33ced0e87c55b1ac7",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Areas"
+                        }
+                      },
+                      "Property": "LEVEL_4"
                     }
                   },
                   "howCreated": 0
@@ -1441,53 +1507,6 @@
               "visualType": "slicer",
               "objects": {
                 "merge": {
-                  "general": [
-                    {
-                      "properties": {
-                        "filter": {
-                          "filter": {
-                            "Version": 2,
-                            "From": [
-                              {
-                                "Name": "s",
-                                "Entity": "SelectExpr",
-                                "Type": 0
-                              }
-                            ],
-                            "Where": [
-                              {
-                                "Condition": {
-                                  "In": {
-                                    "Expressions": [
-                                      {
-                                        "Column": {
-                                          "Expression": {
-                                            "SourceRef": {
-                                              "Source": "s"
-                                            }
-                                          },
-                                          "Property": "ExprType"
-                                        }
-                                      }
-                                    ],
-                                    "Values": [
-                                      [
-                                        {
-                                          "Literal": {
-                                            "Value": "'SO'"
-                                          }
-                                        }
-                                      ]
-                                    ]
-                                  }
-                                }
-                              }
-                            ]
-                          }
-                        }
-                      }
-                    }
-                  ],
                   "data": [
                     {
                       "properties": {
@@ -1507,7 +1526,7 @@
                         "strictSingleSelect": {
                           "expr": {
                             "Literal": {
-                              "Value": "true"
+                              "Value": "false"
                             }
                           }
                         }
@@ -1522,14 +1541,204 @@
                     "Column": {
                       "Expression": {
                         "SourceRef": {
-                          "Entity": "SelectExpr"
+                          "Entity": "Areas"
                         }
                       },
-                      "Property": "ExprType"
+                      "Property": "LEVEL_1"
+                    }
+                  },
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Areas"
+                        }
+                      },
+                      "Property": "LEVEL_2"
+                    }
+                  },
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Areas"
+                        }
+                      },
+                      "Property": "LEVEL_3"
+                    }
+                  },
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Areas"
+                        }
+                      },
+                      "Property": "LEVEL_4"
                     }
                   }
                 ]
-              }
+              },
+              "expansionStates": [
+                {
+                  "roles": [
+                    "Values"
+                  ],
+                  "levels": [
+                    {
+                      "queryRefs": [
+                        "Areas.LEVEL_2"
+                      ],
+                      "isCollapsed": true,
+                      "identityKeys": [
+                        {
+                          "Column": {
+                            "Expression": {
+                              "SourceRef": {
+                                "Entity": "Areas"
+                              }
+                            },
+                            "Property": "LEVEL_1"
+                          }
+                        }
+                      ],
+                      "isPinned": true
+                    },
+                    {
+                      "queryRefs": [
+                        "Areas.LEVEL_3"
+                      ],
+                      "isCollapsed": true,
+                      "identityKeys": [
+                        {
+                          "Column": {
+                            "Expression": {
+                              "SourceRef": {
+                                "Entity": "Areas"
+                              }
+                            },
+                            "Property": "LEVEL_2"
+                          }
+                        }
+                      ],
+                      "isPinned": true
+                    },
+                    {
+                      "queryRefs": [
+                        "Areas.LEVEL_31"
+                      ],
+                      "isCollapsed": true,
+                      "identityKeys": [
+                        {
+                          "Column": {
+                            "Expression": {
+                              "SourceRef": {
+                                "Entity": "Areas"
+                              }
+                            },
+                            "Property": "LEVEL_3"
+                          }
+                        }
+                      ],
+                      "isPinned": true
+                    },
+                    {
+                      "queryRefs": [
+                        "Areas.LEVEL_4"
+                      ],
+                      "isCollapsed": true,
+                      "isPinned": true
+                    }
+                  ],
+                  "root": {
+                    "identityValues": [],
+                    "children": [
+                      {
+                        "identityValues": [
+                          {
+                            "Literal": {
+                              "Value": "'Dnipropetrovska oblast'"
+                            }
+                          }
+                        ]
+                      },
+                      {
+                        "identityValues": [
+                          {
+                            "Literal": {
+                              "Value": "'AR Krym'"
+                            }
+                          }
+                        ]
+                      },
+                      {
+                        "identityValues": [
+                          {
+                            "Literal": {
+                              "Value": "'Сидоренко Алексей'"
+                            }
+                          }
+                        ],
+                        "isToggled": true
+                      },
+                      {
+                        "identityValues": [
+                          {
+                            "Literal": {
+                              "Value": "'Красуцький Сергій (RM GENERIC), GENERIC'"
+                            }
+                          }
+                        ],
+                        "isToggled": true
+                      },
+                      {
+                        "identityValues": [
+                          {
+                            "Literal": {
+                              "Value": "'Гузіль Роман (RM GENERIC), GENERIC'"
+                            }
+                          }
+                        ],
+                        "isToggled": true
+                      },
+                      {
+                        "identityValues": [
+                          {
+                            "Literal": {
+                              "Value": "'Шарлай Тетяна Вячеславівна'"
+                            }
+                          }
+                        ],
+                        "isToggled": true,
+                        "children": [
+                          {
+                            "identityValues": [
+                              {
+                                "Literal": {
+                                  "Value": "'Мельник Володимир Зіновійович'"
+                                }
+                              }
+                            ],
+                            "isToggled": true,
+                            "children": [
+                              {
+                                "identityValues": [
+                                  {
+                                    "Literal": {
+                                      "Value": "'Баламут Катерина Степанівна'"
+                                    }
+                                  }
+                                ],
+                                "isToggled": true
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                }
+              ]
             }
           },
           "9aac67ea04611ce6db3a": {
@@ -1548,7 +1757,7 @@
             "filters": {
               "byExpr": [
                 {
-                  "name": "0ceeeac0cccaf3eb1aa9",
+                  "name": "50f9ab20983be055a90d",
                   "type": "Advanced",
                   "expression": {
                     "Column": {
@@ -1689,121 +1898,6 @@
               "objects": {}
             }
           },
-          "b89705abde2e386acdb2": {
-            "filters": {
-              "byExpr": [
-                {
-                  "name": "b3baa8e1fe5c4bd919d0",
-                  "type": "Categorical",
-                  "expression": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "Dimensions"
-                        }
-                      },
-                      "Property": "DimName"
-                    }
-                  },
-                  "howCreated": 0
-                }
-              ]
-            },
-            "singleVisual": {
-              "visualType": "slicer",
-              "objects": {
-                "merge": {
-                  "general": [
-                    {
-                      "properties": {
-                        "filter": {
-                          "filter": {
-                            "Version": 2,
-                            "From": [
-                              {
-                                "Name": "d",
-                                "Entity": "Dimensions",
-                                "Type": 0
-                              }
-                            ],
-                            "Where": [
-                              {
-                                "Condition": {
-                                  "In": {
-                                    "Expressions": [
-                                      {
-                                        "Column": {
-                                          "Expression": {
-                                            "SourceRef": {
-                                              "Source": "d"
-                                            }
-                                          },
-                                          "Property": "DimName"
-                                        }
-                                      }
-                                    ],
-                                    "Values": [
-                                      [
-                                        {
-                                          "Literal": {
-                                            "Value": "'Market Org'"
-                                          }
-                                        }
-                                      ]
-                                    ]
-                                  }
-                                }
-                              }
-                            ]
-                          }
-                        }
-                      }
-                    }
-                  ],
-                  "data": [
-                    {
-                      "properties": {
-                        "mode": {
-                          "expr": {
-                            "Literal": {
-                              "Value": "'Dropdown'"
-                            }
-                          }
-                        }
-                      }
-                    }
-                  ],
-                  "selection": [
-                    {
-                      "properties": {
-                        "strictSingleSelect": {
-                          "expr": {
-                            "Literal": {
-                              "Value": "true"
-                            }
-                          }
-                        }
-                      }
-                    }
-                  ]
-                }
-              },
-              "activeProjections": {
-                "Values": [
-                  {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "Dimensions"
-                        }
-                      },
-                      "Property": "DimName"
-                    }
-                  }
-                ]
-              }
-            }
-          },
           "c05c4198785535c191d9": {
             "singleVisual": {
               "visualType": "shape",
@@ -1814,7 +1908,7 @@
             "filters": {
               "byExpr": [
                 {
-                  "name": "7db87aaae83b4a72d22b",
+                  "name": "0ce4ed6ecbe91bd21047",
                   "type": "Advanced",
                   "expression": {
                     "Column": {
@@ -1867,7 +1961,7 @@
                                       [
                                         {
                                           "Literal": {
-                                            "Value": "2L"
+                                            "Value": "1L"
                                           }
                                         }
                                       ]
@@ -1908,7 +2002,7 @@
             "filters": {
               "byExpr": [
                 {
-                  "name": "5f3744b72a72e6758098",
+                  "name": "f20ee4289a720046edd1",
                   "type": "Advanced",
                   "expression": {
                     "Measure": {
@@ -1933,7 +2027,7 @@
             "filters": {
               "byExpr": [
                 {
-                  "name": "53e46ed7271e8a365d76",
+                  "name": "08dd2ad20d07068a1dac",
                   "type": "Categorical",
                   "expression": {
                     "Column": {
@@ -2166,6 +2260,416 @@
             "singleVisual": {
               "visualType": "shape",
               "objects": {}
+            }
+          },
+          "a66b89c8b6c981863202": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "d318a3d201ae9c177988",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "RegionLevel"
+                        }
+                      },
+                      "Property": "RegionLevel"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "slicer",
+              "objects": {
+                "merge": {
+                  "general": [
+                    {
+                      "properties": {
+                        "filter": {
+                          "filter": {
+                            "Version": 2,
+                            "From": [
+                              {
+                                "Name": "r",
+                                "Entity": "RegionLevel",
+                                "Type": 0
+                              }
+                            ],
+                            "Where": [
+                              {
+                                "Condition": {
+                                  "In": {
+                                    "Expressions": [
+                                      {
+                                        "Column": {
+                                          "Expression": {
+                                            "SourceRef": {
+                                              "Source": "r"
+                                            }
+                                          },
+                                          "Property": "RegionLevel Fields"
+                                        }
+                                      }
+                                    ],
+                                    "Values": [
+                                      [
+                                        {
+                                          "Literal": {
+                                            "Value": "'''Areas''[LEVEL_1]'"
+                                          }
+                                        }
+                                      ]
+                                    ]
+                                  }
+                                }
+                              }
+                            ]
+                          }
+                        }
+                      }
+                    }
+                  ],
+                  "data": [
+                    {
+                      "properties": {
+                        "mode": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "'Dropdown'"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ],
+                  "selection": [
+                    {
+                      "properties": {
+                        "strictSingleSelect": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "true"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              },
+              "activeProjections": {
+                "Values": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "RegionLevel"
+                        }
+                      },
+                      "Property": "RegionLevel"
+                    }
+                  }
+                ]
+              },
+              "cachedFilterDisplayItems": [
+                {
+                  "id": {
+                    "scopeId": {
+                      "Comparison": {
+                        "ComparisonKind": 0,
+                        "Left": {
+                          "Column": {
+                            "Expression": {
+                              "SourceRef": {
+                                "Entity": "RegionLevel"
+                              }
+                            },
+                            "Property": "RegionLevel Fields"
+                          }
+                        },
+                        "Right": {
+                          "Literal": {
+                            "Value": "'''Areas''[LEVEL_1]'"
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "displayName": "Level 1"
+                }
+              ]
+            }
+          },
+          "f8e19340d04a78620040": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "753adaa19b4981254ab2",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Areas"
+                        }
+                      },
+                      "Property": "MAP_NAME"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "slicer",
+              "objects": {
+                "merge": {
+                  "general": [
+                    {
+                      "properties": {
+                        "filter": {
+                          "filter": {
+                            "Version": 2,
+                            "From": [
+                              {
+                                "Name": "a",
+                                "Entity": "Areas",
+                                "Type": 0
+                              }
+                            ],
+                            "Where": [
+                              {
+                                "Condition": {
+                                  "In": {
+                                    "Expressions": [
+                                      {
+                                        "Column": {
+                                          "Expression": {
+                                            "SourceRef": {
+                                              "Source": "a"
+                                            }
+                                          },
+                                          "Property": "MAP_NAME"
+                                        }
+                                      }
+                                    ],
+                                    "Values": [
+                                      [
+                                        {
+                                          "Literal": {
+                                            "Value": "'UA OPHTHALMO OPHTHALMO_Q1 2026'"
+                                          }
+                                        }
+                                      ]
+                                    ]
+                                  }
+                                }
+                              }
+                            ]
+                          }
+                        }
+                      }
+                    }
+                  ],
+                  "data": [
+                    {
+                      "properties": {
+                        "mode": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "'Dropdown'"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ],
+                  "selection": [
+                    {
+                      "properties": {
+                        "strictSingleSelect": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "true"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              },
+              "activeProjections": {
+                "Values": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Areas"
+                        }
+                      },
+                      "Property": "MAP_NAME"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "0a8448749c2e0da59c87": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "6fa0511add4caa086a7a",
+                  "type": "Advanced",
+                  "filter": {
+                    "Version": 2,
+                    "From": [
+                      {
+                        "Name": "s",
+                        "Entity": "SinglePeriodFilter",
+                        "Type": 0
+                      }
+                    ],
+                    "Where": [
+                      {
+                        "Condition": {
+                          "Not": {
+                            "Expression": {
+                              "Comparison": {
+                                "ComparisonKind": 0,
+                                "Left": {
+                                  "Column": {
+                                    "Expression": {
+                                      "SourceRef": {
+                                        "Source": "s"
+                                      }
+                                    },
+                                    "Property": "Filtered"
+                                  }
+                                },
+                                "Right": {
+                                  "Literal": {
+                                    "Value": "null"
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    ]
+                  },
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "SinglePeriodFilter"
+                        }
+                      },
+                      "Property": "Filtered"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "slicer",
+              "objects": {
+                "merge": {
+                  "general": [
+                    {
+                      "properties": {
+                        "filter": {
+                          "filter": {
+                            "Version": 2,
+                            "From": [
+                              {
+                                "Name": "s",
+                                "Entity": "SinglePeriodFilter",
+                                "Type": 0
+                              }
+                            ],
+                            "Where": [
+                              {
+                                "Condition": {
+                                  "In": {
+                                    "Expressions": [
+                                      {
+                                        "Column": {
+                                          "Expression": {
+                                            "SourceRef": {
+                                              "Source": "s"
+                                            }
+                                          },
+                                          "Property": "Filtered"
+                                        }
+                                      }
+                                    ],
+                                    "Values": [
+                                      [
+                                        {
+                                          "Literal": {
+                                            "Value": "'Hide future periods'"
+                                          }
+                                        }
+                                      ]
+                                    ]
+                                  }
+                                }
+                              }
+                            ]
+                          }
+                        }
+                      }
+                    }
+                  ],
+                  "data": [
+                    {
+                      "properties": {
+                        "mode": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "'Basic'"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ],
+                  "selection": [
+                    {
+                      "properties": {
+                        "strictSingleSelect": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "false"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              },
+              "activeProjections": {
+                "Values": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "SinglePeriodFilter"
+                        }
+                      },
+                      "Property": "Filtered"
+                    }
+                  }
+                ]
+              }
             }
           }
         }

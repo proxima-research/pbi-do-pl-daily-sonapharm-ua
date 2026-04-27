@@ -1,12 +1,12 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.8.0/schema.json",
   "name": "03f154cbccb6b000d04d",
   "position": {
-    "x": 5.40032813781788,
-    "y": 193.43068088597204,
-    "z": 18000,
-    "height": 68.2526661197703,
-    "width": 141.75553732567678,
+    "x": 7,
+    "y": 250,
+    "z": 15000,
+    "height": 69,
+    "width": 142,
     "tabOrder": 9000
   },
   "visual": {
@@ -273,6 +273,20 @@
         },
         "howCreated": "User",
         "isHiddenInViewMode": true
+      },
+      {
+        "name": "3daba676a207d06d8b69",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "SelectMeasures"
+              }
+            },
+            "Property": "MeasureName"
+          }
+        },
+        "type": "Categorical"
       }
     ]
   },

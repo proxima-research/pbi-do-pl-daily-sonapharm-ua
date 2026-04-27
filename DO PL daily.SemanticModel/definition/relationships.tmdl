@@ -41,16 +41,6 @@ relationship AutoDetected_9b5b0e92-1bbb-4087-b623-b14ba55627ac
 	fromColumn: Data.PERIOD_ID
 	toColumn: PeriodsLinks.PERIOD_ID
 
-relationship 7c3f7b8a-1d4f-4d14-b209-b378c317b4b3
-	joinOnDateBehavior: datePartOnly
-	fromColumn: PeriodsLinks.PeriodPY
-	toColumn: LocalDateTable_952d10cf-c69e-4dd7-8a70-50854290457a.Date
-
-relationship fe0706ad-b471-40a9-81c9-48a3e90a2b5c
-	joinOnDateBehavior: datePartOnly
-	fromColumn: PeriodsLinks.Period
-	toColumn: LocalDateTable_ce202fe6-3b82-4628-8266-ddc6cf2b3c87.Date
-
 relationship AutoDetected_c92b15b5-1003-4ca6-8e29-903bb6317c27
 	toCardinality: many
 	fromColumn: Groups.GROUP_ID
@@ -111,34 +101,48 @@ relationship 39327cd1-1c12-fbc4-5cb9-45b339cb90d9
 	fromColumn: VisitsPlan.PERIOD_ID
 	toColumn: Periods.PERIOD_ID
 
-relationship da9a5917-85c0-4ecd-b6d1-9b04e83e35f8
-	joinOnDateBehavior: datePartOnly
-	fromColumn: Periods.Period
-	toColumn: LocalDateTable_0672a010-0988-40e1-bd34-07a9a058ae87.Date
-
-relationship 78145536-6d4e-4dc8-b3c8-ab2af6005493
-	joinOnDateBehavior: datePartOnly
-	fromColumn: Periods.DatePY
-	toColumn: LocalDateTable_9edf90ce-aa71-4d19-8a6d-bd378c543b17.Date
-
-relationship 082142b6-c3e2-4306-a46b-68469cfb4d16
-	joinOnDateBehavior: datePartOnly
-	fromColumn: SinglePeriod.Period
-	toColumn: LocalDateTable_588139d9-9a54-4784-8570-c37cdf6f9939.Date
-
 relationship 3d24ebfd-748d-66b9-7b91-3530def955df
 	fromColumn: SinglePeriod.FP
 	toColumn: SinglePeriodFilter.FP
 
-relationship AutoDetected_e9e92833-e85f-417f-9af0-27fa264c3b36
-	fromColumn: DataStock.PERIOD_ID
-	toColumn: PeriodsLinks.PERIOD_ID
+relationship 98a7d681-8ec7-6975-f1d4-8c00dbe3bbac
+	toCardinality: many
+	fromColumn: DataPlan.AREA_ID
+	toColumn: Areas.AREA_ID
 
-relationship 450f58ee-e6a5-ddb3-8682-fdf71dc15d33
+relationship 8f91d9dc-ec9a-26a8-eff7-c085651a5d0b
+	fromColumn: Areas.UserCulture
+	toColumn: SelectLanguages.UserCulture
+
+relationship 8ad166f0-5860-d184-fec7-cb6a963a50a3
+	toCardinality: many
+	fromColumn: Data.CLIENT_ID
+	toColumn: Areas.CLIENT_ID
+
+relationship 9ea765ab-1dc6-021f-d2a6-1a9bb2af68a1
+	toCardinality: many
+	fromColumn: DataStock.CLIENT_ID
+	toColumn: Areas.CLIENT_ID
+
+relationship 59521338-7129-3891-bb53-078da138ef8c
+	toCardinality: many
+	fromColumn: VisitsFact.CLIENT_ID
+	toColumn: Areas.CLIENT_ID
+
+relationship b0c72906-e236-7175-aa13-1aacd8db47eb
+	fromColumn: DataStock.DRUGS_ID
+	toColumn: DrugsID.DRUGS_ID
+
+relationship e7be2c83-82b9-7f7a-7b7c-025a8a257646
 	fromColumn: DataStock.PERIOD_ID
 	toColumn: Periods.PERIOD_ID
 
-relationship ba7c8731-db6a-0e2b-2a72-4bd5da1ed981
-	fromColumn: DataStock.DRUGS_ID
-	toColumn: DrugsID.DRUGS_ID
+relationship 2a4fcbba-678e-fab6-428c-85c1bbf9e40d
+	fromColumn: StockClientsPeriods.PERIOD_ID
+	toColumn: Periods.PERIOD_ID
+
+relationship e2668006-17da-5452-dcf5-db4a948631eb
+	toCardinality: many
+	fromColumn: StockClientsPeriods.CLIENT_ID
+	toColumn: Areas.CLIENT_ID
 

@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
   "name": "7719bbd333614e6501df",
   "position": {
-    "x": 399,
-    "y": 90.784879189399831,
-    "z": 38003,
+    "x": 691,
+    "y": 91,
+    "z": 31000,
     "height": 64,
-    "width": 263,
+    "width": 286,
     "tabOrder": 39003
   },
   "visual": {
@@ -311,13 +311,8 @@
             },
             "text": {
               "expr": {
-                "Measure": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "SlicerHeaders"
-                    }
-                  },
-                  "Property": "Header_Region"
+                "Literal": {
+                  "Value": "'Regions'"
                 }
               }
             }
@@ -411,5 +406,65 @@
       "filterChanges": true
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "d947112c7eede16c83d6",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Areas"
+              }
+            },
+            "Property": "LEVEL_1"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "a841148b795580c8ea30",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Areas"
+              }
+            },
+            "Property": "LEVEL_2"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "24bf6141c405580542a0",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Areas"
+              }
+            },
+            "Property": "LEVEL_3"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "e1a33ced0e87c55b1ac7",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Areas"
+              }
+            },
+            "Property": "LEVEL_4"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
   }
 }

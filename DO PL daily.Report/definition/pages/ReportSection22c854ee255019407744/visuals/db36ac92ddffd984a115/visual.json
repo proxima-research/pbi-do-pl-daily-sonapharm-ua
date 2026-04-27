@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.8.0/schema.json",
   "name": "db36ac92ddffd984a115",
   "position": {
     "x": 777,
@@ -196,7 +196,7 @@
             "lastLicenseCheck": {
               "expr": {
                 "Literal": {
-                  "Value": "'1775816974139'"
+                  "Value": "'1776955994660'"
                 }
               }
             }
@@ -230,7 +230,7 @@
             "showGrandTotal": {
               "expr": {
                 "Literal": {
-                  "Value": "false"
+                  "Value": "true"
                 }
               }
             },
@@ -648,20 +648,6 @@
   },
   "filterConfig": {
     "filters": [
-      {
-        "name": "5327d2c62f847eb92a8e",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Drugs"
-              }
-            },
-            "Property": "Brand"
-          }
-        },
-        "type": "Categorical"
-      },
       {
         "name": "b023d97d105eb5d07031",
         "field": {

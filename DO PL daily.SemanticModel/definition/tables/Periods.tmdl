@@ -17,11 +17,6 @@ table Periods
 		summarizeBy: none
 		sourceColumn: [Date]
 
-		variation Variation
-			isDefault
-			relationship: da9a5917-85c0-4ecd-b6d1-9b04e83e35f8
-			defaultHierarchy: LocalDateTable_0672a010-0988-40e1-bd34-07a9a058ae87.'Date Hierarchy'
-
 		annotation SummarizationSetBy = Automatic
 
 	column Year
@@ -50,11 +45,6 @@ table Periods
 		isNameInferred
 		sourceColumn: [DatePY]
 
-		variation Variation
-			isDefault
-			relationship: 78145536-6d4e-4dc8-b3c8-ab2af6005493
-			defaultHierarchy: LocalDateTable_9edf90ce-aa71-4d19-8a6d-bd378c543b17.'Date Hierarchy'
-
 		annotation SummarizationSetBy = Automatic
 
 	column PeriodMonth = [Year]*100000+1000+MONTH([Period])
@@ -72,6 +62,15 @@ table Periods
 		sourceColumn: [FP]
 
 		annotation SummarizationSetBy = Automatic
+
+	column PeriodUTC = [Period]
+		formatString: yyyy-mm-dd
+		lineageTag: b389f01f-779a-4381-a210-9c9c20565398
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
 
 	partition Periods = calculated
 		mode: import

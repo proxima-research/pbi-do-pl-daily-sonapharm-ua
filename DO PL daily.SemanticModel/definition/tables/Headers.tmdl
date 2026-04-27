@@ -374,10 +374,7 @@ table Headers
 		isHidden
 		lineageTag: 32ecca36-3d5b-4275-8ace-a680746b6aaf
 
-	measure Header_Dynamic_By_Dim_Sub =
-			
-			var cf=[Current_Filters]
-			return if(len(cf)>0,cf&", ","")&[Paginated_Top]
+	measure Header_Dynamic_By_Dim_Sub = [Current_Filters]
 		isHidden
 		lineageTag: b25f71d0-9ea0-45cd-9cb0-840f7363575a
 
@@ -513,13 +510,46 @@ table Headers
 	measure Header_Rating_Main_Stock =
 			
 			var dimName=SELECTEDVALUE('Dimensions'[DimName])
+			var meas=SELECTEDVALUE(SelectMeasures[MeasureName])
 			var aggrType=SELECTEDVALUE(Aggr[AGGR_TYPE])
 			var periodName=[Selected_Periods_List]
-			var s="Stock by {DIM_NAME}"
+			var s="Stock in {MEASURE}, by {DIM_NAME}"
+			var ss=CALCULATE(SELECTEDVALUE(T[dst],s),T[src]=s)
+			var sss=SUBSTITUTE(SUBSTITUTE(ss,"{DIM_NAME}",dimName),"{MEASURE}",meas)
+			return sss&", "&aggrType&", "&periodName
+		lineageTag: d2693141-8204-44c4-a6cc-e34058b6c91b
+
+	measure Header_Rating_Main_Region =
+			
+			var measureName=SELECTEDVALUE(SelectMeasures[MeasureName])
+			var aggrType=SELECTEDVALUE(Aggr[AGGR_TYPE])
+			var periodName=[Selected_Periods_List]
+			var s="{DATA_TYPE} market sales in {MEASURE} and promotions by region"
+			var ss=CALCULATE(SELECTEDVALUE(T[dst],s),T[src]=s)
+			var sss=SUBSTITUTE(SUBSTITUTE(ss,"{DATA_TYPE}",[Current_Data_Type]),"{MEASURE}",measureName)
+			return sss&", "&aggrType&", "&periodName
+		lineageTag: 0175568e-a5a6-4753-ba52-edb4c335db8e
+
+	measure Header_Dynamic_By_Dim_PRT =
+			
+			var measureName=SELECTEDVALUE(SelectMeasures[MeasureName])
+			var aggrType=SELECTEDVALUE(Aggr[AGGR_TYPE])
+			var selectedDim=SELECTEDVALUE('Dimensions'[DimName])
+			var s="PRT,% by {DIM_NAME}"
+			var ss=SUBSTITUTE(s,"{DIM_NAME}",selectedDim)
+			return ss&", "&aggrType&", "&[Years_List]
+		lineageTag: c4821a9b-e0ce-4bad-8bfc-11cb0a343413
+
+	measure Header_Rating_Main_PRT =
+			
+			var dimName=SELECTEDVALUE('Dimensions'[DimName])
+			var aggrType=SELECTEDVALUE(Aggr[AGGR_TYPE])
+			var periodName=[Selected_Periods_List]
+			var s="PRT,% by {DIM_NAME}"
 			var ss=CALCULATE(SELECTEDVALUE(T[dst],s),T[src]=s)
 			var sss=SUBSTITUTE(ss,"{DIM_NAME}",dimName)
 			return sss&", "&aggrType&", "&periodName
-		lineageTag: d2693141-8204-44c4-a6cc-e34058b6c91b
+		lineageTag: 8b63d384-5d51-4255-8074-d1058addb751
 
 	column Value
 		isHidden

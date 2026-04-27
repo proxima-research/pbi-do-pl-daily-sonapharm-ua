@@ -727,6 +727,36 @@
             "width": 234
           },
           "zIndex": 0
+        },
+        {
+          "location": {},
+          "nodeIndex": "Areas",
+          "nodeLineageTag": "461d262d-6b0e-4479-b9f3-215880f25305",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {},
+          "nodeIndex": "RegionLevel",
+          "nodeLineageTag": "02de9161-34f7-44b5-9b80-d841fd326b46",
+          "size": {
+            "height": 152,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {},
+          "nodeIndex": "StockClientsPeriods",
+          "nodeLineageTag": "c828c41e-665e-460f-b7f2-2ff19388d071",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 0
         }
       ],
       "name": "All tables",
@@ -754,7 +784,7 @@
             "height": 224,
             "width": 234
           },
-          "zIndex": 1
+          "zIndex": 2
         },
         {
           "location": {
@@ -767,7 +797,7 @@
             "height": 176,
             "width": 234
           },
-          "zIndex": 2
+          "zIndex": 4
         },
         {
           "location": {
@@ -791,6 +821,19 @@
           "nodeLineageTag": "4b0c201d-80c7-4dd0-a508-c4279855a7f0",
           "size": {
             "height": 152,
+            "width": 234
+          },
+          "zIndex": 1
+        },
+        {
+          "location": {
+            "x": 447,
+            "y": 658
+          },
+          "nodeIndex": "Areas",
+          "nodeLineageTag": "461d262d-6b0e-4479-b9f3-215880f25305",
+          "size": {
+            "height": 300,
             "width": 234
           },
           "zIndex": 0
@@ -821,7 +864,7 @@
             "height": 300,
             "width": 234
           },
-          "zIndex": 0
+          "zIndex": 1
         },
         {
           "location": {
@@ -834,7 +877,7 @@
             "height": 300,
             "width": 234
           },
-          "zIndex": 0
+          "zIndex": 4
         },
         {
           "location": {
@@ -847,7 +890,7 @@
             "height": 224,
             "width": 234
           },
-          "zIndex": 0
+          "zIndex": 2
         },
         {
           "location": {
@@ -860,7 +903,20 @@
             "height": 152,
             "width": 234
           },
-          "zIndex": 0
+          "zIndex": 3
+        },
+        {
+          "location": {
+            "x": 554,
+            "y": 807
+          },
+          "nodeIndex": "Areas",
+          "nodeLineageTag": "461d262d-6b0e-4479-b9f3-215880f25305",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 5
         }
       ],
       "name": "Data",
@@ -920,8 +976,8 @@
       "nodes": [
         {
           "location": {
-            "x": 177,
-            "y": 207
+            "x": 65,
+            "y": 339
           },
           "nodeIndex": "DataStock",
           "nodeLineageTag": "78ba731f-29d2-439a-95da-a9249a99357c",
@@ -929,12 +985,12 @@
             "height": 272,
             "width": 234
           },
-          "zIndex": 0
+          "zIndex": 2
         },
         {
           "location": {
-            "x": 549,
-            "y": 184
+            "x": 855,
+            "y": 383
           },
           "nodeIndex": "Periods",
           "nodeLineageTag": "659c5d98-0bfc-41f6-a1ae-c251ed6cf0e3",
@@ -942,12 +998,12 @@
             "height": 248,
             "width": 234
           },
-          "zIndex": 0
+          "zIndex": 3
         },
         {
           "location": {
-            "x": 349,
-            "y": 591
+            "x": 436,
+            "y": 589
           },
           "nodeIndex": "DrugsID",
           "nodeLineageTag": "c41b3ca9-a284-463f-94d5-a336fc0ffd12",
@@ -955,10 +1011,170 @@
             "height": 152,
             "width": 234
           },
+          "zIndex": 1
+        },
+        {
+          "location": {
+            "x": 391,
+            "y": 28
+          },
+          "nodeIndex": "Areas",
+          "nodeLineageTag": "461d262d-6b0e-4479-b9f3-215880f25305",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 854,
+            "y": 0
+          },
+          "nodeIndex": "StockClientsPeriods",
+          "nodeLineageTag": "c828c41e-665e-460f-b7f2-2ff19388d071",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
           "zIndex": 0
         }
       ],
       "name": "Stock",
+      "zoomValue": 100,
+      "pinKeyFieldsToTop": false,
+      "showExtraHeaderInfo": false,
+      "hideKeyFieldsWhenCollapsed": false,
+      "tablesLocked": false
+    },
+    {
+      "ordinal": 5,
+      "scrollPosition": {
+        "x": 0,
+        "y": 0
+      },
+      "nodes": [
+        {
+          "location": {
+            "x": 449,
+            "y": 122
+          },
+          "nodeIndex": "Areas",
+          "nodeLineageTag": "461d262d-6b0e-4479-b9f3-215880f25305",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 810,
+            "y": 239
+          },
+          "nodeIndex": "SelectLanguages",
+          "nodeLineageTag": "d6e603be-4637-4794-bdc3-561f078e81b1",
+          "size": {
+            "height": 152,
+            "width": 234
+          },
+          "zIndex": 0
+        }
+      ],
+      "name": "Areas",
+      "zoomValue": 100,
+      "pinKeyFieldsToTop": false,
+      "showExtraHeaderInfo": false,
+      "hideKeyFieldsWhenCollapsed": false,
+      "tablesLocked": false
+    },
+    {
+      "ordinal": 6,
+      "scrollPosition": {
+        "x": 0,
+        "y": 0
+      },
+      "nodes": [
+        {
+          "location": {
+            "x": 841,
+            "y": 249
+          },
+          "nodeIndex": "Data",
+          "nodeLineageTag": "b382dfd2-6dea-47e6-aa31-e17b2a33749a",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 3
+        },
+        {
+          "location": {
+            "x": 715,
+            "y": 0
+          },
+          "nodeIndex": "DataStock",
+          "nodeLineageTag": "78ba731f-29d2-439a-95da-a9249a99357c",
+          "size": {
+            "height": 224,
+            "width": 234
+          },
+          "zIndex": 2
+        },
+        {
+          "location": {
+            "x": 841,
+            "y": 578
+          },
+          "nodeIndex": "VisitsFact",
+          "nodeLineageTag": "3dfb06fc-8ca5-4ed8-a5c4-d48deac5707f",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 5
+        },
+        {
+          "location": {
+            "x": 136,
+            "y": 407
+          },
+          "nodeIndex": "Areas",
+          "nodeLineageTag": "461d262d-6b0e-4479-b9f3-215880f25305",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 1
+        },
+        {
+          "location": {
+            "x": 444,
+            "y": 159
+          },
+          "nodeIndex": "VisitsPlan",
+          "nodeLineageTag": "4b0c201d-80c7-4dd0-a508-c4279855a7f0",
+          "size": {
+            "height": 152,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 10,
+            "y": 0
+          },
+          "nodeIndex": "DataPlan",
+          "nodeLineageTag": "be3e3061-3efa-427f-9e5e-3c79749dca5b",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        }
+      ],
+      "name": "Clients",
       "zoomValue": 100,
       "pinKeyFieldsToTop": false,
       "showExtraHeaderInfo": false,

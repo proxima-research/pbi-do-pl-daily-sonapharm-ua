@@ -1,52 +1,6 @@
 table DataStock
 	lineageTag: 78ba731f-29d2-439a-95da-a9249a99357c
 
-	column PERIOD_ID
-		dataType: int64
-		formatString: 0
-		lineageTag: 0e25fd77-f374-48fd-a3fc-dcabd9af2dd9
-		summarizeBy: none
-		sourceColumn: PERIOD_ID
-
-		annotation SummarizationSetBy = Automatic
-
-	column DRUGS_ID
-		dataType: int64
-		formatString: 0
-		lineageTag: 767bd411-7d1e-46fc-a890-8789405aaf02
-		summarizeBy: none
-		sourceColumn: DRUGS_ID
-
-		annotation SummarizationSetBy = Automatic
-
-	column CLIENT_ID
-		dataType: int64
-		formatString: 0
-		lineageTag: 66e3cab7-83e1-48fb-92ca-9e6113890839
-		summarizeBy: count
-		sourceColumn: CLIENT_ID
-
-		annotation SummarizationSetBy = Automatic
-
-	column AREA_ID
-		dataType: int64
-		formatString: 0
-		lineageTag: 046faa31-2e66-4a43-a788-74bcd7fa0d8c
-		summarizeBy: count
-		sourceColumn: AREA_ID
-
-		annotation SummarizationSetBy = Automatic
-
-	column Q
-		dataType: double
-		lineageTag: 45900ac2-190d-49ad-98e0-ad325bb45f41
-		summarizeBy: sum
-		sourceColumn: Q
-
-		annotation SummarizationSetBy = Automatic
-
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
-
 	column DT
 		dataType: int64
 		formatString: 0
@@ -56,21 +10,38 @@ table DataStock
 
 		annotation SummarizationSetBy = Automatic
 
-	column TABS
-		dataType: double
-		lineageTag: 39dea644-efdc-4208-b297-01c1b262c1cd
-		summarizeBy: sum
-		sourceColumn: TABS
+	column PERIOD_ID
+		dataType: int64
+		formatString: 0
+		lineageTag: bf9eee3e-f9bb-4ca1-b6be-703945ffe841
+		summarizeBy: none
+		sourceColumn: PERIOD_ID
 
 		annotation SummarizationSetBy = Automatic
 
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
+	column DRUGS_ID
+		dataType: int64
+		formatString: 0
+		lineageTag: 50745820-704e-4af3-8814-aed208e53090
+		summarizeBy: none
+		sourceColumn: DRUGS_ID
 
-	column DDD
+		annotation SummarizationSetBy = Automatic
+
+	column CLIENT_ID
+		dataType: int64
+		formatString: 0
+		lineageTag: b9acb2a0-82a8-4c6e-9865-09a1c099fe36
+		summarizeBy: none
+		sourceColumn: CLIENT_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column PCS
 		dataType: double
-		lineageTag: ec238549-5c2e-4b66-8eb0-08937192b7f9
+		lineageTag: e3ce2a3a-b9d0-4e45-9bd3-562a122a8843
 		summarizeBy: sum
-		sourceColumn: DDD
+		sourceColumn: PCS
 
 		annotation SummarizationSetBy = Automatic
 
@@ -83,18 +54,11 @@ table DataStock
 				    Source = PowerPlatform.Dataflows(null),
 				    SO_MONTHLY_ = Source{[Id="Workspaces"]}[Data]{[workspaceId=_WS_ID_]}[Data]{[dataflowId=_DATA_FLOW_ID_]}[Data]{[entity="STOCK_DAILY",version=""]}[Data],
 				    #"Added Custom" = Table.AddColumn(SO_MONTHLY_, "DT", each 3),
-				    #"Changed Type" = Table.TransformColumnTypes(#"Added Custom",{{"DT", Int64.Type}}),
-				    DistinctDrugs=Table.Distinct(Table.SelectColumns(Drugs,{"DRUGS_ID","DRUG_FORM_NUMBER","DDD_AMOUNT"}),"DRUGS_ID"),
-				    #"Merged Queries" = Table.NestedJoin(#"Changed Type", {"DRUGS_ID"}, DistinctDrugs, {"DRUGS_ID"}, "Drugs", JoinKind.Inner),
-				    #"Expanded Drugs" = Table.ExpandTableColumn(#"Merged Queries", "Drugs", {"DRUG_FORM_NUMBER", "DDD_AMOUNT"}, {"Drugs.DRUG_FORM_NUMBER", "Drugs.DDD_AMOUNT"}),
-				    #"Added Custom2" = Table.AddColumn(#"Expanded Drugs", "TABS", each [Q]*[Drugs.DRUG_FORM_NUMBER]),
-				    #"Added Custom1" = Table.AddColumn(#"Added Custom2", "DDD", each [Q]*[Drugs.DDD_AMOUNT]),
-				    #"Changed Type2" = Table.TransformColumnTypes(#"Added Custom1",{{"TABS", type number}, {"DDD", type number}}),
-				    #"Removed Columns" = Table.RemoveColumns(#"Changed Type2",{"Drugs.DRUG_FORM_NUMBER", "Drugs.DDD_AMOUNT"})
+				    #"Changed Type" = Table.TransformColumnTypes(#"Added Custom",{{"DT", Int64.Type}})
 				in
-				    #"Removed Columns"
+				    #"Changed Type"
 
 	annotation PBI_NavigationStepName = Navigation
 
-	annotation PBI_ResultType = Table
+	annotation PBI_ResultType = Exception
 

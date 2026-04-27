@@ -38,6 +38,7 @@ table TranslateLanguageList
 
 	partition TranslateLanguageList = m
 		mode: import
+		queryGroup: Restricts
 		source =
 				let
 				    Source = PowerPlatform.Dataflows(null),

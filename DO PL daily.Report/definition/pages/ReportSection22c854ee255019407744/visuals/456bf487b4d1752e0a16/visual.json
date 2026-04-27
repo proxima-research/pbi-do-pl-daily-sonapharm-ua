@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.8.0/schema.json",
   "name": "456bf487b4d1752e0a16",
   "position": {
     "x": 281,
@@ -50,6 +50,25 @@
               "active": true
             }
           ]
+        },
+        "PreviousYear": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_M_"
+                    }
+                  },
+                  "Property": "Distr_Stock_Dyn_PWD"
+                }
+              },
+              "queryRef": "_M_.Distr_Stock_Dyn_PWD",
+              "nativeQueryRef": "PWD",
+              "displayName": "PWD"
+            }
+          ]
         }
       },
       "sortDefinition": {
@@ -84,7 +103,7 @@
             "lastLicenseCheck": {
               "expr": {
                 "Literal": {
-                  "Value": "'1775816973545'"
+                  "Value": "'1776955994188'"
                 }
               }
             }
@@ -110,7 +129,7 @@
             "chartType": {
               "expr": {
                 "Literal": {
-                  "Value": "4D"
+                  "Value": "1D"
                 }
               }
             }
@@ -195,6 +214,13 @@
                   "Value": "0D"
                 }
               }
+            },
+            "differenceHighlightFromTo": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
+                }
+              }
             }
           }
         }
@@ -210,33 +236,6 @@
               }
             },
             "show": {
-              "expr": {
-                "Literal": {
-                  "Value": "false"
-                }
-              }
-            }
-          }
-        }
-      ],
-      "legendHeaderSettings": [
-        {
-          "properties": {
-            "actual-forecast-percent": {
-              "expr": {
-                "Literal": {
-                  "Value": "'ΔFC%'"
-                }
-              }
-            },
-            "actual-forecast": {
-              "expr": {
-                "Literal": {
-                  "Value": "'ΔFC'"
-                }
-              }
-            },
-            "useAliasesInTooltips": {
               "expr": {
                 "Literal": {
                   "Value": "false"
@@ -277,6 +276,13 @@
                       "Value": "'#4882B5'"
                     }
                   }
+                }
+              }
+            },
+            "lightenOverlapped": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
                 }
               }
             }
@@ -322,6 +328,13 @@
               }
             },
             "allowInteractiveCommentBox": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "enableMeasureDrillThrough": {
               "expr": {
                 "Literal": {
                   "Value": "false"
@@ -375,11 +388,44 @@
                   "Value": "'wf_standard-font, helvetica, arial, sans-serif'"
                 }
               }
+            },
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
             }
           }
         }
       ],
       "axisBreakSettings": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "legendHeaderSettings": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "dataLabelSettings": [
         {
           "properties": {
             "show": {
@@ -639,6 +685,20 @@
               }
             },
             "Property": "Distr_Stock_Dyn_AC"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "f23dca3e10de1a377488",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_M_"
+              }
+            },
+            "Property": "Distr_Stock_Dyn_PWD"
           }
         },
         "type": "Advanced"

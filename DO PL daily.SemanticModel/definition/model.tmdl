@@ -2,6 +2,7 @@ model Model
 	culture: en-US
 	defaultPowerBIDataSourceVersion: powerBI_V3
 	sourceQueryCulture: uk-UA
+	maxParallelismPerRefresh: 1
 	dataAccessOptions
 		legacyRedirects
 		returnErrorValuesAsNull
@@ -18,9 +19,9 @@ queryGroup Restricts
 
 	annotation PBI_QueryGroupOrder = 2
 
-annotation PBI_QueryOrder = ["_WS_ID_","_FLOWS_FLOW_ID_","FLOWS","_DATA_FLOW_ID_","_GROUPS_FLOW_ID_","_DRUGS_FLOW_ID_","_COUNTRY_","_COUNTRY_NAME_","_PROJECT_","_MAIN_DATA_TYPE_","_CURRENCY_","_HISTORY_LENGTH_","GetMinPeriodID","GetMaxPeriodID","GetMaxYear","PeriodsLinks","Drugs","Data","DataPlan","DataStock","Groups","_MISC_FLOW_ID_","DataTypes","_ROLE_","_RESTRICTS_FLOW_ID_","MIN_PERIOD_ID","MAX_PERIOD_ID","SelfMOID","GroupsOrgID","VTMSRC","CatSRC","Cat","DRUGS_EXISTS","Restricts","Restricts_Drugs_RxOTC","Restricts_Drugs_Category","Restricts_Drugs_RxOTC_Category","Restricts_Groups_Organization","Restricts_Drugs_Custom","Restricts_Drugs_Addr_Market","DrugsSRC","_RESTRICTS_CUSTOM_FLOW_ID_","Logo","_TRANSLATIONS_FLOW_ID_","T","GroupsSRC","PeriodsPYSameWD","TranslateAddrMarket","TranslateGRIndexes","TranslateLanguageList","Tags","_SELF_MO_ID_","VisitsFact","VisitsPlan"]
+annotation PBI_QueryOrder = ["_WS_ID_","_FLOWS_FLOW_ID_","FLOWS","_DATA_FLOW_ID_","_GROUPS_FLOW_ID_","_DRUGS_FLOW_ID_","_COUNTRY_","_COUNTRY_NAME_","_PROJECT_","_MAIN_DATA_TYPE_","_CURRENCY_","_HISTORY_LENGTH_","GetMinPeriodID","GetMaxPeriodID","GetMaxYear","PeriodsLinks","Drugs","Data","DataPlan","DataStock","Groups","_MISC_FLOW_ID_","DataTypes","_ROLE_","_RESTRICTS_FLOW_ID_","MIN_PERIOD_ID","MAX_PERIOD_ID","SelfMOID","GroupsOrgID","VTMSRC","CatSRC","Cat","DRUGS_EXISTS","Restricts","Restricts_Drugs_RxOTC","Restricts_Drugs_Category","Restricts_Drugs_RxOTC_Category","Restricts_Groups_Organization","Restricts_Drugs_Custom","Restricts_Drugs_Addr_Market","Restricts_Areas","DrugsSRC","_RESTRICTS_CUSTOM_FLOW_ID_","Logo","_TRANSLATIONS_FLOW_ID_","T","GroupsSRC","PeriodsPYSameWD","TranslateLanguageList","TranslateAddrMarket","TranslateGRIndexes","Tags","_SELF_MO_ID_","VisitsFact","VisitsPlan","_SO_TL_FLOW_ID_","Areas","AreasSRC","_AXIOMA_FLOW_ID_","PolygonsAndClients","Clients","StockClientsPeriods"]
 
-annotation __PBI_TimeIntelligenceEnabled = 1
+annotation __PBI_TimeIntelligenceEnabled = 0
 
 annotation PBI_ProTooling = ["DaxQueryView_Desktop","DevMode"]
 
@@ -28,7 +29,6 @@ annotation __TEdtr = 1
 
 annotation TranslationsBuilder = Version:2.2-Updated:2024-12-18
 
-ref table DateTableTemplate_0f91cb1e-cdea-48a9-8fb4-cec5ed22a469
 ref table _M_
 ref table TopN
 ref table Dimensions
@@ -80,18 +80,17 @@ ref table PeriodsLinks
 ref table Periods
 ref table Aggr
 ref table SelectAggrLength
-ref table LocalDateTable_952d10cf-c69e-4dd7-8a70-50854290457a
-ref table LocalDateTable_ce202fe6-3b82-4628-8266-ddc6cf2b3c87
 ref table Tags
 ref table VisitsFact
 ref table DataPlan
 ref table VisitsPlan
-ref table LocalDateTable_0672a010-0988-40e1-bd34-07a9a058ae87
-ref table LocalDateTable_9edf90ce-aa71-4d19-8a6d-bd378c543b17
 ref table SinglePeriodFilter
-ref table LocalDateTable_588139d9-9a54-4784-8570-c37cdf6f9939
 ref table SelectColumns
 ref table DataStock
+ref table Areas
+ref table RegionLevel
+ref table StockClientsPeriods
+ref table PolygonsAndClients
 
 ref cultureInfo en-US
 ref cultureInfo uk-UA

@@ -3,7 +3,7 @@
   "name": "ReportSection22cfafac636ba8c94920",
   "displayName": "Region analysis",
   "displayOption": "ActualSize",
-  "height": 1283,
+  "height": 793,
   "width": 1280,
   "objects": {
     "displayArea": [
@@ -43,6 +43,5 @@
         }
       }
     ]
-  },
-  "visibility": "HiddenInViewMode"
+  }
 }

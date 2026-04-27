@@ -1,12 +1,12 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.8.0/schema.json",
   "name": "e87140480642064ecc8d",
   "position": {
-    "x": 166.55387783115992,
-    "y": 304.9663692518875,
-    "z": 24000,
-    "height": 69.402882635552515,
-    "width": 120.35689773507208,
+    "x": 161,
+    "y": 305,
+    "z": 22000,
+    "height": 69,
+    "width": 116,
     "tabOrder": 12000
   },
   "visual": {
@@ -220,6 +220,24 @@
       "filterChanges": true
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "879370bca4369b253461",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "TopN"
+              }
+            },
+            "Property": "Top"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
   },
   "isHidden": true
 }

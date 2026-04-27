@@ -1,12 +1,12 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.8.0/schema.json",
   "name": "3fda63658ae3347646a4",
   "position": {
-    "x": 4.9066575154426886,
-    "y": 426.20178448867546,
-    "z": 23000,
-    "height": 67.6458476321208,
-    "width": 161.64722031571725,
+    "x": 8,
+    "y": 364,
+    "z": 21000,
+    "height": 68,
+    "width": 162,
     "tabOrder": 35000
   },
   "visual": {
@@ -227,6 +227,24 @@
       "filterChanges": true
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "b5fbaca03488553be590",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "PeriodsFilter"
+              }
+            },
+            "Property": "Filter"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
   },
   "isHidden": true
 }

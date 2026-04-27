@@ -77,7 +77,7 @@ table Captions
 		isHidden
 		lineageTag: 33f23ac8-0746-43a5-afa0-c597724192b8
 
-	measure Caption_KPI_Stock = var s="Stock" RETURN CALCULATE(SELECTEDVALUE(T[dst],s),T[src]=s)
+	measure Caption_KPI_Stock = var s="Stock monitoring" RETURN CALCULATE(SELECTEDVALUE(T[dst],s),T[src]=s)
 		isHidden
 		lineageTag: 5c006f2e-79c6-425b-a4ee-39bf41dc7a2d
 
@@ -403,6 +403,53 @@ table Captions
 			var gr=[Distr_Sales_PE_Month_FC]
 			return if(ISBLANK(gr),"0.0%",FORMAT(gr,"0.0%"))
 		lineageTag: efb35e8a-c055-42a9-bbea-e3fbced793eb
+
+	measure Caption_KPI_Stock_dPWD =
+			
+			var gr=[Stock_dPWD]
+			var lg=LOG10(abs(gr))
+			var fmt=SWITCH(TRUE(),lg>=9,"##0,,,.0bn",lg>=6,"##0,,.0M",lg>3,"##0,.0K")
+			return FORMAT(gr,"+"&fmt&";-"&fmt)&" △PWD"
+		lineageTag: befda9be-c786-401e-a330-857f98be0cf2
+
+	measure Caption_KPI_Stock_GR_PWD =
+			
+			var gr=[Stock_GR_PWD]
+			return FORMAT(gr,"▲+0.0% △PWD;▼-0.0% △PWD")
+		lineageTag: 5ffa2817-e4de-4cb7-837a-d6cfeb747e8d
+
+	measure Caption_KPI_PRT = var s="Penetration" RETURN CALCULATE(SELECTEDVALUE(T[dst],s),T[src]=s)
+		lineageTag: 02f7ea92-c931-4764-97f4-a116c2fd47c5
+
+	measure Caption_KPI_PRT_AC =
+			
+			var num=[PRT_AC]
+			return FORMAT(num,"#0.0%")
+		lineageTag: e1328cbe-5445-4117-9cfe-885b178e1c30
+
+	measure Caption_KPI_PRT_dPWD =
+			
+			var gr=[PRT_dPWD]
+			return FORMAT(gr,"▲+0.0pp △PWD;▼-0.0pp △PWD")
+		lineageTag: a83ccbd6-eb51-4edf-9b0d-30d77da16c87
+
+	measure Caption_KPI_Pharmacy_Count_Total_AC =
+			
+			var num=[Stock_Clients_Count_Total_AC]
+			return FORMAT(num,"#0")
+		lineageTag: aa8e9e82-547b-41f5-bf42-3f49bfca5bf2
+
+	measure Caption_KPI_Pharmacy_Count_Total = var s="Pharmacy count (total)" RETURN CALCULATE(SELECTEDVALUE(T[dst],s),T[src]=s)
+		lineageTag: 4dedd1c8-9917-49e5-b609-94f9321f21f0
+
+	measure Caption_KPI_Pharmacy_Count_WO_Stock = var s="Pharmacy count (w/o stock)" RETURN CALCULATE(SELECTEDVALUE(T[dst],s),T[src]=s)
+		lineageTag: b979be43-2a88-4c60-8d02-7049cb6327a8
+
+	measure Caption_KPI_Pharmacy_Count_WO_Stock_AC =
+			
+			var num=[Stock_Clients_Count_WO_Stock_AC]
+			return FORMAT(num,"#0")
+		lineageTag: 0505e1a5-af93-4ef4-932c-6d4cdb5eb1e0
 
 	column Value
 		isHidden

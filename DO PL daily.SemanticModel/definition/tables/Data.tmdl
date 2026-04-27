@@ -129,27 +129,29 @@ table Data
 		dataType: int64
 		formatString: 0
 		lineageTag: 58f65212-cc1b-43d9-852b-5f006dc931d5
-		summarizeBy: count
+		summarizeBy: none
 		sourceColumn: CLIENT_ID
 
 		annotation SummarizationSetBy = Automatic
 
-	column AREA_ID
+	column 'Drugs.DRUG_FORM_NUMBER'
 		dataType: int64
 		formatString: 0
-		lineageTag: e13098b6-130f-4bfe-9f25-5f0361496663
-		summarizeBy: count
-		sourceColumn: AREA_ID
+		lineageTag: d84da74e-90be-4344-adcb-798a9a9932fb
+		summarizeBy: sum
+		sourceColumn: Drugs.DRUG_FORM_NUMBER
 
 		annotation SummarizationSetBy = Automatic
 
-	column period_id_src
-		dataType: string
-		lineageTag: 0af3dadb-bab1-47ca-b0a0-d3dac6b1fc01
-		summarizeBy: none
-		sourceColumn: period_id_src
+	column 'Drugs.DDD_AMOUNT'
+		dataType: double
+		lineageTag: 428a1c03-efc7-4c7d-811c-6e1cda5931e7
+		summarizeBy: sum
+		sourceColumn: Drugs.DDD_AMOUNT
 
 		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	partition Data = m
 		mode: import
@@ -166,14 +168,13 @@ table Data
 				    #"Expanded Drugs" = Table.ExpandTableColumn(#"Merged Queries", "Drugs", {"DRUG_FORM_NUMBER", "DDD_AMOUNT"}, {"Drugs.DRUG_FORM_NUMBER", "Drugs.DDD_AMOUNT"}),
 				    #"Added Custom2" = Table.AddColumn(#"Expanded Drugs", "TABS", each [Q]*[Drugs.DRUG_FORM_NUMBER]),
 				    #"Added Custom1" = Table.AddColumn(#"Added Custom2", "DDD", each [Q]*[Drugs.DDD_AMOUNT]),
-				    #"Changed Type2" = Table.TransformColumnTypes(#"Added Custom1",{{"TABS", type number}, {"DDD", type number}}),
-				    #"Removed Columns" = Table.RemoveColumns(#"Changed Type2",{"Drugs.DRUG_FORM_NUMBER", "Drugs.DDD_AMOUNT"})
+				    #"Changed Type2" = Table.TransformColumnTypes(#"Added Custom1",{{"TABS", type number}, {"DDD", type number}})
 				in
-				    #"Removed Columns"
+				    #"Changed Type2"
 
 	changedProperty = IsHidden
 
-	annotation PBI_ResultType = Table
+	annotation PBI_ResultType = Exception
 
 	annotation PBI_NavigationStepName = Navigation
 

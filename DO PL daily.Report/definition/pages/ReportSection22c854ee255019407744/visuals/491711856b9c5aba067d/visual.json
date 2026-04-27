@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.8.0/schema.json",
   "name": "491711856b9c5aba067d",
   "position": {
     "x": 777,
@@ -196,7 +196,7 @@
             "lastLicenseCheck": {
               "expr": {
                 "Literal": {
-                  "Value": "'1775816974093'"
+                  "Value": "'1776955994254'"
                 }
               }
             }
@@ -230,7 +230,7 @@
             "showGrandTotal": {
               "expr": {
                 "Literal": {
-                  "Value": "false"
+                  "Value": "true"
                 }
               }
             },
@@ -628,20 +628,6 @@
   "filterConfig": {
     "filters": [
       {
-        "name": "bcc51dbaf694455e9204",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Drugs"
-              }
-            },
-            "Property": "Brand"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
         "name": "bf1ee466b64e34ee84e1",
         "field": {
           "Measure": {
@@ -710,6 +696,20 @@
           }
         },
         "type": "Advanced"
+      },
+      {
+        "name": "2d196da9ae985ba39e0d",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Drugs"
+              }
+            },
+            "Property": "Brand"
+          }
+        },
+        "type": "Categorical"
       }
     ]
   }

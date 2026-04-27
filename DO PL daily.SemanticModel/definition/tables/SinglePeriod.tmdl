@@ -11,11 +11,6 @@ table SinglePeriod
 		sourceColumn: [Period]
 		sortByColumn: PERIOD_ID
 
-		variation Variation
-			isDefault
-			relationship: 082142b6-c3e2-4306-a46b-68469cfb4d16
-			defaultHierarchy: LocalDateTable_588139d9-9a54-4784-8570-c37cdf6f9939.'Date Hierarchy'
-
 		annotation SummarizationSetBy = Automatic
 
 		annotation PBI_FormatHint = {"isDateTimeCustom":true}

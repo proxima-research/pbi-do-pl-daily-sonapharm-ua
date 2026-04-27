@@ -17,6 +17,7 @@
       "2175f45dd0a1550db060",
       "d80677a2e82686400933",
       "e3a96d0d3c2d4ca0bd20",
+      "df098a6861cc97465146",
       "3cd233ee2207894cc5d1",
       "296ea8b3a24d7571c169",
       "a2fcf03c9c835ade432e",
@@ -784,20 +785,35 @@
               "objects": {}
             }
           },
-          "09f9f97e9b26bff5d826": {
+          "0af5610dc2f894ee9542": {
             "filters": {
               "byExpr": [
                 {
-                  "name": "3a3bddea44bb104e566f",
+                  "name": "64946242f790129aeb9c",
                   "type": "Categorical",
                   "expression": {
                     "Column": {
                       "Expression": {
                         "SourceRef": {
-                          "Entity": "SelectSelfMO"
+                          "Entity": "Drugs"
                         }
                       },
-                      "Property": "Market Org"
+                      "Property": "Brand"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "b8c5e04f29d26847a47c",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_M_"
+                        }
+                      },
+                      "Property": "Distr_Stock_AC_Ranked"
                     }
                   },
                   "howCreated": 0
@@ -805,73 +821,13 @@
               ]
             },
             "singleVisual": {
-              "visualType": "slicer",
+              "visualType": "ZebraBITablesBAE31B370F254F808553548EFB35BFA5",
               "objects": {
                 "merge": {
-                  "general": [
+                  "proFeaturesSettings": [
                     {
                       "properties": {
-                        "filter": {
-                          "filter": {
-                            "Version": 2,
-                            "From": [
-                              {
-                                "Name": "s",
-                                "Entity": "SelectSelfMO",
-                                "Type": 0
-                              }
-                            ],
-                            "Where": [
-                              {
-                                "Condition": {
-                                  "In": {
-                                    "Expressions": [
-                                      {
-                                        "Column": {
-                                          "Expression": {
-                                            "SourceRef": {
-                                              "Source": "s"
-                                            }
-                                          },
-                                          "Property": "Market Org"
-                                        }
-                                      }
-                                    ],
-                                    "Values": [
-                                      [
-                                        {
-                                          "Literal": {
-                                            "Value": "'-- Default --'"
-                                          }
-                                        }
-                                      ]
-                                    ]
-                                  }
-                                }
-                              }
-                            ]
-                          }
-                        }
-                      }
-                    }
-                  ],
-                  "data": [
-                    {
-                      "properties": {
-                        "mode": {
-                          "expr": {
-                            "Literal": {
-                              "Value": "'Dropdown'"
-                            }
-                          }
-                        }
-                      }
-                    }
-                  ],
-                  "selection": [
-                    {
-                      "properties": {
-                        "strictSingleSelect": {
+                        "show": {
                           "expr": {
                             "Literal": {
                               "Value": "true"
@@ -880,30 +836,388 @@
                         }
                       }
                     }
+                  ],
+                  "chartSettings": [
+                    {
+                      "properties": {
+                        "suppressAbsoluteVariances": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "true"
+                            }
+                          }
+                        },
+                        "showAsTable": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "false"
+                            }
+                          }
+                        },
+                        "types": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "'Integrated'"
+                            }
+                          }
+                        },
+                        "columnSettings": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "'{\"AC\":{\"header\":\"AC\",\"invert\":false,\"format\":0,\"useMeasureName\":false,\"pbiFormatString\":\"\",\"percentageFormat\":\"\",\"showPercentageInLabel\":1,\"scaleGroup\":-1,\"suppressOthers\":false,\"tableView\":{\"bold\":false,\"decimalPlaces\":-1,\"displayUnits\":\"Default\",\"textColor\":\"\",\"backgroundFill\":\"\",\"markerStyle\":5,\"border\":\"\",\"showAsTable\":0,\"hidden\":false,\"valueChart\":0,\"absoluteChart\":0,\"relativeChart\":0,\"hiddenFromGroups\":[],\"columnFixedWidth\":200},\"chartView\":{\"bold\":false,\"decimalPlaces\":-1,\"displayUnits\":\"Default\",\"textColor\":\"\",\"backgroundFill\":\"\",\"markerStyle\":5,\"border\":\"\",\"showAsTable\":2,\"hidden\":false,\"valueChart\":0,\"absoluteChart\":0,\"relativeChart\":0,\"hiddenFromGroups\":[],\"columnFixedWidth\":200},\"conditionalVariance\":{\"lowerThreshold\":0,\"upperThreshold\":0,\"thresholdUnit\":\"P\"}},\"Rank\":{\"header\":\"Rank\",\"invert\":false,\"order\":null,\"format\":0,\"useMeasureName\":false,\"pbiFormatString\":\"\",\"percentageFormat\":\"\",\"showPercentageInLabel\":1,\"scaleGroup\":-1,\"suppressOthers\":false,\"tableView\":{\"bold\":false,\"decimalPlaces\":0,\"displayUnits\":\"Default\",\"textColor\":\"\",\"backgroundFill\":\"\",\"markerStyle\":5,\"border\":\"\",\"showAsTable\":0,\"hidden\":false,\"valueChart\":0,\"absoluteChart\":0,\"hiddenFromGroups\":[]},\"chartView\":{\"bold\":false,\"decimalPlaces\":0,\"displayUnits\":\"Default\",\"textColor\":\"\",\"backgroundFill\":\"\",\"markerStyle\":5,\"border\":\"\",\"showAsTable\":0,\"hidden\":false,\"valueChart\":0,\"absoluteChart\":0,\"hiddenFromGroups\":[]},\"conditionalVariance\":{\"lowerThreshold\":0,\"upperThreshold\":0,\"thresholdUnit\":\"P\"}},\"actual\":{\"invert\":false,\"order\":1,\"scaleGroup\":1,\"format\":0,\"useMeasureName\":false,\"suppressOthers\":false,\"pbiFormatString\":\"\",\"tableView\":{\"bold\":false,\"textColor\":\"\",\"backgroundFill\":\"\",\"markerStyle\":5,\"border\":\"\",\"showAsTable\":0,\"hidden\":false,\"hiddenFromGroups\":[]},\"chartView\":{\"bold\":false,\"textColor\":\"\",\"backgroundFill\":\"\",\"markerStyle\":5,\"border\":\"\",\"showAsTable\":0,\"hidden\":false,\"hiddenFromGroups\":[]},\"conditionalVariance\":{\"lowerThreshold\":0,\"upperThreshold\":0,\"thresholdUnit\":\"P\"}},\"previousYear\":{\"invert\":false,\"order\":2,\"scaleGroup\":1,\"format\":0,\"useMeasureName\":false,\"suppressOthers\":false,\"pbiFormatString\":\"\",\"tableView\":{\"bold\":false,\"textColor\":\"\",\"backgroundFill\":\"\",\"markerStyle\":5,\"border\":\"\",\"showAsTable\":0,\"hidden\":false,\"hiddenFromGroups\":[]},\"chartView\":{\"bold\":false,\"textColor\":\"\",\"backgroundFill\":\"\",\"markerStyle\":5,\"border\":\"\",\"showAsTable\":0,\"hidden\":false,\"hiddenFromGroups\":[]},\"conditionalVariance\":{\"lowerThreshold\":0,\"upperThreshold\":0,\"thresholdUnit\":\"P\"}},\"actual-previousYear\":{\"invert\":false,\"order\":3,\"scaleGroup\":1,\"format\":1,\"useMeasureName\":false,\"suppressOthers\":false,\"pbiFormatString\":\"\",\"tableView\":{\"bold\":false,\"textColor\":\"\",\"backgroundFill\":\"\",\"markerStyle\":5,\"border\":\"\",\"showAsTable\":0,\"hidden\":false,\"hiddenFromGroups\":[]},\"chartView\":{\"bold\":false,\"textColor\":\"\",\"backgroundFill\":\"\",\"markerStyle\":5,\"border\":\"\",\"showAsTable\":0,\"hidden\":false,\"hiddenFromGroups\":[]},\"conditionalVariance\":{\"lowerThreshold\":0,\"upperThreshold\":0,\"thresholdUnit\":\"P\"}},\"actual-previousYear-percent\":{\"invert\":false,\"order\":null,\"scaleGroup\":1,\"format\":2,\"useMeasureName\":false,\"suppressOthers\":false,\"pbiFormatString\":\"\",\"tableView\":{\"bold\":false,\"textColor\":\"\",\"backgroundFill\":\"\",\"markerStyle\":5,\"border\":\"\",\"showAsTable\":0,\"hidden\":false,\"hiddenFromGroups\":[]},\"chartView\":{\"bold\":false,\"textColor\":\"\",\"backgroundFill\":\"\",\"markerStyle\":5,\"border\":\"\",\"showAsTable\":0,\"hidden\":false,\"hiddenFromGroups\":[]},\"conditionalVariance\":{\"lowerThreshold\":0,\"upperThreshold\":0,\"thresholdUnit\":\"P\"}},\"plan\":{\"invert\":false,\"order\":null,\"scaleGroup\":1,\"format\":0,\"useMeasureName\":false,\"suppressOthers\":false,\"pbiFormatString\":\"\",\"tableView\":{\"bold\":false,\"textColor\":\"\",\"backgroundFill\":\"\",\"markerStyle\":5,\"border\":\"\",\"showAsTable\":0,\"hidden\":false,\"hiddenFromGroups\":[]},\"chartView\":{\"bold\":false,\"textColor\":\"\",\"backgroundFill\":\"\",\"markerStyle\":5,\"border\":\"\",\"showAsTable\":0,\"hidden\":false,\"hiddenFromGroups\":[]},\"conditionalVariance\":{\"lowerThreshold\":0,\"upperThreshold\":0,\"thresholdUnit\":\"P\"}},\"actual-plan\":{\"invert\":false,\"order\":2,\"scaleGroup\":1,\"format\":1,\"useMeasureName\":false,\"suppressOthers\":false,\"pbiFormatString\":\"\",\"tableView\":{\"bold\":false,\"textColor\":\"\",\"backgroundFill\":\"\",\"markerStyle\":5,\"border\":\"\",\"showAsTable\":0,\"hidden\":false,\"hiddenFromGroups\":[]},\"chartView\":{\"bold\":false,\"textColor\":\"\",\"backgroundFill\":\"\",\"markerStyle\":5,\"border\":\"\",\"showAsTable\":0,\"hidden\":false,\"hiddenFromGroups\":[]},\"conditionalVariance\":{\"lowerThreshold\":0,\"upperThreshold\":0,\"thresholdUnit\":\"P\"}},\"actual-plan-percent\":{\"invert\":false,\"order\":null,\"scaleGroup\":1,\"format\":2,\"useMeasureName\":false,\"suppressOthers\":false,\"pbiFormatString\":\"\",\"tableView\":{\"bold\":false,\"textColor\":\"\",\"backgroundFill\":\"\",\"markerStyle\":5,\"border\":\"\",\"showAsTable\":0,\"hidden\":false,\"hiddenFromGroups\":[]},\"chartView\":{\"bold\":false,\"textColor\":\"\",\"backgroundFill\":\"\",\"markerStyle\":5,\"border\":\"\",\"showAsTable\":0,\"hidden\":false,\"hiddenFromGroups\":[]},\"conditionalVariance\":{\"lowerThreshold\":0,\"upperThreshold\":0,\"thresholdUnit\":\"P\"}},\"PE,%\":{\"header\":\"PE,%\",\"invert\":false,\"order\":3,\"format\":3,\"useMeasureName\":false,\"pbiFormatString\":\"\",\"percentageFormat\":\"0%\",\"showPercentageInLabel\":1,\"scaleGroup\":-1,\"suppressOthers\":false,\"tableView\":{\"bold\":false,\"decimalPlaces\":1,\"displayUnits\":\"Default\",\"textColor\":\"\",\"backgroundFill\":\"\",\"markerStyle\":5,\"border\":\"\",\"showAsTable\":0,\"hidden\":false,\"valueChart\":0,\"absoluteChart\":0,\"relativeChart\":0,\"hiddenFromGroups\":[],\"columnFixedWidth\":200},\"chartView\":{\"bold\":false,\"decimalPlaces\":1,\"displayUnits\":\"Default\",\"textColor\":\"\",\"backgroundFill\":\"\",\"markerStyle\":5,\"border\":\"\",\"showAsTable\":0,\"hidden\":false,\"valueChart\":0,\"absoluteChart\":0,\"relativeChart\":0,\"hiddenFromGroups\":[],\"columnFixedWidth\":200},\"conditionalVariance\":{\"lowerThreshold\":0,\"upperThreshold\":0,\"thresholdUnit\":\"P\"}},\"ΔPY%\":{\"header\":\"ΔPY%\",\"invert\":false,\"order\":2,\"format\":2,\"useMeasureName\":false,\"pbiFormatString\":\"#,0\",\"percentageFormat\":\"0%\",\"showPercentageInLabel\":1,\"scaleGroup\":-1,\"suppressOthers\":false,\"tableView\":{\"bold\":false,\"decimalPlaces\":1,\"displayUnits\":\"Default\",\"textColor\":\"\",\"backgroundFill\":\"\",\"markerStyle\":5,\"border\":\"\",\"showAsTable\":0,\"hidden\":false,\"valueChart\":0,\"absoluteChart\":0,\"hiddenFromGroups\":[]},\"chartView\":{\"bold\":false,\"decimalPlaces\":1,\"displayUnits\":\"Default\",\"textColor\":\"\",\"backgroundFill\":\"\",\"markerStyle\":5,\"border\":\"\",\"showAsTable\":2,\"hidden\":false,\"valueChart\":4,\"absoluteChart\":0,\"hiddenFromGroups\":[]}},\"MS%\":{\"header\":\"MS%\",\"invert\":false,\"order\":3,\"format\":3,\"percentageFormat\":\"0%\",\"showPercentageInLabel\":1,\"scaleGroup\":-1,\"suppressOthers\":false,\"tableView\":{\"bold\":false,\"decimalPlaces\":1,\"displayUnits\":\"Default\",\"textColor\":\"\",\"backgroundFill\":\"\",\"markerStyle\":5,\"border\":\"\",\"showAsTable\":0,\"hidden\":false,\"valueChart\":0,\"absoluteChart\":0,\"hiddenFromGroups\":[]},\"chartView\":{\"bold\":false,\"decimalPlaces\":1,\"displayUnits\":\"Default\",\"textColor\":\"\",\"backgroundFill\":\"\",\"markerStyle\":5,\"border\":\"\",\"showAsTable\":2,\"hidden\":false,\"valueChart\":0,\"absoluteChart\":0,\"hiddenFromGroups\":[]}},\"GR%\":{\"header\":\"GR%\",\"invert\":false,\"format\":2,\"percentageFormat\":\"0%\",\"showPercentageInLabel\":1,\"scaleGroup\":-1,\"suppressOthers\":false,\"tableView\":{\"bold\":false,\"decimalPlaces\":1,\"displayUnits\":\"Default\",\"textColor\":\"\",\"backgroundFill\":\"\",\"markerStyle\":5,\"border\":\"\",\"showAsTable\":0,\"hidden\":false,\"valueChart\":0,\"absoluteChart\":0,\"hiddenFromGroups\":[]},\"chartView\":{\"bold\":false,\"decimalPlaces\":1,\"displayUnits\":\"Default\",\"textColor\":\"\",\"backgroundFill\":\"\",\"markerStyle\":5,\"border\":\"\",\"showAsTable\":2,\"hidden\":false,\"valueChart\":4,\"absoluteChart\":0,\"hiddenFromGroups\":[]},\"order\":null},\"Brand_GR_AC_Ranked\":{\"header\":\"Brand_GR_AC_Ranked\",\"invert\":false,\"format\":3,\"percentageFormat\":\"0%\",\"showPercentageInLabel\":1,\"scaleGroup\":-1,\"suppressOthers\":false,\"tableView\":{\"bold\":false,\"decimalPlaces\":1,\"displayUnits\":\"Default\",\"textColor\":\"\",\"backgroundFill\":\"\",\"markerStyle\":5,\"border\":\"\",\"showAsTable\":0,\"hidden\":false,\"valueChart\":0,\"absoluteChart\":0,\"hiddenFromGroups\":[]},\"chartView\":{\"bold\":false,\"decimalPlaces\":1,\"displayUnits\":\"Default\",\"textColor\":\"\",\"backgroundFill\":\"\",\"markerStyle\":5,\"border\":\"\",\"showAsTable\":2,\"hidden\":false,\"valueChart\":4,\"absoluteChart\":0,\"hiddenFromGroups\":[]},\"order\":null},\"GR\":{\"header\":\"ΔPY%\",\"invert\":false,\"order\":4,\"format\":2,\"percentageFormat\":\"0%\",\"showPercentageInLabel\":1,\"scaleGroup\":-1,\"suppressOthers\":false,\"tableView\":{\"bold\":false,\"decimalPlaces\":1,\"displayUnits\":\"Default\",\"textColor\":\"\",\"backgroundFill\":\"\",\"markerStyle\":5,\"border\":\"\",\"showAsTable\":0,\"hidden\":false,\"valueChart\":0,\"absoluteChart\":0,\"hiddenFromGroups\":[]},\"chartView\":{\"bold\":false,\"decimalPlaces\":1,\"displayUnits\":\"Default\",\"textColor\":\"\",\"backgroundFill\":\"\",\"markerStyle\":5,\"border\":\"\",\"showAsTable\":2,\"hidden\":false,\"valueChart\":4,\"absoluteChart\":0,\"hiddenFromGroups\":[]}},\"MS\":{\"header\":\"MS%\",\"invert\":false,\"order\":5,\"format\":3,\"percentageFormat\":\"0%\",\"showPercentageInLabel\":1,\"scaleGroup\":-1,\"suppressOthers\":false,\"tableView\":{\"bold\":false,\"decimalPlaces\":1,\"displayUnits\":\"Default\",\"textColor\":\"\",\"backgroundFill\":\"\",\"markerStyle\":5,\"border\":\"\",\"showAsTable\":0,\"hidden\":false,\"valueChart\":0,\"absoluteChart\":0,\"hiddenFromGroups\":[]},\"chartView\":{\"bold\":false,\"decimalPlaces\":1,\"displayUnits\":\"Default\",\"textColor\":\"\",\"backgroundFill\":\"\",\"markerStyle\":5,\"border\":\"\",\"showAsTable\":2,\"hidden\":false,\"valueChart\":0,\"absoluteChart\":0,\"hiddenFromGroups\":[]}},\"EI\":{\"header\":\"EI\",\"invert\":false,\"order\":6,\"format\":0,\"percentageFormat\":\"\",\"showPercentageInLabel\":1,\"scaleGroup\":-1,\"suppressOthers\":false,\"tableView\":{\"bold\":false,\"decimalPlaces\":0,\"displayUnits\":\"Default\",\"textColor\":\"\",\"backgroundFill\":\"\",\"markerStyle\":5,\"border\":\"\",\"showAsTable\":0,\"hidden\":false,\"valueChart\":0,\"absoluteChart\":0,\"hiddenFromGroups\":[]},\"chartView\":{\"bold\":false,\"decimalPlaces\":0,\"displayUnits\":\"Default\",\"textColor\":\"\",\"backgroundFill\":\"\",\"markerStyle\":5,\"border\":\"\",\"showAsTable\":0,\"hidden\":false,\"valueChart\":0,\"absoluteChart\":0,\"hiddenFromGroups\":[]}},\"Market_Rank_AC_Ranked\":{\"header\":\"Market_Rank_AC_Ranked\",\"invert\":false,\"format\":0,\"percentageFormat\":\"\",\"showPercentageInLabel\":1,\"scaleGroup\":-1,\"suppressOthers\":false,\"tableView\":{\"bold\":false,\"decimalPlaces\":1,\"displayUnits\":\"Default\",\"textColor\":\"\",\"backgroundFill\":\"\",\"markerStyle\":5,\"border\":\"\",\"showAsTable\":0,\"hidden\":false,\"valueChart\":0,\"absoluteChart\":0,\"hiddenFromGroups\":[]},\"chartView\":{\"bold\":false,\"decimalPlaces\":0,\"displayUnits\":\"Default\",\"textColor\":\"\",\"backgroundFill\":\"\",\"markerStyle\":5,\"border\":\"\",\"showAsTable\":0,\"hidden\":false,\"valueChart\":0,\"absoluteChart\":0,\"hiddenFromGroups\":[]},\"order\":null}}'"
+                            }
+                          }
+                        },
+                        "showGridlinesTable": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "true"
+                            }
+                          }
+                        },
+                        "gridlineDensityTable": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "1L"
+                            }
+                          }
+                        },
+                        "showGrandTotal": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "false"
+                            }
+                          }
+                        },
+                        "freezeGrandTotal": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "true"
+                            }
+                          }
+                        },
+                        "grandTotalGap": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "true"
+                            }
+                          }
+                        },
+                        "minChartWidth": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "140D"
+                            }
+                          }
+                        },
+                        "firstTimeShowingColumnAdder": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "false"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ],
+                  "annotationLayerSettings": [
+                    {
+                      "properties": {
+                        "annotationHighlights": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "'[]'"
+                            }
+                          }
+                        },
+                        "annotationComments": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "'[]'"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ],
+                  "titleSettings": [
+                    {
+                      "properties": {
+                        "show": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "false"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ],
+                  "dataLabelSettings": [
+                    {
+                      "properties": {
+                        "decimalPlaces": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "0L"
+                            }
+                          }
+                        },
+                        "decimalPlacesPercentage": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "0L"
+                            }
+                          }
+                        },
+                        "percentageInLabel": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "false"
+                            }
+                          }
+                        },
+                        "integratedDifferenceLabel": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "1D"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ],
+                  "legendHeaderSettings": [
+                    {
+                      "properties": {
+                        "freeze": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "true"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ],
+                  "designSettings": [
+                    {
+                      "properties": {
+                        "style": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "4D"
+                            }
+                          }
+                        },
+                        "neutralColor": {
+                          "solid": {
+                            "color": {
+                              "expr": {
+                                "Literal": {
+                                  "Value": "'#4882B5'"
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ],
+                  "interactionSettings": [
+                    {
+                      "properties": {
+                        "allowColumnOrderChange": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "false"
+                            }
+                          }
+                        },
+                        "allowColumnRenamingAndDesign": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "false"
+                            }
+                          }
+                        },
+                        "allowHidingAndAddingColumns": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "false"
+                            }
+                          }
+                        },
+                        "allowInteractiveCommentBox": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "false"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ],
+                  "sortSettings": [
+                    {
+                      "properties": {
+                        "columnName": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "'actual'"
+                            }
+                          }
+                        },
+                        "chartSort": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "1D"
+                            }
+                          }
+                        },
+                        "categorySort": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "1D"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ],
+                  "version": [
+                    {
+                      "properties": {
+                        "version": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "'7.8.0.136'"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ],
+                  "categoriesMetadata": [
+                    {
+                      "properties": {
+                        "invertedHierarchies": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "'[]'"
+                            }
+                          }
+                        },
+                        "invertCalculationCategoriesValues": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "'[]'"
+                            }
+                          }
+                        }
+                      }
+                    }
                   ]
                 }
               },
+              "orderBy": [
+                {
+                  "Direction": 2,
+                  "Expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_M_"
+                        }
+                      },
+                      "Property": "Distr_Stock_AC_Ranked"
+                    }
+                  }
+                }
+              ],
               "activeProjections": {
-                "Values": [
+                "Category": [
                   {
                     "Column": {
                       "Expression": {
                         "SourceRef": {
-                          "Entity": "SelectSelfMO"
+                          "Entity": "Drugs"
                         }
                       },
-                      "Property": "Market Org"
+                      "Property": "Brand"
                     }
                   }
                 ]
+              },
+              "projections": {
+                "Category": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Drugs"
+                        }
+                      },
+                      "Property": "Brand"
+                    }
+                  }
+                ],
+                "Values": [
+                  {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_M_"
+                        }
+                      },
+                      "Property": "Distr_Stock_AC_Ranked"
+                    }
+                  }
+                ]
+              },
+              "parameters": {
+                "Category": [
+                  {
+                    "expr": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "Dimensions"
+                          }
+                        },
+                        "Property": "Dim"
+                      }
+                    },
+                    "index": 0,
+                    "length": 1
+                  }
+                ]
               }
+            }
+          },
+          "10162b7d47264afc17ba": {
+            "singleVisual": {
+              "visualType": "shape",
+              "objects": {}
+            }
+          },
+          "10c61d2316f6e196a065": {
+            "singleVisual": {
+              "visualType": "shape",
+              "objects": {}
+            }
+          },
+          "1236709e5e51efff55fe": {
+            "singleVisual": {
+              "visualType": "shape",
+              "objects": {}
             }
           },
           "195c2504d78e5fc739f3": {
             "filters": {
               "byExpr": [
                 {
-                  "name": "a6e0c03ba9874606d39f",
+                  "name": "16e76ebbcab107aae838",
                   "type": "Categorical",
                   "expression": {
                     "Column": {
@@ -956,7 +1270,7 @@
                                       [
                                         {
                                           "Literal": {
-                                            "Value": "'Last 30 days'"
+                                            "Value": "'Last 60 days'"
                                           }
                                         }
                                       ]
@@ -1024,7 +1338,7 @@
             "filters": {
               "byExpr": [
                 {
-                  "name": "24f4cf01412ce59d802a",
+                  "name": "5ea778ed7c8d30ac7443",
                   "type": "Categorical",
                   "expression": {
                     "Column": {
@@ -1160,16 +1474,16 @@
                   "howCreated": 0
                 },
                 {
-                  "name": "1c89e09f520604f12023",
-                  "type": "Advanced",
+                  "name": "4873701addea18c83f46",
+                  "type": "Categorical",
                   "expression": {
-                    "Measure": {
+                    "Column": {
                       "Expression": {
                         "SourceRef": {
-                          "Entity": "_M_"
+                          "Entity": "Periods"
                         }
                       },
-                      "Property": "Distr_Sales_Dyn_PY"
+                      "Property": "Period"
                     }
                   },
                   "howCreated": 0
@@ -1190,16 +1504,16 @@
                   "howCreated": 0
                 },
                 {
-                  "name": "4873701addea18c83f46",
-                  "type": "Categorical",
+                  "name": "1c89e09f520604f12023",
+                  "type": "Advanced",
                   "expression": {
-                    "Column": {
+                    "Measure": {
                       "Expression": {
                         "SourceRef": {
-                          "Entity": "Periods"
+                          "Entity": "_M_"
                         }
                       },
-                      "Property": "Period"
+                      "Property": "Distr_Sales_Dyn_PY"
                     }
                   },
                   "howCreated": 0
@@ -1344,6 +1658,157 @@
             "singleVisual": {
               "visualType": "shape",
               "objects": {}
+            }
+          },
+          "456bf487b4d1752e0a16": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "d3ae920a5a6e835f6c89",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Periods"
+                        }
+                      },
+                      "Property": "Period"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "ad2b100fab4b6282a3db",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_M_"
+                        }
+                      },
+                      "Property": "Distr_Stock_Dyn_AC"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "waterfall6C9ED82ABD1F44C4A0D590CE01EB5EE7",
+              "objects": {
+                "merge": {
+                  "chartSettings": [
+                    {
+                      "properties": {
+                        "chartLayout": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "'Actual / Relative'"
+                            }
+                          }
+                        },
+                        "showGrandTotal": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "true"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ],
+                  "designSettings": [
+                    {
+                      "properties": {
+                        "style": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "4D"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ],
+                  "differenceHighlightSettings": [
+                    {
+                      "properties": {
+                        "show": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "true"
+                            }
+                          }
+                        },
+                        "differenceLabelType": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "0D"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ],
+                  "axisBreakSettings": [
+                    {
+                      "properties": {
+                        "show": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "true"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ],
+                  "chartType": [
+                    {
+                      "properties": {
+                        "chartType": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "4D"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              },
+              "orderBy": [
+                {
+                  "Direction": 1,
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Periods"
+                        }
+                      },
+                      "Property": "Period"
+                    }
+                  }
+                }
+              ],
+              "activeProjections": {
+                "Category": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Periods"
+                        }
+                      },
+                      "Property": "Period"
+                    }
+                  }
+                ]
+              }
             }
           },
           "491711856b9c5aba067d": {
@@ -1845,7 +2310,25 @@
               "objects": {}
             }
           },
+          "5431e75210130b043bcb": {
+            "singleVisual": {
+              "visualType": "shape",
+              "objects": {}
+            }
+          },
+          "5893792ec12fa9bce128": {
+            "singleVisual": {
+              "visualType": "shape",
+              "objects": {}
+            }
+          },
           "5ee80820493a6b9aec16": {
+            "singleVisual": {
+              "visualType": "shape",
+              "objects": {}
+            }
+          },
+          "63ac87203748fbc878e8": {
             "singleVisual": {
               "visualType": "shape",
               "objects": {}
@@ -1855,7 +2338,7 @@
             "filters": {
               "byExpr": [
                 {
-                  "name": "bb87c0cde96013594db7",
+                  "name": "429758060423eea12951",
                   "type": "Advanced",
                   "expression": {
                     "Measure": {
@@ -1873,6 +2356,12 @@
             },
             "singleVisual": {
               "visualType": "htmlContent443BE3AD55E043BF878BED274D3A6865",
+              "objects": {}
+            }
+          },
+          "78c8d6160afd0c15db8a": {
+            "singleVisual": {
+              "visualType": "shape",
               "objects": {}
             }
           },
@@ -1910,21 +2399,6 @@
                   "howCreated": 0
                 },
                 {
-                  "name": "ce35802f03c0ac7a5562",
-                  "type": "Advanced",
-                  "expression": {
-                    "Measure": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "_M_"
-                        }
-                      },
-                      "Property": "Visits_Dyn_PY"
-                    }
-                  },
-                  "howCreated": 0
-                },
-                {
                   "name": "352e4c2e3f19fa8c6d41",
                   "type": "Advanced",
                   "expression": {
@@ -1935,6 +2409,21 @@
                         }
                       },
                       "Property": "Visits_Dyn_PL"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "ce35802f03c0ac7a5562",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_M_"
+                        }
+                      },
+                      "Property": "Visits_Dyn_PY"
                     }
                   },
                   "howCreated": 0
@@ -2400,6 +2889,159 @@
             "singleVisual": {
               "visualType": "shape",
               "objects": {}
+            }
+          },
+          "dab486060bed336356ec": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "6fa0511add4caa086a7a",
+                  "type": "Advanced",
+                  "filter": {
+                    "Version": 2,
+                    "From": [
+                      {
+                        "Name": "s",
+                        "Entity": "SinglePeriodFilter",
+                        "Type": 0
+                      }
+                    ],
+                    "Where": [
+                      {
+                        "Condition": {
+                          "Not": {
+                            "Expression": {
+                              "Comparison": {
+                                "ComparisonKind": 0,
+                                "Left": {
+                                  "Column": {
+                                    "Expression": {
+                                      "SourceRef": {
+                                        "Source": "s"
+                                      }
+                                    },
+                                    "Property": "Filtered"
+                                  }
+                                },
+                                "Right": {
+                                  "Literal": {
+                                    "Value": "null"
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    ]
+                  },
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "SinglePeriodFilter"
+                        }
+                      },
+                      "Property": "Filtered"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "slicer",
+              "objects": {
+                "merge": {
+                  "general": [
+                    {
+                      "properties": {
+                        "filter": {
+                          "filter": {
+                            "Version": 2,
+                            "From": [
+                              {
+                                "Name": "s",
+                                "Entity": "SinglePeriodFilter",
+                                "Type": 0
+                              }
+                            ],
+                            "Where": [
+                              {
+                                "Condition": {
+                                  "In": {
+                                    "Expressions": [
+                                      {
+                                        "Column": {
+                                          "Expression": {
+                                            "SourceRef": {
+                                              "Source": "s"
+                                            }
+                                          },
+                                          "Property": "Filtered"
+                                        }
+                                      }
+                                    ],
+                                    "Values": [
+                                      [
+                                        {
+                                          "Literal": {
+                                            "Value": "'Hide future periods'"
+                                          }
+                                        }
+                                      ]
+                                    ]
+                                  }
+                                }
+                              }
+                            ]
+                          }
+                        }
+                      }
+                    }
+                  ],
+                  "data": [
+                    {
+                      "properties": {
+                        "mode": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "'Basic'"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ],
+                  "selection": [
+                    {
+                      "properties": {
+                        "strictSingleSelect": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "false"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              },
+              "activeProjections": {
+                "Values": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "SinglePeriodFilter"
+                        }
+                      },
+                      "Property": "Filtered"
+                    }
+                  }
+                ]
+              }
             }
           },
           "db36ac92ddffd984a115": {
@@ -2977,7 +3619,7 @@
               },
               "byExpr": [
                 {
-                  "name": "83b3a642e9ac468bb010",
+                  "name": "f8d6fa86f5bb1711abd7",
                   "type": "Categorical",
                   "expression": {
                     "Column": {
@@ -3211,7 +3853,7 @@
             "filters": {
               "byExpr": [
                 {
-                  "name": "9f9084239e6cfdd84267",
+                  "name": "7a7899aeda05a962ce05",
                   "type": "Categorical",
                   "expression": {
                     "Column": {
@@ -3264,7 +3906,7 @@
                                       [
                                         {
                                           "Literal": {
-                                            "Value": "'20'"
+                                            "Value": "'10'"
                                           }
                                         }
                                       ]
@@ -3326,7 +3968,7 @@
             "filters": {
               "byExpr": [
                 {
-                  "name": "491e09aae18512fbb3a0",
+                  "name": "94b05c830e3935c78a6e",
                   "type": "Advanced",
                   "expression": {
                     "Column": {
@@ -3443,64 +4085,20 @@
               "objects": {}
             }
           },
-          "63ac87203748fbc878e8": {
-            "singleVisual": {
-              "visualType": "shape",
-              "objects": {}
-            }
-          },
-          "dab486060bed336356ec": {
+          "df098a6861cc97465146": {
             "filters": {
               "byExpr": [
                 {
-                  "name": "6fa0511add4caa086a7a",
-                  "type": "Advanced",
-                  "filter": {
-                    "Version": 2,
-                    "From": [
-                      {
-                        "Name": "s",
-                        "Entity": "SinglePeriodFilter",
-                        "Type": 0
-                      }
-                    ],
-                    "Where": [
-                      {
-                        "Condition": {
-                          "Not": {
-                            "Expression": {
-                              "Comparison": {
-                                "ComparisonKind": 0,
-                                "Left": {
-                                  "Column": {
-                                    "Expression": {
-                                      "SourceRef": {
-                                        "Source": "s"
-                                      }
-                                    },
-                                    "Property": "Filtered"
-                                  }
-                                },
-                                "Right": {
-                                  "Literal": {
-                                    "Value": "null"
-                                  }
-                                }
-                              }
-                            }
-                          }
-                        }
-                      }
-                    ]
-                  },
+                  "name": "b5c69657860626ae9a70",
+                  "type": "Categorical",
                   "expression": {
                     "Column": {
                       "Expression": {
                         "SourceRef": {
-                          "Entity": "SinglePeriodFilter"
+                          "Entity": "Areas"
                         }
                       },
-                      "Property": "Filtered"
+                      "Property": "MAP_NAME"
                     }
                   },
                   "howCreated": 0
@@ -3519,8 +4117,8 @@
                             "Version": 2,
                             "From": [
                               {
-                                "Name": "s",
-                                "Entity": "SinglePeriodFilter",
+                                "Name": "a",
+                                "Entity": "Areas",
                                 "Type": 0
                               }
                             ],
@@ -3533,10 +4131,10 @@
                                         "Column": {
                                           "Expression": {
                                             "SourceRef": {
-                                              "Source": "s"
+                                              "Source": "a"
                                             }
                                           },
-                                          "Property": "Filtered"
+                                          "Property": "MAP_NAME"
                                         }
                                       }
                                     ],
@@ -3544,7 +4142,7 @@
                                       [
                                         {
                                           "Literal": {
-                                            "Value": "'Hide future periods'"
+                                            "Value": "'UA OPHTHALMO OPHTHALMO_Q1 2026'"
                                           }
                                         }
                                       ]
@@ -3564,7 +4162,7 @@
                         "mode": {
                           "expr": {
                             "Literal": {
-                              "Value": "'Basic'"
+                              "Value": "'Dropdown'"
                             }
                           }
                         }
@@ -3577,7 +4175,7 @@
                         "strictSingleSelect": {
                           "expr": {
                             "Literal": {
-                              "Value": "false"
+                              "Value": "true"
                             }
                           }
                         }
@@ -3592,10 +4190,10 @@
                     "Column": {
                       "Expression": {
                         "SourceRef": {
-                          "Entity": "SinglePeriodFilter"
+                          "Entity": "Areas"
                         }
                       },
-                      "Property": "Filtered"
+                      "Property": "MAP_NAME"
                     }
                   }
                 ]

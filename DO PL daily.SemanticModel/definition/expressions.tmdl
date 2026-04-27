@@ -80,7 +80,9 @@ expression FLOWS =
 
 expression _DATA_FLOW_ID_ =
 		let
-		    Result= if Table.RowCount(FLOWS)>0 then List.Single(Table.SelectRows(FLOWS, each [COUNTRY]=_COUNTRY_ and [PROJECT] = _PROJECT_ and [FLOW_TYPE]= "DATA_DO")[FLOW_ID]) else _FLOWS_FLOW_ID_
+		    Result= "021588eb-0a86-432e-a252-17d4952f1799"//if Table.RowCount(FLOWS)>0 then List.Single(Table.SelectRows(FLOWS, each [COUNTRY]=_COUNTRY_ and [PROJECT] = _PROJECT_ and [FLOW_TYPE]= "DATA_DO")[FLOW_ID]) else _FLOWS_FLOW_ID_
+		//if Table.RowCount(FLOWS)>0 then List.Single(Table.SelectRows(FLOWS, each [COUNTRY]=_COUNTRY_ and [PROJECT] = _PROJECT_ and [FLOW_TYPE]= "DATA_DO")[FLOW_ID]) else _FLOWS_FLOW_ID_
+		
 		in
 		    Result
 	lineageTag: dd020cd1-bfa7-48fc-b30c-61d3c8d87fec
@@ -147,7 +149,7 @@ expression _MAIN_DATA_TYPE_ = "SO" meta [IsParameterQuery=true, Type="Text", IsP
 
 	annotation PBI_ResultType = Text
 
-expression _ROLE_ = "donapharmexim" meta [IsParameterQuery=true, Type="Text", IsParameterQueryRequired=true]
+expression _ROLE_ = "sonapharmexim" meta [IsParameterQuery=true, Type="Text", IsParameterQueryRequired=true]
 	lineageTag: 354a3060-c138-41fd-b407-72cca6ee26b3
 	queryGroup: PARAMS
 
@@ -412,6 +414,84 @@ expression MIN_PERIOD_ID =
 		in
 		    MAX_PERIOD_ID_
 	lineageTag: a9d50f31-cd45-403a-a6b5-a0619e0a94cd
+	queryGroup: Restricts
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+
+expression Restricts_Areas =
+		let
+		    Source = Table.SelectColumns(Restricts,{"table","field","value"}),
+		    #"Filtered Rows" = Table.SelectRows(Source, each ([table] = "Areas") and [field]="Area"),
+		    #"Removed Columns" = Table.RemoveColumns(#"Filtered Rows",{"table", "field"}),
+		    #"Renamed Columns" = Table.RenameColumns(#"Removed Columns",{{"value", "AREA_NAME"}})
+		in
+		    #"Renamed Columns"
+	lineageTag: eadbaaa1-a40c-47d8-b058-d87504834c35
+	queryGroup: Restricts
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+
+expression _SO_TL_FLOW_ID_ =
+		let
+		    Result= "e62100b7-6788-4fc3-b5c9-a48d83fe647b"
+		in
+		    Result
+	lineageTag: b85666a3-46b8-4b8d-b9e9-2f29f8f7ca97
+	queryGroup: FLOW_ID
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Text
+
+expression AreasSRC = ```
+		let
+		    Source = PowerPlatform.Dataflows(null),
+		    Areas = Source{[Id="Workspaces"]}[Data]{[workspaceId=_WS_ID_]}[Data]{[dataflowId=_AXIOMA_FLOW_ID_]}[Data]{[entity="AREAS",version=""]}[Data],
+		    #"Added Custom" = Table.AddColumn(Areas, "AREA_NAME", each [LOC_NAME_EN]),
+		    #"Filtered Rows" = Table.SelectRows(#"Added Custom", each ([AREA_ID] >= 101 and [AREA_ID] <= 127) or [AREA_ID]=23),
+		    AreasSrc = Table.RemoveColumns(#"Filtered Rows",{"LOC_NAME_EN", "LOC_NAME_UA", "LOC_NAME_RU", "AREA_NAME_EN", "AREA_NAME_UA", "AREA_NAME_RU"}),
+		    // Restrict by Area Name
+		    RestrictsAreaExists=Table.RowCount(Restricts_Areas),
+		    Result=if RestrictsAreaExists>0 then Table.NestedJoin(AreasSrc, {"AREA_NAME"}, Restricts_Areas, {"AREA_NAME"}, "Restricts_Areas", JoinKind.Inner) else AreasSrc,
+		    Result2=if RestrictsAreaExists>0 then Table.RemoveColumns(Result,{"AREA_NAME", "Restricts_Areas"}) 
+		    else Table.RemoveColumns(Result,{"AREA_NAME"}),
+		    #"Unpivoted Other Columns" = Table.UnpivotOtherColumns(Result2, {"AREA_ID"}, "Attribute", "Value"),
+		    #"Renamed Columns" = Table.RenameColumns(#"Unpivoted Other Columns",{{"Attribute", "UserCulture"}, {"Value", "AREA_NAME"}}),
+		    #"Merged Queries" = Table.NestedJoin(#"Renamed Columns", {"UserCulture"}, TranslateLanguageList, {"UserCulture"}, "TranslateLanugageList", JoinKind.Inner),
+		    #"Removed Columns" = Table.RemoveColumns(#"Merged Queries",{"TranslateLanugageList"})
+		in
+		    #"Removed Columns"
+		```
+	lineageTag: e37cb819-baa5-4188-8f40-855cd524c5e0
+	queryGroup: Restricts
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+
+expression _AXIOMA_FLOW_ID_ =
+		let
+		    Result= if Table.RowCount(FLOWS)>0 then List.Single(Table.SelectRows(FLOWS, each [PROJECT] = "COMMON" and [FLOW_TYPE]= "AXIOMA")[FLOW_ID]) else _FLOWS_FLOW_ID_
+		in
+		    Result
+	lineageTag: 315c9e73-bbee-4145-8c23-b67fb09496cb
+	queryGroup: FLOW_ID
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Text
+
+expression Clients =
+		let
+		    Source = PowerPlatform.Dataflows(null),
+		    CLIENTS = Source{[Id="Workspaces"]}[Data]{[workspaceId=_WS_ID_]}[Data]{[dataflowId=_DATA_FLOW_ID_]}[Data]{[entity="CLIENTS",version=""]}[Data]
+		in
+		    CLIENTS
+	lineageTag: df505bd6-3719-40ae-9134-ee06660808b7
 	queryGroup: Restricts
 
 	annotation PBI_NavigationStepName = Navigation

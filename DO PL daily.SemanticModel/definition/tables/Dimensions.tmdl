@@ -87,8 +87,17 @@ table Dimensions
 				    ("MC 2",NAMEOF(Drugs[MC Name(2)]),37),
 				    ("MC 3",NAMEOF(Drugs[MC Name(3)]),38),
 				    ("MC 4",NAMEOF(Drugs[MC Name(4)]),39),
-				    ("Market status",NAMEOF(Drugs[Market_Status]),40),
-				    ("Sales type",NAMEOF(ECom[E-com]),41)
+				    ("Region Level 1",NAMEOF(Areas[LEVEL_1]),40),
+				    ("Region Level 2",NAMEOF(Areas[LEVEL_2]),41),
+				    ("Region Level 3",NAMEOF(Areas[LEVEL_3]),42),
+				    ("Region Level 4",NAMEOF(Areas[LEVEL_4]),43),
+				    ("Area",NAMEOF(Areas[AREA_NAME]),44),
+				    ("Chain name",NAMEOF(Areas[CHAIN_NAME]),45),
+				    ("Legal entity",NAMEOF(Areas[ORG_NAME]),46),
+				    ("Pharmacy name",NAMEOF(Areas[CLIENT_NAME]),47),
+				    ("Pharmacy address",NAMEOF(Areas[ADDRESS]),48),
+				    ("Pharmacy type",NAMEOF(Areas[CLIENT_TYPE_ORG]),49),
+				    ("Pharmacy city",NAMEOF(Areas[CITY]),50)
 				}
 				```
 

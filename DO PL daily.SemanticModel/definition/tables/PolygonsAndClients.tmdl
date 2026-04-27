@@ -1,0 +1,34 @@
+table PolygonsAndClients
+	lineageTag: 1643df72-da9f-4b31-a87a-a463d8888618
+
+	column CLIENT_ID
+		dataType: int64
+		formatString: 0
+		lineageTag: aa999a07-edfd-4931-b338-ecb1669f867f
+		summarizeBy: count
+		sourceColumn: CLIENT_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column DATA_LAYER_ID
+		dataType: string
+		lineageTag: a36533a1-04da-47eb-9a73-48467ef5c358
+		summarizeBy: none
+		sourceColumn: DATA_LAYER_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	partition PolygonsAndClients = m
+		mode: import
+		queryGroup: Restricts
+		source =
+				let
+				    Source = PowerPlatform.Dataflows(null),
+				    POLY = Source{[Id="Workspaces"]}[Data]{[workspaceId=_WS_ID_]}[Data]{[dataflowId=_DATA_FLOW_ID_]}[Data]{[entity="CLIENTS_DATALAYERS",version=""]}[Data]
+				in
+				    POLY
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

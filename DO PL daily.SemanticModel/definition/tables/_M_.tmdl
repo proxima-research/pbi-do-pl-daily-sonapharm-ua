@@ -87,8 +87,17 @@ table _M_
 			        "MC 2",rankx(ALLSELECTED(Drugs[MC Name(2)]),[Distr_Sales_AC],,Desc,Dense),
 			        "MC 3",rankx(ALLSELECTED(Drugs[MC Name(3)]),[Distr_Sales_AC],,Desc,Dense),
 			        "MC 4",rankx(ALLSELECTED(Drugs[MC Name(4)]),[Distr_Sales_AC],,Desc,Dense),
-			        "Market status",rankx(ALLSELECTED(Drugs[Market_Status]),[Distr_Sales_AC],,Desc,Dense),
-			        "Sales type",rankx(ALLSELECTED(ECom[E-com]),[Distr_Sales_AC],,Desc,Dense)
+			        "Region Level 1",rankx(ALLSELECTED(Areas[LEVEL_1]),[Distr_Sales_AC],,Desc,Dense),
+			        "Region Level 2",rankx(ALLSELECTED(Areas[LEVEL_2]),[Distr_Sales_AC],,Desc,Dense),
+			        "Region Level 3",rankx(ALLSELECTED(Areas[LEVEL_3]),[Distr_Sales_AC],,Desc,Dense),
+			        "Region Level 4",rankx(ALLSELECTED(Areas[LEVEL_4]),[Distr_Sales_AC],,Desc,Dense),
+			        "Area",rankx(ALLSELECTED(Areas[AREA_NAME]),[Distr_Sales_AC],,Desc,Dense),
+			        "Chain name",rankx(ALLSELECTED(Areas[CHAIN_NAME]),[Distr_Sales_AC],,Desc,Dense),
+			        "Legal entity",rankx(ALLSELECTED(Areas[ORG_NAME]),[Distr_Sales_AC],,Desc,Dense),
+			        "Pharmacy name",rankx(ALLSELECTED(Areas[CLIENT_NAME]),[Distr_Sales_AC],,Desc,Dense),
+			        "Pharmacy address",rankx(ALLSELECTED(Areas[ADDRESS]),[Distr_Sales_AC],,Desc,Dense),
+			        "Pharmacy type",rankx(ALLSELECTED(Areas[CLIENT_TYPE_ORG]),[Distr_Sales_AC],,Desc,Dense),
+			        "Pharmacy city",rankx(ALLSELECTED(Areas[CITY]),[Distr_Sales_AC],,Desc,Dense)
 			    )
 			)
 		formatString: 0
@@ -407,10 +416,11 @@ table _M_
 			var FilteredMC3=IF(ISFILTERED(Drugs[MC Name(3)]),"MC 3:"&CONCATENATEX(FILTERS(Drugs[MC Name(3)]),Drugs[MC Name(3)],","),BLANK())
 			var FilteredMC4=IF(ISFILTERED(Drugs[MC Name(4)]),"MC 4:"&CONCATENATEX(FILTERS(Drugs[MC Name(4)]),Drugs[MC Name(4)],","),BLANK())
 			var FilteredMarketstatus=IF(ISFILTERED(Drugs[Market_Status]),"Market status:"&CONCATENATEX(FILTERS(Drugs[Market_Status]),Drugs[Market_Status],","),BLANK())
-			// var FilteredRegionlevel1=IF(ISFILTERED(Areas[LEVEL_1]),"Reg. level 1:"&CONCATENATEX(FILTERS(Areas[LEVEL_1]),Areas[LEVEL_1],","),BLANK())
-			// var FilteredRegionlevel2=IF(ISFILTERED(Areas[LEVEL_2]),"Reg. level 2:"&CONCATENATEX(FILTERS(Areas[LEVEL_2]),Areas[LEVEL_2],","),BLANK())
-			// var FilteredRegionlevel3=IF(ISFILTERED(Areas[LEVEL_3]),"Reg. level 3:"&CONCATENATEX(FILTERS(Areas[LEVEL_3]),Areas[LEVEL_3],","),BLANK())
-			// var FilteredRegionlevel4=IF(ISFILTERED(Areas[LEVEL_4]),"Reg. level 4:"&CONCATENATEX(FILTERS(Areas[LEVEL_4]),Areas[LEVEL_4],","),BLANK())
+			var FilteredArea=IF(ISFILTERED(Areas[LEVEL_1]),"Area:"&CONCATENATEX(FILTERS(Areas[AREA_NAME]),Areas[AREA_NAME],","),BLANK())
+			 var FilteredRegionlevel1=IF(ISFILTERED(Areas[LEVEL_1]),"Reg. level 1:"&CONCATENATEX(FILTERS(Areas[LEVEL_1]),Areas[LEVEL_1],","),BLANK())
+			 var FilteredRegionlevel2=IF(ISFILTERED(Areas[LEVEL_2]),"Reg. level 2:"&CONCATENATEX(FILTERS(Areas[LEVEL_2]),Areas[LEVEL_2],","),BLANK())
+			 var FilteredRegionlevel3=IF(ISFILTERED(Areas[LEVEL_3]),"Reg. level 3:"&CONCATENATEX(FILTERS(Areas[LEVEL_3]),Areas[LEVEL_3],","),BLANK())
+			 var FilteredRegionlevel4=IF(ISFILTERED(Areas[LEVEL_4]),"Reg. level 4:"&CONCATENATEX(FILTERS(Areas[LEVEL_4]),Areas[LEVEL_4],","),BLANK())
 			var FilteredSalestype=IF(ISFILTERED(ECom[E-com]),"Sales type:"&CONCATENATEX(FILTERS(ECom[E-com]),ECom[E-com],","),BLANK())
 			//var FilteredSupplier=IF(ISFILTERED(Suppliers[SUPPLIER_NAME]),"Supplier:"&CONCATENATEX(FILTERS(Suppliers[SUPPLIER_NAME]),Suppliers[SUPPLIER_NAME],","),BLANK())
 			var FilteredDrugName=IF(ISFILTERED(Drugs[DRUG_NAME]),"Drug Name:"&CONCATENATEX(FILTERS(Drugs[DRUG_NAME]),Drugs[DRUG_NAME],","),BLANK())
@@ -461,10 +471,11 @@ table _M_
 			    FilteredMC3,
 			    FilteredMC4,
 			    FilteredMarketstatus,
-			// FilteredRegionlevel1,
-			// FilteredRegionlevel2,
-			// FilteredRegionlevel3,
-			// FilteredRegionlevel4,
+			 FilteredArea,   
+			 FilteredRegionlevel1,
+			 FilteredRegionlevel2,
+			 FilteredRegionlevel3,
+			 FilteredRegionlevel4,
 			    FilteredSalestype,
 			//    FilteredSupplier,
 			    FilteredVTM,
@@ -884,52 +895,7 @@ table _M_
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
-	measure RankByVol_AllPeriods =
-			[RankByVol_TOTAL]
-			// var SelectDim=SELECTEDVALUE('Dimensions'[DimName])
-			// return if(ISBLANK([Market_Sales_Dyn_AC_Total_By_All_Periods]),1000000,
-			//     SWITCH(SelectDim,
-			//         "Corporation",rankx(ALLSELECTED(Drugs[Corporation]),[Market_Sales_Dyn_AC_Total_By_All_Periods],,Desc,Dense),
-			//         "Market Org",rankx(ALLSELECTED(Drugs[Market Org]),[Market_Sales_Dyn_AC_Total_By_All_Periods],,Desc,Dense),
-			//         "Brand",rankx(ALLSELECTED(Drugs[Brand]),[Market_Sales_Dyn_AC_Total_By_All_Periods],,Desc,Dense),
-			//         "Brand+Market Org",rankx(ALLSELECTED(Drugs[Brand+Market Org]),[Market_Sales_Dyn_AC_Total_By_All_Periods],,Desc,Dense),
-			//         "Brand+Corporation",rankx(ALLSELECTED(Drugs[Brand+Corporation]),[Market_Sales_Dyn_AC_Total_By_All_Periods],,Desc,Dense),
-			//         "SKU",rankx(ALLSELECTED(Drugs[Full medication name]),[Market_Sales_Dyn_AC_Total_By_All_Periods],,Desc,Dense),
-			//         "INN",rankx(ALLSELECTED(Drugs[INN]),[Market_Sales_Dyn_AC_Total_By_All_Periods],,Desc,Dense),
-			//         "Competitve group 1",rankx(ALLSELECTED(Groups[PRODUCT_NAME_TREE.1]),[Market_Sales_Dyn_AC_Total_By_All_Periods],,Desc,Dense),
-			//         "Competitve group 2",rankx(ALLSELECTED(Groups[PRODUCT_NAME_TREE.1]),[Market_Sales_Dyn_AC_Total_By_All_Periods],,Desc,Dense),
-			//         "Competitve group 3",rankx(ALLSELECTED(Groups[PRODUCT_NAME_TREE.1]),[Market_Sales_Dyn_AC_Total_By_All_Periods],,Desc,Dense),
-			//         "Category",rankx(ALLSELECTED(Drugs[CategoryLongName]),[Market_Sales_Dyn_AC_Total_By_All_Periods],,Desc,Dense),
-			//         "Rx/OTC",rankx(ALLSELECTED(Drugs[Rx/OTC]),[Market_Sales_Dyn_AC_Total_By_All_Periods],,Desc,Dense),
-			//         "ATC 1",rankx(ALLSELECTED(Drugs[ATC Code (1)]),[Market_Sales_Dyn_AC_Total_By_All_Periods],,Desc,Dense),
-			//         "ATC 2",rankx(ALLSELECTED(Drugs[ATC Code (2)]),[Market_Sales_Dyn_AC_Total_By_All_Periods],,Desc,Dense),
-			//         "ATC 3",rankx(ALLSELECTED(Drugs[ATC Code (3)]),[Market_Sales_Dyn_AC_Total_By_All_Periods],,Desc,Dense),
-			//         "ATC 4",rankx(ALLSELECTED(Drugs[ATC Code (4)]),[Market_Sales_Dyn_AC_Total_By_All_Periods],,Desc,Dense),
-			//         "ATC 5",rankx(ALLSELECTED(Drugs[ATC Code (5)]),[Market_Sales_Dyn_AC_Total_By_All_Periods],,Desc,Dense),
-			//         "EphMRA 1",rankx(ALLSELECTED(Drugs[EphMRA Code (1)]),[Market_Sales_Dyn_AC_Total_By_All_Periods],,Desc,Dense),
-			//         "EphMRA 2",rankx(ALLSELECTED(Drugs[EphMRA Code (2)]),[Market_Sales_Dyn_AC_Total_By_All_Periods],,Desc,Dense),
-			//         "EphMRA 3",rankx(ALLSELECTED(Drugs[EphMRA Code (3)]),[Market_Sales_Dyn_AC_Total_By_All_Periods],,Desc,Dense),
-			//         "EphMRA 4",rankx(ALLSELECTED(Drugs[EphMRA Code (4)]),[Market_Sales_Dyn_AC_Total_By_All_Periods],,Desc,Dense),
-			//         "NFC 1",rankx(ALLSELECTED(Drugs[NFC Code (1)]),[Market_Sales_Dyn_AC_Total_By_All_Periods],,Desc,Dense),
-			//         "NFC 2",rankx(ALLSELECTED(Drugs[NFC Code (2)]),[Market_Sales_Dyn_AC_Total_By_All_Periods],,Desc,Dense),
-			//         "NFC 3",rankx(ALLSELECTED(Drugs[NFC Code (3)]),[Market_Sales_Dyn_AC_Total_By_All_Periods],,Desc,Dense),
-			//         "Domestic/Foreign(maker)",rankx(ALLSELECTED(Drugs[Domestic/Foreign(maker)]),[Market_Sales_Dyn_AC_Total_By_All_Periods],,Desc,Dense),
-			//         "Maker",rankx(ALLSELECTED(Drugs[Maker]),[Market_Sales_Dyn_AC_Total_By_All_Periods],,Desc,Dense),
-			//         "Cosmetic 1",rankx(ALLSELECTED(Drugs[Cosmetic Name(1)]),[Market_Sales_Dyn_AC_Total_By_All_Periods],,Desc,Dense),
-			//         "Cosmetic 2",rankx(ALLSELECTED(Drugs[Cosmetic Name(2)]),[Market_Sales_Dyn_AC_Total_By_All_Periods],,Desc,Dense),
-			//         "Cosmetic 3",rankx(ALLSELECTED(Drugs[Cosmetic Name(3)]),[Market_Sales_Dyn_AC_Total_By_All_Periods],,Desc,Dense),
-			//         "Cosmetic 4",rankx(ALLSELECTED(Drugs[Cosmetic Name(4)]),[Market_Sales_Dyn_AC_Total_By_All_Periods],,Desc,Dense),
-			//         "Cosmetic 5",rankx(ALLSELECTED(Drugs[Cosmetic Name(5)]),[Market_Sales_Dyn_AC_Total_By_All_Periods],,Desc,Dense),
-			//         "Bad 1",rankx(ALLSELECTED(Drugs[BAD Name(1)]),[Market_Sales_Dyn_AC_Total_By_All_Periods],,Desc,Dense),
-			//         "Bad 2",rankx(ALLSELECTED(Drugs[BAD Name(2)]),[Market_Sales_Dyn_AC_Total_By_All_Periods],,Desc,Dense),
-			//         "MC 1",rankx(ALLSELECTED(Drugs[MC Name(1)]),[Market_Sales_Dyn_AC_Total_By_All_Periods],,Desc,Dense),
-			//         "MC 2",rankx(ALLSELECTED(Drugs[MC Name(2)]),[Market_Sales_Dyn_AC_Total_By_All_Periods],,Desc,Dense),
-			//         "MC 3",rankx(ALLSELECTED(Drugs[MC Name(3)]),[Market_Sales_Dyn_AC_Total_By_All_Periods],,Desc,Dense),
-			//         "MC 4",rankx(ALLSELECTED(Drugs[MC Name(4)]),[Market_Sales_Dyn_AC_Total_By_All_Periods],,Desc,Dense),
-			//         "Market status",rankx(ALLSELECTED(Drugs[Market_Status]),[Market_Sales_Dyn_AC_Total_By_All_Periods],,Desc,Dense),
-			//         "Sales type",rankx(ALLSELECTED(ECom[E-com]),[Market_Sales_Dyn_AC_Total_By_All_Periods],,Desc,Dense)
-			//     )
-			// )
+	measure RankByVol_AllPeriods = [RankByVol_TOTAL]
 		formatString: 0
 		isHidden
 		lineageTag: 281342de-4ed5-4e26-9058-5d7e620e43da
@@ -2525,29 +2491,16 @@ table _M_
 		isHidden
 		lineageTag: 48c5671d-8dec-4990-b58e-be1e90d6ba8a
 
-	measure PRT_Dyn_AC =
-			
-			var CY=[Current_Year]
-			return Calculate([PRTByMeasure],FILTER(Periods,[PT]=0 && Periods[Year]=CY))
+	measure PRT_Dyn_AC = DIVIDE([Clients_With_Stock_Dyn_AC], [Stock_Clients_Count_Total_Dyn_AC])
+		formatString: 0.00%;-0.00%;0.00%
 		isHidden
 		lineageTag: eda8c5f2-baee-4924-8495-b446d5dc5376
 
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
-
-	measure PRTByMeasure =
-			
-			var measureType=SELECTEDVALUE(SelectPRT[PRTType])
-			return SWITCH(measureType,
-			        "Penetration",max(Data[PENETRATION]),
-			        "WPenetration",max(Data[PENETRATION_W]),
-			        "SRO",max(Data[SRO]),
-			        "WSRO",max(Data[SRO_W])
-			    )
+	measure PRTByMeasure = CALCULATE(DISTINCTCOUNT(DataStock[CLIENT_ID]),[Distr_Stock_Dyn_AC]>0)/calculate(DISTINCTCOUNT(StockClientsPeriods[CLIENT_ID]))
 		isHidden
 		lineageTag: fa55f4ce-cd80-4bd8-b1c5-790089c71b58
 
-	measure RankByPRT_AllPeriods = rankx(ALLSELECTED(Drugs[Full medication name]),[PRTByMeasure],,DESC,Dense)
-		formatString: 0
+	measure RankByPRT_AllPeriods = [TOTAL_PRT]
 		isHidden
 		lineageTag: 125d910d-fc9a-4e91-aca8-d621320aac52
 
@@ -3551,59 +3504,6 @@ table _M_
 			            ),
 			        BLANK()
 			    )
-			//     TOTAL = 
-			// VAR SelectedDate = SELECTEDVALUE(SinglePeriod[Period], MAX(SinglePeriod[Period]))
-			// VAR PeriodLength = SELECTEDVALUE(PeriodsFilter[ID])
-			// VAR AggrType = SELECTEDVALUE(Aggr[AGGR_TYPE])
-			// VAR delta = SELECTEDVALUE(SelectAggrLength[Value])
-			
-			// RETURN
-			//     SWITCH(
-			//         AggrType,
-			//         "Daily", 
-			//             CALCULATE(
-			//                 [SumByMeasure],
-			//                 Periods[Period] >= SelectedDate - PeriodLength + 1 && Periods[Period] <= SelectedDate,
-			//                 REMOVEFILTERS(Periods)
-			//             ),
-			//         "YTD", 
-			//             CALCULATE(
-			//                 TOTALYTD([SumByMeasure], Periods[Period], ALL(Periods)),
-			//                 Periods[Period] <= SelectedDate,
-			//                 REMOVEFILTERS(Periods)
-			//             ),
-			//         "MTD", 
-			//             CALCULATE(
-			//                 TOTALMTD([SumByMeasure], Periods[Period], ALL(Periods)),
-			//                 Periods[Period] <= SelectedDate,
-			//                 REMOVEFILTERS(Periods)
-			//             ),
-			//         "MQT", 
-			//             CALCULATE(
-			//                 [SumByMeasure], 
-			//                 ALL(Periods),
-			//                 DATESINPERIOD(Periods[Period], SelectedDate, -90, DAY)
-			//             ),
-			//         "MMT", 
-			//             CALCULATE(
-			//                 [SumByMeasure], 
-			//                 ALL(Periods),
-			//                 DATESINPERIOD(Periods[Period], SelectedDate, -30, DAY)
-			//             ),
-			//         "MAT", 
-			//             CALCULATE(
-			//                 [SumByMeasure], 
-			//                 ALL(Periods),
-			//                 DATESINPERIOD(Periods[Period], SelectedDate, -1, YEAR)
-			//             ),
-			//         "Custom", 
-			//             CALCULATE(
-			//                 [SumByMeasure], 
-			//                 ALL(Periods),
-			//                 DATESINPERIOD(Periods[Period], SelectedDate, -1 * delta, DAY)
-			//             ),
-			//         BLANK()
-			//     )
 			
 			```
 		isHidden
@@ -3655,8 +3555,17 @@ table _M_
 			        "MC 2",rankx(ALLSELECTED(Drugs[MC Name(2)]),[TOTAL],,Desc,Dense),
 			        "MC 3",rankx(ALLSELECTED(Drugs[MC Name(3)]),[TOTAL],,Desc,Dense),
 			        "MC 4",rankx(ALLSELECTED(Drugs[MC Name(4)]),[TOTAL],,Desc,Dense),
-			        "Market status",rankx(ALLSELECTED(Drugs[Market_Status]),[TOTAL],,Desc,Dense),
-			        "Sales type",rankx(ALLSELECTED(ECom[E-com]),[TOTAL],,Desc,Dense)
+			        "Region Level 1",rankx(ALLSELECTED(Areas[LEVEL_1]),[TOTAL],,Desc,Dense),
+			        "Region Level 2",rankx(ALLSELECTED(Areas[LEVEL_2]),[TOTAL],,Desc,Dense),
+			        "Region Level 3",rankx(ALLSELECTED(Areas[LEVEL_3]),[TOTAL],,Desc,Dense),
+			        "Region Level 4",rankx(ALLSELECTED(Areas[LEVEL_4]),[TOTAL],,Desc,Dense),
+			        "Area",rankx(ALLSELECTED(Areas[AREA_NAME]),[TOTAL],,Desc,Dense),
+			        "Chain name",rankx(ALLSELECTED(Areas[CHAIN_NAME]),[TOTAL],,Desc,Dense),
+			        "Legal entity",rankx(ALLSELECTED(Areas[ORG_NAME]),[TOTAL],,Desc,Dense),
+			        "Pharmacy name",rankx(ALLSELECTED(Areas[CLIENT_NAME]),[TOTAL],,Desc,Dense),
+			        "Pharmacy address",rankx(ALLSELECTED(Areas[ADDRESS]),[TOTAL],,Desc,Dense),
+			        "Pharmacy type",rankx(ALLSELECTED(Areas[CLIENT_TYPE_ORG]),[TOTAL],,Desc,Dense),
+			        "Pharmacy city",rankx(ALLSELECTED(Areas[CITY]),[TOTAL],,Desc,Dense)
 			    )
 			)
 		formatString: 0
@@ -3772,7 +3681,7 @@ table _M_
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
-	measure VisitsFactMeasure = sum(VisitsFact[VISITS])
+	measure VisitsFactMeasure = sum(VisitsFact[VISITS_COUNT])
 		formatString: 0
 		lineageTag: 03d304e7-6c3b-463b-9a24-4b6e1a6031ec
 
@@ -3898,10 +3807,19 @@ table _M_
 			        "MC 2",rankx(ALLSELECTED(Drugs[MC Name(2)]),ROUND([Visits_AC],4),,Desc,Dense),
 			        "MC 3",rankx(ALLSELECTED(Drugs[MC Name(3)]),ROUND([Visits_AC],4),,Desc,Dense),
 			        "MC 4",rankx(ALLSELECTED(Drugs[MC Name(4)]),ROUND([Visits_AC],4),,Desc,Dense),
-			        "Market status",rankx(ALLSELECTED(Drugs[Market_Status]),ROUND([Visits_AC],4),,Desc,Dense)
+			        "Region Level 1",rankx(ALLSELECTED(Areas[LEVEL_1]),[Visits_AC],,Desc,Dense),
+			        "Region Level 2",rankx(ALLSELECTED(Areas[LEVEL_2]),[Visits_AC],,Desc,Dense),
+			        "Region Level 3",rankx(ALLSELECTED(Areas[LEVEL_3]),[Visits_AC],,Desc,Dense),
+			        "Region Level 4",rankx(ALLSELECTED(Areas[LEVEL_4]),[Visits_AC],,Desc,Dense),
+			        "Area",rankx(ALLSELECTED(Areas[AREA_NAME]),[Visits_AC],,Desc,Dense),
+			        "Chain name",rankx(ALLSELECTED(Areas[CHAIN_NAME]),[Visits_AC],,Desc,Dense),
+			        "Legal entity",rankx(ALLSELECTED(Areas[ORG_NAME]),[Visits_AC],,Desc,Dense),
+			        "Pharmacy name",rankx(ALLSELECTED(Areas[CLIENT_NAME]),[Visits_AC],,Desc,Dense),
+			        "Pharmacy address",rankx(ALLSELECTED(Areas[ADDRESS]),[Visits_AC],,Desc,Dense),
+			        "Pharmacy type",rankx(ALLSELECTED(Areas[CLIENT_TYPE_ORG]),[Visits_AC],,Desc,Dense),
+			        "Pharmacy city",rankx(ALLSELECTED(Areas[CITY]),[Visits_AC],,Desc,Dense)
 			    )
 			)
-		formatString: 0
 		lineageTag: b11d909b-35ee-4b71-b1ce-c75062a7f1be
 
 	measure IsTotalByDim = ```
@@ -4172,7 +4090,7 @@ table _M_
 			)
 		lineageTag: ae83f34d-410e-4b20-ad2f-8ffc9e0796ab
 
-	measure Promo = sum(VisitsFact[VISITS])
+	measure Promo = sum(VisitsFact[VISITS_COUNT])
 		formatString: 0
 		lineageTag: 4a130bad-7a8e-466f-aded-907e999dc0b0
 
@@ -4374,6 +4292,7 @@ table _M_
 			        )
 			    )
 			)
+		formatString: 0
 		lineageTag: a3e2e941-a43b-4911-9923-636e7a4b83d1
 
 	measure Distr_Stock_Dyn_AC =
@@ -4402,8 +4321,8 @@ table _M_
 			var measureType=SELECTEDVALUE(SelectMeasures[MeasureName])
 			var curType=SELECTEDVALUE(_CURRENCY_[_CURRENCY_])
 			return SWITCH(TRUE(),
-			        measureType="pcs",sum(DataStock[Q]),0
-			    )
+			        measureType="pcs",sum(DataStock[PCS]
+			    ))
 		lineageTag: 90d882fd-f0de-4db9-b747-f39d5e534178
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
@@ -4458,7 +4377,17 @@ table _M_
 			        "MC 2",rankx(ALLSELECTED(Drugs[MC Name(2)]),ROUND([Distr_Stock_AC],4),,Desc,Dense),
 			        "MC 3",rankx(ALLSELECTED(Drugs[MC Name(3)]),ROUND([Distr_Stock_AC],4),,Desc,Dense),
 			        "MC 4",rankx(ALLSELECTED(Drugs[MC Name(4)]),ROUND([Distr_Stock_AC],4),,Desc,Dense),
-			        "Market status",rankx(ALLSELECTED(Drugs[Market_Status]),ROUND([Distr_Stock_AC],4),,Desc,Dense)
+			         "Region Level 1",rankx(ALLSELECTED(Areas[LEVEL_1]),[Distr_Stock_AC],,Desc,Dense),
+			        "Region Level 2",rankx(ALLSELECTED(Areas[LEVEL_2]),[Distr_Stock_AC],,Desc,Dense),
+			        "Region Level 3",rankx(ALLSELECTED(Areas[LEVEL_3]),[Distr_Stock_AC],,Desc,Dense),
+			        "Region Level 4",rankx(ALLSELECTED(Areas[LEVEL_4]),[Distr_Stock_AC],,Desc,Dense),
+			        "Area",rankx(ALLSELECTED(Areas[AREA_NAME]),[Distr_Stock_AC],,Desc,Dense),
+			        "Chain name",rankx(ALLSELECTED(Areas[CHAIN_NAME]),[Distr_Stock_AC],,Desc,Dense),
+			        "Legal entity",rankx(ALLSELECTED(Areas[ORG_NAME]),[Distr_Stock_AC],,Desc,Dense),
+			        "Pharmacy name",rankx(ALLSELECTED(Areas[CLIENT_NAME]),[Distr_Stock_AC],,Desc,Dense),
+			        "Pharmacy address",rankx(ALLSELECTED(Areas[ADDRESS]),[Distr_Stock_AC],,Desc,Dense),
+			        "Pharmacy type",rankx(ALLSELECTED(Areas[CLIENT_TYPE_ORG]),[Distr_Stock_AC],,Desc,Dense),
+			        "Pharmacy city",rankx(ALLSELECTED(Areas[CITY]),[Distr_Stock_AC],,Desc,Dense)
 			    )
 			)
 		formatString: 0
@@ -4496,6 +4425,848 @@ table _M_
 
 	measure Distr_Sales_PE_Month_FC = divide([Distr_Sales_Month_FC],[Distr_Sales_Month_PL],BLANK())
 		lineageTag: 938c499f-9839-48b1-a788-558a9bb482cd
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure Distr_Sales_AC_Managed = IF( CONTAINS( ALLSELECTED(SelectColumns[ColumnName]), SelectColumns[ColumnName], "Distr Sales AC"),[Distr_Sales_AC],BLANK())
+		lineageTag: 81c9add1-9714-4761-863c-07e56dd77fa9
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure Distr_Sales_dPY_Managed = IF( CONTAINS( ALLSELECTED(SelectColumns[ColumnName]), SelectColumns[ColumnName], "Distr Sales ΔPY"),[Distr_Sales_dPY],BLANK())
+		lineageTag: 0fcb83d2-12c5-4461-aa9a-e0dbf56789d3
+
+	measure Distr_Sales_dPY = ([Distr_Sales_AC]-[Distr_Sales_PY])
+		lineageTag: 114a5296-38b6-41c6-80cf-d977ba6fc1b9
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure Distr_GR_PY =
+			
+			var ac=[Distr_Sales_AC]
+			var py=[Distr_Sales_PY]
+			return if(isblank(ac)||ISBLANK(py),blank(),DIVIDE(ac,py,0)-1)
+		lineageTag: c51a1ffa-3881-4939-840d-7cf07b2c2750
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure Distr_GR_PY_Managed = IF( CONTAINS( ALLSELECTED(SelectColumns[ColumnName]), SelectColumns[ColumnName], "Distr Sales ΔPY%"),[Distr_GR_PY],BLANK())
+		lineageTag: ad22a1ac-66ee-4602-a34c-16d8fdcf9273
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure Distr_Sales_PL_Managed = IF( CONTAINS( ALLSELECTED(SelectColumns[ColumnName]), SelectColumns[ColumnName], "Distr Sales PL"),[Distr_Sales_PL],BLANK())
+		lineageTag: 69a3a9c1-357c-4739-817b-c78b950d6017
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure Distr_Sales_PE_Managed = IF( CONTAINS( ALLSELECTED(SelectColumns[ColumnName]), SelectColumns[ColumnName], "Distr Sales PE%"),[Distr_Sales_PE],BLANK())
+		lineageTag: f80cb01e-065d-41ce-af03-767d93761e62
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure Visits_AC_Managed = IF( CONTAINS( ALLSELECTED(SelectColumns[ColumnName]), SelectColumns[ColumnName], "Promo AC"),[Visits_AC],BLANK())
+		formatString: 0
+		lineageTag: 7144eeaf-818d-435b-a8d8-6394052d82f9
+
+	measure Visits_PL_Managed = IF( CONTAINS( ALLSELECTED(SelectColumns[ColumnName]), SelectColumns[ColumnName], "Promo PL"),[Visits_PL],BLANK())
+		lineageTag: 7412d21f-25bc-4761-b6ae-4f1ba9e0a9a3
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure Visits_PE_Managed = IF( CONTAINS( ALLSELECTED(SelectColumns[ColumnName]), SelectColumns[ColumnName], "Promo PE%"),[Visits_PE],BLANK())
+		lineageTag: ebaa84a1-74d2-49a6-b436-2a422f631ccd
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure Distr_MS_AC_In_Areas =
+			
+			var lev=SELECTEDVALUE(RegionLevel[RegionLevelName])
+			return switch(lev,
+			    "Level 1",DIVIDE([Distr_Sales_AC],CALCULATE([Distr_Sales_AC],ALLSELECTED(Areas[LEVEL_1]))),
+			    "Level 2",DIVIDE([Distr_Sales_AC],CALCULATE([Distr_Sales_AC],ALLSELECTED(Areas[LEVEL_2]))),
+			    "Level 3",DIVIDE([Distr_Sales_AC],CALCULATE([Distr_Sales_AC],ALLSELECTED(Areas[LEVEL_3]))),
+			    "Level 4",DIVIDE([Distr_Sales_AC],CALCULATE([Distr_Sales_AC],ALLSELECTED(Areas[LEVEL_4])))
+			)
+		lineageTag: f9eb2e27-f2f9-40e9-b48b-e44d861990c7
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure Distr_MS_AC_In_Areas_Managed = IF( CONTAINS( ALLSELECTED(SelectColumns[ColumnName]), SelectColumns[ColumnName], "Distr TS%"),[Distr_MS_AC_In_Areas],BLANK())
+		lineageTag: e6cb9aad-6edf-4e81-a30b-37d6243f49c4
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure Distr_Sales_AC_Ranked_By_Region_Paginated_TopN =
+			
+			var currentPage=SELECTEDVALUE(SelectPages[Value])
+			var itemsPerPage=[TOP]
+			var beginTop=itemsPerPage*(currentPage-1)+1
+			var endTop=itemsPerPage*currentPage
+			var currentRank=[RegionRankByVol]
+			return if([IsTotalByDimRegion]||currentRank>=beginTop && currentRank<=endTop,[Distr_Sales_AC],BLANK())
+		lineageTag: 8cf8d2d9-2e38-47c5-88a6-f94ddd82e151
+
+	measure RegionRankByVol = ```
+			
+			var lev=SELECTEDVALUE(RegionLevel[RegionLevelName])
+			return if(ISBLANK([Distr_Sales_AC]),BLANK(),
+			    switch(lev,
+			        "Level 1",rankx(ALLSELECTED(Areas[LEVEL_1]),[Distr_Sales_AC],,DESC,Dense),
+			        "Level 2",rankx(ALLSELECTED(Areas[LEVEL_2]),[Distr_Sales_AC],,DESC,Dense),
+			        "Level 3",rankx(ALLSELECTED(Areas[LEVEL_3]),[Distr_Sales_AC],,DESC,Dense),
+			        "Level 4",rankx(ALLSELECTED(Areas[LEVEL_4]),[Distr_Sales_AC],,DESC,Dense)
+			        
+			    )
+			)
+			```
+		formatString: 0
+		lineageTag: ef33986f-b677-4832-ab7c-d7881638cbe8
+
+	measure IsTotalByDimRegion =
+			
+			var SelectDim=SELECTEDVALUE(RegionLevel[RegionLevelName])
+			return SWITCH(SelectDim,
+			        "Level 1",ISINSCOPE(Areas[LEVEL_1])=FALSE,
+			        "Level 2",ISINSCOPE(Areas[LEVEL_2])=FALSE,
+			        "Level 3",ISINSCOPE(Areas[LEVEL_3])=FALSE,
+			        "Level 4",ISINSCOPE(Areas[LEVEL_4])=FALSE
+			    )
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 937fde38-cd2a-4eee-bc95-9553f295cc91
+
+	measure Distr_Sales_AC_Ranked_By_Region_Paginated_Managed = IF( CONTAINS( ALLSELECTED(SelectColumns[ColumnName]), SelectColumns[ColumnName], "Distr Sales AC"),[Distr_Sales_AC_Ranked_By_Region_Paginated_TopN],BLANK())
+		lineageTag: 2016ee54-b894-4503-8134-9b56f5669015
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure Distr_Sales_dPY_Ranked_By_Region_Paginated_TopN =
+			
+			var currentPage=SELECTEDVALUE(SelectPages[Value])
+			var itemsPerPage=[TOP]
+			var beginTop=itemsPerPage*(currentPage-1)+1
+			var endTop=itemsPerPage*currentPage
+			var currentRank=[RegionRankByVol]
+			return if([IsTotalByDimRegion]||currentRank>=beginTop && currentRank<=endTop,[Distr_Sales_dPY],BLANK())
+		lineageTag: 84369530-331c-40e7-871e-f0c48ca00db3
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure Distr_Sales_dPY_Ranked_By_Region_Paginated_TopN_Managed = IF( CONTAINS( ALLSELECTED(SelectColumns[ColumnName]), SelectColumns[ColumnName], "Distr Sales ΔPY"),[Distr_Sales_dPY_Ranked_By_Region_Paginated_TopN],BLANK())
+		lineageTag: 6bf8a10b-ed95-43c3-94c4-ee8be61186f5
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure Distr_Sales_GR_PY_Ranked_By_Region_Paginated_TopN =
+			
+			var currentPage=SELECTEDVALUE(SelectPages[Value])
+			var itemsPerPage=[TOP]
+			var beginTop=itemsPerPage*(currentPage-1)+1
+			var endTop=itemsPerPage*currentPage
+			var currentRank=[RegionRankByVol]
+			return if([IsTotalByDimRegion]||currentRank>=beginTop && currentRank<=endTop,[Distr_GR_PY],BLANK())
+		lineageTag: 10fcf0ed-623f-4629-ae13-85d7b0d9de42
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure Distr_Sales_GR_PY_Ranked_By_Region_Paginated_TopN_Managed = IF( CONTAINS( ALLSELECTED(SelectColumns[ColumnName]), SelectColumns[ColumnName], "Distr Sales ΔPY%"),[Distr_Sales_GR_PY_Ranked_By_Region_Paginated_TopN],BLANK())
+		lineageTag: ee29e575-5c18-4854-855e-2f3b8f9a0643
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure Distr_Sales_PL_Ranked_By_Region_Paginated_TopN =
+			
+			var currentPage=SELECTEDVALUE(SelectPages[Value])
+			var itemsPerPage=[TOP]
+			var beginTop=itemsPerPage*(currentPage-1)+1
+			var endTop=itemsPerPage*currentPage
+			var currentRank=[RegionRankByVol]
+			return if([IsTotalByDimRegion]|| currentRank>=beginTop && currentRank<=endTop,[Distr_Sales_PL],BLANK())
+		lineageTag: 0351f7b1-88af-4fff-808e-0c103ba179db
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure Distr_Sales_PL_Ranked_By_Region_Paginated_TopN_Managed = IF( CONTAINS( ALLSELECTED(SelectColumns[ColumnName]), SelectColumns[ColumnName], "Distr Sales PL"),[Distr_Sales_PL_Ranked_By_Region_Paginated_TopN],BLANK())
+		lineageTag: 10735196-422f-4bbb-80ec-88735b4d38ad
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure Distr_Sales_PE_Ranked_By_Region_Paginated_TopN =
+			
+			var currentPage=SELECTEDVALUE(SelectPages[Value])
+			var itemsPerPage=[TOP]
+			var beginTop=itemsPerPage*(currentPage-1)+1
+			var endTop=itemsPerPage*currentPage
+			var currentRank=[RegionRankByVol]
+			return if([IsTotalByDimRegion]||currentRank>=beginTop && currentRank<=endTop,[Distr_Sales_PE],BLANK())
+		lineageTag: cf547d69-75d4-4d9d-bbc9-49089993d1be
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure Distr_Sales_PE_Ranked_By_Region_Paginated_TopN_Managed = IF( CONTAINS( ALLSELECTED(SelectColumns[ColumnName]), SelectColumns[ColumnName], "Distr Sales PE%"),[Distr_Sales_PE_Ranked_By_Region_Paginated_TopN],BLANK())
+		lineageTag: 44b1398f-93f8-4aa3-94ae-71af9afa6462
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure Visits_AC_Ranked_By_Region_Paginated_TopN =
+			
+			var currentPage=SELECTEDVALUE(SelectPages[Value])
+			var itemsPerPage=[TOP]
+			var beginTop=itemsPerPage*(currentPage-1)+1
+			var endTop=itemsPerPage*currentPage
+			var currentRank=[RegionRankByVol]
+			return if([IsTotalByDimRegion]||currentRank>=beginTop && currentRank<=endTop,[Visits_AC],BLANK())
+		formatString: 0
+		lineageTag: aff12348-f026-402b-b902-0cf41406c260
+
+	measure Visits_AC_Ranked_By_Region_Paginated_TopN_Managed = IF( CONTAINS( ALLSELECTED(SelectColumns[ColumnName]), SelectColumns[ColumnName], "Promo AC"),[Visits_AC_Ranked_By_Region_Paginated_TopN],BLANK())
+		formatString: 0
+		lineageTag: f7de5de6-e6d5-4e48-bb2c-2ca8fb5c5f1b
+
+	measure Visits_PL_Ranked_By_Region_Paginated_TopN =
+			
+			var currentPage=SELECTEDVALUE(SelectPages[Value])
+			var itemsPerPage=[TOP]
+			var beginTop=itemsPerPage*(currentPage-1)+1
+			var endTop=itemsPerPage*currentPage
+			var currentRank=[RegionRankByVol]
+			return if([IsTotalByDimRegion]||currentRank>=beginTop && currentRank<=endTop,[Visits_PL],BLANK())
+		lineageTag: 83735d54-1dd2-42a0-98fd-0123e09ffffc
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure Visits_PL_Ranked_By_Region_Paginated_TopN_Managed = IF( CONTAINS( ALLSELECTED(SelectColumns[ColumnName]), SelectColumns[ColumnName], "Promo PL"),[Visits_PL_Ranked_By_Region_Paginated_TopN],BLANK())
+		lineageTag: e38a9e93-1124-4552-ba54-c42ea76859dd
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure Visits_PE_Ranked_By_Region_Paginated_TopN =
+			
+			var currentPage=SELECTEDVALUE(SelectPages[Value])
+			var itemsPerPage=[TOP]
+			var beginTop=itemsPerPage*(currentPage-1)+1
+			var endTop=itemsPerPage*currentPage
+			var currentRank=[RegionRankByVol]
+			return if([IsTotalByDimRegion]||currentRank>=beginTop && currentRank<=endTop,[Visits_PE],BLANK())
+		lineageTag: cc7eb84b-421a-4914-bbf8-c50f72079168
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure Visits_PE_Ranked_By_Region_Paginated_TopN_Managed = IF( CONTAINS( ALLSELECTED(SelectColumns[ColumnName]), SelectColumns[ColumnName], "Promo PE%"),[Visits_PE_Ranked_By_Region_Paginated_TopN],BLANK())
+		lineageTag: 436ff9b1-faba-42a3-aaa9-e314ed890f76
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure Distr_Sales_PY_Ranked_By_Region_Paginated_TopN =
+			
+			var currentPage=SELECTEDVALUE(SelectPages[Value])
+			var itemsPerPage=[TOP]
+			var beginTop=itemsPerPage*(currentPage-1)+1
+			var endTop=itemsPerPage*currentPage
+			var currentRank=[RegionRankByVol]
+			return if([IsTotalByDimRegion]||currentRank>=beginTop && currentRank<=endTop,[Distr_Sales_PY],BLANK())
+		lineageTag: 2c2cab40-2f1e-4f2a-9c75-101326f40fd0
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure Distr_Sales_PY_Ranked_By_Region_Paginated_Managed = IF( CONTAINS( ALLSELECTED(SelectColumns[ColumnName]), SelectColumns[ColumnName], "Distr Sales PY"),[Distr_Sales_PY_Ranked_By_Region_Paginated_TopN],BLANK())
+		lineageTag: cc94448e-c415-4f2c-8e6d-9687843dbb76
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure Distr_MS_In_Regions_Paginated_TopN =
+			
+			var currentPage=SELECTEDVALUE(SelectPages[Value])
+			var itemsPerPage=[TOP]
+			var beginTop=itemsPerPage*(currentPage-1)+1
+			var endTop=itemsPerPage*currentPage
+			var currentRank=[RegionRankByVol]
+			return if([IsTotalByDimRegion]||currentRank>=beginTop && currentRank<=endTop,
+			    switch(SELECTEDVALUE(RegionLevel[RegionLevelName]),
+			        "Level 1",DIVIDE([Distr_Sales_AC],CALCULATE([Distr_Sales_AC],ALLSELECTED(Areas[LEVEL_1]))),
+			        "Level 2",DIVIDE([Distr_Sales_AC],CALCULATE([Distr_Sales_AC],ALLSELECTED(Areas[LEVEL_2]))),
+			        "Level 3",DIVIDE([Distr_Sales_AC],CALCULATE([Distr_Sales_AC],ALLSELECTED(Areas[LEVEL_3]))),
+			        "Level 4",DIVIDE([Distr_Sales_AC],CALCULATE([Distr_Sales_AC],ALLSELECTED(Areas[LEVEL_4])))
+			    ),
+			BLANK())
+		lineageTag: b61c8528-c2cf-48bf-875b-cd0a87fafbe8
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure Distr_MS_In_Regions_Paginated_Managed = IF( CONTAINS( ALLSELECTED(SelectColumns[ColumnName]), SelectColumns[ColumnName], "Distr TS%"),[Distr_MS_In_Regions_Paginated_TopN],BLANK())
+		lineageTag: 6b1c9144-250c-48ec-8e30-3ae5a9c18cd7
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure Distr_Stock_Dyn_PWD =
+			
+			VAR SelectedDate = SELECTEDVALUE(SinglePeriod[Period], MAX(SinglePeriod[Period]))
+			VAR PeriodLength = SELECTEDVALUE(PeriodsFilter[ID])
+			VAR AggrType = SELECTEDVALUE(Aggr[AGGR_TYPE])
+			VAR Delta = SELECTEDVALUE(SelectAggrLength[Value])
+			VAR CDate = SELECTEDVALUE(Periods[Period])
+			
+			VAR PWDMaxDate = CDate - 7
+			VAR PWDMinDate = PWDMaxDate - Delta + 1
+			
+			RETURN
+			IF(
+			    CDate >= SelectedDate - PeriodLength + 1 && CDate <= SelectedDate,
+			    SWITCH(
+			        AggrType,
+			        "Daily",
+			            CALCULATE(
+			                [SumStockByMeasure],
+			                ALL(Periods),
+			                Periods[Period] = CDate - 7
+			            ),
+			        "YTD",
+			            CALCULATE(
+			                [SumStockByMeasure],
+			                ALL(Periods),
+			                DATESYTD(DATEADD(Periods[Period], -7, DAY))
+			            ),
+			        "MTD",
+			            CALCULATE(
+			                [SumStockByMeasure],
+			                ALL(Periods),
+			                DATESMTD(DATEADD(Periods[Period], -7, DAY))
+			            ),
+			        "MQT",
+			            CALCULATE(
+			                [SumStockByMeasure],
+			                ALL(Periods),
+			                DATEADD(
+			                    DATESINPERIOD(Periods[Period], LASTDATE(Periods[Period]), -90, DAY),
+			                    -7,
+			                    DAY
+			                )
+			            ),
+			        "MMT",
+			            CALCULATE(
+			                [SumStockByMeasure],
+			                ALL(Periods),
+			                DATEADD(
+			                    DATESINPERIOD(Periods[Period], LASTDATE(Periods[Period]), -30, DAY),
+			                    -7,
+			                    DAY
+			                )
+			            ),
+			        "MAT",
+			            CALCULATE(
+			                [SumStockByMeasure],
+			                ALL(Periods),
+			                DATEADD(
+			                    DATESINPERIOD(Periods[Period], LASTDATE(Periods[Period]), -1, YEAR),
+			                    -7,
+			                    DAY
+			                )
+			            ),
+			        "Custom",
+			            CALCULATE(
+			                [SumStockByMeasure],
+			                ALL(Periods),
+			                Periods[Period] >= PWDMinDate &&
+			                Periods[Period] <= PWDMaxDate
+			            )
+			    ),
+			    BLANK()
+			)
+		lineageTag: f770417b-f052-49d2-9298-84aae881b4ff
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure Distr_Stock_PWD =
+			CALCULATE([Distr_Stock_Dyn_PWD],
+			    Filter(Periods,
+			        IF(ISFILTERED(Periods[Period]),Periods[setperiod]>0,
+			        if(ISFILTERED(SinglePeriod),
+			            Periods[setperiod] in values(SinglePeriod[PERIOD_ID]),
+			            Periods[setperiod]=max(SinglePeriod[PERIOD_ID]))
+			        )
+			    )
+			)
+		lineageTag: 15d171d5-d544-4dfc-8dbb-3ea49e218b64
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure Distr_Stock_PWD_Ranked = if([RankByStock]<=[TOP],[Distr_Stock_PWD],BLANK())
+		lineageTag: 18380abf-9957-4fd4-a235-c21db1f5eb9d
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure Stock_Rank_AC_Ranked = if([RankByStock]<=[TOP],[RankByStock],BLANK())
+		formatString: 0
+		lineageTag: 5560658e-766f-4948-b0af-0c5bd059b0cf
+
+	measure Stock_GR_PWD =
+			
+			var ac=[Distr_Stock_AC]
+			var pwd=[Distr_Stock_PWD]
+			return if(isblank(ac)||ISBLANK(pwd),blank(),DIVIDE(ac,pwd,0)-1)
+		lineageTag: 7f238270-7c12-45ce-8ff4-761b932a072e
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure Distr_Stock_GR_PWD_Ranked = if([RankByStock]<=[TOP],[Stock_GR_PWD],BLANK())
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: 849bc547-1118-4baa-802e-07368a7675a0
+
+	measure Stock_dPWD =
+			
+			var ac=[Distr_Stock_AC]
+			var pwd=[Distr_Stock_PWD]
+			return ac-pwd
+		lineageTag: 5dcd3a3b-ecab-4edf-9b01-33b7b9bc6db3
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure Clients_With_Stock_Dyn_AC =
+			
+			COUNTROWS(
+			    FILTER(
+			        VALUES(DataStock[CLIENT_ID]),
+			        CALCULATE([Distr_Stock_Dyn_AC]) > 0
+			    )
+			)
+		formatString: 0
+		lineageTag: 1357bd80-eba4-4e9d-b67b-ee71cc471a8c
+
+	measure Stock_Clients_Count_Total_Dyn_AC =
+			
+			VAR SelectedDate = SELECTEDVALUE(SinglePeriod[Period], MAX(SinglePeriod[Period]))
+			VAR PeriodLength = SELECTEDVALUE(PeriodsFilter[ID])
+			VAR AggrType = SELECTEDVALUE(Aggr[AGGR_TYPE])
+			VAR delta = SELECTEDVALUE(SelectAggrLength[Value])
+			VAR CDate = SELECTEDVALUE(Periods[Period])
+			RETURN
+			IF(
+			    CDate >= SelectedDate - PeriodLength + 1 && CDate <= SelectedDate,
+			    SWITCH(
+			        AggrType,
+			        "Daily",
+			            CALCULATE(
+			                DISTINCTCOUNT(StockClientsPeriods[CLIENT_ID])
+			            ),
+			        "YTD",
+			            TOTALYTD(
+			                DISTINCTCOUNT(StockClientsPeriods[CLIENT_ID]),
+			                Periods[Period],
+			                ALL(Periods)
+			            ),
+			        "MTD",
+			            TOTALMTD(
+			                DISTINCTCOUNT(StockClientsPeriods[CLIENT_ID]),
+			                Periods[Period],
+			                ALL(Periods)
+			            ),
+			        "MQT",
+			            CALCULATE(
+			                DISTINCTCOUNT(StockClientsPeriods[CLIENT_ID]),
+			                ALL(Periods),
+			                DATESINPERIOD(Periods[Period], LASTDATE(Periods[Period]), -90, DAY)
+			            ),
+			        "MMT",
+			            CALCULATE(
+			                DISTINCTCOUNT(StockClientsPeriods[CLIENT_ID]),
+			                ALL(Periods),
+			                DATESINPERIOD(Periods[Period], LASTDATE(Periods[Period]), -30, DAY)
+			            ),
+			        "MAT",
+			            CALCULATE(
+			                DISTINCTCOUNT(StockClientsPeriods[CLIENT_ID]),
+			                ALL(Periods),
+			                DATESINPERIOD(Periods[Period], LASTDATE(Periods[Period]), -1, YEAR)
+			            ),
+			        "Custom",
+			            CALCULATE(
+			                DISTINCTCOUNT(StockClientsPeriods[CLIENT_ID]),
+			                ALL(Periods),
+			                DATESINPERIOD(Periods[Period], LASTDATE(Periods[Period]), -1 * delta, DAY)
+			            )
+			    ),
+			    BLANK()
+			)
+		formatString: 0
+		lineageTag: cc2b71eb-b282-4d8a-8fb5-aaf13a9ad338
+
+	measure PRT_Dyn_AC_Ranked = if([RankByVol]<=[TOP],[PRT_Dyn_AC],BLANK())
+		lineageTag: f477c96b-ab57-44dd-b855-0d1449d943a6
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure PRT_Dyn_PWD = DIVIDE([Clients_With_Stock_Dyn_PWD], [Clients_Total_Dyn_PWD])
+		lineageTag: aa5917c7-0ef8-49dd-b291-7fbf03e1cb7d
+
+	measure Clients_With_Stock_Dyn_PWD =
+			
+			COUNTROWS(
+			    FILTER(
+			        VALUES(DataStock[CLIENT_ID]),
+			        CALCULATE([Distr_Stock_Dyn_PWD]) > 0
+			    )
+			)
+		lineageTag: 16e1ed29-c084-43bd-b723-84f714089ddc
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure Clients_Total_Dyn_PWD =
+			
+			VAR SelectedDate = SELECTEDVALUE(SinglePeriod[Period], MAX(SinglePeriod[Period]))
+			VAR PeriodLength = SELECTEDVALUE(PeriodsFilter[ID])
+			VAR AggrType = SELECTEDVALUE(Aggr[AGGR_TYPE])
+			VAR Delta = SELECTEDVALUE(SelectAggrLength[Value])
+			VAR CDate = SELECTEDVALUE(Periods[Period])
+			
+			VAR PWDMaxDate = CDate - 7
+			VAR PWDMinDate = PWDMaxDate - Delta + 1
+			
+			RETURN
+			IF(
+			    CDate >= SelectedDate - PeriodLength + 1 && CDate <= SelectedDate,
+			    SWITCH(
+			        AggrType,
+			        "Daily",
+			            CALCULATE(
+			                DISTINCTCOUNT(StockClientsPeriods[CLIENT_ID]),
+			                ALL(Periods),
+			                Periods[Period] = CDate - 7
+			            ),
+			        "YTD",
+			            CALCULATE(
+			                DISTINCTCOUNT(StockClientsPeriods[CLIENT_ID]),
+			                ALL(Periods),
+			                DATESYTD(DATEADD(Periods[Period], -7, DAY))
+			            ),
+			        "MTD",
+			            CALCULATE(
+			                DISTINCTCOUNT(StockClientsPeriods[CLIENT_ID]),
+			                ALL(Periods),
+			                DATESMTD(DATEADD(Periods[Period], -7, DAY))
+			            ),
+			        "MQT",
+			            CALCULATE(
+			                DISTINCTCOUNT(StockClientsPeriods[CLIENT_ID]),
+			                ALL(Periods),
+			                DATEADD(
+			                    DATESINPERIOD(Periods[Period], LASTDATE(Periods[Period]), -90, DAY),
+			                    -7,
+			                    DAY
+			                )
+			            ),
+			        "MMT",
+			            CALCULATE(
+			                DISTINCTCOUNT(StockClientsPeriods[CLIENT_ID]),
+			                ALL(Periods),
+			                DATEADD(
+			                    DATESINPERIOD(Periods[Period], LASTDATE(Periods[Period]), -30, DAY),
+			                    -7,
+			                    DAY
+			                )
+			            ),
+			        "MAT",
+			            CALCULATE(
+			                DISTINCTCOUNT(StockClientsPeriods[CLIENT_ID]),
+			                ALL(Periods),
+			                DATEADD(
+			                    DATESINPERIOD(Periods[Period], LASTDATE(Periods[Period]), -1, YEAR),
+			                    -7,
+			                    DAY
+			                )
+			            ),
+			        "Custom",
+			            CALCULATE(
+			                DISTINCTCOUNT(StockClientsPeriods[CLIENT_ID]),
+			                ALL(Periods),
+			                Periods[Period] >= PWDMinDate &&
+			                Periods[Period] <= PWDMaxDate
+			            )
+			    ),
+			    BLANK()
+			)
+		formatString: 0
+		lineageTag: 23c20354-e40c-4f79-ae46-03b38959764e
+
+	measure PRT_Dyn_PWD_Ranked = if([RankByVol]<=[TOP],[PRT_Dyn_PWD],BLANK())
+		lineageTag: bffaefde-c6eb-4e2d-b60f-2ce3179fa32b
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure PRT_AC =
+			CALCULATE([PRT_Dyn_AC],
+			    Filter(Periods,
+			        IF(ISFILTERED(Periods[Period]),Periods[setperiod]>0,
+			        if(ISFILTERED(SinglePeriod),
+			            Periods[setperiod] in values(SinglePeriod[PERIOD_ID]),
+			            Periods[setperiod]=max(SinglePeriod[PERIOD_ID]))
+			        )
+			    )
+			)
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: 56b469cf-492e-4aaa-9d40-820ad6aa33f4
+
+	measure PRT_AC_Ranked =
+			
+			var currentRank=[RankByVol]
+			return if([IsTotalByDim]||currentRank<=[TOP],[PRT_AC],BLANK())
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: d2c8f2b4-e840-4bd6-a342-f845c03fa46b
+
+	measure PRT_PWD =
+			CALCULATE([PRT_Dyn_PWD],
+			    Filter(Periods,
+			        IF(ISFILTERED(Periods[Period]),Periods[setperiod]>0,
+			        if(ISFILTERED(SinglePeriod),
+			            Periods[setperiod] in values(SinglePeriod[PERIOD_ID]),
+			            Periods[setperiod]=max(SinglePeriod[PERIOD_ID]))
+			        )
+			    )
+			)
+		lineageTag: f10bdd6b-29be-4312-a2d8-9624408ae1d9
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure PRT_PWD_Ranked =
+			
+			var currentRank=[RankByVol]
+			return if([IsTotalByDim]||currentRank<=[TOP],[PRT_PWD],BLANK())
+		lineageTag: cc7d0f3c-6dc4-4203-85ad-b1550f70e670
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure PRT_Dyn_AC_Ranked_All_Periods = if([RankByVol_AllPeriods]<=[TOP],[PRT_Dyn_AC],BLANK())
+		lineageTag: 5996430c-153b-45b4-abc5-23789ce7280a
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure RankByPRT =
+			
+			var SelectDim=SELECTEDVALUE('Dimensions'[DimName])
+			return if(ISBLANK([PRT_AC]),1000000,
+			    SWITCH(SelectDim,
+			        "Corporation",rankx(ALLSELECTED(Drugs[Corporation]),[PRT_AC],,Desc,Dense),
+			        "Market Org",rankx(ALLSELECTED(Drugs[Market Org]),[PRT_AC],,Desc,Dense),
+			        "Brand",rankx(ALLSELECTED(Drugs[Brand]),[PRT_AC],,Desc,Dense),
+			        "Brand+Market Org",rankx(ALLSELECTED(Drugs[Brand+Market Org]),[PRT_AC],,Desc,Dense),
+			        "Brand+Corporation",rankx(ALLSELECTED(Drugs[Brand+Corporation]),[PRT_AC],,Desc,Dense),
+			        "SKU",rankx(ALLSELECTED(Drugs[Full medication name]),[PRT_AC],,Desc,Dense),
+			        "INN",rankx(ALLSELECTED(Drugs[INN]),[PRT_AC],,Desc,Dense),
+			        "Comp group L1",IF(ISBLANK(SELECTEDVALUE(Groups[PRODUCT_NAME_TREE.1])),1000000,RANKX(FILTER(ALLSELECTED(Groups[PRODUCT_NAME_TREE.1]),NOT ISBLANK(Groups[PRODUCT_NAME_TREE.1])),[PRT_AC],,Desc,Dense)),
+			        "Comp group L2",IF(ISBLANK(SELECTEDVALUE(Groups[PRODUCT_NAME_TREE.2])),1000000,RANKX(FILTER(ALLSELECTED(Groups[PRODUCT_NAME_TREE.2]),NOT ISBLANK(Groups[PRODUCT_NAME_TREE.2])),[PRT_AC],,Desc,Dense)),
+			        "Comp group L3",IF(ISBLANK(SELECTEDVALUE(Groups[PRODUCT_NAME_TREE.3])),1000000,RANKX(FILTER(ALLSELECTED(Groups[PRODUCT_NAME_TREE.3]),NOT ISBLANK(Groups[PRODUCT_NAME_TREE.3])),[PRT_AC],,Desc,Dense)),
+			        "Comp group L4",IF(ISBLANK(SELECTEDVALUE(Groups[PRODUCT_NAME_TREE.4])),1000000,RANKX(FILTER(ALLSELECTED(Groups[PRODUCT_NAME_TREE.4]),NOT ISBLANK(Groups[PRODUCT_NAME_TREE.4])),[PRT_AC],,Desc,Dense)),
+			        "Comp group L5",IF(ISBLANK(SELECTEDVALUE(Groups[PRODUCT_NAME_TREE.5])),1000000,RANKX(FILTER(ALLSELECTED(Groups[PRODUCT_NAME_TREE.5]),NOT ISBLANK(Groups[PRODUCT_NAME_TREE.5])),[PRT_AC],,Desc,Dense)),
+			        "Category",rankx(ALLSELECTED(Drugs[CategoryLongName]),[PRT_AC],,Desc,Dense),
+			        "Rx/OTC",rankx(ALLSELECTED(Drugs[Rx/OTC]),[PRT_AC],,Desc,Dense),
+			        "ATC 1",rankx(ALLSELECTED(Drugs[ATC Code (1)]),[PRT_AC],,Desc,Dense),
+			        "ATC 2",rankx(ALLSELECTED(Drugs[ATC Code (2)]),[PRT_AC],,Desc,Dense),
+			        "ATC 3",rankx(ALLSELECTED(Drugs[ATC Code (3)]),[PRT_AC],,Desc,Dense),
+			        "ATC 4",rankx(ALLSELECTED(Drugs[ATC Code (4)]),[PRT_AC],,Desc,Dense),
+			        "ATC 5",rankx(ALLSELECTED(Drugs[ATC Code (5)]),[PRT_AC],,Desc,Dense),
+			        "EphMRA 1",rankx(ALLSELECTED(Drugs[EphMRA Code (1)]),[PRT_AC],,Desc,Dense),
+			        "EphMRA 2",rankx(ALLSELECTED(Drugs[EphMRA Code (2)]),[PRT_AC],,Desc,Dense),
+			        "EphMRA 3",rankx(ALLSELECTED(Drugs[EphMRA Code (3)]),[PRT_AC],,Desc,Dense),
+			        "EphMRA 4",rankx(ALLSELECTED(Drugs[EphMRA Code (4)]),[PRT_AC],,Desc,Dense),
+			        "NFC 1",rankx(ALLSELECTED(Drugs[NFC Code (1)]),[PRT_AC],,Desc,Dense),
+			        "NFC 2",rankx(ALLSELECTED(Drugs[NFC Code (2)]),[PRT_AC],,Desc,Dense),
+			        "NFC 3",rankx(ALLSELECTED(Drugs[NFC Code (3)]),[PRT_AC],,Desc,Dense),
+			        "Domestic/Foreign(maker)",rankx(ALLSELECTED(Drugs[Domestic/Foreign(maker)]),[PRT_AC],,Desc,Dense),
+			        "Maker",rankx(ALLSELECTED(Drugs[Maker]),[PRT_AC],,Desc,Dense),
+			        "Cosmetic 1",rankx(ALLSELECTED(Drugs[Cosmetic Name(1)]),[PRT_AC],,Desc,Dense),
+			        "Cosmetic 2",rankx(ALLSELECTED(Drugs[Cosmetic Name(2)]),[PRT_AC],,Desc,Dense),
+			        "Cosmetic 3",rankx(ALLSELECTED(Drugs[Cosmetic Name(3)]),[PRT_AC],,Desc,Dense),
+			        "Cosmetic 4",rankx(ALLSELECTED(Drugs[Cosmetic Name(4)]),[PRT_AC],,Desc,Dense),
+			        "Cosmetic 5",rankx(ALLSELECTED(Drugs[Cosmetic Name(5)]),[PRT_AC],,Desc,Dense),
+			        "Bad 1",rankx(ALLSELECTED(Drugs[BAD Name(1)]),[PRT_AC],,Desc,Dense),
+			        "Bad 2",rankx(ALLSELECTED(Drugs[BAD Name(2)]),[PRT_AC],,Desc,Dense),
+			        "MC 1",rankx(ALLSELECTED(Drugs[MC Name(1)]),[PRT_AC],,Desc,Dense),
+			        "MC 2",rankx(ALLSELECTED(Drugs[MC Name(2)]),[PRT_AC],,Desc,Dense),
+			        "MC 3",rankx(ALLSELECTED(Drugs[MC Name(3)]),[PRT_AC],,Desc,Dense),
+			        "MC 4",rankx(ALLSELECTED(Drugs[MC Name(4)]),[PRT_AC],,Desc,Dense),
+			        "Region Level 1",rankx(ALLSELECTED(Areas[LEVEL_1]),[PRT_AC],,Desc,Dense),
+			        "Region Level 2",rankx(ALLSELECTED(Areas[LEVEL_2]),[PRT_AC],,Desc,Dense),
+			        "Region Level 3",rankx(ALLSELECTED(Areas[LEVEL_3]),[PRT_AC],,Desc,Dense),
+			        "Region Level 4",rankx(ALLSELECTED(Areas[LEVEL_4]),[PRT_AC],,Desc,Dense),
+			        "Area",rankx(ALLSELECTED(Areas[AREA_NAME]),[PRT_AC],,Desc,Dense),
+			        "Chain name",rankx(ALLSELECTED(Areas[CHAIN_NAME]),[PRT_AC],,Desc,Dense),
+			        "Legal entity",rankx(ALLSELECTED(Areas[ORG_NAME]),[PRT_AC],,Desc,Dense),
+			        "Pharmacy name",rankx(ALLSELECTED(Areas[CLIENT_NAME]),[PRT_AC],,Desc,Dense),
+			        "Pharmacy address",rankx(ALLSELECTED(Areas[ADDRESS]),[PRT_AC],,Desc,Dense),
+			        "Pharmacy type",rankx(ALLSELECTED(Areas[CLIENT_TYPE_ORG]),[PRT_AC],,Desc,Dense),
+			        "Pharmacy city",rankx(ALLSELECTED(Areas[CITY]),[PRT_AC],,Desc,Dense)
+			    )
+			)
+		formatString: 0
+		lineageTag: a8f1cf8c-16c8-4512-be9c-29068bd4ffa6
+
+	measure TOTAL_PRT = ```
+			
+			VAR SelectedDate = SELECTEDVALUE(SinglePeriod[Period], MAX(SinglePeriod[Period]))
+			VAR AggrType = SELECTEDVALUE(Aggr[AGGR_TYPE])
+			VAR delta = SELECTEDVALUE(SelectAggrLength[Value])
+			
+			RETURN
+			    SWITCH(
+			        AggrType,
+			        "Daily", 
+			            CALCULATE(
+			                [PRT_Dyn_AC],
+			                Periods[Period] = SelectedDate,
+			                REMOVEFILTERS(Periods)
+			            ),
+			        "YTD", 
+			            CALCULATE(
+			                TOTALYTD([PRT_Dyn_AC], Periods[Period], ALL(Periods)),
+			                Periods[Period] <= SelectedDate,
+			                REMOVEFILTERS(Periods)
+			            ),
+			        "MTD", 
+			            CALCULATE(
+			                TOTALMTD([PRT_Dyn_AC], Periods[Period], ALL(Periods)),
+			                Periods[Period] <= SelectedDate,
+			                REMOVEFILTERS(Periods)
+			            ),
+			        "MQT", 
+			            CALCULATE(
+			                [PRT_Dyn_AC], 
+			                ALL(Periods),
+			                DATESINPERIOD(Periods[Period], SelectedDate, -90, DAY)
+			            ),
+			        "MMT", 
+			            CALCULATE(
+			                [PRT_Dyn_AC], 
+			                ALL(Periods),
+			                DATESINPERIOD(Periods[Period], SelectedDate, -30, DAY)
+			            ),
+			        "MAT", 
+			            CALCULATE(
+			                [PRT_Dyn_AC], 
+			                ALL(Periods),
+			                DATESINPERIOD(Periods[Period], SelectedDate, -1, YEAR)
+			            ),
+			        "Custom", 
+			            CALCULATE(
+			                [PRT_Dyn_AC], 
+			                ALL(Periods),
+			                DATESINPERIOD(Periods[Period], SelectedDate, -1 * delta, DAY)
+			            ),
+			        BLANK()
+			    )
+			
+			```
+		lineageTag: eb6404ca-9954-42ec-832e-63c26538e044
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure Clients_Count = DISTINCTCOUNT(StockClientsPeriods[CLIENT_ID])
+		formatString: 0
+		lineageTag: bbab39d6-f775-4fff-9403-4ccf87ffb19a
+
+	measure Clients_Count_Stock = DISTINCTCOUNT(StockClientsPeriods[CLIENT_ID])
+		formatString: 0
+		lineageTag: df48a564-031d-406d-9bc5-58fd4cd381b2
+
+	measure PRT_dPWD =
+			
+			var gr_ac=[PRT_AC]
+			var gr_pwd=[PRT_PWD]
+			var gr=(gr_ac-gr_pwd)*100
+			return gr
+		lineageTag: 4fe5f5a5-a508-4244-a57b-0ab7d2df1fd7
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure Stock_Clients_Count_Total_AC =
+			CALCULATE([Stock_Clients_Count_Total_Dyn_AC],
+			    Filter(Periods,
+			        IF(ISFILTERED(Periods[Period]),Periods[setperiod]>0,
+			        if(ISFILTERED(SinglePeriod),
+			            Periods[setperiod] in values(SinglePeriod[PERIOD_ID]),
+			            Periods[setperiod]=max(SinglePeriod[PERIOD_ID]))
+			        )
+			    )
+			)
+		formatString: 0
+		lineageTag: f642d108-501a-49c8-b0de-c01b6286f15b
+
+	measure Stock_Clients_Count_WO_Stock_AC =
+			CALCULATE([Stock_Clients_Count_WO_Stock_Dyn_AC],
+			    Filter(Periods,
+			        IF(ISFILTERED(Periods[Period]),Periods[setperiod]>0,
+			        if(ISFILTERED(SinglePeriod),
+			            Periods[setperiod] in values(SinglePeriod[PERIOD_ID]),
+			            Periods[setperiod]=max(SinglePeriod[PERIOD_ID]))
+			        )
+			    )
+			)
+		lineageTag: 451717e5-b108-4315-959e-f45aa9e4e20b
+
+	measure Stock_Clients_Count_WO_Stock_Dyn_AC = [Stock_Clients_Count_Total_Dyn_AC]-[Clients_With_Stock_Dyn_AC]
+		formatString: 0
+		lineageTag: 5b3a7261-8c1e-482b-9c6d-9a3898e59547
+
+	measure PRT_AC_Ranked_By_Region_Paginated_TopN =
+			
+			var currentPage=SELECTEDVALUE(SelectPages[Value])
+			var itemsPerPage=[TOP]
+			var beginTop=itemsPerPage*(currentPage-1)+1
+			var endTop=itemsPerPage*currentPage
+			var currentRank=[RegionRankByVol]
+			return if(not([IsTotalByDimRegion])&&(currentRank>=beginTop && currentRank<=endTop),[PRT_AC],BLANK())
+		lineageTag: b730077c-5ab4-4cb3-a77c-a98602bc3e31
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure PRT_AC_Ranked_By_Region_Paginated_Managed = IF( CONTAINS( ALLSELECTED(SelectColumns[ColumnName]), SelectColumns[ColumnName], "Penetration AC,%"),[Distr_Sales_AC_Ranked_By_Region_Paginated_TopN]/100,BLANK())
+		lineageTag: c40e94f8-29fa-4de3-8a43-5fd3083e19c8
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure Promo_MS_In_Regions_Paginated_TopN =
+			
+			var currentPage=SELECTEDVALUE(SelectPages[Value])
+			var itemsPerPage=[TOP]
+			var beginTop=itemsPerPage*(currentPage-1)+1
+			var endTop=itemsPerPage*currentPage
+			var currentRank=[RegionRankByVol]
+			return if([IsTotalByDimRegion]||currentRank>=beginTop && currentRank<=endTop,
+			    switch(SELECTEDVALUE(RegionLevel[RegionLevelName]),
+			        "Level 1",DIVIDE([Visits_AC],CALCULATE([Visits_AC],ALLSELECTED(Areas[LEVEL_1]))),
+			        "Level 2",DIVIDE([Visits_AC],CALCULATE([Visits_AC],ALLSELECTED(Areas[LEVEL_2]))),
+			        "Level 3",DIVIDE([Visits_AC],CALCULATE([Visits_AC],ALLSELECTED(Areas[LEVEL_3]))),
+			        "Level 4",DIVIDE([Visits_AC],CALCULATE([Visits_AC],ALLSELECTED(Areas[LEVEL_4])))
+			    ),
+			BLANK())
+		lineageTag: 7abdc7b4-0564-4139-a1ca-5d7edc51fece
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure Promo_MS_In_Regions_Paginated_Managed = IF( CONTAINS( ALLSELECTED(SelectColumns[ColumnName]), SelectColumns[ColumnName], "Promo TS%"),[Promo_MS_In_Regions_Paginated_TopN],BLANK())
+		lineageTag: d3de714d-2483-4d79-8b84-fec8a5e8679b
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure Stock_MS_In_Regions_Paginated_TopN =
+			
+			var currentPage=SELECTEDVALUE(SelectPages[Value])
+			var itemsPerPage=[TOP]
+			var beginTop=itemsPerPage*(currentPage-1)+1
+			var endTop=itemsPerPage*currentPage
+			var currentRank=[RegionRankByVol]
+			return if([IsTotalByDimRegion]||(currentRank>=beginTop && currentRank<=endTop),
+			    switch(SELECTEDVALUE(RegionLevel[RegionLevelName]),
+			        "Level 1",DIVIDE([Distr_Stock_AC],CALCULATE([Distr_Stock_AC],ALLSELECTED(Areas[LEVEL_1]))),
+			        "Level 2",DIVIDE([Distr_Stock_AC],CALCULATE([Distr_Stock_AC],ALLSELECTED(Areas[LEVEL_2]))),
+			        "Level 3",DIVIDE([Distr_Stock_AC],CALCULATE([Distr_Stock_AC],ALLSELECTED(Areas[LEVEL_3]))),
+			        "Level 4",DIVIDE([Distr_Stock_AC],CALCULATE([Distr_Stock_AC],ALLSELECTED(Areas[LEVEL_4])))
+			    ),
+			BLANK())
+		lineageTag: 87f3d2ad-4a47-4fa9-91b3-ea168d94f9be
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure Stock_MS_In_Regions_Paginated_Managed = IF(CONTAINS( ALLSELECTED(SelectColumns[ColumnName]), SelectColumns[ColumnName], "Stock TS%"),[Stock_MS_In_Regions_Paginated_TopN],BLANK())
+		lineageTag: 83c86edf-0586-4a39-9499-d0cb577ae4a8
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 

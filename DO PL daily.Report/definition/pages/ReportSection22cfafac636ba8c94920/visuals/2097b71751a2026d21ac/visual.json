@@ -1,12 +1,12 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.8.0/schema.json",
   "name": "2097b71751a2026d21ac",
   "position": {
-    "x": 146.34797529169526,
-    "y": 194.27316403568989,
-    "z": 21000,
-    "height": 67.6458476321208,
-    "width": 140.56280027453673,
+    "x": 144,
+    "y": 251,
+    "z": 18000,
+    "height": 68,
+    "width": 133,
     "tabOrder": 11000
   },
   "visual": {
@@ -220,6 +220,24 @@
       "filterChanges": true
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "ba43eaea880061678c6b",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Aggr"
+              }
+            },
+            "Property": "AGGR_TYPE"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
   },
   "isHidden": true
 }
