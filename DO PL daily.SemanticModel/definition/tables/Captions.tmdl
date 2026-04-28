@@ -408,7 +408,7 @@ table Captions
 			
 			var gr=[Stock_dPWD]
 			var lg=LOG10(abs(gr))
-			var fmt=SWITCH(TRUE(),lg>=9,"##0,,,.0bn",lg>=6,"##0,,.0M",lg>3,"##0,.0K")
+			var fmt=SWITCH(TRUE(),lg>=9,"##0,,,.0bn",lg>=6,"##0,,.0M",lg>3,"##0,.0K","##0")
 			return FORMAT(gr,"+"&fmt&";-"&fmt)&" △PWD"
 		lineageTag: befda9be-c786-401e-a330-857f98be0cf2
 

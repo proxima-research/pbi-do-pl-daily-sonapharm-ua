@@ -501,7 +501,7 @@ table Headers
 			var measureName=SELECTEDVALUE(SelectMeasures[MeasureName])
 			var aggrType=SELECTEDVALUE(Aggr[AGGR_TYPE])
 			var periodName=[Selected_Periods_List]
-			var s="Stock"
+			var s="Stock in {MEASURE}"
 			var ss=CALCULATE(SELECTEDVALUE(T[dst],s),T[src]=s)
 			var sss=SUBSTITUTE(SUBSTITUTE(ss,"{DATA_TYPE}",[Current_Data_Type]),"{MEASURE}",measureName)
 			return sss&", "&aggrType&", "&[Years_Range]
@@ -535,7 +535,7 @@ table Headers
 			var measureName=SELECTEDVALUE(SelectMeasures[MeasureName])
 			var aggrType=SELECTEDVALUE(Aggr[AGGR_TYPE])
 			var selectedDim=SELECTEDVALUE('Dimensions'[DimName])
-			var s="PRT,% by {DIM_NAME}"
+			var s="Penetration,% by {DIM_NAME}"
 			var ss=SUBSTITUTE(s,"{DIM_NAME}",selectedDim)
 			return ss&", "&aggrType&", "&[Years_List]
 		lineageTag: c4821a9b-e0ce-4bad-8bfc-11cb0a343413
@@ -545,7 +545,7 @@ table Headers
 			var dimName=SELECTEDVALUE('Dimensions'[DimName])
 			var aggrType=SELECTEDVALUE(Aggr[AGGR_TYPE])
 			var periodName=[Selected_Periods_List]
-			var s="PRT,% by {DIM_NAME}"
+			var s="Penetration,% by {DIM_NAME}"
 			var ss=CALCULATE(SELECTEDVALUE(T[dst],s),T[src]=s)
 			var sss=SUBSTITUTE(ss,"{DIM_NAME}",dimName)
 			return sss&", "&aggrType&", "&periodName

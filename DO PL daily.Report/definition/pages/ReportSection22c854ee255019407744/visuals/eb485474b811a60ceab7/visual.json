@@ -221,5 +221,6 @@
         "type": "Categorical"
       }
     ]
-  }
+  },
+  "isHidden": true
 }

@@ -246,5 +246,6 @@
         "type": "Categorical"
       }
     ]
-  }
+  },
+  "isHidden": true
 }

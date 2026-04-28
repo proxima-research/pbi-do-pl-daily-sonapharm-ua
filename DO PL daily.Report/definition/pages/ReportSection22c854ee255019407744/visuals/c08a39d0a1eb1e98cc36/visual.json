@@ -113,7 +113,7 @@
             "jsonSpec": {
               "expr": {
                 "Literal": {
-                  "Value": "'{\n  \"data\": {\"name\": \"dataset\"},\n  \"transform\": [\n    /* dim: безпечний доступ */\n    {\"calculate\": \"isValid(datum[datum[''DimName'']]) ? datum[datum[''DimName'']] : ''''\", \"as\": \"dim\"},\n\n    {\"calculate\": \"format(datum.ac,''.2%'')\", \"as\": \"value\"},\n    {\"calculate\": \"datum.ExprName\", \"as\": \"valueName\"},\n    {\"calculate\": \"''PRT: '' + datum.value\", \"as\": \"nameAndValue\"},\n\n    {\"calculate\": \"toNumber(replace(datum.date, /\\\\D/g, ''''))\", \"as\": \"period_num\"},\n    {\"joinaggregate\": [{\"op\": \"max\", \"field\": \"period_num\", \"as\": \"max_period\"}]},\n    {\"calculate\": \"datum.period_num == datum.max_period ? 1 : 0\", \"as\": \"is_last\"},\n    {\"calculate\": \"datum.is_last ? toNumber(datum.ac) : -1e100\", \"as\": \"rank_value\"},\n    {\n      \"window\": [{\"op\": \"rank\", \"as\": \"global_rank\"}],\n      \"sort\": [{\"field\": \"is_last\", \"order\": \"descending\"}, {\"field\": \"rank_value\", \"order\": \"descending\"}]\n    },\n    {\"calculate\": \"datum.is_last ? datum.global_rank : null\", \"as\": \"last_period_rank\"},\n    {\"joinaggregate\": [{\"op\": \"min\", \"field\": \"last_period_rank\", \"as\": \"rank_per_dim\"}], \"groupby\": [\"dim\"]},\n    {\"calculate\": \"toNumber(datum.rank_per_dim)\", \"as\": \"rank_per_dim_num\"}\n  ],\n\n  \"encoding\": {\n    \"x\": {\n      \"field\": \"date\",\n      \"type\": \"temporal\",\n      \"axis\": {\n        \"format\": \"%d.%m.%Y\",\n        \"labelAngle\": -45,\n        \"tickCount\": \"day\",\n        \"tickExtra\": false,\n        \"gridDash\": {\n          \"condition\": {\n            \"test\": { \"field\": \"date\", \"timeUnit\": \"day\", \"equal\": 1 },\n            \"value\": []\n          },\n          \"value\": [3, 3]\n        }\n      }\n    },\n    \"y\": {\n      \"field\": \"ac\",\n      \"type\": \"quantitative\",\n      \"axis\": {\n        \"labelExpr\": \"format(datum.value,''.2%'')\",\n        \"gridDash\": {\n          \"condition\": {\"test\": {\"field\": \"date\", \"timeUnit\": \"month\", \"equal\": 1}, \"value\": []},\n          \"value\": [3, 3]\n        }\n      }\n    },\n    \"color\": {\n      \"field\": \"dim\",\n      \"type\": \"nominal\",\n      \"sort\": {\"field\": \"rank_per_dim_num\", \"order\": \"ascending\"}\n    }\n  },\n\n  \"layer\": [\n  {\n    \"mark\": { \"type\": \"line\", \"point\":{\"filled\": true,\"size\":20} },\n    \"encoding\": {\n      \"strokeWidth\": {\n        \"condition\": [\n          { \"param\": \"series\", \"empty\": false, \"value\": 3 }  \n        ],\n        \"value\": 2\n      }\n    }\n  },\n\n  /* 1) ХІТ-ТЕСТ: великі напівпрозорі точки, що ловлять мишу й оновлюють selection-и */\n  {\n    \"mark\": { \"type\": \"circle\", \"size\": 30, \"opacity\": 0.1 },\n    \"encoding\": {\n      \"x\": { \"field\": \"date\", \"type\": \"temporal\" },\n      \"y\": { \"field\": \"ac\",   \"type\": \"quantitative\" }\n    },\n    \"params\": [\n      {\n        \"name\": \"hover\",\n        \"select\": {\n          \"type\": \"point\",\n          \"encodings\": [\"x\",\"y\"],\n          \"nearest\": true,\n          \"on\": \"mousemove\",\n          \"clear\": false\n        }\n      },\n      {\n        /* ВАЖЛИВО: selection по серії (полю dim) */\n        \"name\": \"series\",\n        \"select\": {\n          \"type\": \"point\",\n          \"fields\": [\"dim\"],          /* ідентифікуємо серію за dim */\n          \"encodings\": [\"x\",\"y\"],     /* nearest до вузла */\n          \"nearest\": true,\n          \"on\": \"mousemove\",\n          \"clear\": false\n        }\n      }\n    ]\n  },\n\n  /* 2) ФОКУСНА КРАПКА + ТУЛТІП: лише коли є hover */\n  {\n    \"transform\": [ { \"filter\": { \"param\": \"hover\", \"empty\": false } } ],\n    \"mark\": { \"type\": \"point\", \"size\": 50, \"color\": \"black\" },\n    \"encoding\": {\n      \"x\": { \"field\": \"date\", \"type\": \"temporal\" },\n      \"y\": { \"field\": \"ac\",   \"type\": \"quantitative\" },\n      \"tooltip\": [\n        { \"field\": \"dim\",          \"type\": \"nominal\",     \"title\": \" \" },\n        { \"field\": \"date\",         \"type\": \"temporal\",     \"title\": \"  \", \"format\": \"%d.%m.%Y\"\n       },\n        { \"field\": \"nameAndValue\", \"type\": \"nominal\",     \"title\": \"   \" }\n      ]\n    }\n  }\n]\n\n}'"
+                  "Value": "'{\n  \"data\": {\"name\": \"dataset\"},\n  \"transform\": [\n    /* dim: безпечний доступ */\n    {\"calculate\": \"isValid(datum[datum[''DimName'']]) ? datum[datum[''DimName'']] : ''''\", \"as\": \"dim\"},\n\n    {\"calculate\": \"format(datum.ac,''.2%'')\", \"as\": \"value\"},\n    {\"calculate\": \"datum.ExprName\", \"as\": \"valueName\"},\n    {\"calculate\": \"''PRT: '' + datum.value\", \"as\": \"nameAndValue\"},\n\n    {\"calculate\": \"toNumber(replace(datum.date, /\\\\D/g, ''''))\", \"as\": \"period_num\"},\n    {\"joinaggregate\": [{\"op\": \"max\", \"field\": \"period_num\", \"as\": \"max_period\"}]},\n    {\"calculate\": \"datum.period_num == datum.max_period ? 1 : 0\", \"as\": \"is_last\"},\n    {\"calculate\": \"datum.is_last ? toNumber(datum.ac) : -1e100\", \"as\": \"rank_value\"},\n    {\n      \"window\": [{\"op\": \"rank\", \"as\": \"global_rank\"}],\n      \"sort\": [{\"field\": \"is_last\", \"order\": \"descending\"}, {\"field\": \"rank_value\", \"order\": \"descending\"}]\n    },\n    {\"calculate\": \"datum.is_last ? datum.global_rank : null\", \"as\": \"last_period_rank\"},\n    {\"joinaggregate\": [{\"op\": \"min\", \"field\": \"last_period_rank\", \"as\": \"rank_per_dim\"}], \"groupby\": [\"dim\"]},\n    {\"calculate\": \"toNumber(datum.rank_per_dim)\", \"as\": \"rank_per_dim_num\"}\n  ],\n\n  \"encoding\": {\n    \"x\": {\n      \"field\": \"date\",\n      \"type\": \"temporal\",\n      \"axis\": {\n        \"format\": \"%d.%m.%Y\",\n        \"labelAngle\": -45,\n        \"tickCount\": \"day\",\n        \"tickExtra\": false,\n        \"gridDash\": {\n          \"condition\": {\n            \"test\": { \"field\": \"date\", \"timeUnit\": \"day\", \"equal\": 1 },\n            \"value\": []\n          },\n          \"value\": [3, 3]\n        }\n      }\n    },\n    \"y\": {\n      \"field\": \"ac\",\n      \"type\": \"quantitative\",\n      \"axis\": {\n        \"labelExpr\": \"format(datum.value,''.2%'')\",\n        \"gridDash\": {\n          \"condition\": {\"test\": {\"field\": \"date\", \"timeUnit\": \"month\", \"equal\": 1}, \"value\": []},\n          \"value\": [3, 3]\n        }\n      },\n      \"scale\":{\n        \"zero\":false\n      }\n    },\n    \"color\": {\n      \"field\": \"dim\",\n      \"type\": \"nominal\",\n      \"sort\": {\"field\": \"rank_per_dim_num\", \"order\": \"ascending\"}\n    }\n  },\n\n  \"layer\": [\n  {\n    \"mark\": { \"type\": \"line\", \"point\":{\"filled\": true,\"size\":20} },\n    \"encoding\": {\n      \"strokeWidth\": {\n        \"condition\": [\n          { \"param\": \"series\", \"empty\": false, \"value\": 3 }  \n        ],\n        \"value\": 2\n      }\n    }\n  },\n\n  /* 1) ХІТ-ТЕСТ: великі напівпрозорі точки, що ловлять мишу й оновлюють selection-и */\n  {\n    \"mark\": { \"type\": \"circle\", \"size\": 30, \"opacity\": 0.1 },\n    \"encoding\": {\n      \"x\": { \"field\": \"date\", \"type\": \"temporal\" },\n      \"y\": { \"field\": \"ac\",   \"type\": \"quantitative\" }\n    },\n    \"params\": [\n      {\n        \"name\": \"hover\",\n        \"select\": {\n          \"type\": \"point\",\n          \"encodings\": [\"x\",\"y\"],\n          \"nearest\": true,\n          \"on\": \"mousemove\",\n          \"clear\": false\n        }\n      },\n      {\n        /* ВАЖЛИВО: selection по серії (полю dim) */\n        \"name\": \"series\",\n        \"select\": {\n          \"type\": \"point\",\n          \"fields\": [\"dim\"],          /* ідентифікуємо серію за dim */\n          \"encodings\": [\"x\",\"y\"],     /* nearest до вузла */\n          \"nearest\": true,\n          \"on\": \"mousemove\",\n          \"clear\": false\n        }\n      }\n    ]\n  },\n\n  /* 2) ФОКУСНА КРАПКА + ТУЛТІП: лише коли є hover */\n  {\n    \"transform\": [ { \"filter\": { \"param\": \"hover\", \"empty\": false } } ],\n    \"mark\": { \"type\": \"point\", \"size\": 50, \"color\": \"black\" },\n    \"encoding\": {\n      \"x\": { \"field\": \"date\", \"type\": \"temporal\" },\n      \"y\": { \"field\": \"ac\",   \"type\": \"quantitative\" },\n      \"tooltip\": [\n        { \"field\": \"dim\",          \"type\": \"nominal\",     \"title\": \" \" },\n        { \"field\": \"date\",         \"type\": \"temporal\",     \"title\": \"  \", \"format\": \"%d.%m.%Y\"\n       },\n        { \"field\": \"nameAndValue\", \"type\": \"nominal\",     \"title\": \"   \" }\n      ]\n    }\n  }\n]\n\n}'"
                 }
               }
             },
@@ -343,5 +343,65 @@
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "0030ad3540119913d762",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Periods"
+              }
+            },
+            "Property": "Period"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "92a3799556400316c001",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Drugs"
+              }
+            },
+            "Property": "Brand"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "aeb35c35aa723ca7a058",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_M_"
+              }
+            },
+            "Property": "PRT_Dyn_AC_Ranked_All_Periods"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "f67827860da3d180c703",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Dimensions"
+              }
+            },
+            "Property": "DimName"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
   }
 }

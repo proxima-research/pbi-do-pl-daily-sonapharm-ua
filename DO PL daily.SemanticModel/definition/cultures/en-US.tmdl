@@ -30289,9 +30289,88 @@ cultureInfo en-US
 			          }
 			        }
 			      ]
+			    },
+			    "entity__m_.PRT_rank_AC_ranked": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_M_",
+			          "ConceptualProperty": "PRT_Rank_AC_Ranked"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "PRT rank AC ranked": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "PRT_Rank_AC_Ranked": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "Rank": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
 			    }
 			  },
 			  "Relationships": {
+			    "data_plan_has_period": {
+			      "Binding": {
+			        "ConceptualEntity": "DataPlan"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "data_plan": {
+			          "Target": {
+			            "Entity": "data_plan"
+			          }
+			        },
+			        "period": {
+			          "Target": {
+			            "Entity": "period"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "data_plan"
+			            },
+			            "Object": {
+			              "Role": "period"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "data_plans_have_periods"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "period"
+			            },
+			            "Object": {
+			              "Role": "data_plan"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "periods_have_data_plans"
+			        }
+			      ]
+			    },
 			    "data_plan_has_drugs_ID": {
 			      "Binding": {
 			        "ConceptualEntity": "DataPlan"
@@ -30847,6 +30926,39 @@ cultureInfo en-US
 			          }
 			        }
 			      }
+			    },
+			    "entity__m__has_PRT_rank_AC_ranked": {
+			      "Binding": {
+			        "ConceptualEntity": "_M_"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "entity__m_": {
+			          "Target": {
+			            "Entity": "entity__m_"
+			          }
+			        },
+			        "entity__m_.PRT_rank_AC_ranked": {
+			          "Target": {
+			            "Entity": "entity__m_.PRT_rank_AC_ranked"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "entity__m_"
+			            },
+			            "Object": {
+			              "Role": "entity__m_.PRT_rank_AC_ranked"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "Phrasing_m__have_PRT_rank_AC_ranked"
+			        }
+			      ]
 			    },
 			    "entity__m__has_stock_MS_in_regions_paginated_managed": {
 			      "Binding": {
@@ -48290,52 +48402,6 @@ cultureInfo en-US
 			          "State": "Generated",
 			          "Weight": 0.75,
 			          "ID": "headers_head"
-			        }
-			      ]
-			    },
-			    "data_plan_has_period": {
-			      "Binding": {
-			        "ConceptualEntity": "DataPlan"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "data_plan": {
-			          "Target": {
-			            "Entity": "data_plan"
-			          }
-			        },
-			        "period": {
-			          "Target": {
-			            "Entity": "period"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "data_plan"
-			            },
-			            "Object": {
-			              "Role": "period"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "data_plans_have_periods"
-			        },
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "period"
-			            },
-			            "Object": {
-			              "Role": "data_plan"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "periods_have_data_plans"
 			        }
 			      ]
 			    },

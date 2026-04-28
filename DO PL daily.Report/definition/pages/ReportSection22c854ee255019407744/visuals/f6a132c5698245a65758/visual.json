@@ -74,10 +74,10 @@
                       "Entity": "_M_"
                     }
                   },
-                  "Property": "Market_Rank_AC_Ranked"
+                  "Property": "PRT_Rank_AC_Ranked"
                 }
               },
-              "queryRef": "_M_.Market_Rank_AC_Ranked",
+              "queryRef": "_M_.PRT_Rank_AC_Ranked",
               "nativeQueryRef": "Rank",
               "displayName": "Rank"
             }
@@ -162,7 +162,7 @@
             "lastLicenseCheck": {
               "expr": {
                 "Literal": {
-                  "Value": "'1776955994475'"
+                  "Value": "'1777318438443'"
                 }
               }
             }
@@ -625,5 +625,65 @@
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "e0ccc7c20094b78353e1",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Drugs"
+              }
+            },
+            "Property": "Brand"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "c133d8a69042b00650c2",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_M_"
+              }
+            },
+            "Property": "PRT_AC_Ranked"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "1add6140acdb05074769",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_M_"
+              }
+            },
+            "Property": "PRT_PWD_Ranked"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "d5fc10acc0198035289a",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_M_"
+              }
+            },
+            "Property": "PRT_Rank_AC_Ranked"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
   }
 }

@@ -220,5 +220,6 @@
       "filterChanges": true
     },
     "drillFilterOtherVisuals": true
-  }
+  },
+  "isHidden": true
 }

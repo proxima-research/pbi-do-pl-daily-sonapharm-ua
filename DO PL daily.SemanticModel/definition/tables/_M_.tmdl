@@ -5007,7 +5007,7 @@ table _M_
 
 	measure PRT_AC_Ranked =
 			
-			var currentRank=[RankByVol]
+			var currentRank=[RankByPRT]
 			return if([IsTotalByDim]||currentRank<=[TOP],[PRT_AC],BLANK())
 		formatString: 0.00%;-0.00%;0.00%
 		lineageTag: d2c8f2b4-e840-4bd6-a342-f845c03fa46b
@@ -5028,7 +5028,7 @@ table _M_
 
 	measure PRT_PWD_Ranked =
 			
-			var currentRank=[RankByVol]
+			var currentRank=[RankByPRT]
 			return if([IsTotalByDim]||currentRank<=[TOP],[PRT_PWD],BLANK())
 		lineageTag: cc7d0f3c-6dc4-4203-85ad-b1550f70e670
 
@@ -5269,6 +5269,10 @@ table _M_
 		lineageTag: 83c86edf-0586-4a39-9499-d0cb577ae4a8
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure PRT_Rank_AC_Ranked = if([RankByPRT]<=[TOP],[RankByPRT],BLANK())
+		formatString: 0
+		lineageTag: 3e763b32-e8f6-4d9b-8282-3f5ed46a6e18
 
 	column Value
 		isHidden

@@ -245,5 +245,6 @@
         "type": "Advanced"
       }
     ]
-  }
+  },
+  "isHidden": true
 }

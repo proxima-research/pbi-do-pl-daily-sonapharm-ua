@@ -233,5 +233,6 @@
         "isLockedInViewMode": true
       }
     ]
-  }
+  },
+  "isHidden": true
 }
