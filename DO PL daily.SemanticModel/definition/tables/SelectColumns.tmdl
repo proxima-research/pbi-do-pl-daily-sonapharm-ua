@@ -43,8 +43,8 @@ table SelectColumns
 		source =
 				DATATABLE("ColumnName",STRING,"Sort",INTEGER,"Sub",STRING,
 				    {
-				        {"Distr Sales AC",16,"Distr"},
-				        {"Distr Sales ΔPY",17,"Distr"},
+				        //{"Distr Sales AC",16,"Distr"},
+				        //{"Distr Sales ΔPY",17,"Distr"},
 				        {"Distr Sales ΔPY%",18,"Distr"},
 				        {"Distr Sales PL",19,"Distr"},
 				        {"Distr Sales PE%",20,"Distr"},
@@ -53,8 +53,9 @@ table SelectColumns
 				        {"Promo PE%",23,"Promo"},
 				        {"Distr TS%",26,"Distr"},
 				        {"Penetration AC,%",27,"Distr"},
-				        {"Promo TS%",28,"Promo"},
-				        {"Stock TS%",29,"Distr"}
+				        {"Stock AC",28,"Distr"},
+				        {"Promo TS%",29,"Promo"},
+				        {"Stock TS%",30,"Distr"}
 				    }
 				)
 

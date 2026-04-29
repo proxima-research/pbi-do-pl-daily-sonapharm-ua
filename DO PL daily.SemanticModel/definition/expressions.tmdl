@@ -498,3 +498,15 @@ expression Clients =
 
 	annotation PBI_ResultType = Table
 
+expression _MAP_URL_FLOW_ID_ =
+		let
+		    Result= if Table.RowCount(FLOWS)>0 then List.Single(Table.SelectRows(FLOWS, each [PROJECT] = "COMMON" and [FLOW_TYPE]= "MAP_URLS")[FLOW_ID]) else _FLOWS_FLOW_ID_
+		in
+		    Result
+	lineageTag: 67dbfcb1-8c82-4b8b-811a-057bedb32b2c
+	queryGroup: FLOW_ID
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Text
+

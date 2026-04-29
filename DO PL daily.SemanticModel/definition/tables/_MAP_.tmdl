@@ -1,0 +1,102 @@
+table _MAP_
+	lineageTag: 767e4f05-207f-444f-9573-bd08215f5f20
+
+	measure Map_Url = CALCULATE (SELECTEDVALUE ( MapURLs[URL] ),MapURLs[TYPE]="GEO")
+		lineageTag: 374446d0-784d-4e24-976e-9fb425339b63
+
+	measure Map_Url_Areas = CALCULATE (SELECTEDVALUE ( MapURLs[URL] ),MapURLs[TYPE]="COUNTRY")
+		lineageTag: ab081cbe-10a3-4d6b-a8b0-7b99f8d30ec6
+
+	measure Polygons_List_Areas = "["&CONCATENATEX(DISTINCT(Areas[AREA_ID]),if(Areas[AREA_ID]=2,101,Areas[AREA_ID]),",")&"]"
+		lineageTag: 06bf04da-5a2d-426d-94c0-b3d98f3bf82b
+
+	measure Map_Sub_Label_Info_SelfMO =
+			
+			var showSubLabel=1//sum(Areas[SHOW_SUB_LABEL])
+			var coloredIdx=1//SELECTEDVALUE(SelectColoredByExprMarketOverview[Idx])
+			var measureName="Distr AC"//SELECTEDVALUE(SelectColoredByExprMarketOverview[ShortName])
+			var D_AC=[Distr_Sales_AC]
+			var D_PY=[Distr_Sales_PY]
+			var D_PL=[Distr_Sales_PL]
+			var P_AC=[Promo_Month_AC]
+			var measureValue=SWITCH(coloredIdx,
+			    1,Format(D_AC,switch(TRUE(),D_AC>1e9,"#0,,,.0bn",D_AC>1e6,"#0,,.0M",D_AC>1e3,"#0,.0K","#0")),
+			    2,Format(D_PY,switch(TRUE(),D_PY>1e9,"#0,,,.0bn",D_PY>1e6,"#0,,.0M",D_PY>1e3,"#0,.0K","#0")),
+			    3,Format(D_PL,switch(TRUE(),D_PL>1e9,"#0,,,.0bn",D_PL>1e6,"#0,,.0M",D_PL>1e3,"#0,.0K","#0")),
+			    4,Format([Distr_Sales_PE],"0.00%"),
+			    5,Format(P_AC,switch(TRUE(),P_AC>1e9,"#0,,,.0bn",P_AC>1e6,"#0,,.0M",P_AC>1e3,"#0,.0K","#0")),
+			    6,Format([Promo_Month_PE],"0.00%"),
+			    7,Format([PRT_AC],"0.00%"),
+			    8,Format([Distr_Stock_AC],switch(TRUE(),P_AC>1e9,"#0,,,.0bn",P_AC>1e6,"#0,,.0M",P_AC>1e3,"#0,.0K","#0"))
+			)
+			var template="<div style='text-align:center;margin-top:3px;'><span style='border-radius:5px;margin-top:4px;padding:4px;background-color:#eee;font-size:1em;'>"&measureName&"&nbsp;<span style='padding:2px;font-weight:bold;font-size:1.1em;background-color:#E2F3FE'>"&measureValue&"</span></span></div>"
+			return if(showSubLabel=0,BLANK(),template)
+		lineageTag: 1e5776fa-b734-49e1-802c-30fd2e503a2f
+
+	measure Map_Market_Overview_Colored =
+			SWITCH(SELECTEDVALUE(SelectColoredByExprMarketOverview[Idx]),
+			    1,[Distr_Sales_AC],
+			    2,[Distr_Sales_PY],
+			    3,[Distr_Sales_PL],
+			    4,[Distr_Sales_PE],
+			    5,[Visits_AC],
+			    6,[Visits_PE],
+			    7,[PRT_AC],
+			    8,[Distr_Stock_AC]
+			)
+		lineageTag: aed3ccd0-ab0b-464e-af64-3d59278be481
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure Map_Popup_Info_SelfMO =
+			
+			var D_AC=[Distr_Sales_AC]
+			var D_PY=[Distr_Sales_PY]
+			var D_PL=[Distr_Sales_PL]
+			var P_AC=[Promo_Month_AC]
+			var S_AC=[Distr_Stock_AC]
+			var template="<table>"&
+			"<tr><td><b>Distr AC:</b></td><td>"&Format(D_AC,switch(TRUE(),D_AC>1e9,"#0,,,.0bn",D_AC>1e6,"#0,,.0M",D_AC>1e3,"#0,.0K","#0"))&
+			"<tr><td><b>Distr PY:</b></td><td>"&Format(D_PY,switch(TRUE(),D_PY>1e9,"#0,,,.0bn",D_PY>1e6,"#0,,.0M",D_PY>1e3,"#0,.0K","#0"))&
+			"<tr><td><b>Distr PL:</b></td><td>"&Format(D_PL,switch(TRUE(),D_PL>1e9,"#0,,,.0bn",D_PL>1e6,"#0,,.0M",D_PL>1e3,"#0,.0K","#0"))&
+			"<tr><td><b>Distr PE%:</b></td><td>"&Format([Distr_Sales_PE],"0.00%")&
+			"<tr><td><b>Promo AC:</b></td><td>"&Format(P_AC,switch(TRUE(),P_AC>1e9,"#0,,,.0bn",P_AC>1e6,"#0,,.0M",P_AC>1e3,"#0,.0K","#0"))&
+			"<tr><td><b>Pormo PE%:</b></td><td>"&Format([Visits_PE],"0.00%")&
+			"<tr><td><b>Penetration AC%:</b></td><td>"&Format([PRT_AC],"0.00%")&
+			"<tr><td><b>Stock AC:</b></td><td>"&Format(S_AC,switch(TRUE(),S_AC>1e9,"#0,,,.0bn",S_AC>1e6,"#0,,.0M",S_AC>1e3,"#0,.0K","#0"))&
+			"</td></table>"
+			return template
+		lineageTag: b9a1973d-0fe5-4f04-ab39-e61100e8141b
+
+	measure Google_Maps_Key = CALCULATE(max(Keys[Value]),Keys[Name]="GoogleMaps")
+		lineageTag: a5c84531-7ed0-46e0-bf4c-6d536a1fdc44
+
+	measure Polygons_List =
+			
+			"[" &
+			CONCATENATEX(
+			    SUMMARIZE(
+			        FILTER(Areas, Areas[IS_COVERED] = 1),
+			        Areas[POLYGON_ID]
+			    ),
+			    """" & Areas[POLYGON_ID] & """",
+			    ","
+			)
+			& "]"
+		lineageTag: 6005d849-0d2f-464c-8584-4d22dfb1596f
+
+	column Value
+		formatString: 0
+		lineageTag: 7469ae48-1bc6-4593-824e-b5d7e2fa9394
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Value]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition _MAP_ = calculated
+		mode: import
+		source = {{BLANK()}}
+
+	annotation PBI_Id = 2131138fee7d4651ba885f39b54ffa85
+

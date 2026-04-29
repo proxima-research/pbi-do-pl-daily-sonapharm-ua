@@ -1455,12 +1455,6 @@ cultureInfo en-US
 			          }
 			        },
 			        {
-			          "stock AC": {
-			            "State": "Generated",
-			            "Weight": 0.97
-			          }
-			        },
-			        {
 			          "KPI stock AC": {
 			            "State": "Generated",
 			            "Weight": 0.97
@@ -3259,12 +3253,6 @@ cultureInfo en-US
 			            "State": "Generated",
 			            "Weight": 0.99
 			          }
-			        },
-			        {
-			          "country": {
-			            "State": "Generated",
-			            "Weight": 0.97
-			          }
 			        }
 			      ]
 			    },
@@ -3291,12 +3279,6 @@ cultureInfo en-US
 			            "State": "Generated",
 			            "Weight": 0.99
 			          }
-			        },
-			        {
-			          "country": {
-			            "State": "Generated",
-			            "Weight": 0.97
-			          }
 			        }
 			      ]
 			    },
@@ -3322,12 +3304,6 @@ cultureInfo en-US
 			            "Type": "Noun",
 			            "State": "Generated",
 			            "Weight": 0.99
-			          }
-			        },
-			        {
-			          "country": {
-			            "State": "Generated",
-			            "Weight": 0.97
 			          }
 			        }
 			      ]
@@ -3597,12 +3573,6 @@ cultureInfo en-US
 			            "State": "Generated",
 			            "Weight": 0.99
 			          }
-			        },
-			        {
-			          "type": {
-			            "State": "Generated",
-			            "Weight": 0.97
-			          }
 			        }
 			      ]
 			    },
@@ -3628,12 +3598,6 @@ cultureInfo en-US
 			            "Type": "Noun",
 			            "State": "Generated",
 			            "Weight": 0.99
-			          }
-			        },
-			        {
-			          "type": {
-			            "State": "Generated",
-			            "Weight": 0.97
 			          }
 			        }
 			      ]
@@ -5118,12 +5082,6 @@ cultureInfo en-US
 			            "State": "Generated",
 			            "Weight": 0.97
 			          }
-			        },
-			        {
-			          "short name": {
-			            "State": "Generated",
-			            "Weight": 0.97
-			          }
 			        }
 			      ]
 			    },
@@ -5215,12 +5173,6 @@ cultureInfo en-US
 			            "Type": "Noun",
 			            "State": "Generated",
 			            "Weight": 0.99
-			          }
-			        },
-			        {
-			          "country": {
-			            "State": "Generated",
-			            "Weight": 0.97
 			          }
 			        }
 			      ]
@@ -5969,12 +5921,6 @@ cultureInfo en-US
 			        {
 			          "licensee country": {
 			            "State": "Generated"
-			          }
-			        },
-			        {
-			          "country": {
-			            "State": "Generated",
-			            "Weight": 0.97
 			          }
 			        }
 			      ]
@@ -10058,12 +10004,6 @@ cultureInfo en-US
 			          }
 			        },
 			        {
-			          "idx": {
-			            "State": "Generated",
-			            "Weight": 0.97
-			          }
-			        },
-			        {
 			          "mix idx": {
 			            "State": "Generated",
 			            "Weight": 0.97
@@ -10232,12 +10172,6 @@ cultureInfo en-US
 			          }
 			        },
 			        {
-			          "idx": {
-			            "State": "Generated",
-			            "Weight": 0.97
-			          }
-			        },
-			        {
 			          "price idx": {
 			            "State": "Generated",
 			            "Weight": 0.97
@@ -10343,12 +10277,6 @@ cultureInfo en-US
 			            "Type": "Noun",
 			            "State": "Generated",
 			            "Weight": 0.99
-			          }
-			        },
-			        {
-			          "idx": {
-			            "State": "Generated",
-			            "Weight": 0.97
 			          }
 			        },
 			        {
@@ -11170,12 +11098,6 @@ cultureInfo en-US
 			            "Type": "Noun",
 			            "State": "Generated",
 			            "Weight": 0.99
-			          }
-			        },
-			        {
-			          "type": {
-			            "State": "Generated",
-			            "Weight": 0.97
 			          }
 			        }
 			      ]
@@ -12186,12 +12108,6 @@ cultureInfo en-US
 			          }
 			        },
 			        {
-			          "idx": {
-			            "State": "Generated",
-			            "Weight": 0.97
-			          }
-			        },
-			        {
 			          "mix idx": {
 			            "State": "Generated",
 			            "Weight": 0.97
@@ -12262,12 +12178,6 @@ cultureInfo en-US
 			          }
 			        },
 			        {
-			          "idx": {
-			            "State": "Generated",
-			            "Weight": 0.97
-			          }
-			        },
-			        {
 			          "price idx": {
 			            "State": "Generated",
 			            "Weight": 0.97
@@ -12309,12 +12219,6 @@ cultureInfo en-US
 			            "Type": "Noun",
 			            "State": "Generated",
 			            "Weight": 0.99
-			          }
-			        },
-			        {
-			          "idx": {
-			            "State": "Generated",
-			            "Weight": 0.97
 			          }
 			        },
 			        {
@@ -14261,12 +14165,6 @@ cultureInfo en-US
 			            "Type": "Noun",
 			            "State": "Generated",
 			            "Weight": 0.99
-			          }
-			        },
-			        {
-			          "type": {
-			            "State": "Generated",
-			            "Weight": 0.97
 			          }
 			        },
 			        {
@@ -23641,12 +23539,6 @@ cultureInfo en-US
 			            "State": "Generated",
 			            "Weight": 0.99
 			          }
-			        },
-			        {
-			          "type": {
-			            "State": "Generated",
-			            "Weight": 0.97
-			          }
 			        }
 			      ]
 			    },
@@ -24078,12 +23970,6 @@ cultureInfo en-US
 			          "maker country": {
 			            "State": "Generated"
 			          }
-			        },
-			        {
-			          "country": {
-			            "State": "Generated",
-			            "Weight": 0.97
-			          }
 			        }
 			      ]
 			    },
@@ -24171,12 +24057,6 @@ cultureInfo en-US
 			          }
 			        },
 			        {
-			          "type": {
-			            "State": "Generated",
-			            "Weight": 0.97
-			          }
-			        },
-			        {
 			          "type id": {
 			            "State": "Generated",
 			            "Weight": 0.97
@@ -24210,12 +24090,6 @@ cultureInfo en-US
 			            "Type": "Noun",
 			            "State": "Generated",
 			            "Weight": 0.99
-			          }
-			        },
-			        {
-			          "type": {
-			            "State": "Generated",
-			            "Weight": 0.97
 			          }
 			        }
 			      ]
@@ -27658,6 +27532,16 @@ cultureInfo en-US
 			            "State": "Generated",
 			            "Weight": 0.99
 			          }
+			        },
+			        {
+			          "Distr AC": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
 			        }
 			      ]
 			    },
@@ -27726,16 +27610,6 @@ cultureInfo en-US
 			            "Type": "Noun",
 			            "State": "Generated",
 			            "Weight": 0.99
-			          }
-			        },
-			        {
-			          "Distr AC": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
 			          }
 			        }
 			      ]
@@ -28054,16 +27928,6 @@ cultureInfo en-US
 			          "distr sales d PY ranked by region paginated top N managed": {
 			            "State": "Generated"
 			          }
-			        },
-			        {
-			          "Distr ΔPY": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
 			        }
 			      ]
 			    },
@@ -28166,6 +28030,16 @@ cultureInfo en-US
 			            "State": "Generated",
 			            "Weight": 0.99
 			          }
+			        },
+			        {
+			          "Distr PY": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
 			        }
 			      ]
 			    },
@@ -28188,16 +28062,6 @@ cultureInfo en-US
 			            "Type": "Noun",
 			            "State": "Generated",
 			            "Weight": 0.99
-			          }
-			        },
-			        {
-			          "PY": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
 			          }
 			        }
 			      ]
@@ -29656,12 +29520,6 @@ cultureInfo en-US
 			          }
 			        },
 			        {
-			          "stock AC": {
-			            "State": "Generated",
-			            "Weight": 0.97
-			          }
-			        },
-			        {
 			          "WO stock AC": {
 			            "State": "Generated",
 			            "Weight": 0.97
@@ -29957,12 +29815,6 @@ cultureInfo en-US
 			            "Type": "Noun",
 			            "State": "Generated",
 			            "Weight": 0.99
-			          }
-			        },
-			        {
-			          "stock AC": {
-			            "State": "Generated",
-			            "Weight": 0.97
 			          }
 			        },
 			        {
@@ -30322,73 +30174,653 @@ cultureInfo en-US
 			          }
 			        }
 			      ]
-			    }
-			  },
-			  "Relationships": {
-			    "data_plan_has_period": {
-			      "Binding": {
-			        "ConceptualEntity": "DataPlan"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "data_plan": {
-			          "Target": {
-			            "Entity": "data_plan"
-			          }
-			        },
-			        "period": {
-			          "Target": {
-			            "Entity": "period"
-			          }
+			    },
+			    "entity__m_.distr_stock_AC_ranked_by_region_paginated_top_N": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_M_",
+			          "ConceptualProperty": "Distr_Stock_AC_Ranked_By_Region_Paginated_TopN"
 			        }
 			      },
-			      "Phrasings": [
+			      "State": "Generated",
+			      "Terms": [
 			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "data_plan"
-			            },
-			            "Object": {
-			              "Role": "period"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "data_plans_have_periods"
+			          "distr stock AC ranked by region paginated top N": {
+			            "State": "Generated"
+			          }
 			        },
 			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "period"
-			            },
-			            "Object": {
-			              "Role": "data_plan"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "periods_have_data_plans"
+			          "Distr_Stock_AC_Ranked_By_Region_Paginated_TopN": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
 			        }
 			      ]
 			    },
-			    "data_plan_has_drugs_ID": {
-			      "Binding": {
-			        "ConceptualEntity": "DataPlan"
+			    "entity__m_.distr_stock_AC_ranked_by_region_paginated_managed": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_M_",
+			          "ConceptualProperty": "Distr_Stock_AC_Ranked_By_Region_Paginated_Managed"
+			        }
 			      },
 			      "State": "Generated",
-			      "Roles": {
-			        "data_plan": {
-			          "Target": {
-			            "Entity": "data_plan"
+			      "Terms": [
+			        {
+			          "distr stock AC ranked by region paginated managed": {
+			            "State": "Generated"
 			          }
 			        },
-			        "drugs_ID": {
-			          "Target": {
-			            "Entity": "drugs_ID"
+			        {
+			          "Distr_Stock_AC_Ranked_By_Region_Paginated_Managed": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "Stock AC": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
 			          }
 			        }
-			      }
+			      ]
 			    },
+			    "map_url": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "MapUrls"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "map url": {
+			            "State": "Generated",
+			            "Weight": 0.87
+			          }
+			        },
+			        {
+			          "MapUrls": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.8613
+			          }
+			        }
+			      ]
+			    },
+			    "map_url.country": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "MapUrls",
+			          "ConceptualProperty": "COUNTRY"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "country": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "map_url.type": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "MapUrls",
+			          "ConceptualProperty": "TYPE"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "type": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "map_url.company": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "MapUrls",
+			          "ConceptualProperty": "COMPANY"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "company": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "map_url.url": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "MapUrls",
+			          "ConceptualProperty": "URL"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "url": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "map_url.expired": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "MapUrls",
+			          "ConceptualProperty": "EXPIRED"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "expired": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "entity__map_": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_MAP_"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "_map_": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "entity__map_.value": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_MAP_",
+			          "ConceptualProperty": "Value"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "value": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "entity__map_.map_url": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_MAP_",
+			          "ConceptualProperty": "Map_Url"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "map url": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "Map_Url": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        }
+			      ]
+			    },
+			    "entity__map_.map_url_areas": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_MAP_",
+			          "ConceptualProperty": "Map_Url_Areas"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "map url areas": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "Map_Url_Areas": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "areas": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "url areas": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        }
+			      ]
+			    },
+			    "entity__map_.polygons_list_areas": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_MAP_",
+			          "ConceptualProperty": "Polygons_List_Areas"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "polygons list areas": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "Polygons_List_Areas": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "areas": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "list areas": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        }
+			      ]
+			    },
+			    "entity__map_.map_sub_label_info_self_MO": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_MAP_",
+			          "ConceptualProperty": "Map_Sub_Label_Info_SelfMO"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "map sub label info self MO": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "Map_Sub_Label_Info_SelfMO": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "MO": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "self MO": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "info self MO": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "label info self MO": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "sub label info self MO": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "sub_label": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "entity__map_.map_market_overview_colored": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_MAP_",
+			          "ConceptualProperty": "Map_Market_Overview_Colored"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "map market overview colored": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "Map_Market_Overview_Colored": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "colored": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "overview colored": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "market overview colored": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "value": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "entity__map_.map_popup_info_self_MO": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_MAP_",
+			          "ConceptualProperty": "Map_Popup_Info_SelfMO"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "map popup info self MO": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "Map_Popup_Info_SelfMO": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "MO": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "self MO": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "info self MO": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "popup info self MO": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "popup": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "entity__map_.google_maps_key": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_MAP_",
+			          "ConceptualProperty": "Google_Maps_Key"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "google maps key": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "Google_Maps_Key": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "maps key": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        }
+			      ]
+			    },
+			    "key": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Keys"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "key": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "key.name": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Keys",
+			          "ConceptualProperty": "Name"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "name": {
+			            "State": "Generated"
+			          }
+			        }
+			      ],
+			      "NameType": "Name"
+			    },
+			    "key.value": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Keys",
+			          "ConceptualProperty": "Value"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "value": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "select_colored_by_expr_market_overview": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "SelectColoredByExprMarketOverview"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "select colored by expr market overview": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "SelectColoredByExprMarketOverview": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        }
+			      ]
+			    },
+			    "select_colored_by_expr_market_overview.colored_by": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "SelectColoredByExprMarketOverview",
+			          "ConceptualProperty": "ColoredBy"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "colored by": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "ColoredBy": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        }
+			      ]
+			    },
+			    "select_colored_by_expr_market_overview.idx": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "SelectColoredByExprMarketOverview",
+			          "ConceptualProperty": "Idx"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "idx": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "select_colored_by_expr_market_overview.short_name": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "SelectColoredByExprMarketOverview",
+			          "ConceptualProperty": "ShortName"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "short name": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "ShortName": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "short": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        }
+			      ]
+			    },
+			    "entity__map_.polygons_list": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_MAP_",
+			          "ConceptualProperty": "Polygons_List"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "polygons list": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "Polygons_List": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        }
+			      ]
+			    }
+			  },
+			  "Relationships": {
 			    "data_plan_has_periods_link": {
 			      "Binding": {
 			        "ConceptualEntity": "DataPlan"
@@ -30926,6 +31358,732 @@ cultureInfo en-US
 			          }
 			        }
 			      }
+			    },
+			    "area_has_entity__map__polygons_list": {
+			      "Binding": {
+			        "ConceptualEntity": "Areas"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "area": {
+			          "Target": {
+			            "Entity": "area"
+			          }
+			        },
+			        "entity__map_.polygons_list": {
+			          "Target": {
+			            "Entity": "entity__map_.polygons_list"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "area"
+			            },
+			            "Object": {
+			              "Role": "entity__map_.polygons_list"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "areas_have_polygons_list"
+			        }
+			      ]
+			    },
+			    "select_colored_by_expr_market_overview_has_short_name": {
+			      "Binding": {
+			        "ConceptualEntity": "SelectColoredByExprMarketOverview"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "select_colored_by_expr_market_overview": {
+			          "Target": {
+			            "Entity": "select_colored_by_expr_market_overview"
+			          }
+			        },
+			        "select_colored_by_expr_market_overview.short_name": {
+			          "Target": {
+			            "Entity": "select_colored_by_expr_market_overview.short_name"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "select_colored_by_expr_market_overview"
+			            },
+			            "Object": {
+			              "Role": "select_colored_by_expr_market_overview.short_name"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "select_colored_by_expr_market_overview_have_short_names"
+			        }
+			      ]
+			    },
+			    "select_colored_by_expr_market_overview_has_idx": {
+			      "Binding": {
+			        "ConceptualEntity": "SelectColoredByExprMarketOverview"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "select_colored_by_expr_market_overview": {
+			          "Target": {
+			            "Entity": "select_colored_by_expr_market_overview"
+			          }
+			        },
+			        "select_colored_by_expr_market_overview.idx": {
+			          "Target": {
+			            "Entity": "select_colored_by_expr_market_overview.idx"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "select_colored_by_expr_market_overview"
+			            },
+			            "Object": {
+			              "Role": "select_colored_by_expr_market_overview.idx"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "select_colored_by_expr_market_overview_have_idx"
+			        }
+			      ]
+			    },
+			    "select_colored_by_expr_market_overview_has_colored_by": {
+			      "Binding": {
+			        "ConceptualEntity": "SelectColoredByExprMarketOverview"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "select_colored_by_expr_market_overview": {
+			          "Target": {
+			            "Entity": "select_colored_by_expr_market_overview"
+			          }
+			        },
+			        "select_colored_by_expr_market_overview.colored_by": {
+			          "Target": {
+			            "Entity": "select_colored_by_expr_market_overview.colored_by"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "select_colored_by_expr_market_overview"
+			            },
+			            "Object": {
+			              "Role": "select_colored_by_expr_market_overview.colored_by"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "select_colored_by_expr_market_overview_have_colored_by"
+			        },
+			        {
+			          "Verb": {
+			            "Subject": {
+			              "Role": "select_colored_by_expr_market_overview.colored_by"
+			            },
+			            "Verbs": [
+			              {
+			                "color": {
+			                  "State": "Generated"
+			                }
+			              }
+			            ],
+			            "Object": {
+			              "Role": "select_colored_by_expr_market_overview"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.95,
+			          "ID": "colored_by_color_select_colored_by_expr_market_overview"
+			        }
+			      ]
+			    },
+			    "key_has_value": {
+			      "Binding": {
+			        "ConceptualEntity": "Keys"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "key": {
+			          "Target": {
+			            "Entity": "key"
+			          }
+			        },
+			        "key.value": {
+			          "Target": {
+			            "Entity": "key.value"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "key"
+			            },
+			            "Object": {
+			              "Role": "key.value"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "keys_have_values"
+			        }
+			      ]
+			    },
+			    "key_has_name": {
+			      "Binding": {
+			        "ConceptualEntity": "Keys"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "key": {
+			          "Target": {
+			            "Entity": "key"
+			          }
+			        },
+			        "key.name": {
+			          "Target": {
+			            "Entity": "key.name"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "key"
+			            },
+			            "Object": {
+			              "Role": "key.name"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "keys_have_names"
+			        },
+			        {
+			          "Name": {
+			            "Subject": {
+			              "Role": "key"
+			            },
+			            "Name": {
+			              "Role": "key.name"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "names_are_names_IDs_of_keys"
+			        }
+			      ]
+			    },
+			    "key_has_entity__map__google_maps_key": {
+			      "Binding": {
+			        "ConceptualEntity": "Keys"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "key": {
+			          "Target": {
+			            "Entity": "key"
+			          }
+			        },
+			        "entity__map_.google_maps_key": {
+			          "Target": {
+			            "Entity": "entity__map_.google_maps_key"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "key"
+			            },
+			            "Object": {
+			              "Role": "entity__map_.google_maps_key"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "keys_have_google_maps_key"
+			        }
+			      ]
+			    },
+			    "entity__map__has_map_popup_info_self_MO": {
+			      "Binding": {
+			        "ConceptualEntity": "_MAP_"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "entity__map_": {
+			          "Target": {
+			            "Entity": "entity__map_"
+			          }
+			        },
+			        "entity__map_.map_popup_info_self_MO": {
+			          "Target": {
+			            "Entity": "entity__map_.map_popup_info_self_MO"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "entity__map_"
+			            },
+			            "Object": {
+			              "Role": "entity__map_.map_popup_info_self_MO"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "Phrasing_map__have_map_popup_info_self_MO"
+			        }
+			      ]
+			    },
+			    "entity__map__has_map_market_overview_colored": {
+			      "Binding": {
+			        "ConceptualEntity": "_MAP_"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "entity__map_": {
+			          "Target": {
+			            "Entity": "entity__map_"
+			          }
+			        },
+			        "entity__map_.map_market_overview_colored": {
+			          "Target": {
+			            "Entity": "entity__map_.map_market_overview_colored"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "entity__map_"
+			            },
+			            "Object": {
+			              "Role": "entity__map_.map_market_overview_colored"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "Phrasing_map__have_map_market_overview_colored"
+			        }
+			      ]
+			    },
+			    "entity__map__has_map_sub_label_info_self_MO": {
+			      "Binding": {
+			        "ConceptualEntity": "_MAP_"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "entity__map_": {
+			          "Target": {
+			            "Entity": "entity__map_"
+			          }
+			        },
+			        "entity__map_.map_sub_label_info_self_MO": {
+			          "Target": {
+			            "Entity": "entity__map_.map_sub_label_info_self_MO"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "entity__map_"
+			            },
+			            "Object": {
+			              "Role": "entity__map_.map_sub_label_info_self_MO"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "Phrasing_map__have_map_sub_label_info_self_MO"
+			        }
+			      ]
+			    },
+			    "area_has_entity__map__polygons_list_areas": {
+			      "Binding": {
+			        "ConceptualEntity": "Areas"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "area": {
+			          "Target": {
+			            "Entity": "area"
+			          }
+			        },
+			        "entity__map_.polygons_list_areas": {
+			          "Target": {
+			            "Entity": "entity__map_.polygons_list_areas"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "area"
+			            },
+			            "Object": {
+			              "Role": "entity__map_.polygons_list_areas"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "areas_have_polygons_list_areas"
+			        }
+			      ]
+			    },
+			    "map_url_has_entity__map__map_url_areas": {
+			      "Binding": {
+			        "ConceptualEntity": "MapUrls"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "map_url": {
+			          "Target": {
+			            "Entity": "map_url"
+			          }
+			        },
+			        "entity__map_.map_url_areas": {
+			          "Target": {
+			            "Entity": "entity__map_.map_url_areas"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "map_url"
+			            },
+			            "Object": {
+			              "Role": "entity__map_.map_url_areas"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "map_urls_have_map_url_areas"
+			        }
+			      ]
+			    },
+			    "map_url_has_entity__map__map_url": {
+			      "Binding": {
+			        "ConceptualEntity": "MapUrls"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "map_url": {
+			          "Target": {
+			            "Entity": "map_url"
+			          }
+			        },
+			        "entity__map_.map_url": {
+			          "Target": {
+			            "Entity": "entity__map_.map_url"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "map_url"
+			            },
+			            "Object": {
+			              "Role": "entity__map_.map_url"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "map_urls_have_map_url"
+			        }
+			      ]
+			    },
+			    "entity__map__has_value": {
+			      "Binding": {
+			        "ConceptualEntity": "_MAP_"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "entity__map_": {
+			          "Target": {
+			            "Entity": "entity__map_"
+			          }
+			        },
+			        "entity__map_.value": {
+			          "Target": {
+			            "Entity": "entity__map_.value"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "entity__map_"
+			            },
+			            "Object": {
+			              "Role": "entity__map_.value"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "Phrasing_map__have_values"
+			        }
+			      ]
+			    },
+			    "map_url_has_expired": {
+			      "Binding": {
+			        "ConceptualEntity": "MapUrls"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "map_url": {
+			          "Target": {
+			            "Entity": "map_url"
+			          }
+			        },
+			        "map_url.expired": {
+			          "Target": {
+			            "Entity": "map_url.expired"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "map_url"
+			            },
+			            "Object": {
+			              "Role": "map_url.expired"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "map_urls_have_expired"
+			        }
+			      ]
+			    },
+			    "map_url_has_url": {
+			      "Binding": {
+			        "ConceptualEntity": "MapUrls"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "map_url": {
+			          "Target": {
+			            "Entity": "map_url"
+			          }
+			        },
+			        "map_url.url": {
+			          "Target": {
+			            "Entity": "map_url.url"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "map_url"
+			            },
+			            "Object": {
+			              "Role": "map_url.url"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "map_urls_have_urls"
+			        }
+			      ]
+			    },
+			    "map_url_has_company": {
+			      "Binding": {
+			        "ConceptualEntity": "MapUrls"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "map_url": {
+			          "Target": {
+			            "Entity": "map_url"
+			          }
+			        },
+			        "map_url.company": {
+			          "Target": {
+			            "Entity": "map_url.company"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "map_url"
+			            },
+			            "Object": {
+			              "Role": "map_url.company"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "map_urls_have_companies"
+			        }
+			      ]
+			    },
+			    "map_url_has_type": {
+			      "Binding": {
+			        "ConceptualEntity": "MapUrls"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "map_url": {
+			          "Target": {
+			            "Entity": "map_url"
+			          }
+			        },
+			        "map_url.type": {
+			          "Target": {
+			            "Entity": "map_url.type"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "map_url"
+			            },
+			            "Object": {
+			              "Role": "map_url.type"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "map_urls_have_types"
+			        }
+			      ]
+			    },
+			    "map_url_has_country": {
+			      "Binding": {
+			        "ConceptualEntity": "MapUrls"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "map_url": {
+			          "Target": {
+			            "Entity": "map_url"
+			          }
+			        },
+			        "map_url.country": {
+			          "Target": {
+			            "Entity": "map_url.country"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "map_url"
+			            },
+			            "Object": {
+			              "Role": "map_url.country"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "map_urls_have_countries"
+			        }
+			      ]
+			    },
+			    "entity__m__has_distr_stock_AC_ranked_by_region_paginated_managed": {
+			      "Binding": {
+			        "ConceptualEntity": "_M_"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "entity__m_": {
+			          "Target": {
+			            "Entity": "entity__m_"
+			          }
+			        },
+			        "entity__m_.distr_stock_AC_ranked_by_region_paginated_managed": {
+			          "Target": {
+			            "Entity": "entity__m_.distr_stock_AC_ranked_by_region_paginated_managed"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "entity__m_"
+			            },
+			            "Object": {
+			              "Role": "entity__m_.distr_stock_AC_ranked_by_region_paginated_managed"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "Phrasing_m__have_distr_stock_AC_ranked_by_region_paginated_managed"
+			        }
+			      ]
+			    },
+			    "entity__m__has_distr_stock_AC_ranked_by_region_paginated_top_N": {
+			      "Binding": {
+			        "ConceptualEntity": "_M_"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "entity__m_": {
+			          "Target": {
+			            "Entity": "entity__m_"
+			          }
+			        },
+			        "entity__m_.distr_stock_AC_ranked_by_region_paginated_top_N": {
+			          "Target": {
+			            "Entity": "entity__m_.distr_stock_AC_ranked_by_region_paginated_top_N"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "entity__m_"
+			            },
+			            "Object": {
+			              "Role": "entity__m_.distr_stock_AC_ranked_by_region_paginated_top_N"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "Phrasing_m__have_distr_stock_AC_ranked_by_region_paginated_top_N"
+			        }
+			      ]
 			    },
 			    "entity__m__has_PRT_rank_AC_ranked": {
 			      "Binding": {
@@ -47868,6 +49026,141 @@ cultureInfo en-US
 			        }
 			      ]
 			    },
+			    "area_in_entity__map__polygons_list_areas": {
+			      "Binding": {
+			        "ConceptualEntity": "Areas"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "area": {
+			          "Target": {
+			            "Entity": "area"
+			          }
+			        },
+			        "entity__map_.polygons_list_areas": {
+			          "Target": {
+			            "Entity": "entity__map_.polygons_list_areas"
+			          }
+			        }
+			      },
+			      "SemanticSlots": {
+			        "Where": {
+			          "Role": "entity__map_.polygons_list_areas"
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Preposition": {
+			            "Subject": {
+			              "Role": "area"
+			            },
+			            "Prepositions": [
+			              {
+			                "in": {
+			                  "State": "Generated"
+			                }
+			              }
+			            ],
+			            "Object": {
+			              "Role": "entity__map_.polygons_list_areas"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "areas_are_in_polygons_list_areas"
+			        }
+			      ]
+			    },
+			    "map_url_in_entity__map__map_url_areas": {
+			      "Binding": {
+			        "ConceptualEntity": "MapUrls"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "map_url": {
+			          "Target": {
+			            "Entity": "map_url"
+			          }
+			        },
+			        "entity__map_.map_url_areas": {
+			          "Target": {
+			            "Entity": "entity__map_.map_url_areas"
+			          }
+			        }
+			      },
+			      "SemanticSlots": {
+			        "Where": {
+			          "Role": "entity__map_.map_url_areas"
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Preposition": {
+			            "Subject": {
+			              "Role": "map_url"
+			            },
+			            "Prepositions": [
+			              {
+			                "in": {
+			                  "State": "Generated"
+			                }
+			              }
+			            ],
+			            "Object": {
+			              "Role": "entity__map_.map_url_areas"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "map_urls_are_in_map_url_areas"
+			        }
+			      ]
+			    },
+			    "map_url_in_country": {
+			      "Binding": {
+			        "ConceptualEntity": "MapUrls"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "map_url": {
+			          "Target": {
+			            "Entity": "map_url"
+			          }
+			        },
+			        "map_url.country": {
+			          "Target": {
+			            "Entity": "map_url.country"
+			          }
+			        }
+			      },
+			      "SemanticSlots": {
+			        "Where": {
+			          "Role": "map_url.country"
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Preposition": {
+			            "Subject": {
+			              "Role": "map_url"
+			            },
+			            "Prepositions": [
+			              {
+			                "in": {
+			                  "State": "Generated"
+			                }
+			              }
+			            ],
+			            "Object": {
+			              "Role": "map_url.country"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "map_urls_are_in_countries"
+			        }
+			      ]
+			    },
 			    "area_in_city": {
 			      "Binding": {
 			        "ConceptualEntity": "Areas"
@@ -48402,6 +49695,70 @@ cultureInfo en-US
 			          "State": "Generated",
 			          "Weight": 0.75,
 			          "ID": "headers_head"
+			        }
+			      ]
+			    },
+			    "data_plan_has_drugs_ID": {
+			      "Binding": {
+			        "ConceptualEntity": "DataPlan"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "data_plan": {
+			          "Target": {
+			            "Entity": "data_plan"
+			          }
+			        },
+			        "drugs_ID": {
+			          "Target": {
+			            "Entity": "drugs_ID"
+			          }
+			        }
+			      }
+			    },
+			    "data_plan_has_period": {
+			      "Binding": {
+			        "ConceptualEntity": "DataPlan"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "data_plan": {
+			          "Target": {
+			            "Entity": "data_plan"
+			          }
+			        },
+			        "period": {
+			          "Target": {
+			            "Entity": "period"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "data_plan"
+			            },
+			            "Object": {
+			              "Role": "period"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "data_plans_have_periods"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "period"
+			            },
+			            "Object": {
+			              "Role": "data_plan"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "periods_have_data_plans"
 			        }
 			      ]
 			    },

@@ -52,18 +52,12 @@ table ExportExpr
 				
 				var curName=SELECTEDVALUE(_CURRENCY_[_CURRENCY_])
 				return {
-				    (curName, NAMEOF('_M_'[SumByVol_AC_AllPeriods]), 0),
-				    ("USD", NAMEOF('_M_'[SumByUSD_AC_AllPeriods]), 1),
-				    ("EUR", NAMEOF('_M_'[SumByEUR_AC_AllPeriods]), 2),
-				    ("pcs", NAMEOF('_M_'[SumByPCS_AC_AllPeriods]), 3),
-				    ("tabs", NAMEOF('_M_'[SumByTABS_AC_AllPeriods]), 4),
-				    ("DDD", NAMEOF('_M_'[SumByDDD_AC_AllPeriods]), 5),
-				    ("Weighted cost ("&curName&")", NAMEOF('_M_'[PriceVOL_AC_AllPeriods]), 6),
-				    ("Weighted cost (USD)", NAMEOF('_M_'[PriceUSD_AC_AllPeriods]), 7),
-				    ("Weighted cost (EUR)", NAMEOF('_M_'[PriceEUR_AC_AllPeriods]), 8),
-				    ("Weighted cost (DDD)", NAMEOF('_M_'[PriceDDD_AC_AllPeriods]), 9),
-				    ("Weighted cost (tabs)", NAMEOF('_M_'[PriceTABS_AC_AllPeriods]), 10),
-				    ("MS%, "&curName, NAMEOF('_M_'[MS_Vol_Dyn_AC_AllPeriods]), 11)
+				    ("Distr sales, "&curName, NAMEOF('_M_'[SumByVol_AC_AllPeriods]), 0),
+				    ("Distr sales, "&"USD", NAMEOF('_M_'[SumByUSD_AC_AllPeriods]), 1),
+				    ("Distr sales, "&"EUR", NAMEOF('_M_'[SumByEUR_AC_AllPeriods]), 2),
+				    ("Distr sales, "&"pcs", NAMEOF('_M_'[SumByPCS_AC_AllPeriods]), 3),
+				    ("Distr sales, "&"tabs", NAMEOF('_M_'[SumByTABS_AC_AllPeriods]), 4),
+				    ("Distr sales, "&"DDD", NAMEOF('_M_'[SumByDDD_AC_AllPeriods]), 5)
 				}
 
 	annotation PBI_Id = 401e6ff8d3e14c21acfffbe11abed201

@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.8.0/schema.json",
   "name": "6d0f030c996716d8ac95",
   "position": {
     "x": 8.2618025751072963,
@@ -99,13 +99,8 @@
           "properties": {
             "text": {
               "expr": {
-                "Measure": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "Captions"
-                    }
-                  },
-                  "Property": "Caption_Page_Name_Group_Analysis"
+                "Literal": {
+                  "Value": "'Region analysis'"
                 }
               }
             },

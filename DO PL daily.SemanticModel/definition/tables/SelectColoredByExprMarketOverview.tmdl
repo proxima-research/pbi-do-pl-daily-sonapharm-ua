@@ -1,0 +1,45 @@
+table SelectColoredByExprMarketOverview
+	lineageTag: 5b0f927e-0510-4028-b366-c09c5df5b911
+
+	column ColoredBy
+		lineageTag: 55f6d881-dc32-483a-bf85-e6a2d58f39b3
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [ColoredBy]
+		sortByColumn: Idx
+
+		annotation SummarizationSetBy = Automatic
+
+	column Idx
+		formatString: 0
+		lineageTag: 1388d9d4-153b-4509-a7a5-8bceb77a1550
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Idx]
+
+		annotation SummarizationSetBy = Automatic
+
+	column ShortName
+		lineageTag: 15336c61-4e49-48e8-b1a8-489b154bbf2f
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [ShortName]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition SelectColoredByExprMarketOverview = calculated
+		mode: import
+		source =
+				DATATABLE("ColoredBy",STRING,"Idx",INTEGER,"ShortName",STRING,{
+				    {"Distr AC",1,"Distr AC"},
+				    {"Distr PY",2,"Distr AC"},
+				    {"Distr PL",3,"Distr AC"},
+				    {"Distr PE%",4,"Distr PE%"},
+				    {"Promo AC",5,"Promo AC"},
+				    {"Promo PE%",6,"Promo PE%"},
+				    {"Penetration AC%",7,"Penetration AC%"},
+				    {"Stock AC",8,"Stock AC"}
+				})
+
+	annotation PBI_Id = 65ab0997ea1044ccb5014e82bfedb143
+

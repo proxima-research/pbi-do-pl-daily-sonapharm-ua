@@ -551,6 +551,17 @@ table Headers
 			return sss&", "&aggrType&", "&periodName
 		lineageTag: 8b63d384-5d51-4255-8074-d1058addb751
 
+	measure Header_Map_Main_Region =
+			
+			var measureName=SELECTEDVALUE(SelectMeasures[MeasureName])
+			var periodName=[Selected_Periods_List]
+			var aggrType=SELECTEDVALUE(Aggr[AGGR_TYPE])
+			var s="{DATA_TYPE} market sales in {MEASURE}, by region on map"
+			var ss=CALCULATE(SELECTEDVALUE(T[dst],s),T[src]=s)
+			var sss=SUBSTITUTE(SUBSTITUTE(ss,"{DATA_TYPE}",[Current_Data_Type]),"{MEASURE}",measureName)
+			return sss&", "&aggrType&", "&periodName
+		lineageTag: f06e88a0-fe2b-4627-a1ec-fab53c15f8c0
+
 	column Value
 		isHidden
 		formatString: 0

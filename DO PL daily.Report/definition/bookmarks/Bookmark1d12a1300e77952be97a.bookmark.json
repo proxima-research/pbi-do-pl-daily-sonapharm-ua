@@ -11,20 +11,20 @@
       "e87140480642064ecc8d",
       "3fda63658ae3347646a4",
       "a300625625a25890c8c6",
+      "0a8448749c2e0da59c87",
       "2097b71751a2026d21ac",
-      "b89705abde2e386acdb2",
       "e91b38a3868dd3d19974",
       "03f154cbccb6b000d04d",
       "a4fc037de5ddee1bbe16",
       "0caed7700c5672d82339",
       "b396e7242d30795bc850",
       "9aac67ea04611ce6db3a",
-      "0a8448749c2e0da59c87"
+      "7ab326d082aa20693c1b"
     ],
     "suppressData": true
   },
   "explorationState": {
-    "version": "1.3",
+    "version": "1.11",
     "activeSection": "ReportSection22cfafac636ba8c94920",
     "filters": {
       "byExpr": [
@@ -78,6 +78,66 @@
                 }
               },
               "Property": "Language"
+            }
+          },
+          "howCreated": 1
+        },
+        {
+          "name": "dd240e3c205742853e17",
+          "type": "Categorical",
+          "expression": {
+            "Column": {
+              "Expression": {
+                "SourceRef": {
+                  "Entity": "Areas"
+                }
+              },
+              "Property": "AREA_NAME"
+            }
+          },
+          "howCreated": 1
+        },
+        {
+          "name": "cb9c61578537ad05a519",
+          "type": "Categorical",
+          "expression": {
+            "Column": {
+              "Expression": {
+                "SourceRef": {
+                  "Entity": "Areas"
+                }
+              },
+              "Property": "CHAIN_NAME"
+            }
+          },
+          "howCreated": 1
+        },
+        {
+          "name": "4370aa2e9b60a2809233",
+          "type": "Categorical",
+          "expression": {
+            "Column": {
+              "Expression": {
+                "SourceRef": {
+                  "Entity": "Areas"
+                }
+              },
+              "Property": "ORG_NAME"
+            }
+          },
+          "howCreated": 1
+        },
+        {
+          "name": "f09a35683ea027b822b1",
+          "type": "Categorical",
+          "expression": {
+            "Column": {
+              "Expression": {
+                "SourceRef": {
+                  "Entity": "Areas"
+                }
+              },
+              "Property": "CLIENT_NAME"
             }
           },
           "howCreated": 1
@@ -771,6 +831,66 @@
             }
           },
           "howCreated": 1
+        },
+        {
+          "name": "5d440ae6598730c5292d",
+          "type": "Categorical",
+          "expression": {
+            "Column": {
+              "Expression": {
+                "SourceRef": {
+                  "Entity": "Areas"
+                }
+              },
+              "Property": "LEVEL_1"
+            }
+          },
+          "howCreated": 1
+        },
+        {
+          "name": "b835f218d9ce83ed3b11",
+          "type": "Categorical",
+          "expression": {
+            "Column": {
+              "Expression": {
+                "SourceRef": {
+                  "Entity": "Areas"
+                }
+              },
+              "Property": "LEVEL_2"
+            }
+          },
+          "howCreated": 1
+        },
+        {
+          "name": "07c393b6e2c25b30c5c2",
+          "type": "Categorical",
+          "expression": {
+            "Column": {
+              "Expression": {
+                "SourceRef": {
+                  "Entity": "Areas"
+                }
+              },
+              "Property": "LEVEL_3"
+            }
+          },
+          "howCreated": 1
+        },
+        {
+          "name": "94abeb5767ab080751b1",
+          "type": "Categorical",
+          "expression": {
+            "Column": {
+              "Expression": {
+                "SourceRef": {
+                  "Entity": "Areas"
+                }
+              },
+              "Property": "LEVEL_4"
+            }
+          },
+          "howCreated": 1
         }
       ]
     },
@@ -832,7 +952,7 @@
               },
               "byExpr": [
                 {
-                  "name": "eace4135ba381233270d",
+                  "name": "3daba676a207d06d8b69",
                   "type": "Categorical",
                   "expression": {
                     "Column": {
@@ -950,7 +1070,7 @@
             "filters": {
               "byExpr": [
                 {
-                  "name": "6481d90a8be5bd910589",
+                  "name": "fc2bb59a305a5b69893e",
                   "type": "Categorical",
                   "expression": {
                     "Column": {
@@ -1089,14 +1209,56 @@
                                       [
                                         {
                                           "Literal": {
-                                            "Value": "'Self Sales AC'"
+                                            "Value": "'Distr Sales ΔPY%'"
                                           }
                                         }
                                       ],
                                       [
                                         {
                                           "Literal": {
-                                            "Value": "'Distr Sales AC'"
+                                            "Value": "'Distr Sales PL'"
+                                          }
+                                        }
+                                      ],
+                                      [
+                                        {
+                                          "Literal": {
+                                            "Value": "'Promo PE%'"
+                                          }
+                                        }
+                                      ],
+                                      [
+                                        {
+                                          "Literal": {
+                                            "Value": "'Distr TS%'"
+                                          }
+                                        }
+                                      ],
+                                      [
+                                        {
+                                          "Literal": {
+                                            "Value": "'Penetration AC,%'"
+                                          }
+                                        }
+                                      ],
+                                      [
+                                        {
+                                          "Literal": {
+                                            "Value": "'Promo TS%'"
+                                          }
+                                        }
+                                      ],
+                                      [
+                                        {
+                                          "Literal": {
+                                            "Value": "'Stock TS%'"
+                                          }
+                                        }
+                                      ],
+                                      [
+                                        {
+                                          "Literal": {
+                                            "Value": "'Stock AC'"
                                           }
                                         }
                                       ]
@@ -1169,6 +1331,162 @@
               }
             }
           },
+          "0a8448749c2e0da59c87": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "6fa0511add4caa086a7a",
+                  "type": "Advanced",
+                  "filter": {
+                    "Version": 2,
+                    "From": [
+                      {
+                        "Name": "s",
+                        "Entity": "SinglePeriodFilter",
+                        "Type": 0
+                      }
+                    ],
+                    "Where": [
+                      {
+                        "Condition": {
+                          "Not": {
+                            "Expression": {
+                              "Comparison": {
+                                "ComparisonKind": 0,
+                                "Left": {
+                                  "Column": {
+                                    "Expression": {
+                                      "SourceRef": {
+                                        "Source": "s"
+                                      }
+                                    },
+                                    "Property": "Filtered"
+                                  }
+                                },
+                                "Right": {
+                                  "Literal": {
+                                    "Value": "null"
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    ]
+                  },
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "SinglePeriodFilter"
+                        }
+                      },
+                      "Property": "Filtered"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "slicer",
+              "objects": {
+                "merge": {
+                  "general": [
+                    {
+                      "properties": {
+                        "filter": {
+                          "filter": {
+                            "Version": 2,
+                            "From": [
+                              {
+                                "Name": "s",
+                                "Entity": "SinglePeriodFilter",
+                                "Type": 0
+                              }
+                            ],
+                            "Where": [
+                              {
+                                "Condition": {
+                                  "In": {
+                                    "Expressions": [
+                                      {
+                                        "Column": {
+                                          "Expression": {
+                                            "SourceRef": {
+                                              "Source": "s"
+                                            }
+                                          },
+                                          "Property": "Filtered"
+                                        }
+                                      }
+                                    ],
+                                    "Values": [
+                                      [
+                                        {
+                                          "Literal": {
+                                            "Value": "'Hide future periods'"
+                                          }
+                                        }
+                                      ]
+                                    ]
+                                  }
+                                }
+                              }
+                            ]
+                          }
+                        }
+                      }
+                    }
+                  ],
+                  "data": [
+                    {
+                      "properties": {
+                        "mode": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "'Basic'"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ],
+                  "selection": [
+                    {
+                      "properties": {
+                        "strictSingleSelect": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "false"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              },
+              "activeProjections": {
+                "Values": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "SinglePeriodFilter"
+                        }
+                      },
+                      "Property": "Filtered"
+                    }
+                  }
+                ]
+              },
+              "display": {
+                "mode": "hidden"
+              }
+            }
+          },
           "0caed7700c5672d82339": {
             "singleVisual": {
               "visualType": "shape",
@@ -1178,11 +1496,776 @@
               }
             }
           },
+          "1631b1f0d8329050409d": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "22741c128ed4046a5326",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_M_"
+                        }
+                      },
+                      "Property": "Distr_Sales_GR_PY_Ranked_By_Region_Paginated_TopN_Managed"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "ce9e7973d69d1bc56b29",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_M_"
+                        }
+                      },
+                      "Property": "Distr_Sales_PL_Ranked_By_Region_Paginated_TopN_Managed"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "3736ec8a0b09b300e69d",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_M_"
+                        }
+                      },
+                      "Property": "Distr_Sales_PE_Ranked_By_Region_Paginated_TopN_Managed"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "92ba854217e781670d18",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_M_"
+                        }
+                      },
+                      "Property": "Visits_AC_Ranked_By_Region_Paginated_TopN_Managed"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "38086cf05bd86ead1276",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_M_"
+                        }
+                      },
+                      "Property": "Visits_PL_Ranked_By_Region_Paginated_TopN_Managed"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "3b4b4ecb90048ae322d4",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_M_"
+                        }
+                      },
+                      "Property": "Visits_PE_Ranked_By_Region_Paginated_TopN_Managed"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "2bf92f1c970878a0d947",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_M_"
+                        }
+                      },
+                      "Property": "Distr_MS_In_Regions_Paginated_Managed"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "96a9ec3cc80870706712",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "SelectColumns"
+                        }
+                      },
+                      "Property": "Distr_Rank_AC_Ranked_Paginated_TopN_Self"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "85d3cc7e39a708146e56",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_M_"
+                        }
+                      },
+                      "Property": "PRT_AC_Ranked_By_Region_Paginated_Managed"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "186d7430ce0cd610dc06",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_M_"
+                        }
+                      },
+                      "Property": "Promo_MS_In_Regions_Paginated_Managed"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "5b8637f03801c63d39b8",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_M_"
+                        }
+                      },
+                      "Property": "Stock_MS_In_Regions_Paginated_Managed"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "6bdf584b8209a4c8d4ea",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_M_"
+                        }
+                      },
+                      "Property": "Distr_Sales_PY_Ranked_By_Region_Paginated_TopN"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "044334dfee915027d861",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_M_"
+                        }
+                      },
+                      "Property": "Distr_Sales_AC_Ranked_By_Region_Paginated_TopN"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "c5a3053a19ed32b02a20",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Areas"
+                        }
+                      },
+                      "Property": "LEVEL_1"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "20fd548e0a70881ec070",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_M_"
+                        }
+                      },
+                      "Property": "Distr_Stock_AC_Ranked_By_Region_Paginated_Managed"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "ZebraBITablesBAE31B370F254F808553548EFB35BFA5",
+              "objects": {
+                "merge": {
+                  "proFeaturesSettings": [
+                    {
+                      "properties": {
+                        "show": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "true"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ],
+                  "chartSettings": [
+                    {
+                      "properties": {
+                        "suppressAbsoluteVariances": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "true"
+                            }
+                          }
+                        },
+                        "suppressEmptyColumns": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "true"
+                            }
+                          }
+                        },
+                        "showAsTable": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "false"
+                            }
+                          }
+                        },
+                        "types": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "'Integrated'"
+                            }
+                          }
+                        },
+                        "columnSettings": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "'{\"actual\":{\"invert\":false,\"order\":1,\"scaleGroup\":1,\"format\":0,\"useMeasureName\":false,\"suppressOthers\":false,\"pbiFormatString\":\"\",\"tableView\":{\"bold\":false,\"textColor\":\"\",\"backgroundFill\":\"\",\"markerStyle\":5,\"border\":\"\",\"showAsTable\":2,\"hidden\":false,\"hiddenFromGroups\":[]},\"chartView\":{\"bold\":false,\"textColor\":\"\",\"backgroundFill\":\"\",\"markerStyle\":5,\"border\":\"\",\"showAsTable\":2,\"hidden\":false,\"hiddenFromGroups\":[]},\"conditionalVariance\":{\"lowerThreshold\":0,\"upperThreshold\":0,\"thresholdUnit\":\"P\"}},\"previousYear\":{\"invert\":false,\"order\":1,\"scaleGroup\":1,\"format\":0,\"useMeasureName\":false,\"suppressOthers\":false,\"pbiFormatString\":\"\",\"tableView\":{\"bold\":false,\"textColor\":\"\",\"backgroundFill\":\"\",\"markerStyle\":5,\"border\":\"\",\"showAsTable\":2,\"hidden\":false,\"hiddenFromGroups\":[]},\"chartView\":{\"bold\":false,\"textColor\":\"\",\"backgroundFill\":\"\",\"markerStyle\":5,\"border\":\"\",\"showAsTable\":2,\"hidden\":false,\"hiddenFromGroups\":[]},\"conditionalVariance\":{\"lowerThreshold\":0,\"upperThreshold\":0,\"thresholdUnit\":\"P\"}},\"actual-previousYear\":{\"invert\":false,\"order\":4,\"scaleGroup\":1,\"format\":1,\"useMeasureName\":false,\"suppressOthers\":false,\"pbiFormatString\":\"\",\"tableView\":{\"bold\":false,\"textColor\":\"\",\"backgroundFill\":\"\",\"markerStyle\":5,\"border\":\"\",\"showAsTable\":0,\"hidden\":false,\"hiddenFromGroups\":[]},\"chartView\":{\"bold\":false,\"textColor\":\"\",\"backgroundFill\":\"\",\"markerStyle\":5,\"border\":\"\",\"showAsTable\":0,\"hidden\":false,\"hiddenFromGroups\":[]},\"conditionalVariance\":{\"lowerThreshold\":0,\"upperThreshold\":0,\"thresholdUnit\":\"P\"}},\"actual-previousYear-percent\":{\"invert\":false,\"order\":3,\"scaleGroup\":1,\"format\":2,\"useMeasureName\":false,\"suppressOthers\":false,\"pbiFormatString\":\"\",\"tableView\":{\"bold\":false,\"textColor\":\"\",\"backgroundFill\":\"\",\"markerStyle\":5,\"border\":\"\",\"showAsTable\":0,\"hidden\":false,\"hiddenFromGroups\":[]},\"chartView\":{\"bold\":false,\"textColor\":\"\",\"backgroundFill\":\"\",\"markerStyle\":5,\"border\":\"\",\"showAsTable\":0,\"hidden\":false,\"hiddenFromGroups\":[]},\"conditionalVariance\":{\"lowerThreshold\":0,\"upperThreshold\":0,\"thresholdUnit\":\"P\"}},\"Rank\":{\"header\":\"Rank\",\"invert\":false,\"order\":null,\"format\":0,\"useMeasureName\":true,\"pbiFormatString\":\"\",\"percentageFormat\":\"\",\"showPercentageInLabel\":1,\"scaleGroup\":-1,\"suppressOthers\":false,\"tableView\":{\"bold\":false,\"decimalPlaces\":0,\"displayUnits\":\"Default\",\"textColor\":\"\",\"backgroundFill\":\"\",\"markerStyle\":5,\"border\":\"\",\"showAsTable\":0,\"hidden\":false,\"valueChart\":0,\"absoluteChart\":0,\"hiddenFromGroups\":[]},\"chartView\":{\"bold\":false,\"decimalPlaces\":0,\"displayUnits\":\"Default\",\"textColor\":\"\",\"backgroundFill\":\"\",\"markerStyle\":5,\"border\":\"\",\"showAsTable\":0,\"hidden\":false,\"valueChart\":0,\"absoluteChart\":0,\"hiddenFromGroups\":[]},\"conditionalVariance\":{\"lowerThreshold\":0,\"upperThreshold\":0,\"thresholdUnit\":\"P\"}},\"Distr ΔPY\":{\"header\":\"Distr ΔPY\",\"invert\":false,\"order\":2,\"format\":1,\"useMeasureName\":false,\"pbiFormatString\":\"\",\"percentageFormat\":\"\",\"showPercentageInLabel\":1,\"scaleGroup\":-1,\"suppressOthers\":false,\"tableView\":{\"bold\":false,\"decimalPlaces\":-1,\"displayUnits\":\"Default\",\"textColor\":\"\",\"backgroundFill\":\"\",\"markerStyle\":5,\"border\":\"\",\"showAsTable\":0,\"hidden\":false,\"valueChart\":0,\"absoluteChart\":0,\"relativeChart\":0,\"hiddenFromGroups\":[],\"columnFixedWidth\":200},\"chartView\":{\"bold\":false,\"decimalPlaces\":-1,\"displayUnits\":\"Default\",\"textColor\":\"\",\"backgroundFill\":\"\",\"markerStyle\":5,\"border\":\"\",\"showAsTable\":2,\"hidden\":false,\"valueChart\":0,\"absoluteChart\":0,\"relativeChart\":0,\"hiddenFromGroups\":[],\"columnFixedWidth\":200},\"conditionalVariance\":{\"lowerThreshold\":0,\"upperThreshold\":0,\"thresholdUnit\":\"P\"}},\"Distr ΔPY%\":{\"header\":\"Distr ΔPY%\",\"invert\":false,\"order\":7,\"format\":3,\"useMeasureName\":false,\"pbiFormatString\":\"\",\"percentageFormat\":\"0%\",\"showPercentageInLabel\":1,\"scaleGroup\":-1,\"suppressOthers\":false,\"tableView\":{\"bold\":false,\"decimalPlaces\":-1,\"displayUnits\":\"Default\",\"textColor\":\"\",\"backgroundFill\":\"\",\"markerStyle\":5,\"border\":\"\",\"showAsTable\":0,\"hidden\":false,\"valueChart\":0,\"absoluteChart\":0,\"relativeChart\":0,\"hiddenFromGroups\":[],\"columnFixedWidth\":200},\"chartView\":{\"bold\":false,\"decimalPlaces\":-1,\"displayUnits\":\"Default\",\"textColor\":\"\",\"backgroundFill\":\"\",\"markerStyle\":5,\"border\":\"\",\"showAsTable\":2,\"hidden\":false,\"valueChart\":4,\"absoluteChart\":0,\"relativeChart\":0,\"hiddenFromGroups\":[],\"columnFixedWidth\":200},\"conditionalVariance\":{\"lowerThreshold\":0,\"upperThreshold\":0,\"thresholdUnit\":\"P\"}},\"Distr PL\":{\"header\":\"Distr PL\",\"invert\":false,\"order\":8,\"format\":0,\"useMeasureName\":false,\"pbiFormatString\":\"\",\"percentageFormat\":\"\",\"showPercentageInLabel\":1,\"scaleGroup\":-1,\"suppressOthers\":false,\"tableView\":{\"bold\":false,\"decimalPlaces\":-1,\"displayUnits\":\"Default\",\"textColor\":\"\",\"backgroundFill\":\"\",\"markerStyle\":5,\"border\":\"\",\"showAsTable\":0,\"hidden\":false,\"valueChart\":0,\"absoluteChart\":0,\"relativeChart\":0,\"hiddenFromGroups\":[],\"columnFixedWidth\":200},\"chartView\":{\"bold\":false,\"decimalPlaces\":-1,\"displayUnits\":\"Default\",\"textColor\":\"\",\"backgroundFill\":\"\",\"markerStyle\":5,\"border\":\"\",\"showAsTable\":0,\"hidden\":false,\"valueChart\":0,\"absoluteChart\":0,\"relativeChart\":0,\"hiddenFromGroups\":[],\"columnFixedWidth\":200},\"conditionalVariance\":{\"lowerThreshold\":0,\"upperThreshold\":0,\"thresholdUnit\":\"P\"}},\"Distr PE%\":{\"header\":\"Distr PE%\",\"invert\":false,\"order\":8,\"format\":3,\"useMeasureName\":false,\"pbiFormatString\":\"\",\"percentageFormat\":\"0%\",\"showPercentageInLabel\":1,\"scaleGroup\":-1,\"suppressOthers\":false,\"tableView\":{\"bold\":false,\"decimalPlaces\":-1,\"displayUnits\":\"Default\",\"textColor\":\"\",\"backgroundFill\":\"\",\"markerStyle\":5,\"border\":\"\",\"showAsTable\":0,\"hidden\":false,\"valueChart\":0,\"absoluteChart\":0,\"relativeChart\":0,\"hiddenFromGroups\":[],\"columnFixedWidth\":200},\"chartView\":{\"bold\":false,\"decimalPlaces\":-1,\"displayUnits\":\"Default\",\"textColor\":\"\",\"backgroundFill\":\"\",\"markerStyle\":5,\"border\":\"\",\"showAsTable\":0,\"hidden\":false,\"valueChart\":0,\"absoluteChart\":0,\"relativeChart\":0,\"hiddenFromGroups\":[],\"columnFixedWidth\":200},\"conditionalVariance\":{\"lowerThreshold\":0,\"upperThreshold\":0,\"thresholdUnit\":\"P\"}},\"Promo AC\":{\"header\":\"Promo AC\",\"invert\":false,\"order\":13,\"format\":0,\"useMeasureName\":false,\"pbiFormatString\":\"\",\"percentageFormat\":\"\",\"showPercentageInLabel\":1,\"scaleGroup\":-1,\"suppressOthers\":false,\"tableView\":{\"bold\":false,\"decimalPlaces\":-1,\"displayUnits\":\"Default\",\"textColor\":\"\",\"backgroundFill\":\"\",\"markerStyle\":5,\"border\":\"\",\"showAsTable\":0,\"hidden\":false,\"valueChart\":0,\"absoluteChart\":0,\"relativeChart\":0,\"hiddenFromGroups\":[],\"columnFixedWidth\":200},\"chartView\":{\"bold\":false,\"decimalPlaces\":0,\"displayUnits\":\"Default\",\"textColor\":\"\",\"backgroundFill\":\"\",\"markerStyle\":5,\"border\":\"\",\"showAsTable\":2,\"hidden\":false,\"valueChart\":0,\"absoluteChart\":0,\"relativeChart\":0,\"hiddenFromGroups\":[],\"columnFixedWidth\":200},\"conditionalVariance\":{\"lowerThreshold\":0,\"upperThreshold\":0,\"thresholdUnit\":\"P\"}},\"Promo PL\":{\"header\":\"Promo PL\",\"invert\":false,\"order\":14,\"format\":0,\"useMeasureName\":false,\"pbiFormatString\":\"\",\"percentageFormat\":\"\",\"showPercentageInLabel\":1,\"scaleGroup\":-1,\"suppressOthers\":false,\"tableView\":{\"bold\":false,\"decimalPlaces\":-1,\"displayUnits\":\"Default\",\"textColor\":\"\",\"backgroundFill\":\"\",\"markerStyle\":5,\"border\":\"\",\"showAsTable\":0,\"hidden\":false,\"valueChart\":0,\"absoluteChart\":0,\"relativeChart\":0,\"hiddenFromGroups\":[],\"columnFixedWidth\":200},\"chartView\":{\"bold\":false,\"decimalPlaces\":-1,\"displayUnits\":\"Default\",\"textColor\":\"\",\"backgroundFill\":\"\",\"markerStyle\":5,\"border\":\"\",\"showAsTable\":0,\"hidden\":false,\"valueChart\":0,\"absoluteChart\":0,\"relativeChart\":0,\"hiddenFromGroups\":[],\"columnFixedWidth\":200},\"conditionalVariance\":{\"lowerThreshold\":0,\"upperThreshold\":0,\"thresholdUnit\":\"P\"}},\"Promo PE%\":{\"header\":\"Promo PE%\",\"invert\":false,\"order\":13,\"format\":0,\"useMeasureName\":false,\"pbiFormatString\":\"\",\"percentageFormat\":\"0%\",\"showPercentageInLabel\":1,\"scaleGroup\":-1,\"suppressOthers\":false,\"tableView\":{\"bold\":false,\"decimalPlaces\":-1,\"displayUnits\":\"Default\",\"textColor\":\"\",\"backgroundFill\":\"\",\"markerStyle\":5,\"border\":\"\",\"showAsTable\":0,\"hidden\":false,\"valueChart\":0,\"absoluteChart\":0,\"relativeChart\":0,\"hiddenFromGroups\":[],\"columnFixedWidth\":200},\"chartView\":{\"bold\":false,\"decimalPlaces\":-1,\"displayUnits\":\"P\",\"textColor\":\"\",\"backgroundFill\":\"\",\"markerStyle\":5,\"border\":\"\",\"showAsTable\":0,\"hidden\":false,\"valueChart\":0,\"absoluteChart\":0,\"relativeChart\":0,\"hiddenFromGroups\":[],\"columnFixedWidth\":200},\"conditionalVariance\":{\"lowerThreshold\":0,\"upperThreshold\":0,\"thresholdUnit\":\"P\"}},\"Distr TS%\":{\"header\":\"Distr TS%\",\"invert\":false,\"order\":14,\"format\":0,\"useMeasureName\":false,\"pbiFormatString\":\"\",\"percentageFormat\":\"0%\",\"showPercentageInLabel\":1,\"scaleGroup\":-1,\"suppressOthers\":false,\"tableView\":{\"bold\":false,\"decimalPlaces\":-1,\"displayUnits\":\"Default\",\"textColor\":\"\",\"backgroundFill\":\"\",\"markerStyle\":5,\"border\":\"\",\"showAsTable\":0,\"hidden\":false,\"valueChart\":0,\"absoluteChart\":0,\"relativeChart\":0,\"hiddenFromGroups\":[],\"columnFixedWidth\":200},\"chartView\":{\"bold\":false,\"decimalPlaces\":-1,\"displayUnits\":\"P\",\"textColor\":\"\",\"backgroundFill\":\"\",\"markerStyle\":5,\"border\":\"\",\"showAsTable\":0,\"hidden\":false,\"valueChart\":0,\"absoluteChart\":0,\"relativeChart\":0,\"hiddenFromGroups\":[],\"columnFixedWidth\":200},\"conditionalVariance\":{\"lowerThreshold\":0,\"upperThreshold\":0,\"thresholdUnit\":\"P\"}},\"PRT%\":{\"header\":\"PRT%\",\"invert\":false,\"order\":12,\"format\":3,\"useMeasureName\":false,\"pbiFormatString\":\"\",\"percentageFormat\":\"0%\",\"showPercentageInLabel\":1,\"scaleGroup\":-1,\"suppressOthers\":false,\"tableView\":{\"bold\":false,\"decimalPlaces\":-1,\"displayUnits\":\"Default\",\"textColor\":\"\",\"backgroundFill\":\"\",\"markerStyle\":5,\"border\":\"\",\"showAsTable\":0,\"hidden\":false,\"valueChart\":0,\"absoluteChart\":0,\"relativeChart\":0,\"hiddenFromGroups\":[],\"columnFixedWidth\":200},\"chartView\":{\"bold\":false,\"decimalPlaces\":-1,\"displayUnits\":\"Default\",\"textColor\":\"\",\"backgroundFill\":\"\",\"markerStyle\":5,\"border\":\"\",\"showAsTable\":0,\"hidden\":false,\"valueChart\":0,\"absoluteChart\":0,\"relativeChart\":0,\"hiddenFromGroups\":[],\"columnFixedWidth\":200},\"conditionalVariance\":{\"lowerThreshold\":0,\"upperThreshold\":0,\"thresholdUnit\":\"P\"}},\"Promo TS%\":{\"header\":\"Promo TS%\",\"invert\":false,\"order\":15,\"format\":3,\"useMeasureName\":false,\"pbiFormatString\":\"\",\"percentageFormat\":\"0%\",\"showPercentageInLabel\":1,\"scaleGroup\":-1,\"suppressOthers\":false,\"tableView\":{\"bold\":false,\"decimalPlaces\":-1,\"displayUnits\":\"Default\",\"textColor\":\"\",\"backgroundFill\":\"\",\"markerStyle\":5,\"border\":\"\",\"showAsTable\":0,\"hidden\":false,\"valueChart\":0,\"absoluteChart\":0,\"relativeChart\":0,\"hiddenFromGroups\":[],\"columnFixedWidth\":200},\"chartView\":{\"bold\":false,\"decimalPlaces\":-1,\"displayUnits\":\"Default\",\"textColor\":\"\",\"backgroundFill\":\"\",\"markerStyle\":5,\"border\":\"\",\"showAsTable\":0,\"hidden\":false,\"valueChart\":0,\"absoluteChart\":0,\"relativeChart\":0,\"hiddenFromGroups\":[],\"columnFixedWidth\":200},\"conditionalVariance\":{\"lowerThreshold\":0,\"upperThreshold\":0,\"thresholdUnit\":\"P\"}},\"Stock TS%\":{\"header\":\"Stock TS%\",\"invert\":false,\"order\":17,\"format\":3,\"useMeasureName\":false,\"pbiFormatString\":\"\",\"percentageFormat\":\"0%\",\"showPercentageInLabel\":1,\"scaleGroup\":-1,\"suppressOthers\":false,\"tableView\":{\"bold\":false,\"decimalPlaces\":-1,\"displayUnits\":\"Default\",\"textColor\":\"\",\"backgroundFill\":\"\",\"markerStyle\":5,\"border\":\"\",\"showAsTable\":0,\"hidden\":false,\"valueChart\":0,\"absoluteChart\":0,\"relativeChart\":0,\"hiddenFromGroups\":[],\"columnFixedWidth\":200},\"chartView\":{\"bold\":false,\"decimalPlaces\":-1,\"displayUnits\":\"Default\",\"textColor\":\"\",\"backgroundFill\":\"\",\"markerStyle\":5,\"border\":\"\",\"showAsTable\":0,\"hidden\":false,\"valueChart\":0,\"absoluteChart\":0,\"relativeChart\":0,\"hiddenFromGroups\":[],\"columnFixedWidth\":200},\"conditionalVariance\":{\"lowerThreshold\":0,\"upperThreshold\":0,\"thresholdUnit\":\"P\"}},\"Promo_MS_In_Regions_Paginated_Managed\":{\"header\":\"Promo_MS_In_Regions_Paginated_Managed\",\"invert\":false,\"format\":3,\"useMeasureName\":false,\"pbiFormatString\":\"\",\"percentageFormat\":\"\",\"showPercentageInLabel\":1,\"scaleGroup\":-1,\"suppressOthers\":false,\"tableView\":{\"bold\":false,\"decimalPlaces\":-1,\"displayUnits\":\"Default\",\"textColor\":\"\",\"backgroundFill\":\"\",\"markerStyle\":5,\"border\":\"\",\"showAsTable\":0,\"hidden\":false,\"valueChart\":0,\"absoluteChart\":0,\"relativeChart\":0,\"hiddenFromGroups\":[],\"columnFixedWidth\":200},\"chartView\":{\"bold\":false,\"decimalPlaces\":-1,\"displayUnits\":\"Default\",\"textColor\":\"\",\"backgroundFill\":\"\",\"markerStyle\":5,\"border\":\"\",\"showAsTable\":0,\"hidden\":false,\"valueChart\":0,\"absoluteChart\":0,\"relativeChart\":0,\"hiddenFromGroups\":[],\"columnFixedWidth\":200},\"conditionalVariance\":{\"lowerThreshold\":0,\"upperThreshold\":0,\"thresholdUnit\":\"P\"},\"order\":null},\"GR\":{\"header\":\"ΔPY%\",\"invert\":false,\"order\":2,\"format\":2,\"useMeasureName\":false,\"pbiFormatString\":\"\",\"percentageFormat\":\"0%\",\"showPercentageInLabel\":1,\"scaleGroup\":-1,\"suppressOthers\":false,\"tableView\":{\"bold\":false,\"decimalPlaces\":1,\"displayUnits\":\"Default\",\"textColor\":\"\",\"backgroundFill\":\"\",\"markerStyle\":5,\"border\":\"\",\"showAsTable\":0,\"hidden\":false,\"valueChart\":0,\"absoluteChart\":0,\"hiddenFromGroups\":[]},\"chartView\":{\"bold\":false,\"decimalPlaces\":1,\"displayUnits\":\"Default\",\"textColor\":\"\",\"backgroundFill\":\"\",\"markerStyle\":5,\"border\":\"\",\"showAsTable\":2,\"hidden\":false,\"valueChart\":4,\"absoluteChart\":0,\"hiddenFromGroups\":[]},\"conditionalVariance\":{\"lowerThreshold\":0,\"upperThreshold\":0,\"thresholdUnit\":\"P\"}},\"Self Sales\":{\"header\":\"Self Sales\",\"invert\":false,\"format\":0,\"useMeasureName\":false,\"pbiFormatString\":\"\",\"percentageFormat\":\"\",\"showPercentageInLabel\":1,\"scaleGroup\":-1,\"suppressOthers\":false,\"tableView\":{\"bold\":false,\"decimalPlaces\":-1,\"displayUnits\":\"Default\",\"textColor\":\"\",\"backgroundFill\":\"\",\"markerStyle\":5,\"border\":\"\",\"showAsTable\":0,\"hidden\":false,\"valueChart\":0,\"absoluteChart\":0,\"relativeChart\":0,\"hiddenFromGroups\":[],\"columnFixedWidth\":200},\"chartView\":{\"bold\":false,\"decimalPlaces\":-1,\"displayUnits\":\"Default\",\"textColor\":\"\",\"backgroundFill\":\"\",\"markerStyle\":5,\"border\":\"\",\"showAsTable\":2,\"hidden\":false,\"valueChart\":0,\"absoluteChart\":0,\"relativeChart\":0,\"hiddenFromGroups\":[],\"columnFixedWidth\":200},\"conditionalVariance\":{\"lowerThreshold\":0,\"upperThreshold\":0,\"thresholdUnit\":\"P\"},\"order\":null},\"Self ΔPY\":{\"header\":\"Self ΔPY\",\"invert\":false,\"order\":6,\"format\":1,\"useMeasureName\":false,\"pbiFormatString\":\"\",\"percentageFormat\":\"\",\"showPercentageInLabel\":1,\"scaleGroup\":-1,\"suppressOthers\":false,\"tableView\":{\"bold\":false,\"decimalPlaces\":-1,\"displayUnits\":\"Default\",\"textColor\":\"\",\"backgroundFill\":\"\",\"markerStyle\":5,\"border\":\"\",\"showAsTable\":0,\"hidden\":false,\"valueChart\":0,\"absoluteChart\":0,\"hiddenFromGroups\":[],\"columnFixedWidth\":200},\"chartView\":{\"bold\":false,\"decimalPlaces\":-1,\"displayUnits\":\"Default\",\"textColor\":\"\",\"backgroundFill\":\"\",\"markerStyle\":5,\"border\":\"\",\"showAsTable\":2,\"hidden\":false,\"valueChart\":0,\"absoluteChart\":0,\"hiddenFromGroups\":[],\"columnFixedWidth\":200},\"conditionalVariance\":{\"lowerThreshold\":0,\"upperThreshold\":0,\"thresholdUnit\":\"P\"}},\"Self ΔPY%\":{\"header\":\"Self ΔPY%\",\"invert\":false,\"order\":7,\"format\":2,\"useMeasureName\":false,\"pbiFormatString\":\"\",\"percentageFormat\":\"0%\",\"showPercentageInLabel\":1,\"scaleGroup\":-1,\"suppressOthers\":false,\"tableView\":{\"bold\":false,\"decimalPlaces\":-1,\"displayUnits\":\"Default\",\"textColor\":\"\",\"backgroundFill\":\"\",\"markerStyle\":5,\"border\":\"\",\"showAsTable\":0,\"hidden\":false,\"valueChart\":0,\"absoluteChart\":0,\"hiddenFromGroups\":[],\"columnFixedWidth\":200},\"chartView\":{\"bold\":false,\"decimalPlaces\":-1,\"displayUnits\":\"Default\",\"textColor\":\"\",\"backgroundFill\":\"\",\"markerStyle\":5,\"border\":\"\",\"showAsTable\":2,\"hidden\":false,\"valueChart\":4,\"absoluteChart\":0,\"hiddenFromGroups\":[],\"columnFixedWidth\":200,\"relativeChart\":0},\"conditionalVariance\":{\"lowerThreshold\":0,\"upperThreshold\":0,\"thresholdUnit\":\"P\"}},\"Self MS%\":{\"header\":\"Self MS%\",\"invert\":false,\"order\":8,\"format\":3,\"useMeasureName\":false,\"pbiFormatString\":\"\",\"percentageFormat\":\"0%\",\"showPercentageInLabel\":1,\"scaleGroup\":-1,\"suppressOthers\":false,\"tableView\":{\"bold\":false,\"decimalPlaces\":-1,\"displayUnits\":\"Default\",\"textColor\":\"\",\"backgroundFill\":\"\",\"markerStyle\":5,\"border\":\"\",\"showAsTable\":0,\"hidden\":false,\"valueChart\":0,\"absoluteChart\":0,\"hiddenFromGroups\":[],\"columnFixedWidth\":200},\"chartView\":{\"bold\":false,\"decimalPlaces\":2,\"displayUnits\":\"Default\",\"textColor\":\"\",\"backgroundFill\":\"\",\"markerStyle\":5,\"border\":\"\",\"showAsTable\":0,\"hidden\":false,\"valueChart\":0,\"absoluteChart\":0,\"hiddenFromGroups\":[],\"columnFixedWidth\":200},\"conditionalVariance\":{\"lowerThreshold\":0,\"upperThreshold\":0,\"thresholdUnit\":\"P\"}},\"Self EI\":{\"header\":\"Self EI\",\"invert\":false,\"order\":9,\"format\":0,\"useMeasureName\":false,\"pbiFormatString\":\"\",\"percentageFormat\":\"\",\"showPercentageInLabel\":1,\"scaleGroup\":-1,\"suppressOthers\":false,\"tableView\":{\"bold\":false,\"decimalPlaces\":-1,\"displayUnits\":\"Default\",\"textColor\":\"\",\"backgroundFill\":\"\",\"markerStyle\":5,\"border\":\"\",\"showAsTable\":0,\"hidden\":false,\"valueChart\":0,\"absoluteChart\":0,\"hiddenFromGroups\":[],\"columnFixedWidth\":200},\"chartView\":{\"bold\":false,\"decimalPlaces\":0,\"displayUnits\":\"Default\",\"textColor\":\"\",\"backgroundFill\":\"\",\"markerStyle\":5,\"border\":\"\",\"showAsTable\":0,\"hidden\":false,\"valueChart\":0,\"absoluteChart\":0,\"hiddenFromGroups\":[],\"columnFixedWidth\":200},\"conditionalVariance\":{\"lowerThreshold\":0,\"upperThreshold\":0,\"thresholdUnit\":\"P\"}},\"Distr AC\":{\"header\":\"Distr AC\",\"invert\":false,\"order\":10,\"format\":0,\"useMeasureName\":false,\"pbiFormatString\":\"\",\"percentageFormat\":\"\",\"showPercentageInLabel\":1,\"scaleGroup\":-1,\"suppressOthers\":false,\"tableView\":{\"bold\":false,\"decimalPlaces\":-1,\"displayUnits\":\"Default\",\"textColor\":\"\",\"backgroundFill\":\"\",\"markerStyle\":5,\"border\":\"\",\"showAsTable\":0,\"hidden\":false,\"valueChart\":0,\"absoluteChart\":0,\"relativeChart\":0,\"hiddenFromGroups\":[],\"columnFixedWidth\":200},\"chartView\":{\"bold\":false,\"decimalPlaces\":-1,\"displayUnits\":\"Default\",\"textColor\":\"\",\"backgroundFill\":\"\",\"markerStyle\":5,\"border\":\"\",\"showAsTable\":2,\"hidden\":false,\"valueChart\":0,\"absoluteChart\":0,\"relativeChart\":0,\"hiddenFromGroups\":[],\"columnFixedWidth\":200},\"conditionalVariance\":{\"lowerThreshold\":0,\"upperThreshold\":0,\"thresholdUnit\":\"P\"}},\"Visits_PL_Ranked_By_Region_Paginated_TopN_Managed\":{\"header\":\"Visits_PL_Ranked_By_Region_Paginated_TopN_Managed\",\"invert\":false,\"format\":0,\"useMeasureName\":false,\"pbiFormatString\":\"\",\"percentageFormat\":\"\",\"showPercentageInLabel\":1,\"scaleGroup\":-1,\"suppressOthers\":false,\"tableView\":{\"bold\":false,\"decimalPlaces\":-1,\"displayUnits\":\"Default\",\"textColor\":\"\",\"backgroundFill\":\"\",\"markerStyle\":5,\"border\":\"\",\"showAsTable\":0,\"hidden\":false,\"valueChart\":0,\"absoluteChart\":0,\"relativeChart\":0,\"hiddenFromGroups\":[],\"columnFixedWidth\":200},\"chartView\":{\"bold\":false,\"decimalPlaces\":-1,\"displayUnits\":\"Default\",\"textColor\":\"\",\"backgroundFill\":\"\",\"markerStyle\":5,\"border\":\"\",\"showAsTable\":0,\"hidden\":false,\"valueChart\":0,\"absoluteChart\":0,\"relativeChart\":0,\"hiddenFromGroups\":[],\"columnFixedWidth\":200},\"conditionalVariance\":{\"lowerThreshold\":0,\"upperThreshold\":0,\"thresholdUnit\":\"P\"},\"order\":null},\"Visits_PE_Ranked_By_Region_Paginated_TopN_Managed\":{\"header\":\"Visits_PE_Ranked_By_Region_Paginated_TopN_Managed\",\"invert\":false,\"format\":3,\"useMeasureName\":false,\"pbiFormatString\":\"\",\"percentageFormat\":\"0%\",\"showPercentageInLabel\":1,\"scaleGroup\":-1,\"suppressOthers\":false,\"tableView\":{\"bold\":false,\"decimalPlaces\":-1,\"displayUnits\":\"Default\",\"textColor\":\"\",\"backgroundFill\":\"\",\"markerStyle\":5,\"border\":\"\",\"showAsTable\":0,\"hidden\":false,\"valueChart\":0,\"absoluteChart\":0,\"relativeChart\":0,\"hiddenFromGroups\":[],\"columnFixedWidth\":200},\"chartView\":{\"bold\":false,\"decimalPlaces\":-1,\"displayUnits\":\"Default\",\"textColor\":\"\",\"backgroundFill\":\"\",\"markerStyle\":5,\"border\":\"\",\"showAsTable\":0,\"hidden\":false,\"valueChart\":0,\"absoluteChart\":0,\"relativeChart\":0,\"hiddenFromGroups\":[],\"columnFixedWidth\":200},\"conditionalVariance\":{\"lowerThreshold\":0,\"upperThreshold\":0,\"thresholdUnit\":\"P\"},\"order\":null},\"Self AC\":{\"header\":\"Self AC\",\"invert\":false,\"order\":4,\"format\":0,\"useMeasureName\":false,\"pbiFormatString\":\"\",\"percentageFormat\":\"\",\"showPercentageInLabel\":1,\"scaleGroup\":-1,\"suppressOthers\":false,\"tableView\":{\"bold\":false,\"decimalPlaces\":-1,\"displayUnits\":\"Default\",\"textColor\":\"\",\"backgroundFill\":\"\",\"markerStyle\":5,\"border\":\"\",\"showAsTable\":0,\"hidden\":false,\"valueChart\":0,\"absoluteChart\":0,\"hiddenFromGroups\":[],\"columnFixedWidth\":200},\"chartView\":{\"bold\":false,\"decimalPlaces\":-1,\"displayUnits\":\"Default\",\"textColor\":\"\",\"backgroundFill\":\"\",\"markerStyle\":5,\"border\":\"\",\"showAsTable\":2,\"hidden\":false,\"valueChart\":0,\"absoluteChart\":0,\"hiddenFromGroups\":[],\"columnFixedWidth\":200},\"conditionalVariance\":{\"lowerThreshold\":0,\"upperThreshold\":0,\"thresholdUnit\":\"P\"}},\"Distr PA%\":{\"header\":\"Distr PA%\",\"invert\":false,\"order\":14,\"format\":3,\"useMeasureName\":false,\"pbiFormatString\":\"\",\"percentageFormat\":\"0%\",\"showPercentageInLabel\":1,\"scaleGroup\":-1,\"suppressOthers\":false,\"tableView\":{\"bold\":false,\"decimalPlaces\":-1,\"displayUnits\":\"Default\",\"textColor\":\"\",\"backgroundFill\":\"\",\"markerStyle\":5,\"border\":\"\",\"showAsTable\":0,\"hidden\":false,\"valueChart\":0,\"absoluteChart\":0,\"relativeChart\":0,\"hiddenFromGroups\":[],\"columnFixedWidth\":200},\"chartView\":{\"bold\":false,\"decimalPlaces\":-1,\"displayUnits\":\"Default\",\"textColor\":\"\",\"backgroundFill\":\"\",\"markerStyle\":5,\"border\":\"\",\"showAsTable\":0,\"hidden\":false,\"valueChart\":0,\"absoluteChart\":0,\"relativeChart\":0,\"hiddenFromGroups\":[],\"columnFixedWidth\":200}},\"SelfMO_GR_AC\":{\"header\":\"SelfMO_GR_AC\",\"invert\":false,\"format\":0,\"pbiFormatString\":\"0.00%;-0.00%;0.00%\",\"percentageFormat\":\"\",\"showPercentageInLabel\":1,\"scaleGroup\":-1,\"suppressOthers\":false,\"tableView\":{\"bold\":false,\"decimalPlaces\":-1,\"displayUnits\":\"Default\",\"textColor\":\"\",\"backgroundFill\":\"\",\"markerStyle\":5,\"border\":\"\",\"showAsTable\":0,\"hidden\":false,\"valueChart\":0,\"absoluteChart\":0,\"hiddenFromGroups\":[],\"columnFixedWidth\":200},\"chartView\":{\"bold\":false,\"decimalPlaces\":-1,\"displayUnits\":\"Default\",\"textColor\":\"\",\"backgroundFill\":\"\",\"markerStyle\":5,\"border\":\"\",\"showAsTable\":2,\"hidden\":false,\"valueChart\":0,\"absoluteChart\":0,\"hiddenFromGroups\":[],\"columnFixedWidth\":200},\"order\":null},\"Market_GR_AC_Ranked\":{\"header\":\"Market_GR_AC_Ranked\",\"invert\":false,\"format\":3,\"percentageFormat\":\"0%\",\"showPercentageInLabel\":1,\"scaleGroup\":-1,\"suppressOthers\":false,\"tableView\":{\"bold\":false,\"decimalPlaces\":-1,\"displayUnits\":\"Default\",\"textColor\":\"\",\"backgroundFill\":\"\",\"markerStyle\":5,\"border\":\"\",\"showAsTable\":0,\"hidden\":false,\"valueChart\":0,\"absoluteChart\":0,\"hiddenFromGroups\":[],\"columnFixedWidth\":200},\"chartView\":{\"bold\":false,\"decimalPlaces\":-1,\"displayUnits\":\"Default\",\"textColor\":\"\",\"backgroundFill\":\"\",\"markerStyle\":5,\"border\":\"\",\"showAsTable\":2,\"hidden\":false,\"valueChart\":4,\"absoluteChart\":0,\"hiddenFromGroups\":[],\"columnFixedWidth\":200},\"order\":null},\"SelfMO_Sales_AC_Ranked\":{\"header\":\"SelfMO_Sales_AC_Ranked\",\"invert\":false,\"format\":0,\"pbiFormatString\":\"#,0\",\"percentageFormat\":\"\",\"showPercentageInLabel\":1,\"scaleGroup\":-1,\"suppressOthers\":false,\"tableView\":{\"bold\":false,\"decimalPlaces\":-1,\"displayUnits\":\"Default\",\"textColor\":\"\",\"backgroundFill\":\"\",\"markerStyle\":5,\"border\":\"\",\"showAsTable\":0,\"hidden\":false,\"valueChart\":0,\"absoluteChart\":0,\"hiddenFromGroups\":[],\"columnFixedWidth\":200},\"chartView\":{\"bold\":false,\"decimalPlaces\":-1,\"displayUnits\":\"Default\",\"textColor\":\"\",\"backgroundFill\":\"\",\"markerStyle\":5,\"border\":\"\",\"showAsTable\":2,\"hidden\":false,\"valueChart\":0,\"absoluteChart\":0,\"hiddenFromGroups\":[],\"columnFixedWidth\":200},\"order\":null},\"ΔPY%\":{\"header\":\"ΔPY%\",\"invert\":false,\"order\":2,\"format\":2,\"pbiFormatString\":\"#,0\",\"percentageFormat\":\"0%\",\"showPercentageInLabel\":1,\"scaleGroup\":-1,\"suppressOthers\":false,\"tableView\":{\"bold\":false,\"decimalPlaces\":1,\"displayUnits\":\"Default\",\"textColor\":\"\",\"backgroundFill\":\"\",\"markerStyle\":5,\"border\":\"\",\"showAsTable\":2,\"hidden\":false,\"valueChart\":0,\"absoluteChart\":0,\"hiddenFromGroups\":[]},\"chartView\":{\"bold\":false,\"decimalPlaces\":1,\"displayUnits\":\"Default\",\"textColor\":\"\",\"backgroundFill\":\"\",\"markerStyle\":5,\"border\":\"\",\"showAsTable\":2,\"hidden\":false,\"valueChart\":4,\"absoluteChart\":0,\"hiddenFromGroups\":[]}},\"MS%\":{\"header\":\"MS%\",\"invert\":false,\"order\":3,\"format\":3,\"percentageFormat\":\"0%\",\"showPercentageInLabel\":1,\"scaleGroup\":-1,\"suppressOthers\":false,\"tableView\":{\"bold\":false,\"decimalPlaces\":1,\"displayUnits\":\"Default\",\"textColor\":\"\",\"backgroundFill\":\"\",\"markerStyle\":5,\"border\":\"\",\"showAsTable\":0,\"hidden\":false,\"valueChart\":0,\"absoluteChart\":0,\"hiddenFromGroups\":[]},\"chartView\":{\"bold\":false,\"decimalPlaces\":1,\"displayUnits\":\"Default\",\"textColor\":\"\",\"backgroundFill\":\"\",\"markerStyle\":5,\"border\":\"\",\"showAsTable\":2,\"hidden\":false,\"valueChart\":0,\"absoluteChart\":0,\"hiddenFromGroups\":[]}},\"GR%\":{\"header\":\"GR%\",\"invert\":false,\"format\":2,\"percentageFormat\":\"0%\",\"showPercentageInLabel\":1,\"scaleGroup\":-1,\"suppressOthers\":false,\"tableView\":{\"bold\":false,\"decimalPlaces\":1,\"displayUnits\":\"Default\",\"textColor\":\"\",\"backgroundFill\":\"\",\"markerStyle\":5,\"border\":\"\",\"showAsTable\":0,\"hidden\":false,\"valueChart\":0,\"absoluteChart\":0,\"hiddenFromGroups\":[]},\"chartView\":{\"bold\":false,\"decimalPlaces\":1,\"displayUnits\":\"Default\",\"textColor\":\"\",\"backgroundFill\":\"\",\"markerStyle\":5,\"border\":\"\",\"showAsTable\":2,\"hidden\":false,\"valueChart\":4,\"absoluteChart\":0,\"hiddenFromGroups\":[]},\"order\":null},\"Brand_GR_AC_Ranked\":{\"header\":\"Brand_GR_AC_Ranked\",\"invert\":false,\"format\":3,\"percentageFormat\":\"0%\",\"showPercentageInLabel\":1,\"scaleGroup\":-1,\"suppressOthers\":false,\"tableView\":{\"bold\":false,\"decimalPlaces\":1,\"displayUnits\":\"Default\",\"textColor\":\"\",\"backgroundFill\":\"\",\"markerStyle\":5,\"border\":\"\",\"showAsTable\":0,\"hidden\":false,\"valueChart\":0,\"absoluteChart\":0,\"hiddenFromGroups\":[]},\"chartView\":{\"bold\":false,\"decimalPlaces\":1,\"displayUnits\":\"Default\",\"textColor\":\"\",\"backgroundFill\":\"\",\"markerStyle\":5,\"border\":\"\",\"showAsTable\":2,\"hidden\":false,\"valueChart\":4,\"absoluteChart\":0,\"hiddenFromGroups\":[]},\"order\":null},\"MS\":{\"header\":\"MS%\",\"invert\":false,\"order\":5,\"format\":3,\"percentageFormat\":\"0%\",\"showPercentageInLabel\":1,\"scaleGroup\":-1,\"suppressOthers\":false,\"tableView\":{\"bold\":false,\"decimalPlaces\":1,\"displayUnits\":\"Default\",\"textColor\":\"\",\"backgroundFill\":\"\",\"markerStyle\":5,\"border\":\"\",\"showAsTable\":0,\"hidden\":false,\"valueChart\":0,\"absoluteChart\":0,\"hiddenFromGroups\":[]},\"chartView\":{\"bold\":false,\"decimalPlaces\":1,\"displayUnits\":\"Default\",\"textColor\":\"\",\"backgroundFill\":\"\",\"markerStyle\":5,\"border\":\"\",\"showAsTable\":2,\"hidden\":false,\"valueChart\":0,\"absoluteChart\":0,\"hiddenFromGroups\":[]}},\"EI\":{\"header\":\"EI\",\"invert\":false,\"order\":6,\"format\":0,\"percentageFormat\":\"\",\"showPercentageInLabel\":1,\"scaleGroup\":-1,\"suppressOthers\":false,\"tableView\":{\"bold\":false,\"decimalPlaces\":0,\"displayUnits\":\"Default\",\"textColor\":\"\",\"backgroundFill\":\"\",\"markerStyle\":5,\"border\":\"\",\"showAsTable\":0,\"hidden\":false,\"valueChart\":0,\"absoluteChart\":0,\"hiddenFromGroups\":[]},\"chartView\":{\"bold\":false,\"decimalPlaces\":0,\"displayUnits\":\"Default\",\"textColor\":\"\",\"backgroundFill\":\"\",\"markerStyle\":5,\"border\":\"\",\"showAsTable\":0,\"hidden\":false,\"valueChart\":0,\"absoluteChart\":0,\"hiddenFromGroups\":[]}},\"Market_Rank_AC_Ranked\":{\"header\":\"Market_Rank_AC_Ranked\",\"invert\":false,\"format\":0,\"percentageFormat\":\"\",\"showPercentageInLabel\":1,\"scaleGroup\":-1,\"suppressOthers\":false,\"tableView\":{\"bold\":false,\"decimalPlaces\":1,\"displayUnits\":\"Default\",\"textColor\":\"\",\"backgroundFill\":\"\",\"markerStyle\":5,\"border\":\"\",\"showAsTable\":0,\"hidden\":false,\"valueChart\":0,\"absoluteChart\":0,\"hiddenFromGroups\":[]},\"chartView\":{\"bold\":false,\"decimalPlaces\":0,\"displayUnits\":\"Default\",\"textColor\":\"\",\"backgroundFill\":\"\",\"markerStyle\":5,\"border\":\"\",\"showAsTable\":0,\"hidden\":false,\"valueChart\":0,\"absoluteChart\":0,\"hiddenFromGroups\":[]},\"order\":null}}'"
+                            }
+                          }
+                        },
+                        "showGridlinesTable": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "true"
+                            }
+                          }
+                        },
+                        "gridlineDensityTable": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "1L"
+                            }
+                          }
+                        },
+                        "showTotals": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "0D"
+                            }
+                          }
+                        },
+                        "showGrandTotal": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "true"
+                            }
+                          }
+                        },
+                        "showChartOnGrandTotal": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "false"
+                            }
+                          }
+                        },
+                        "freezeGrandTotal": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "true"
+                            }
+                          }
+                        },
+                        "grandTotalGap": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "true"
+                            }
+                          }
+                        },
+                        "valueChart": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "1D"
+                            }
+                          }
+                        },
+                        "minChartWidth": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "140D"
+                            }
+                          }
+                        },
+                        "firstTimeShowingColumnAdder": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "false"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ],
+                  "annotationLayerSettings": [
+                    {
+                      "properties": {
+                        "annotationHighlights": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "'[]'"
+                            }
+                          }
+                        },
+                        "annotationComments": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "'[]'"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ],
+                  "titleSettings": [
+                    {
+                      "properties": {
+                        "show": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "false"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ],
+                  "dataLabelSettings": [
+                    {
+                      "properties": {
+                        "integratedDifferenceLabel": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "1D"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ],
+                  "legendHeaderSettings": [
+                    {
+                      "properties": {
+                        "actual": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "'Distr AC'"
+                            }
+                          }
+                        },
+                        "freeze": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "true"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ],
+                  "designSettings": [
+                    {
+                      "properties": {
+                        "style": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "4D"
+                            }
+                          }
+                        },
+                        "neutralColor": {
+                          "solid": {
+                            "color": {
+                              "expr": {
+                                "Literal": {
+                                  "Value": "'#4882B5'"
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ],
+                  "interactionSettings": [
+                    {
+                      "properties": {
+                        "allowColumnOrderChange": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "false"
+                            }
+                          }
+                        },
+                        "allowColumnRenamingAndDesign": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "false"
+                            }
+                          }
+                        },
+                        "allowHidingAndAddingColumns": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "false"
+                            }
+                          }
+                        },
+                        "allowInteractiveCommentBox": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "false"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ],
+                  "sortSettings": [
+                    {
+                      "properties": {
+                        "columnName": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "'actual'"
+                            }
+                          }
+                        },
+                        "chartSort": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "1D"
+                            }
+                          }
+                        },
+                        "categorySort": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "1D"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ],
+                  "version": [
+                    {
+                      "properties": {
+                        "version": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "'7.8.0.136'"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ],
+                  "categoriesMetadata": [
+                    {
+                      "properties": {
+                        "collapsedVirtually": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "'[]'"
+                            }
+                          }
+                        },
+                        "invertedHierarchies": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "'[]'"
+                            }
+                          }
+                        },
+                        "invertCalculationCategoriesValues": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "'[]'"
+                            }
+                          }
+                        },
+                        "userChangedExpandCollapse": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "true"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              },
+              "orderBy": [
+                {
+                  "Direction": 2,
+                  "Expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_M_"
+                        }
+                      },
+                      "Property": "Distr_Sales_AC_Ranked_By_Region_Paginated_TopN"
+                    }
+                  }
+                }
+              ],
+              "activeProjections": {
+                "Category": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Areas"
+                        }
+                      },
+                      "Property": "LEVEL_1"
+                    }
+                  }
+                ]
+              },
+              "projections": {
+                "Category": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Areas"
+                        }
+                      },
+                      "Property": "LEVEL_1"
+                    }
+                  }
+                ],
+                "Values": [
+                  {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_M_"
+                        }
+                      },
+                      "Property": "Distr_Sales_AC_Ranked_By_Region_Paginated_TopN"
+                    }
+                  },
+                  {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "SelectColumns"
+                        }
+                      },
+                      "Property": "Distr_Rank_AC_Ranked_Paginated_TopN_Self"
+                    }
+                  },
+                  {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_M_"
+                        }
+                      },
+                      "Property": "Distr_Sales_GR_PY_Ranked_By_Region_Paginated_TopN_Managed"
+                    }
+                  },
+                  {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_M_"
+                        }
+                      },
+                      "Property": "Distr_Sales_PL_Ranked_By_Region_Paginated_TopN_Managed"
+                    }
+                  },
+                  {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_M_"
+                        }
+                      },
+                      "Property": "Distr_Sales_PE_Ranked_By_Region_Paginated_TopN_Managed"
+                    }
+                  },
+                  {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_M_"
+                        }
+                      },
+                      "Property": "Visits_AC_Ranked_By_Region_Paginated_TopN_Managed"
+                    }
+                  },
+                  {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_M_"
+                        }
+                      },
+                      "Property": "Visits_PL_Ranked_By_Region_Paginated_TopN_Managed"
+                    }
+                  },
+                  {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_M_"
+                        }
+                      },
+                      "Property": "Visits_PE_Ranked_By_Region_Paginated_TopN_Managed"
+                    }
+                  },
+                  {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_M_"
+                        }
+                      },
+                      "Property": "Distr_MS_In_Regions_Paginated_Managed"
+                    }
+                  },
+                  {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_M_"
+                        }
+                      },
+                      "Property": "PRT_AC_Ranked_By_Region_Paginated_Managed"
+                    }
+                  },
+                  {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_M_"
+                        }
+                      },
+                      "Property": "Distr_Stock_AC_Ranked_By_Region_Paginated_Managed"
+                    }
+                  },
+                  {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_M_"
+                        }
+                      },
+                      "Property": "Promo_MS_In_Regions_Paginated_Managed"
+                    }
+                  },
+                  {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_M_"
+                        }
+                      },
+                      "Property": "Stock_MS_In_Regions_Paginated_Managed"
+                    }
+                  }
+                ],
+                "PreviousYear": [
+                  {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_M_"
+                        }
+                      },
+                      "Property": "Distr_Sales_PY_Ranked_By_Region_Paginated_TopN"
+                    }
+                  }
+                ]
+              },
+              "parameters": {
+                "Category": [
+                  {
+                    "expr": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "RegionLevel"
+                          }
+                        },
+                        "Property": "RegionLevel"
+                      }
+                    },
+                    "index": 0,
+                    "length": 1
+                  }
+                ]
+              }
+            }
+          },
           "2097b71751a2026d21ac": {
             "filters": {
               "byExpr": [
                 {
-                  "name": "0a7cbe8d9e75d309079c",
+                  "name": "ba43eaea880061678c6b",
                   "type": "Categorical",
                   "expression": {
                     "Column": {
@@ -1312,7 +2395,7 @@
             "filters": {
               "byExpr": [
                 {
-                  "name": "542bed453a70eae3d9a0",
+                  "name": "b5fbaca03488553be590",
                   "type": "Categorical",
                   "expression": {
                     "Column": {
@@ -1744,6 +2827,16 @@
                                 "isToggled": true
                               }
                             ]
+                          },
+                          {
+                            "identityValues": [
+                              {
+                                "Literal": {
+                                  "Value": "'Наталя Горблюк'"
+                                }
+                              }
+                            ],
+                            "isToggled": true
                           }
                         ]
                       }
@@ -1772,7 +2865,7 @@
             "filters": {
               "byExpr": [
                 {
-                  "name": "6d20c900ae302d760aa8",
+                  "name": "8f2a88870ea69198c253",
                   "type": "Advanced",
                   "expression": {
                     "Column": {
@@ -1899,6 +2992,148 @@
               "display": {
                 "mode": "hidden"
               }
+            }
+          },
+          "a66b89c8b6c981863202": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "d318a3d201ae9c177988",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "RegionLevel"
+                        }
+                      },
+                      "Property": "RegionLevel"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "slicer",
+              "objects": {
+                "merge": {
+                  "general": [
+                    {
+                      "properties": {
+                        "filter": {
+                          "filter": {
+                            "Version": 2,
+                            "From": [
+                              {
+                                "Name": "r",
+                                "Entity": "RegionLevel",
+                                "Type": 0
+                              }
+                            ],
+                            "Where": [
+                              {
+                                "Condition": {
+                                  "In": {
+                                    "Expressions": [
+                                      {
+                                        "Column": {
+                                          "Expression": {
+                                            "SourceRef": {
+                                              "Source": "r"
+                                            }
+                                          },
+                                          "Property": "RegionLevel Fields"
+                                        }
+                                      }
+                                    ],
+                                    "Values": [
+                                      [
+                                        {
+                                          "Literal": {
+                                            "Value": "'''Areas''[LEVEL_1]'"
+                                          }
+                                        }
+                                      ]
+                                    ]
+                                  }
+                                }
+                              }
+                            ]
+                          }
+                        }
+                      }
+                    }
+                  ],
+                  "data": [
+                    {
+                      "properties": {
+                        "mode": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "'Dropdown'"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ],
+                  "selection": [
+                    {
+                      "properties": {
+                        "strictSingleSelect": {
+                          "expr": {
+                            "Literal": {
+                              "Value": "true"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              },
+              "activeProjections": {
+                "Values": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "RegionLevel"
+                        }
+                      },
+                      "Property": "RegionLevel"
+                    }
+                  }
+                ]
+              },
+              "cachedFilterDisplayItems": [
+                {
+                  "id": {
+                    "scopeId": {
+                      "Comparison": {
+                        "ComparisonKind": 0,
+                        "Left": {
+                          "Column": {
+                            "Expression": {
+                              "SourceRef": {
+                                "Entity": "RegionLevel"
+                              }
+                            },
+                            "Property": "RegionLevel Fields"
+                          }
+                        },
+                        "Right": {
+                          "Literal": {
+                            "Value": "'''Areas''[LEVEL_1]'"
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "displayName": "Level 1"
+                }
+              ]
             }
           },
           "aa46398b80b613901d08": {
@@ -2029,7 +3264,7 @@
             "filters": {
               "byExpr": [
                 {
-                  "name": "aba1dd9d7427b54d76d6",
+                  "name": "555f22c5566d01254033",
                   "type": "Advanced",
                   "expression": {
                     "Measure": {
@@ -2054,7 +3289,7 @@
             "filters": {
               "byExpr": [
                 {
-                  "name": "8c446553b27527c2e2ad",
+                  "name": "879370bca4369b253461",
                   "type": "Categorical",
                   "expression": {
                     "Column": {
@@ -2295,148 +3530,6 @@
               "objects": {}
             }
           },
-          "a66b89c8b6c981863202": {
-            "filters": {
-              "byExpr": [
-                {
-                  "name": "d318a3d201ae9c177988",
-                  "type": "Categorical",
-                  "expression": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "RegionLevel"
-                        }
-                      },
-                      "Property": "RegionLevel"
-                    }
-                  },
-                  "howCreated": 0
-                }
-              ]
-            },
-            "singleVisual": {
-              "visualType": "slicer",
-              "objects": {
-                "merge": {
-                  "general": [
-                    {
-                      "properties": {
-                        "filter": {
-                          "filter": {
-                            "Version": 2,
-                            "From": [
-                              {
-                                "Name": "r",
-                                "Entity": "RegionLevel",
-                                "Type": 0
-                              }
-                            ],
-                            "Where": [
-                              {
-                                "Condition": {
-                                  "In": {
-                                    "Expressions": [
-                                      {
-                                        "Column": {
-                                          "Expression": {
-                                            "SourceRef": {
-                                              "Source": "r"
-                                            }
-                                          },
-                                          "Property": "RegionLevel Fields"
-                                        }
-                                      }
-                                    ],
-                                    "Values": [
-                                      [
-                                        {
-                                          "Literal": {
-                                            "Value": "'''Areas''[LEVEL_1]'"
-                                          }
-                                        }
-                                      ]
-                                    ]
-                                  }
-                                }
-                              }
-                            ]
-                          }
-                        }
-                      }
-                    }
-                  ],
-                  "data": [
-                    {
-                      "properties": {
-                        "mode": {
-                          "expr": {
-                            "Literal": {
-                              "Value": "'Dropdown'"
-                            }
-                          }
-                        }
-                      }
-                    }
-                  ],
-                  "selection": [
-                    {
-                      "properties": {
-                        "strictSingleSelect": {
-                          "expr": {
-                            "Literal": {
-                              "Value": "true"
-                            }
-                          }
-                        }
-                      }
-                    }
-                  ]
-                }
-              },
-              "activeProjections": {
-                "Values": [
-                  {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "RegionLevel"
-                        }
-                      },
-                      "Property": "RegionLevel"
-                    }
-                  }
-                ]
-              },
-              "cachedFilterDisplayItems": [
-                {
-                  "id": {
-                    "scopeId": {
-                      "Comparison": {
-                        "ComparisonKind": 0,
-                        "Left": {
-                          "Column": {
-                            "Expression": {
-                              "SourceRef": {
-                                "Entity": "RegionLevel"
-                              }
-                            },
-                            "Property": "RegionLevel Fields"
-                          }
-                        },
-                        "Right": {
-                          "Literal": {
-                            "Value": "'''Areas''[LEVEL_1]'"
-                          }
-                        }
-                      }
-                    }
-                  },
-                  "displayName": "Level 1"
-                }
-              ]
-            }
-          },
           "f8e19340d04a78620040": {
             "filters": {
               "byExpr": [
@@ -2552,58 +3645,134 @@
               }
             }
           },
-          "0a8448749c2e0da59c87": {
+          "6d9438759eb7021c78c4": {
             "filters": {
               "byExpr": [
                 {
-                  "name": "6fa0511add4caa086a7a",
-                  "type": "Advanced",
-                  "filter": {
-                    "Version": 2,
-                    "From": [
-                      {
-                        "Name": "s",
-                        "Entity": "SinglePeriodFilter",
-                        "Type": 0
-                      }
-                    ],
-                    "Where": [
-                      {
-                        "Condition": {
-                          "Not": {
-                            "Expression": {
-                              "Comparison": {
-                                "ComparisonKind": 0,
-                                "Left": {
-                                  "Column": {
-                                    "Expression": {
-                                      "SourceRef": {
-                                        "Source": "s"
-                                      }
-                                    },
-                                    "Property": "Filtered"
-                                  }
-                                },
-                                "Right": {
-                                  "Literal": {
-                                    "Value": "null"
-                                  }
-                                }
-                              }
-                            }
-                          }
-                        }
-                      }
-                    ]
-                  },
+                  "name": "dbe4a1166b2e4956e048",
+                  "type": "Categorical",
                   "expression": {
                     "Column": {
                       "Expression": {
                         "SourceRef": {
-                          "Entity": "SinglePeriodFilter"
+                          "Entity": "Areas"
                         }
                       },
-                      "Property": "Filtered"
+                      "Property": "AREA_NAME"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "1084e1980902c420e036",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_MAP_"
+                        }
+                      },
+                      "Property": "Polygons_List_Areas"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "dc1661771970c20ba9ab",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_MAP_"
+                        }
+                      },
+                      "Property": "Map_Sub_Label_Info_SelfMO"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "2dffb424823e63a99cc3",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_MAP_"
+                        }
+                      },
+                      "Property": "Map_Market_Overview_Colored"
+                    }
+                  },
+                  "howCreated": 0
+                },
+                {
+                  "name": "0aa6d111a005a508c3d4",
+                  "type": "Advanced",
+                  "expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_MAP_"
+                        }
+                      },
+                      "Property": "Map_Popup_Info_SelfMO"
+                    }
+                  },
+                  "howCreated": 0
+                }
+              ]
+            },
+            "singleVisual": {
+              "visualType": "pbileafmap06EE075D1DF84F34B506CB5760CED0ED",
+              "objects": {},
+              "orderBy": [
+                {
+                  "Direction": 1,
+                  "Expression": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_MAP_"
+                        }
+                      },
+                      "Property": "Polygons_List_Areas"
+                    }
+                  }
+                }
+              ],
+              "activeProjections": {
+                "Category": [
+                  {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Areas"
+                        }
+                      },
+                      "Property": "AREA_NAME"
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          "7ab326d082aa20693c1b": {
+            "filters": {
+              "byExpr": [
+                {
+                  "name": "f2d8bf550a8937180a95",
+                  "type": "Categorical",
+                  "expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "SelectColoredByExprMarketOverview"
+                        }
+                      },
+                      "Property": "ColoredBy"
                     }
                   },
                   "howCreated": 0
@@ -2623,7 +3792,7 @@
                             "From": [
                               {
                                 "Name": "s",
-                                "Entity": "SinglePeriodFilter",
+                                "Entity": "SelectColoredByExprMarketOverview",
                                 "Type": 0
                               }
                             ],
@@ -2639,7 +3808,7 @@
                                               "Source": "s"
                                             }
                                           },
-                                          "Property": "Filtered"
+                                          "Property": "ColoredBy"
                                         }
                                       }
                                     ],
@@ -2647,7 +3816,7 @@
                                       [
                                         {
                                           "Literal": {
-                                            "Value": "'Hide future periods'"
+                                            "Value": "'Distr AC'"
                                           }
                                         }
                                       ]
@@ -2667,7 +3836,7 @@
                         "mode": {
                           "expr": {
                             "Literal": {
-                              "Value": "'Basic'"
+                              "Value": "'Dropdown'"
                             }
                           }
                         }
@@ -2680,7 +3849,7 @@
                         "strictSingleSelect": {
                           "expr": {
                             "Literal": {
-                              "Value": "false"
+                              "Value": "true"
                             }
                           }
                         }
@@ -2695,10 +3864,10 @@
                     "Column": {
                       "Expression": {
                         "SourceRef": {
-                          "Entity": "SinglePeriodFilter"
+                          "Entity": "SelectColoredByExprMarketOverview"
                         }
                       },
-                      "Property": "Filtered"
+                      "Property": "ColoredBy"
                     }
                   }
                 ]

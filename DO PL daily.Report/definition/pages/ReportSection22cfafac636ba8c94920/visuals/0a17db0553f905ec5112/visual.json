@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.8.0/schema.json",
   "name": "0a17db0553f905ec5112",
   "position": {
-    "x": 966,
+    "x": 963,
     "y": 91,
-    "z": 30000,
+    "z": 29000,
     "height": 69,
-    "width": 233,
+    "width": 236,
     "tabOrder": 39002
   },
   "visual": {
@@ -118,20 +118,6 @@
                           [
                             {
                               "Literal": {
-                                "Value": "'Distr Sales AC'"
-                              }
-                            }
-                          ],
-                          [
-                            {
-                              "Literal": {
-                                "Value": "'Distr Sales ΔPY'"
-                              }
-                            }
-                          ],
-                          [
-                            {
-                              "Literal": {
                                 "Value": "'Distr Sales ΔPY%'"
                               }
                             }
@@ -175,6 +161,13 @@
                             {
                               "Literal": {
                                 "Value": "'Stock TS%'"
+                              }
+                            }
+                          ],
+                          [
+                            {
+                              "Literal": {
+                                "Value": "'Stock AC'"
                               }
                             }
                           ]

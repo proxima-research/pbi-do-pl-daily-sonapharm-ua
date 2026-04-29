@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.2.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.8.0/schema.json",
   "name": "828c00f701e847198401",
   "position": {
     "x": 19.753086419753089,
@@ -27,7 +27,7 @@
                 }
               },
               "queryRef": "Periods.Year",
-              "nativeQueryRef": "Year1",
+              "nativeQueryRef": "Year",
               "displayName": "Year"
             },
             {
@@ -38,12 +38,12 @@
                       "Entity": "_M_"
                     }
                   },
-                  "Property": "SumByVol_AC_AllPeriods"
+                  "Property": "SumByPCS_AC_AllPeriods"
                 }
               },
-              "queryRef": "_M_.SumByVol_AC_AllPeriods",
-              "nativeQueryRef": "UAH",
-              "displayName": "UAH"
+              "queryRef": "_M_.SumByPCS_AC_AllPeriods",
+              "nativeQueryRef": "Distr sales, pcs",
+              "displayName": "Distr sales, pcs"
             }
           ],
           "fieldParameters": [
@@ -379,7 +379,8 @@
             "Property": "SumByVol_AC_AllPeriods"
           }
         },
-        "type": "Advanced"
+        "type": "Advanced",
+        "howCreated": "User"
       },
       {
         "name": "Filter3506b9bd6979e2ddb0c2",

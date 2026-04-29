@@ -47,7 +47,7 @@ table ExportFields
 
 	partition ExportFields = calculated
 		mode: import
-		source =
+		source = ```
 				{
 				    ("Data Type", NAMEOF([Current_Data_Type]), 0),
 				    ("Period Aggr Type", NAMEOF(Aggr[AGGR_TYPE]), 1),
@@ -67,7 +67,6 @@ table ExportFields
 				    ("Brand+Market Org", NAMEOF('Drugs'[Brand+Market Org]), 18),
 				    ("Rx/OTC", NAMEOF('Drugs'[Rx/OTC]), 19),
 				    ("Market Org", NAMEOF('Drugs'[Market Org]), 20),
-				    //("License owner", NAMEOF('Drugs'[License Owner]), 21),
 				    ("Maker", NAMEOF('Drugs'[Maker]), 22),
 				    ("Corporation", NAMEOF('Drugs'[Corporation]), 23),
 				    ("NFC Code (1)", NAMEOF(Drugs[NFC Code (1)]), 24),
@@ -87,8 +86,6 @@ table ExportFields
 				    ("Cosmetic (3)", NAMEOF('Drugs'[Cosmetic Name(3)]), 42),
 				    ("Cosmetic (4)", NAMEOF('Drugs'[Cosmetic Name(4)]), 43),
 				    ("Cosmetic (5)", NAMEOF('Drugs'[Cosmetic Name(5)]), 44),
-				 //   ("Bad (1)", NAMEOF(Drugs[BAD Name(1)]), 45),
-				    //("Bad (2)", NAMEOF(Drugs[BAD Name(1)]), 46),
 				    ("MC (1)", NAMEOF('Drugs'[MC Name(1)]), 49),
 				    ("MC (2)", NAMEOF('Drugs'[MC Name(2)]), 50),
 				    ("MC (3)", NAMEOF('Drugs'[MC Name(3)]), 51),
@@ -96,16 +93,18 @@ table ExportFields
 				    ("Competitive group", NAMEOF('Groups'[PRODUCT_NAME]), 54),
 				    ("Self in Group", NAMEOF('Groups'[IS_LOCAL]), 55),
 				    ("Number of pack", NAMEOF('Drugs'[DRUG_FORM_NUMBER]), 56),
-				    //("Pack Volume", NAMEOF('Drugs'[PACK_VOLUME]), 58),
 				    ("Comp group L1", NAMEOF('Groups'[PRODUCT_NAME_TREE.1]), 59),
 				    ("Comp group L2", NAMEOF('Groups'[PRODUCT_NAME_TREE.2]), 60),
 				    ("Comp group L3", NAMEOF('Groups'[PRODUCT_NAME_TREE.3]), 61),
 				    ("Comp group L3", NAMEOF('Groups'[PRODUCT_NAME_TREE.4]), 62),
 				    ("Comp group L3", NAMEOF('Groups'[PRODUCT_NAME_TREE.5]), 63),
-				    //("Sales type", NAMEOF('ECom'[E-com]), 62),
 				    ("Addressable market", NAMEOF(Groups[IS_ADDRESSABLE_MARKET]), 64),
-				    ("PTM", NAMEOF(Drugs[PTM]), 65)
+				    ("Region level 1", NAMEOF('Areas'[LEVEL_1]), 74),
+				    ("Region level 2", NAMEOF('Areas'[LEVEL_2]), 75),
+				    ("Region level 3", NAMEOF('Areas'[LEVEL_3]), 76),
+				    ("Region level 4", NAMEOF('Areas'[LEVEL_4]), 77)    
 				}
+				```
 
 	annotation PBI_Id = 959ea82e462f44aa975b2f2091dabd1e
 

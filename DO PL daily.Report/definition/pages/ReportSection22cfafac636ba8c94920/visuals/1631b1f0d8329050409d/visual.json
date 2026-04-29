@@ -4,8 +4,8 @@
   "position": {
     "x": 281,
     "y": 155,
-    "z": 33001,
-    "height": 589,
+    "z": 33000,
+    "height": 423,
     "width": 911,
     "tabOrder": 39007
   },
@@ -23,13 +23,13 @@
                       "Entity": "Areas"
                     }
                   },
-                  "Property": "LEVEL_4"
+                  "Property": "LEVEL_1"
                 }
               },
-              "queryRef": "Areas.LEVEL_4",
-              "nativeQueryRef": "Level 4",
+              "queryRef": "Areas.LEVEL_1",
+              "nativeQueryRef": "Level 1",
               "active": true,
-              "displayName": "Level 4"
+              "displayName": "Level 1"
             }
           ],
           "fieldParameters": [
@@ -59,10 +59,10 @@
                       "Entity": "_M_"
                     }
                   },
-                  "Property": "Distr_Sales_AC_Ranked_By_Region_Paginated_Managed"
+                  "Property": "Distr_Sales_AC_Ranked_By_Region_Paginated_TopN"
                 }
               },
-              "queryRef": "_M_.Distr_Sales_AC_Ranked_By_Region_Paginated_Managed",
+              "queryRef": "_M_.Distr_Sales_AC_Ranked_By_Region_Paginated_TopN",
               "nativeQueryRef": "Distr AC",
               "displayName": "Distr AC"
             },
@@ -80,21 +80,6 @@
               "queryRef": "SelectColumns.Distr_Rank_AC_Ranked_Paginated_TopN_Self",
               "nativeQueryRef": "Rank",
               "displayName": "Rank"
-            },
-            {
-              "field": {
-                "Measure": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "_M_"
-                    }
-                  },
-                  "Property": "Distr_Sales_dPY_Ranked_By_Region_Paginated_TopN_Managed"
-                }
-              },
-              "queryRef": "_M_.Distr_Sales_dPY_Ranked_By_Region_Paginated_TopN_Managed",
-              "nativeQueryRef": "Distr ΔPY",
-              "displayName": "Distr ΔPY"
             },
             {
               "field": {
@@ -224,6 +209,21 @@
                       "Entity": "_M_"
                     }
                   },
+                  "Property": "Distr_Stock_AC_Ranked_By_Region_Paginated_Managed"
+                }
+              },
+              "queryRef": "_M_.Distr_Stock_AC_Ranked_By_Region_Paginated_Managed",
+              "nativeQueryRef": "Stock AC",
+              "displayName": "Stock AC"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_M_"
+                    }
+                  },
                   "Property": "Promo_MS_In_Regions_Paginated_Managed"
                 }
               },
@@ -258,12 +258,12 @@
                       "Entity": "_M_"
                     }
                   },
-                  "Property": "Distr_Sales_PY_Ranked_By_Region_Paginated_Managed"
+                  "Property": "Distr_Sales_PY_Ranked_By_Region_Paginated_TopN"
                 }
               },
-              "queryRef": "_M_.Distr_Sales_PY_Ranked_By_Region_Paginated_Managed",
-              "nativeQueryRef": "PY",
-              "displayName": "PY"
+              "queryRef": "_M_.Distr_Sales_PY_Ranked_By_Region_Paginated_TopN",
+              "nativeQueryRef": "Distr PY",
+              "displayName": "Distr PY"
             }
           ]
         }
@@ -278,7 +278,7 @@
                     "Entity": "_M_"
                   }
                 },
-                "Property": "Distr_Sales_AC_Ranked_By_Region_Paginated_Managed"
+                "Property": "Distr_Sales_AC_Ranked_By_Region_Paginated_TopN"
               }
             },
             "direction": "Descending"
@@ -327,7 +327,7 @@
             "lastLicenseCheck": {
               "expr": {
                 "Literal": {
-                  "Value": "'1776955425982'"
+                  "Value": "'1777392748414'"
                 }
               }
             }
@@ -347,7 +347,7 @@
             "types": {
               "expr": {
                 "Literal": {
-                  "Value": "'Actual'"
+                  "Value": "'Integrated'"
                 }
               }
             },
@@ -417,7 +417,7 @@
             "valueChart": {
               "expr": {
                 "Literal": {
-                  "Value": "0D"
+                  "Value": "1D"
                 }
               }
             },
@@ -815,34 +815,6 @@
   "filterConfig": {
     "filters": [
       {
-        "name": "dec56f8d5384abb1b653",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Areas"
-              }
-            },
-            "Property": "LEVEL_4"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "60452a75724b80aab1a3",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "_M_"
-              }
-            },
-            "Property": "Distr_Sales_dPY_Ranked_By_Region_Paginated_TopN_Managed"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
         "name": "22741c128ed4046a5326",
         "field": {
           "Measure": {
@@ -941,20 +913,6 @@
         "type": "Advanced"
       },
       {
-        "name": "dc8d7e20b7d46e035021",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "_M_"
-              }
-            },
-            "Property": "Distr_Sales_PY_Ranked_By_Region_Paginated_Managed"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
         "name": "96a9ec3cc80870706712",
         "field": {
           "Measure": {
@@ -964,20 +922,6 @@
               }
             },
             "Property": "Distr_Rank_AC_Ranked_Paginated_TopN_Self"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "a72c27e8ce0de70d9db0",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "_M_"
-              }
-            },
-            "Property": "Distr_Sales_AC_Ranked_By_Region_Paginated_Managed"
           }
         },
         "type": "Advanced"
@@ -1023,6 +967,62 @@
           }
         },
         "type": "Advanced"
+      },
+      {
+        "name": "6bdf584b8209a4c8d4ea",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_M_"
+              }
+            },
+            "Property": "Distr_Sales_PY_Ranked_By_Region_Paginated_TopN"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "044334dfee915027d861",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_M_"
+              }
+            },
+            "Property": "Distr_Sales_AC_Ranked_By_Region_Paginated_TopN"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "20fd548e0a70881ec070",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_M_"
+              }
+            },
+            "Property": "Distr_Stock_AC_Ranked_By_Region_Paginated_Managed"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "408532e518b5aac68170",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Areas"
+              }
+            },
+            "Property": "LEVEL_1"
+          }
+        },
+        "type": "Categorical"
       }
     ]
   }

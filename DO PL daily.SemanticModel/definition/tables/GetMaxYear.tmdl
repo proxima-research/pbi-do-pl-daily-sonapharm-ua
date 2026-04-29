@@ -25,7 +25,7 @@ table GetMaxYear
 
 	changedProperty = IsHidden
 
-	annotation PBI_ResultType = Exception
+	annotation PBI_ResultType = Number
 
 	annotation PBI_NavigationStepName = Navigation
 

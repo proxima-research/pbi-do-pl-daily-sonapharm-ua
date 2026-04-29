@@ -757,6 +757,54 @@
             "width": 234
           },
           "zIndex": 0
+        },
+        {
+          "location": {},
+          "nodeIndex": "PolygonsAndClients",
+          "nodeLineageTag": "1643df72-da9f-4b31-a87a-a463d8888618",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {},
+          "nodeIndex": "MapUrls",
+          "nodeLineageTag": "41bf818c-9a28-478e-9eae-0ca1ca76f22b",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {},
+          "nodeIndex": "_MAP_",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {},
+          "nodeIndex": "Keys",
+          "nodeLineageTag": "80cff70f-231a-4102-b156-9f64d00d0220",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {},
+          "nodeIndex": "SelectColoredByExprMarketOverview",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 0
         }
       ],
       "name": "All tables",
@@ -1035,6 +1083,19 @@
           "nodeLineageTag": "c828c41e-665e-460f-b7f2-2ff19388d071",
           "size": {
             "height": 128,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": -6,
+            "y": 50
+          },
+          "nodeIndex": "SelectLanguages",
+          "nodeLineageTag": "d6e603be-4637-4794-bdc3-561f078e81b1",
+          "size": {
+            "height": 152,
             "width": 234
           },
           "zIndex": 0

@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.2.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.8.0/schema.json",
   "name": "b0847660e5ca04a399c0",
   "position": {
     "x": 309.73418881759852,
@@ -52,6 +52,13 @@
         {
           "properties": {
             "strictSingleSelect": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "singleSelect": {
               "expr": {
                 "Literal": {
                   "Value": "false"
@@ -272,5 +279,23 @@
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "9af018c22b9c5077e5c0",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "ExportFields"
+              }
+            },
+            "Property": "ExportFields"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
   }
 }

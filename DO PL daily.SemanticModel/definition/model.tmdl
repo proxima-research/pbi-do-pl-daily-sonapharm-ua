@@ -19,7 +19,7 @@ queryGroup Restricts
 
 	annotation PBI_QueryGroupOrder = 2
 
-annotation PBI_QueryOrder = ["_WS_ID_","_FLOWS_FLOW_ID_","FLOWS","_DATA_FLOW_ID_","_GROUPS_FLOW_ID_","_DRUGS_FLOW_ID_","_COUNTRY_","_COUNTRY_NAME_","_PROJECT_","_MAIN_DATA_TYPE_","_CURRENCY_","_HISTORY_LENGTH_","GetMinPeriodID","GetMaxPeriodID","GetMaxYear","PeriodsLinks","Drugs","Data","DataPlan","DataStock","Groups","_MISC_FLOW_ID_","DataTypes","_ROLE_","_RESTRICTS_FLOW_ID_","MIN_PERIOD_ID","MAX_PERIOD_ID","SelfMOID","GroupsOrgID","VTMSRC","CatSRC","Cat","DRUGS_EXISTS","Restricts","Restricts_Drugs_RxOTC","Restricts_Drugs_Category","Restricts_Drugs_RxOTC_Category","Restricts_Groups_Organization","Restricts_Drugs_Custom","Restricts_Drugs_Addr_Market","Restricts_Areas","DrugsSRC","_RESTRICTS_CUSTOM_FLOW_ID_","Logo","_TRANSLATIONS_FLOW_ID_","T","GroupsSRC","PeriodsPYSameWD","TranslateLanguageList","TranslateAddrMarket","TranslateGRIndexes","Tags","_SELF_MO_ID_","VisitsFact","VisitsPlan","_SO_TL_FLOW_ID_","Areas","AreasSRC","_AXIOMA_FLOW_ID_","PolygonsAndClients","Clients","StockClientsPeriods"]
+annotation PBI_QueryOrder = ["_WS_ID_","_FLOWS_FLOW_ID_","FLOWS","_DATA_FLOW_ID_","_GROUPS_FLOW_ID_","_DRUGS_FLOW_ID_","_COUNTRY_","_COUNTRY_NAME_","_PROJECT_","_MAIN_DATA_TYPE_","_CURRENCY_","_HISTORY_LENGTH_","GetMinPeriodID","GetMaxPeriodID","GetMaxYear","PeriodsLinks","Drugs","Data","DataPlan","DataStock","Groups","_MISC_FLOW_ID_","DataTypes","_ROLE_","_RESTRICTS_FLOW_ID_","MIN_PERIOD_ID","MAX_PERIOD_ID","SelfMOID","GroupsOrgID","VTMSRC","CatSRC","Cat","DRUGS_EXISTS","Restricts","Restricts_Drugs_RxOTC","Restricts_Drugs_Category","Restricts_Drugs_RxOTC_Category","Restricts_Groups_Organization","Restricts_Drugs_Custom","Restricts_Drugs_Addr_Market","Restricts_Areas","DrugsSRC","_RESTRICTS_CUSTOM_FLOW_ID_","Logo","_TRANSLATIONS_FLOW_ID_","T","GroupsSRC","PeriodsPYSameWD","TranslateLanguageList","TranslateAddrMarket","TranslateGRIndexes","Tags","_SELF_MO_ID_","VisitsFact","VisitsPlan","_SO_TL_FLOW_ID_","Areas","AreasSRC","_AXIOMA_FLOW_ID_","PolygonsAndClients","Clients","StockClientsPeriods","_MAP_URL_FLOW_ID_","MapUrls","Keys"]
 
 annotation __PBI_TimeIntelligenceEnabled = 0
 
@@ -91,6 +91,10 @@ ref table Areas
 ref table RegionLevel
 ref table StockClientsPeriods
 ref table PolygonsAndClients
+ref table MapUrls
+ref table _MAP_
+ref table Keys
+ref table SelectColoredByExprMarketOverview
 
 ref cultureInfo en-US
 ref cultureInfo uk-UA

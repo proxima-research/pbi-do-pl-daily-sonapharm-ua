@@ -416,7 +416,7 @@ table _M_
 			var FilteredMC3=IF(ISFILTERED(Drugs[MC Name(3)]),"MC 3:"&CONCATENATEX(FILTERS(Drugs[MC Name(3)]),Drugs[MC Name(3)],","),BLANK())
 			var FilteredMC4=IF(ISFILTERED(Drugs[MC Name(4)]),"MC 4:"&CONCATENATEX(FILTERS(Drugs[MC Name(4)]),Drugs[MC Name(4)],","),BLANK())
 			var FilteredMarketstatus=IF(ISFILTERED(Drugs[Market_Status]),"Market status:"&CONCATENATEX(FILTERS(Drugs[Market_Status]),Drugs[Market_Status],","),BLANK())
-			var FilteredArea=IF(ISFILTERED(Areas[LEVEL_1]),"Area:"&CONCATENATEX(FILTERS(Areas[AREA_NAME]),Areas[AREA_NAME],","),BLANK())
+			var FilteredArea=IF(ISFILTERED(Areas[AREA_NAME]),"Area:"&CONCATENATEX(FILTERS(Areas[AREA_NAME]),Areas[AREA_NAME],","),BLANK())
 			 var FilteredRegionlevel1=IF(ISFILTERED(Areas[LEVEL_1]),"Reg. level 1:"&CONCATENATEX(FILTERS(Areas[LEVEL_1]),Areas[LEVEL_1],","),BLANK())
 			 var FilteredRegionlevel2=IF(ISFILTERED(Areas[LEVEL_2]),"Reg. level 2:"&CONCATENATEX(FILTERS(Areas[LEVEL_2]),Areas[LEVEL_2],","),BLANK())
 			 var FilteredRegionlevel3=IF(ISFILTERED(Areas[LEVEL_3]),"Reg. level 3:"&CONCATENATEX(FILTERS(Areas[LEVEL_3]),Areas[LEVEL_3],","),BLANK())
@@ -5273,6 +5273,23 @@ table _M_
 	measure PRT_Rank_AC_Ranked = if([RankByPRT]<=[TOP],[RankByPRT],BLANK())
 		formatString: 0
 		lineageTag: 3e763b32-e8f6-4d9b-8282-3f5ed46a6e18
+
+	measure Distr_Stock_AC_Ranked_By_Region_Paginated_TopN =
+			
+			var currentPage=SELECTEDVALUE(SelectPages[Value])
+			var itemsPerPage=[TOP]
+			var beginTop=itemsPerPage*(currentPage-1)+1
+			var endTop=itemsPerPage*currentPage
+			var currentRank=[RegionRankByVol]
+			return if([IsTotalByDimRegion]||currentRank>=beginTop && currentRank<=endTop,[Distr_Stock_AC],BLANK())
+		lineageTag: 671406b5-5328-45ed-ab6a-14351301f1de
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure Distr_Stock_AC_Ranked_By_Region_Paginated_Managed = IF( CONTAINS( ALLSELECTED(SelectColumns[ColumnName]), SelectColumns[ColumnName], "Stock AC"),[Distr_Stock_AC_Ranked_By_Region_Paginated_TopN],BLANK())
+		lineageTag: cd1bc486-77b7-4e0b-af3a-445b8b1a5e26
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	column Value
 		isHidden

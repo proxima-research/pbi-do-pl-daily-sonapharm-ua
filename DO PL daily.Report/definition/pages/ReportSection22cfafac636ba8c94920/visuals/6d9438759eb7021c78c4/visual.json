@@ -1,0 +1,377 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.8.0/schema.json",
+  "name": "6d9438759eb7021c78c4",
+  "position": {
+    "x": 280.69249793899422,
+    "y": 584.79802143446,
+    "z": 34000,
+    "height": 615.20197856554,
+    "width": 983.47897774113767,
+    "tabOrder": 39008
+  },
+  "visual": {
+    "visualType": "pbileafmap06EE075D1DF84F34B506CB5760CED0ED",
+    "query": {
+      "queryState": {
+        "Measure": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_MAP_"
+                    }
+                  },
+                  "Property": "Polygons_List"
+                }
+              },
+              "queryRef": "_MAP_.Polygons_List",
+              "nativeQueryRef": "polygons_list",
+              "displayName": "polygons_list"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_MAP_"
+                    }
+                  },
+                  "Property": "Map_Market_Overview_Colored"
+                }
+              },
+              "queryRef": "_MAP_.Map_Market_Overview_Colored",
+              "nativeQueryRef": "value",
+              "displayName": "value"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_MAP_"
+                    }
+                  },
+                  "Property": "Map_Popup_Info_SelfMO"
+                }
+              },
+              "queryRef": "_MAP_.Map_Popup_Info_SelfMO",
+              "nativeQueryRef": "popup",
+              "displayName": "popup"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_MAP_"
+                    }
+                  },
+                  "Property": "Map_Sub_Label_Info_SelfMO"
+                }
+              },
+              "queryRef": "_MAP_.Map_Sub_Label_Info_SelfMO",
+              "nativeQueryRef": "sub_label",
+              "displayName": "sub_label"
+            }
+          ]
+        },
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Areas"
+                    }
+                  },
+                  "Property": "LEVEL_1"
+                }
+              },
+              "queryRef": "Areas.LEVEL_1",
+              "nativeQueryRef": "Level 1",
+              "active": true,
+              "displayName": "Level 1"
+            }
+          ],
+          "fieldParameters": [
+            {
+              "parameterExpr": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "RegionLevel"
+                    }
+                  },
+                  "Property": "RegionLevel"
+                }
+              },
+              "index": 0,
+              "length": 1
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Measure": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "_MAP_"
+                  }
+                },
+                "Property": "Polygons_List"
+              }
+            },
+            "direction": "Ascending"
+          }
+        ],
+        "isDefaultSort": true
+      }
+    },
+    "objects": {
+      "map": [
+        {
+          "properties": {
+            "name": {
+              "expr": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_MAP_"
+                    }
+                  },
+                  "Property": "Map_Url"
+                }
+              }
+            },
+            "polygons": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "labels": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "values": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "dissolve": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "extractPolygon": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "googleApiKey": {
+              "expr": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_MAP_"
+                    }
+                  },
+                  "Property": "Google_Maps_Key"
+                }
+              }
+            },
+            "maxZoom": {
+              "expr": {
+                "Literal": {
+                  "Value": "'14'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "text": {
+              "expr": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Headers"
+                    }
+                  },
+                  "Property": "Header_Map_Main_Region"
+                }
+              }
+            },
+            "fontFamily": {
+              "expr": {
+                "Literal": {
+                  "Value": "'''Segoe UI'', wf_segoe-ui_normal, helvetica, arial, sans-serif'"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "10D"
+                }
+              }
+            },
+            "bold": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "subTitle": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Headers"
+                    }
+                  },
+                  "Property": "Header_Filters"
+                }
+              }
+            },
+            "titleWrap": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "border": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "color": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 0,
+                      "Percent": 0
+                    }
+                  }
+                }
+              }
+            },
+            "radius": {
+              "expr": {
+                "Literal": {
+                  "Value": "8D"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "dc1661771970c20ba9ab",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_MAP_"
+              }
+            },
+            "Property": "Map_Sub_Label_Info_SelfMO"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "2dffb424823e63a99cc3",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_MAP_"
+              }
+            },
+            "Property": "Map_Market_Overview_Colored"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "0aa6d111a005a508c3d4",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_MAP_"
+              }
+            },
+            "Property": "Map_Popup_Info_SelfMO"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "f68a8380ad21b1019150",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_MAP_"
+              }
+            },
+            "Property": "Polygons_List"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
+  }
+}

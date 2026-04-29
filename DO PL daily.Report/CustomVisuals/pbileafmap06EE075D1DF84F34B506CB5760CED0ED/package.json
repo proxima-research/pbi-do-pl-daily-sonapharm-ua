@@ -1,0 +1,29 @@
+{
+  "version": "3.0.0.0",
+  "author": {
+    "name": "samuelstinger",
+    "email": "stingersamuel@gmail.com"
+  },
+  "resources": [
+    {
+      "resourceId": "rId0",
+      "sourceType": 5,
+      "file": "resources/pbileafmap06EE075D1DF84F34B506CB5760CED0ED.pbiviz.json"
+    }
+  ],
+  "visual": {
+    "guid": "pbileafmap06EE075D1DF84F34B506CB5760CED0ED",
+    "name": "pbileafmap_geo",
+    "displayName": "PBI Leaf Map (geo)",
+    "version": "3.0.0.0",
+    "description": "PowerBI Leaflet-based Map (geo)",
+    "supportUrl": "https://proximaresearch.com",
+    "gitHubUrl": "",
+    "visualClassName": "Visual"
+  },
+  "metadata": {
+    "pbivizjson": {
+      "resourceId": "rId0"
+    }
+  }
+}

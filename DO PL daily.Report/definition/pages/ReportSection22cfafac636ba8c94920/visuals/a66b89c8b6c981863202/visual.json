@@ -1,10 +1,10 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.8.0/schema.json",
   "name": "a66b89c8b6c981863202",
   "position": {
-    "x": 560,
+    "x": 557,
     "y": 91,
-    "z": 32000,
+    "z": 31000,
     "height": 69,
     "width": 141,
     "tabOrder": 39004
@@ -101,7 +101,7 @@
                           [
                             {
                               "Literal": {
-                                "Value": "'''Areas''[LEVEL_4]'"
+                                "Value": "'''Areas''[LEVEL_1]'"
                               }
                             }
                           ]
@@ -129,7 +129,7 @@
                                 "0": [
                                   {
                                     "Literal": {
-                                      "Value": "'''Areas''[LEVEL_4]'"
+                                      "Value": "'''Areas''[LEVEL_1]'"
                                     }
                                   }
                                 ]
@@ -153,7 +153,7 @@
                         },
                         "valueMap": [
                           {
-                            "0": "Level 4"
+                            "0": "Level 1"
                           }
                         ]
                       }

@@ -1061,6 +1061,17 @@
           "type": "BaseTheme"
         }
       ]
+    },
+    {
+      "name": "pbileafmap06EE075D1DF84F34B506CB5760CED0ED",
+      "type": "CustomVisual",
+      "items": [
+        {
+          "name": "pbileafmap06EE075D1DF84F34B506CB5760CED0ED.pbiviz.json",
+          "path": "pbileafmap06EE075D1DF84F34B506CB5760CED0ED.pbiviz.json",
+          "type": "CustomVisualMetadata"
+        }
+      ]
     }
   ],
   "settings": {

@@ -1,10 +1,10 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.8.0/schema.json",
   "name": "7719bbd333614e6501df",
   "position": {
-    "x": 691,
+    "x": 688,
     "y": 91,
-    "z": 31000,
+    "z": 30000,
     "height": 64,
     "width": 286,
     "tabOrder": 39003
@@ -231,6 +231,16 @@
                       "isToggled": true
                     }
                   ]
+                },
+                {
+                  "identityValues": [
+                    {
+                      "Literal": {
+                        "Value": "'Наталя Горблюк'"
+                      }
+                    }
+                  ],
+                  "isToggled": true
                 }
               ]
             }
