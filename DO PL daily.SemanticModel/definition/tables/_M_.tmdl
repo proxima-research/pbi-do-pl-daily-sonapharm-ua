@@ -5212,15 +5212,14 @@ table _M_
 			var beginTop=itemsPerPage*(currentPage-1)+1
 			var endTop=itemsPerPage*currentPage
 			var currentRank=[RegionRankByVol]
-			return if(not([IsTotalByDimRegion])&&(currentRank>=beginTop && currentRank<=endTop),[PRT_AC],BLANK())
+			return if([IsTotalByDimRegion]||(currentRank>=beginTop && currentRank<=endTop),[PRT_AC],BLANK())
 		lineageTag: b730077c-5ab4-4cb3-a77c-a98602bc3e31
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
-	measure PRT_AC_Ranked_By_Region_Paginated_Managed = IF( CONTAINS( ALLSELECTED(SelectColumns[ColumnName]), SelectColumns[ColumnName], "Penetration AC,%"),[Distr_Sales_AC_Ranked_By_Region_Paginated_TopN]/100,BLANK())
+	measure PRT_AC_Ranked_By_Region_Paginated_Managed = IF( CONTAINS( ALLSELECTED(SelectColumns[ColumnName]), SelectColumns[ColumnName], "Penetration AC,%"),[PRT_AC_Ranked_By_Region_Paginated_TopN],BLANK())
+		formatString: 0.00%;-0.00%;0.00%
 		lineageTag: c40e94f8-29fa-4de3-8a43-5fd3083e19c8
-
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	measure Promo_MS_In_Regions_Paginated_TopN =
 			
