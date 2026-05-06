@@ -1,13 +1,13 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.8.0/schema.json",
   "name": "abfb8ebb0693d6e9313c",
   "position": {
     "x": 16.436597110754416,
     "y": 186.86935723621281,
-    "z": 26000,
+    "z": 27000,
     "height": 80,
     "width": 252.76825969341749,
-    "tabOrder": 18000
+    "tabOrder": 16000
   },
   "visualGroup": {
     "displayName": "KPI_MO_Sales",

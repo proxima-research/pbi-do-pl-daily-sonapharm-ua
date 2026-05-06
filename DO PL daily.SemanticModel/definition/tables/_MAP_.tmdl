@@ -13,8 +13,8 @@ table _MAP_
 	measure Map_Sub_Label_Info_SelfMO =
 			
 			var showSubLabel=1//sum(Areas[SHOW_SUB_LABEL])
-			var coloredIdx=1//SELECTEDVALUE(SelectColoredByExprMarketOverview[Idx])
-			var measureName="Distr AC"//SELECTEDVALUE(SelectColoredByExprMarketOverview[ShortName])
+			var coloredIdx=SELECTEDVALUE(SelectColoredByExprMarketOverview[Idx])
+			var measureName=SELECTEDVALUE(SelectColoredByExprMarketOverview[ColoredBy])
 			var D_AC=[Distr_Sales_AC]
 			var D_PY=[Distr_Sales_PY]
 			var D_PL=[Distr_Sales_PL]

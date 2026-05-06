@@ -2,12 +2,12 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.8.0/schema.json",
   "name": "eb485474b811a60ceab7",
   "position": {
-    "x": 8,
-    "y": 973.46841673502877,
-    "z": 18000,
+    "x": 9,
+    "y": 1042,
+    "z": 19000,
     "height": 68,
-    "width": 154,
-    "tabOrder": 7000
+    "width": 271,
+    "tabOrder": 6000
   },
   "visual": {
     "visualType": "slicer",
@@ -23,11 +23,41 @@
                       "Entity": "SinglePeriod"
                     }
                   },
-                  "Property": "Period"
+                  "Property": "QuarterStr"
                 }
               },
-              "queryRef": "SinglePeriod.Period",
-              "nativeQueryRef": "Period1",
+              "queryRef": "SinglePeriod.QuarterStr",
+              "nativeQueryRef": "QuarterStr",
+              "active": true
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "SinglePeriod"
+                    }
+                  },
+                  "Property": "MonthStr"
+                }
+              },
+              "queryRef": "SinglePeriod.MonthStr",
+              "nativeQueryRef": "MonthStr",
+              "active": true
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "SinglePeriod"
+                    }
+                  },
+                  "Property": "PeriodStr"
+                }
+              },
+              "queryRef": "SinglePeriod.PeriodStr",
+              "nativeQueryRef": "PeriodStr",
               "active": true
             }
           ]
@@ -43,14 +73,67 @@
                     "Entity": "SinglePeriod"
                   }
                 },
-                "Property": "Period"
+                "Property": "QuarterStr"
               }
             },
-            "direction": "Descending"
+            "direction": "Ascending"
           }
         ]
       }
     },
+    "expansionStates": [
+      {
+        "roles": [
+          "Values"
+        ],
+        "levels": [
+          {
+            "queryRefs": [
+              "SinglePeriod.QuarterStr"
+            ],
+            "identityKeys": [
+              {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "SinglePeriod"
+                    }
+                  },
+                  "Property": "QuarterStr"
+                }
+              }
+            ],
+            "isPinned": true
+          },
+          {
+            "queryRefs": [
+              "SinglePeriod.MonthStr"
+            ],
+            "identityKeys": [
+              {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "SinglePeriod"
+                    }
+                  },
+                  "Property": "MonthStr"
+                }
+              }
+            ],
+            "isPinned": true
+          },
+          {
+            "queryRefs": [
+              "SinglePeriod.PeriodStr"
+            ],
+            "isCollapsed": true,
+            "isPinned": true
+          }
+        ],
+        "root": {}
+      }
+    ],
     "objects": {
       "data": [
         {
@@ -207,7 +290,7 @@
   "filterConfig": {
     "filters": [
       {
-        "name": "433212a481ea6a01794b",
+        "name": "c7f923979e83bdeed911",
         "field": {
           "Column": {
             "Expression": {
@@ -215,7 +298,35 @@
                 "Entity": "SinglePeriod"
               }
             },
-            "Property": "Period"
+            "Property": "PeriodStr"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "fe0f75860c38a86e9d6b",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "SinglePeriod"
+              }
+            },
+            "Property": "MonthStr"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "2df10495c7a331d00460",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "SinglePeriod"
+              }
+            },
+            "Property": "QuarterStr"
           }
         },
         "type": "Categorical"

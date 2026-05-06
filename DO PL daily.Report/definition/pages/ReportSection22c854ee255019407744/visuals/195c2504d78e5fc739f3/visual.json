@@ -2,12 +2,12 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.8.0/schema.json",
   "name": "195c2504d78e5fc739f3",
   "position": {
-    "x": 8,
-    "y": 1028,
+    "x": 9,
+    "y": 1097,
     "z": 16000,
     "height": 67,
     "width": 155,
-    "tabOrder": 33000
+    "tabOrder": 27000
   },
   "visual": {
     "visualType": "slicer",
@@ -101,7 +101,7 @@
                           [
                             {
                               "Literal": {
-                                "Value": "'Last 60 days'"
+                                "Value": "'Last 30 days'"
                               }
                             }
                           ]
@@ -227,24 +227,6 @@
       "filterChanges": true
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "16e76ebbcab107aae838",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "PeriodsFilter"
-              }
-            },
-            "Property": "Filter"
-          }
-        },
-        "type": "Categorical"
-      }
-    ]
   },
   "isHidden": true
 }

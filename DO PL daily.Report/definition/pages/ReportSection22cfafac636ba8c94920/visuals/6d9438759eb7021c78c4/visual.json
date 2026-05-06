@@ -7,12 +7,48 @@
     "z": 34000,
     "height": 615.20197856554,
     "width": 983.47897774113767,
-    "tabOrder": 39008
+    "tabOrder": 32000
   },
   "visual": {
     "visualType": "pbileafmap06EE075D1DF84F34B506CB5760CED0ED",
     "query": {
       "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Areas"
+                    }
+                  },
+                  "Property": "LEVEL_1"
+                }
+              },
+              "queryRef": "Areas.LEVEL_1",
+              "nativeQueryRef": "Level 1",
+              "active": true,
+              "displayName": "Level 1"
+            }
+          ],
+          "fieldParameters": [
+            {
+              "parameterExpr": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "RegionLevel"
+                    }
+                  },
+                  "Property": "RegionLevel"
+                }
+              },
+              "index": 0,
+              "length": 1
+            }
+          ]
+        },
         "Measure": {
           "projections": [
             {
@@ -74,42 +110,6 @@
               "queryRef": "_MAP_.Map_Sub_Label_Info_SelfMO",
               "nativeQueryRef": "sub_label",
               "displayName": "sub_label"
-            }
-          ]
-        },
-        "Category": {
-          "projections": [
-            {
-              "field": {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "Areas"
-                    }
-                  },
-                  "Property": "LEVEL_1"
-                }
-              },
-              "queryRef": "Areas.LEVEL_1",
-              "nativeQueryRef": "Level 1",
-              "active": true,
-              "displayName": "Level 1"
-            }
-          ],
-          "fieldParameters": [
-            {
-              "parameterExpr": {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "RegionLevel"
-                    }
-                  },
-                  "Property": "RegionLevel"
-                }
-              },
-              "index": 0,
-              "length": 1
             }
           ]
         }
@@ -313,65 +313,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "dc1661771970c20ba9ab",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "_MAP_"
-              }
-            },
-            "Property": "Map_Sub_Label_Info_SelfMO"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "2dffb424823e63a99cc3",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "_MAP_"
-              }
-            },
-            "Property": "Map_Market_Overview_Colored"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "0aa6d111a005a508c3d4",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "_MAP_"
-              }
-            },
-            "Property": "Map_Popup_Info_SelfMO"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "f68a8380ad21b1019150",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "_MAP_"
-              }
-            },
-            "Property": "Polygons_List"
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
   }
 }

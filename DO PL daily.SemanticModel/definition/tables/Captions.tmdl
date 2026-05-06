@@ -414,7 +414,7 @@ table Captions
 
 	measure Caption_KPI_Stock_GR_PWD =
 			
-			var gr=[Stock_GR_PWD]
+			var gr=[Distr_Stock_GR_PWD]
 			return FORMAT(gr,"▲+0.0% △PWD;▼-0.0% △PWD")
 		lineageTag: 5ffa2817-e4de-4cb7-837a-d6cfeb747e8d
 

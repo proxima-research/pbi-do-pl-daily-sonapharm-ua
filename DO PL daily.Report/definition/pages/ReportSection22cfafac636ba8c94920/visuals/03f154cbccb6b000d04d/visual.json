@@ -7,7 +7,7 @@
     "z": 16000,
     "height": 69,
     "width": 142,
-    "tabOrder": 9000
+    "tabOrder": 8000
   },
   "visual": {
     "visualType": "slicer",
@@ -273,20 +273,6 @@
         },
         "howCreated": "User",
         "isHiddenInViewMode": true
-      },
-      {
-        "name": "3daba676a207d06d8b69",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "SelectMeasures"
-              }
-            },
-            "Property": "MeasureName"
-          }
-        },
-        "type": "Categorical"
       }
     ]
   },

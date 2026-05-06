@@ -322,13 +322,13 @@ table Headers
 	measure Header_Export_Main =
 			
 			var isShowData=[IsExportFieldSelected]+[IsExportExprSelected]
-			var aggrType=SELECTEDVALUE(Periods[AGGR_TYPE])
+			var aggrType=SELECTEDVALUE(Aggr[AGGR_TYPE])
 			var fields=if([IsExportFieldSelected]>0,CONCATENATEX(VALUES(ExportFields[ExportFieldName]),ExportFields[ExportFieldName],", "),BLANK())
 			var s=switch(isShowData,
 			    0,"Please select at least one value in 'Export fields' and 'Export measures' selectоrs",
 			    1,"Please select at least one value in 'Export measures' selectоr",
 			    2,"Please select at least one value in 'Export fields' selectоr",
-			    3,"Export {DATA_TYPE}, by {FIELDS}"
+			    3,"Export data, by {FIELDS}"
 			)
 			var ss=CALCULATE(SELECTEDVALUE(T[dst],s),T[src]=s)
 			return if(isShowData=3,SUBSTITUTE(SUBSTITUTE(ss,"{DATA_TYPE}",[Current_Data_Type]),"{FIELDS}",fields)&", "&aggrType&", "&[Years_List],ss)
@@ -498,7 +498,7 @@ table Headers
 
 	measure Header_Dynamic_Main_Stock =
 			
-			var measureName=SELECTEDVALUE(SelectMeasures[MeasureName])
+			var measureName="pcs"//SELECTEDVALUE(SelectMeasures[MeasureName])
 			var aggrType=SELECTEDVALUE(Aggr[AGGR_TYPE])
 			var periodName=[Selected_Periods_List]
 			var s="Stock in {MEASURE}"
@@ -510,7 +510,7 @@ table Headers
 	measure Header_Rating_Main_Stock =
 			
 			var dimName=SELECTEDVALUE('Dimensions'[DimName])
-			var meas=SELECTEDVALUE(SelectMeasures[MeasureName])
+			var meas="pcs"//SELECTEDVALUE(SelectMeasures[MeasureName])
 			var aggrType=SELECTEDVALUE(Aggr[AGGR_TYPE])
 			var periodName=[Selected_Periods_List]
 			var s="Stock in {MEASURE}, by {DIM_NAME}"

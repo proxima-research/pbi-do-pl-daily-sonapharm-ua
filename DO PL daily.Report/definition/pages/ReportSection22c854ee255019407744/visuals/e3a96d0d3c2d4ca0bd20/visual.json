@@ -2,12 +2,12 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.8.0/schema.json",
   "name": "e3a96d0d3c2d4ca0bd20",
   "position": {
-    "x": 8,
-    "y": 858.64315012305167,
+    "x": 9,
+    "y": 927.64315012305167,
     "z": 11000,
     "height": 68.2526661197703,
     "width": 133.35520918785889,
-    "tabOrder": 4000
+    "tabOrder": 3000
   },
   "visual": {
     "visualType": "slicer",
@@ -274,20 +274,6 @@
         "howCreated": "User",
         "isHiddenInViewMode": true,
         "isLockedInViewMode": true
-      },
-      {
-        "name": "f8d6fa86f5bb1711abd7",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "SelectMeasures"
-              }
-            },
-            "Property": "MeasureName"
-          }
-        },
-        "type": "Categorical"
       }
     ]
   },

@@ -7,7 +7,7 @@
     "z": 18000,
     "height": 68,
     "width": 133,
-    "tabOrder": 11000
+    "tabOrder": 9000
   },
   "visual": {
     "visualType": "slicer",
@@ -220,24 +220,6 @@
       "filterChanges": true
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "ba43eaea880061678c6b",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Aggr"
-              }
-            },
-            "Property": "AGGR_TYPE"
-          }
-        },
-        "type": "Categorical"
-      }
-    ]
   },
   "isHidden": true
 }

@@ -1,0 +1,26 @@
+table SelectRatingType
+	lineageTag: 4f70d357-2873-4dfa-980c-4f55b59158c4
+
+	column RatingTypeStr
+		lineageTag: 5bdbadec-45ab-45e2-870e-79fac3405d50
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [RatingTypeStr]
+
+		annotation SummarizationSetBy = Automatic
+
+	column RatingType
+		formatString: 0
+		lineageTag: a4ad9d63-e13f-4e8b-82c9-5df1608b32a8
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [RatingType]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition SelectRatingType = calculated
+		mode: import
+		source = DATATABLE("RatingTypeStr",STRING,"RatingType",INTEGER,{{"All Ratings by Distr Sales",1}})
+
+	annotation PBI_Id = 8718293dee6b4a7383f156db6a886e04
+

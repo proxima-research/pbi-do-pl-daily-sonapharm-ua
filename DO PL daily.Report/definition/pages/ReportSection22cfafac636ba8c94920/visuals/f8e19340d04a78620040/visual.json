@@ -7,7 +7,7 @@
     "z": 32000,
     "height": 69,
     "width": 298,
-    "tabOrder": 39005
+    "tabOrder": 29000
   },
   "visual": {
     "visualType": "slicer",
@@ -229,23 +229,5 @@
       "filterChanges": true
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "753adaa19b4981254ab2",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Areas"
-              }
-            },
-            "Property": "MAP_NAME"
-          }
-        },
-        "type": "Categorical"
-      }
-    ]
   }
 }

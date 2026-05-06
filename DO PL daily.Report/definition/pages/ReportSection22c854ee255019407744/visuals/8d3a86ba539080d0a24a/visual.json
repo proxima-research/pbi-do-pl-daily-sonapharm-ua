@@ -4,9 +4,10 @@
   "position": {
     "x": 17,
     "y": 533,
-    "z": 23750,
+    "z": 24000,
     "height": 80,
-    "width": 252.76825969341749
+    "width": 252.76825969341749,
+    "tabOrder": 36000
   },
   "visualGroup": {
     "displayName": "KPI_Pharm",

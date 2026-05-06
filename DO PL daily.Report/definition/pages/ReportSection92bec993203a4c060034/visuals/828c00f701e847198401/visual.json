@@ -7,7 +7,7 @@
     "z": 15000,
     "height": 622.22222222222229,
     "width": 1242.4691358024693,
-    "tabOrder": 12000
+    "tabOrder": 11000
   },
   "visual": {
     "visualType": "tableEx",
@@ -38,12 +38,12 @@
                       "Entity": "_M_"
                     }
                   },
-                  "Property": "SumByPCS_AC_AllPeriods"
+                  "Property": "Distr_Sales_Export_PCS"
                 }
               },
-              "queryRef": "_M_.SumByPCS_AC_AllPeriods",
-              "nativeQueryRef": "Distr sales, pcs",
-              "displayName": "Distr sales, pcs"
+              "queryRef": "_M_.Distr_Sales_Export_PCS",
+              "nativeQueryRef": "DO (pcs)",
+              "displayName": "DO (pcs)"
             }
           ],
           "fieldParameters": [
@@ -59,7 +59,8 @@
                 }
               },
               "index": 0,
-              "length": 1
+              "length": 1,
+              "sortDirection": "Ascending"
             },
             {
               "parameterExpr": {
@@ -77,6 +78,23 @@
             }
           ]
         }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Periods"
+                  }
+                },
+                "Property": "Year"
+              }
+            },
+            "direction": "Ascending"
+          }
+        ]
       }
     },
     "visualContainerObjects": {
@@ -376,7 +394,7 @@
                 "Entity": "_M_"
               }
             },
-            "Property": "SumByVol_AC_AllPeriods"
+            "Property": "Distr_Sales_Export"
           }
         },
         "type": "Advanced",

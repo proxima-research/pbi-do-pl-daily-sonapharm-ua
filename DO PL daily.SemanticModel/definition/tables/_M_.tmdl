@@ -1334,31 +1334,40 @@ table _M_
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
-	measure SumByVol_AC_AllPeriods =
+	measure Distr_Sales_Export =
 			
-			var curType=SELECTEDVALUE(_CURRENCY_[_CURRENCY_])
-			return CALCULATE([SumByMeasure_AC],SelectMeasures[MeasureName]=curType)
+			var AggrType=SELECTEDVALUE(Aggr[AGGR_TYPE])
+			var delta=SELECTEDVALUE(SelectAggrLength[Value])
+			return SWITCH(AggrType,
+			        "Daily",CALCULATE([SumByMeasure]),
+			        "YTD",TOTALYTD([SumByMeasure],Periods[Period],All(Periods)),
+			        "MTD",TOTALMTD([SumByMeasure],Periods[Period],All(Periods)),
+			        "MQT",CALCULATE([SumByMeasure],All(Periods),DATESINPERIOD(Periods[Period],LASTDATE(Periods[Period]),-90,DAY)),
+			        "MMT",CALCULATE([SumByMeasure],All(Periods),DATESINPERIOD(Periods[Period],LASTDATE(Periods[Period]),-30,DAY)),
+			        "MAT",CALCULATE([SumByMeasure],All(Periods),DATESINPERIOD(Periods[Period],LASTDATE(Periods[Period]),-1,YEAR)),
+			        "Custom",CALCULATE([SumByMeasure],All(Periods),DATESINPERIOD(Periods[Period],LASTDATE(Periods[Period]),-1*delta,DAY))
+			)
 		formatString: #,0
 		isHidden
 		lineageTag: 3281b445-602e-4730-b61f-1533fbf88397
 
 		annotation PBI_FormatHint = {"isDecimal":true}
 
-	measure SumByEUR_AC_AllPeriods = CALCULATE([SumByMeasure_AC],SelectMeasures[MeasureName]="EUR")
+	measure Distr_Sales_Export_EUR = CALCULATE([Distr_Sales_Export],SelectMeasures[MeasureName]="EUR")
 		formatString: #,0
 		isHidden
 		lineageTag: 98633e4e-31c5-4069-9f56-fc54aa1ac4e5
 
 		annotation PBI_FormatHint = {"isDecimal":true}
 
-	measure SumByUSD_AC_AllPeriods = CALCULATE([SumByMeasure_AC],SelectMeasures[MeasureName]="USD")
+	measure Distr_Sales_Export_USD = CALCULATE([Distr_Sales_Export],SelectMeasures[MeasureName]="USD")
 		formatString: #,0
 		isHidden
 		lineageTag: a57c2b2e-d200-490c-b5f9-afc2b32b5eeb
 
 		annotation PBI_FormatHint = {"isDecimal":true}
 
-	measure SumByPCS_AC_AllPeriods = CALCULATE([SumByMeasure_AC],SelectMeasures[MeasureName]="pcs")
+	measure Distr_Sales_Export_PCS = CALCULATE([Distr_Sales_Export],SelectMeasures[MeasureName]="pcs")
 		formatString: #,0
 		isHidden
 		lineageTag: fca036c1-7ab5-441d-921b-458d58392c01
@@ -1383,7 +1392,7 @@ table _M_
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
-	measure Market_VOL_GR_AC_AllPeriods = ([SumByVol_AC_AllPeriods]/[SumByVol_PY_AllPeriods]-1)
+	measure Market_VOL_GR_AC_AllPeriods = ([Distr_Sales_Export]/[SumByVol_PY_AllPeriods]-1)
 		isHidden
 		lineageTag: c20403c5-3a14-4579-a1ee-13e06f11009b
 
@@ -2183,7 +2192,7 @@ table _M_
 		isHidden
 		lineageTag: b7543bd7-38eb-428b-938b-5c1ff62027d3
 
-	measure SumByTABS_AC_AllPeriods = CALCULATE([SumByMeasure_AC],SelectMeasures[MeasureName]="tabs")
+	measure Distr_Sales_Export_TABS = CALCULATE([Distr_Sales_Export],SelectMeasures[MeasureName]="tabs")
 		isHidden
 		lineageTag: 676777ff-64af-4b64-a308-34dac64a9ab8
 
@@ -2195,7 +2204,7 @@ table _M_
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
-	measure SumByDDD_AC_AllPeriods = CALCULATE([SumByMeasure_AC],SelectMeasures[MeasureName]="DDD")
+	measure Distr_Sales_DDD_Export = CALCULATE([SumByMeasure_AC],SelectMeasures[MeasureName]="DDD")
 		isHidden
 		lineageTag: c656f131-7acc-45a9-9652-e00002bb8041
 
@@ -2207,19 +2216,19 @@ table _M_
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
-	measure PriceEUR_AC_AllPeriods = ([SumByEUR_AC_AllPeriods]/[SumByPCS_AC_AllPeriods])
+	measure PriceEUR_AC_AllPeriods = ([Distr_Sales_Export_EUR]/[Distr_Sales_Export_PCS])
 		isHidden
 		lineageTag: 9484fd3b-8003-4519-917d-28ec51e1b34c
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
-	measure PriceVOL_AC_AllPeriods = ([SumByVol_AC_AllPeriods]/[SumByPCS_AC_AllPeriods])
+	measure PriceVOL_AC_AllPeriods = ([Distr_Sales_Export]/[Distr_Sales_Export_PCS])
 		isHidden
 		lineageTag: ba01d9c1-dcd2-4221-83a9-30367dd1090e
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
-	measure PriceUSD_AC_AllPeriods = ([SumByUSD_AC_AllPeriods]/[SumByPCS_AC_AllPeriods])
+	measure PriceUSD_AC_AllPeriods = ([Distr_Sales_Export_USD]/[Distr_Sales_Export_PCS])
 		isHidden
 		lineageTag: 8bddf393-445c-4a60-a341-c391f43d8a6f
 
@@ -2938,7 +2947,7 @@ table _M_
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
-	measure MS_Vol_Dyn_AC_AllPeriods = CALCULATE([SumByVol_AC_AllPeriods])/CALCULATE([SumByVol_AC_AllPeriods],REMOVEFILTERS(Drugs))
+	measure MS_Vol_Dyn_AC_AllPeriods = CALCULATE([Distr_Sales_Export])/CALCULATE([Distr_Sales_Export],REMOVEFILTERS(Drugs))
 		formatString: 0.00%;-0.00%;0.00%
 		isHidden
 		lineageTag: 7a9be232-344c-4651-87af-88b6a36a5556
@@ -3046,7 +3055,7 @@ table _M_
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
-	measure Market_Sales_PCS_Dyn_AC_All_Periods = [SumByPCS_AC_AllPeriods]
+	measure Market_Sales_PCS_Dyn_AC_All_Periods = [Distr_Sales_Export_PCS]
 		isHidden
 		lineageTag: a13e31d6-0ddc-4587-92ad-1a3d8bf634cf
 
@@ -3648,13 +3657,13 @@ table _M_
 		isHidden
 		lineageTag: db0f3fa0-28d4-4451-b2ca-289dd8ab1b10
 
-	measure PriceDDD_AC_AllPeriods = ([SumByDDD_AC_AllPeriods]/[SumByPCS_AC_AllPeriods])
+	measure PriceDDD_AC_AllPeriods = ([Distr_Sales_DDD_Export]/[Distr_Sales_Export_PCS])
 		isHidden
 		lineageTag: e20d44a6-0c48-46c8-ae82-1ddd92616f37
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
-	measure PriceTABS_AC_AllPeriods = ([SumByTABS_AC_AllPeriods]/[SumByPCS_AC_AllPeriods])
+	measure PriceTABS_AC_AllPeriods = ([Distr_Sales_Export_TABS]/[Distr_Sales_Export_PCS])
 		isHidden
 		lineageTag: edff8f85-11be-4dcf-963f-99d8fcd33f31
 
@@ -4304,25 +4313,28 @@ table _M_
 			var CDate=SELECTEDVALUE(Periods[Period])
 			RETURN if(CDate >= SelectedDate - PeriodLength + 1 && CDate <= SelectedDate,
 			    SWITCH(AggrType,
-			            "Daily",CALCULATE([SumStockByMeasure]),
-			            "YTD",TOTALYTD([SumStockByMeasure],Periods[Period],All(Periods)),
-			            "MTD",TOTALMTD([SumStockByMeasure],Periods[Period],All(Periods)),
-			            "MQT",CALCULATE([SumStockByMeasure],All(Periods),DATESINPERIOD(Periods[Period],LASTDATE(Periods[Period]),-90,DAY)),
-			            "MMT",CALCULATE([SumStockByMeasure],All(Periods),DATESINPERIOD(Periods[Period],LASTDATE(Periods[Period]),-30,DAY)),
-			            "MAT",CALCULATE([SumStockByMeasure],All(Periods),DATESINPERIOD(Periods[Period],LASTDATE(Periods[Period]),-1,YEAR)),
-			            "Custom",CALCULATE([SumStockByMeasure],All(Periods),DATESINPERIOD(Periods[Period],LASTDATE(Periods[Period]),-1*delta,DAY))
+			            "Daily",CALCULATE([StockByMeasure_AC_AllPeriods]),
+			            "YTD",TOTALYTD([StockByMeasure_AC_AllPeriods],Periods[Period],All(Periods)),
+			            "MTD",TOTALMTD([StockByMeasure_AC_AllPeriods],Periods[Period],All(Periods)),
+			            "MQT",CALCULATE([StockByMeasure_AC_AllPeriods],All(Periods),DATESINPERIOD(Periods[Period],LASTDATE(Periods[Period]),-90,DAY)),
+			            "MMT",CALCULATE([StockByMeasure_AC_AllPeriods],All(Periods),DATESINPERIOD(Periods[Period],LASTDATE(Periods[Period]),-30,DAY)),
+			            "MAT",CALCULATE([StockByMeasure_AC_AllPeriods],All(Periods),DATESINPERIOD(Periods[Period],LASTDATE(Periods[Period]),-1,YEAR)),
+			            "Custom",CALCULATE([StockByMeasure_AC_AllPeriods],All(Periods),DATESINPERIOD(Periods[Period],LASTDATE(Periods[Period]),-1*delta,DAY))
 			    )
 			    ,BLANK()
 			)
 		lineageTag: 172772cc-1b0c-4cf3-ab02-4c88e35ba3a2
 
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
 	measure SumStockByMeasure =
-			
-			var measureType=SELECTEDVALUE(SelectMeasures[MeasureName])
-			var curType=SELECTEDVALUE(_CURRENCY_[_CURRENCY_])
-			return SWITCH(TRUE(),
-			        measureType="pcs",sum(DataStock[PCS]
-			    ))
+			sum(DataStock[PCS])
+			//var measureType=SELECTEDVALUE(SelectMeasures[MeasureName])
+			// return SWITCH(TRUE(),
+			//         measureType="pcs",sum(DataStock[PCS]),
+			//         measureType="tabs",sum(DataStock[TABS]),
+			//         measureType="DDD",sum(DataStock[DDD])
+			//     )
 		lineageTag: 90d882fd-f0de-4db9-b747-f39d5e534178
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
@@ -4332,6 +4344,8 @@ table _M_
 			var currentRank=[RankByStock]
 			return if([IsTotalByDim]||currentRank<=[TOP],[Distr_Stock_AC],BLANK())
 		lineageTag: a82fd23a-2b6f-4fe0-9c18-adcdb2b136af
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	measure RankByStock =
 			
@@ -4510,7 +4524,7 @@ table _M_
 	measure RegionRankByVol = ```
 			
 			var lev=SELECTEDVALUE(RegionLevel[RegionLevelName])
-			return if(ISBLANK([Distr_Sales_AC]),BLANK(),
+			return //if(ISBLANK([Distr_Sales_AC]),BLANK(),
 			    switch(lev,
 			        "Level 1",rankx(ALLSELECTED(Areas[LEVEL_1]),[Distr_Sales_AC],,DESC,Dense),
 			        "Level 2",rankx(ALLSELECTED(Areas[LEVEL_2]),[Distr_Sales_AC],,DESC,Dense),
@@ -4518,7 +4532,7 @@ table _M_
 			        "Level 4",rankx(ALLSELECTED(Areas[LEVEL_4]),[Distr_Sales_AC],,DESC,Dense)
 			        
 			    )
-			)
+			//)
 			```
 		formatString: 0
 		lineageTag: ef33986f-b677-4832-ab7c-d7881638cbe8
@@ -4716,25 +4730,25 @@ table _M_
 			        AggrType,
 			        "Daily",
 			            CALCULATE(
-			                [SumStockByMeasure],
+			                [StockByMeasure_AC_AllPeriods],
 			                ALL(Periods),
 			                Periods[Period] = CDate - 7
 			            ),
 			        "YTD",
 			            CALCULATE(
-			                [SumStockByMeasure],
+			                [StockByMeasure_AC_AllPeriods],
 			                ALL(Periods),
 			                DATESYTD(DATEADD(Periods[Period], -7, DAY))
 			            ),
 			        "MTD",
 			            CALCULATE(
-			                [SumStockByMeasure],
+			                [StockByMeasure_AC_AllPeriods],
 			                ALL(Periods),
 			                DATESMTD(DATEADD(Periods[Period], -7, DAY))
 			            ),
 			        "MQT",
 			            CALCULATE(
-			                [SumStockByMeasure],
+			                [StockByMeasure_AC_AllPeriods],
 			                ALL(Periods),
 			                DATEADD(
 			                    DATESINPERIOD(Periods[Period], LASTDATE(Periods[Period]), -90, DAY),
@@ -4744,7 +4758,7 @@ table _M_
 			            ),
 			        "MMT",
 			            CALCULATE(
-			                [SumStockByMeasure],
+			                [StockByMeasure_AC_AllPeriods],
 			                ALL(Periods),
 			                DATEADD(
 			                    DATESINPERIOD(Periods[Period], LASTDATE(Periods[Period]), -30, DAY),
@@ -4754,7 +4768,7 @@ table _M_
 			            ),
 			        "MAT",
 			            CALCULATE(
-			                [SumStockByMeasure],
+			                [StockByMeasure_AC_AllPeriods],
 			                ALL(Periods),
 			                DATEADD(
 			                    DATESINPERIOD(Periods[Period], LASTDATE(Periods[Period]), -1, YEAR),
@@ -4764,7 +4778,7 @@ table _M_
 			            ),
 			        "Custom",
 			            CALCULATE(
-			                [SumStockByMeasure],
+			                [StockByMeasure_AC_AllPeriods],
 			                ALL(Periods),
 			                Periods[Period] >= PWDMinDate &&
 			                Periods[Period] <= PWDMaxDate
@@ -4799,7 +4813,7 @@ table _M_
 		formatString: 0
 		lineageTag: 5560658e-766f-4948-b0af-0c5bd059b0cf
 
-	measure Stock_GR_PWD =
+	measure Distr_Stock_GR_PWD =
 			
 			var ac=[Distr_Stock_AC]
 			var pwd=[Distr_Stock_PWD]
@@ -4808,7 +4822,7 @@ table _M_
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
-	measure Distr_Stock_GR_PWD_Ranked = if([RankByStock]<=[TOP],[Stock_GR_PWD],BLANK())
+	measure Distr_Stock_GR_PWD_Ranked = if([RankByStock]<=[TOP],[Distr_Stock_GR_PWD],BLANK())
 		formatString: 0.00%;-0.00%;0.00%
 		lineageTag: 849bc547-1118-4baa-802e-07368a7675a0
 
@@ -5289,6 +5303,223 @@ table _M_
 		lineageTag: cd1bc486-77b7-4e0b-af3a-445b8b1a5e26
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure Distr_Stock_PCS_Export = CALCULATE([StockByMeasure_AC_AllPeriods],SelectMeasures[MeasureName] = "pcs")
+		lineageTag: 91be127c-802c-4705-bba0-a6f9c41d708c
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure Distr_Stock_TABS_Export = CALCULATE([StockByMeasure_AC_AllPeriods],SelectMeasures[MeasureName] = "tabs")
+		lineageTag: fd1dfb6d-fbee-4818-a0f3-6a084f8fe65a
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure Distr_Stock_DDD_Export = CALCULATE([StockByMeasure_AC_AllPeriods],SelectMeasures[MeasureName] = "DDD")
+		lineageTag: 91cd8978-3205-4017-84b4-f68202e19ced
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure StockByMeasure_AC_AllPeriods =
+			
+			VAR PeriodInRow =
+			    HASONEVALUE(Periods[Period])
+			
+			VAR TargetPeriodID =
+			    IF(
+			        PeriodInRow,
+			        MAX(Periods[PERIOD_ID]),
+			        CALCULATE(
+			            MAX(DataStock[PERIOD_ID]),
+			            ALLSELECTED(Periods[Period])
+			        )
+			    )
+			
+			RETURN
+			    CALCULATE(
+			        [SumStockByMeasure],
+			        REMOVEFILTERS(Periods[Period]),
+			        REMOVEFILTERS(Periods[PERIOD_ID]),
+			        Periods[PERIOD_ID] = TargetPeriodID
+			    )
+		lineageTag: 33d3da0c-da7a-43fa-aded-9f94fefd5210
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure Distr_Sales_Export_UAH = CALCULATE([Distr_Sales_Export],SelectMeasures[MeasureName]="UAH")
+		lineageTag: f7f51509-eaa2-41c4-9ea9-6f95886a0b82
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure Distr_Plans_Export =
+			
+			var AggrType=SELECTEDVALUE(Aggr[AGGR_TYPE])
+			var delta=SELECTEDVALUE(SelectAggrLength[Value])
+			return SWITCH(AggrType,
+			        "Daily",CALCULATE([DistrPlanByMeasure]),
+			        "YTD",TOTALYTD([DistrPlanByMeasure],Periods[Period],All(Periods)),
+			        "MTD",TOTALMTD([DistrPlanByMeasure],Periods[Period],All(Periods)),
+			        "MQT",CALCULATE([DistrPlanByMeasure],All(Periods),DATESINPERIOD(Periods[Period],LASTDATE(Periods[Period]),-90,DAY)),
+			        "MMT",CALCULATE([DistrPlanByMeasure],All(Periods),DATESINPERIOD(Periods[Period],LASTDATE(Periods[Period]),-30,DAY)),
+			        "MAT",CALCULATE([DistrPlanByMeasure],All(Periods),DATESINPERIOD(Periods[Period],LASTDATE(Periods[Period]),-1,YEAR)),
+			        "Custom",CALCULATE([DistrPlanByMeasure],All(Periods),DATESINPERIOD(Periods[Period],LASTDATE(Periods[Period]),-1*delta,DAY))
+			)
+		lineageTag: 1dd72ecc-33f8-45b7-a438-67ddbca2902a
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure Distr_Plans_Export_PCS = CALCULATE([Distr_Plans_Export],SelectMeasures[MeasureName]="pcs")
+		lineageTag: 83ddcefc-c286-40ca-98d5-af6e6aa3c589
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure Distr_Plans_Export_UAH = CALCULATE([Distr_Plans_Export],SelectMeasures[MeasureName]="UAH")
+		lineageTag: 92533f01-e732-46a4-bf12-2629480f7255
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure Distr_Plans_Export_USD = CALCULATE([Distr_Plans_Export],SelectMeasures[MeasureName]="USD")
+		lineageTag: 43741064-9c88-4829-a7d6-c8715eafea8c
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure Distr_Plans_Export_EUR = CALCULATE([Distr_Plans_Export],SelectMeasures[MeasureName]="EUR")
+		lineageTag: b61745da-bfba-452b-8773-a696e09c2a0a
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure Promo_Facts_Export =
+			
+			var AggrType=SELECTEDVALUE(Aggr[AGGR_TYPE])
+			var delta=SELECTEDVALUE(SelectAggrLength[Value])
+			return SWITCH(AggrType,
+			        "Daily",CALCULATE([VisitsFactMeasure]),
+			        "YTD",TOTALYTD([VisitsFactMeasure],Periods[Period],All(Periods)),
+			        "MTD",TOTALMTD([VisitsFactMeasure],Periods[Period],All(Periods)),
+			        "MQT",CALCULATE([VisitsFactMeasure],All(Periods),DATESINPERIOD(Periods[Period],LASTDATE(Periods[Period]),-90,DAY)),
+			        "MMT",CALCULATE([VisitsFactMeasure],All(Periods),DATESINPERIOD(Periods[Period],LASTDATE(Periods[Period]),-30,DAY)),
+			        "MAT",CALCULATE([VisitsFactMeasure],All(Periods),DATESINPERIOD(Periods[Period],LASTDATE(Periods[Period]),-1,YEAR)),
+			        "Custom",CALCULATE([VisitsFactMeasure],All(Periods),DATESINPERIOD(Periods[Period],LASTDATE(Periods[Period]),-1*delta,DAY))
+			)
+		formatString: 0
+		lineageTag: 4d0cd5aa-074b-4edd-abd7-36e8a388f25b
+
+		annotation PBI_FormatHint = {"isDecimal":true}
+
+	measure Promo_Plans_Export =
+			
+			var AggrType=SELECTEDVALUE(Aggr[AGGR_TYPE])
+			var delta=SELECTEDVALUE(SelectAggrLength[Value])
+			return SWITCH(AggrType,
+			        "Daily",CALCULATE([VisitsPlanByMeasure]),
+			        "YTD",TOTALYTD([VisitsPlanByMeasure],Periods[Period],All(Periods)),
+			        "MTD",TOTALMTD([VisitsPlanByMeasure],Periods[Period],All(Periods)),
+			        "MQT",CALCULATE([VisitsPlanByMeasure],All(Periods),DATESINPERIOD(Periods[Period],LASTDATE(Periods[Period]),-90,DAY)),
+			        "MMT",CALCULATE([VisitsPlanByMeasure],All(Periods),DATESINPERIOD(Periods[Period],LASTDATE(Periods[Period]),-30,DAY)),
+			        "MAT",CALCULATE([VisitsPlanByMeasure],All(Periods),DATESINPERIOD(Periods[Period],LASTDATE(Periods[Period]),-1,YEAR)),
+			        "Custom",CALCULATE([VisitsPlanByMeasure],All(Periods),DATESINPERIOD(Periods[Period],LASTDATE(Periods[Period]),-1*delta,DAY))
+			)
+		formatString: 0
+		lineageTag: a468387a-b348-4b17-8b6a-51c26ae74b0c
+
+		annotation PBI_FormatHint = {"isDecimal":true}
+
+	measure TEST1 = rankx(ALLSELECTED(Areas[LEVEL_4]),[Distr_Sales_AC],,DESC,Dense)
+		formatString: 0
+		lineageTag: e6c19c8b-6408-41b7-a250-cfc346918dd7
+
+	measure Visits_AC_Ranked_By_Select_Type =
+			
+			var currentRank=if([Is_All_Ratings_By_Sales],[RankByVol],[RankByVisits])
+			return if([IsTotalByDim]||currentRank<=[TOP],[Visits_AC],BLANK())
+		formatString: 0
+		lineageTag: f469c8b5-7a03-4557-9a1e-e39981ecab14
+
+	measure Visits_PY_Ranked_By_Select_Type =
+			
+			var currentRank=if([Is_All_Ratings_By_Sales],[RankByVol],[RankByVisits])
+			return if([IsTotalByDim]||currentRank<=[TOP],[Visits_PY],BLANK())
+		formatString: 0
+		lineageTag: 2eea7034-c675-492f-81b2-ac85f2be09ed
+
+	measure Visits_PL_Ranked_By_Select_Type =
+			
+			var currentRank=if([Is_All_Ratings_By_Sales],[RankByVol],[RankByVisits])
+			return if([IsTotalByDim]||currentRank<=[TOP],[Visits_PL],BLANK())
+		lineageTag: 3b1ca4b5-699f-459a-a3b0-ee0a1a333f93
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure Visits_PE_Ranked_By_Select_Type =
+			
+			var currentRank=if([Is_All_Ratings_By_Sales],[RankByVol],[RankByVisits])
+			return if([IsTotalByDim]||currentRank<=[TOP],[Visits_PE],BLANK())
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: c7700cd9-b54d-428e-a320-1627eb5f2175
+
+	measure Visits_Rank_Ranked_By_Select_Type =
+			
+			var currentRank=if([Is_All_Ratings_By_Sales],[RankByVol],[RankByVisits])
+			return if([IsTotalByDim]||currentRank<=[TOP],currentRank,BLANK())
+		formatString: 0
+		lineageTag: f680a2b9-4a70-441a-84ca-e77e0fdd61b0
+
+	measure Is_All_Ratings_By_Sales = ```
+			ISFILTERED(SelectRatingType[RatingTypeStr])
+			
+			```
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: d9a7ed0e-733e-4ccc-9f64-82548343eea4
+
+	measure Distr_Stock_AC_Ranked_By_Select_Rank_Type =
+			
+			var currentRank=if([Is_All_Ratings_By_Sales],[RankByVol],[RankByStock])
+			return if([IsTotalByDim]||currentRank<=[TOP],[Distr_Stock_AC],BLANK())
+		lineageTag: 4a96701e-6986-4f32-a1e9-534e5e35c8c0
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure Distr_Stock_PWD_Ranked_By_Select_Rank_Type =
+			
+			var currentRank=if([Is_All_Ratings_By_Sales],[RankByVol],[RankByStock])
+			return if([IsTotalByDim]||currentRank<=[TOP],[Distr_Stock_PWD],BLANK())
+		lineageTag: 338adf04-7fa3-4f75-8d64-08c70766e5c5
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure Distr_Stock_Rank_AC_Ranked_By_Select_Rank_Type =
+			
+			var currentRank=if([Is_All_Ratings_By_Sales],[RankByVol],[RankByStock])
+			return if([IsTotalByDim]||currentRank<=[TOP],currentRank,BLANK())
+		formatString: 0
+		lineageTag: b98d9fbf-21f3-4419-8ba9-97172276779e
+
+	measure Distr_Stock_GR_PWD_Ranked_By_Select_Rank_Type =
+			
+			var currentRank=if([Is_All_Ratings_By_Sales],[RankByVol],[RankByStock])
+			return if([IsTotalByDim]||currentRank<=[TOP],[Distr_Stock_GR_PWD],BLANK())
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: 3fd869f5-1136-4e3e-bbd0-055bbed0ce93
+
+	measure PRT_AC_Ranked_By_Select_Rank_Type =
+			
+			var currentRank=if([Is_All_Ratings_By_Sales],[RankByVol],[RankByPRT])
+			return if([IsTotalByDim]||currentRank<=[TOP],[PRT_AC],BLANK())
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: 74fcabb0-f49f-4f84-b93e-a6b6b168b340
+
+	measure PRT_PWD_Ranked_By_Select_Rank_Type =
+			
+			var currentRank=if([Is_All_Ratings_By_Sales],[RankByVol],[RankByPRT])
+			return if([IsTotalByDim]||currentRank<=[TOP],[PRT_PWD],BLANK())
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: e0047d12-baa6-4729-83f8-fe09a2ea5f36
+
+	measure PRT_Rank_AC_Ranked_By_Select_Rank_Type =
+			
+			var currentRank=if([Is_All_Ratings_By_Sales],[RankByVol],[RankByPRT])
+			return if([IsTotalByDim]||currentRank<=[TOP],currentRank,BLANK())
+		formatString: 0
+		lineageTag: ffc9012b-d615-4f21-a775-689a8773e2a1
 
 	column Value
 		isHidden

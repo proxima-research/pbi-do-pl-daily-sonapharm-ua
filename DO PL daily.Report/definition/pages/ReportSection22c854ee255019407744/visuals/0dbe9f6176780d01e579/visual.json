@@ -1,13 +1,13 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.8.0/schema.json",
-  "name": "e91b38a3868dd3d19974",
+  "name": "0dbe9f6176780d01e579",
   "position": {
-    "x": 19,
-    "y": 149,
+    "x": 15,
+    "y": 789,
     "z": 17000,
-    "height": 44,
-    "width": 247,
-    "tabOrder": 23000
+    "height": 46,
+    "width": 253,
+    "tabOrder": 37000
   },
   "visual": {
     "visualType": "slicer",
@@ -20,14 +20,14 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "AddMarketFilterTable"
+                      "Entity": "SelectRatingType"
                     }
                   },
-                  "Property": "Addressable market"
+                  "Property": "RatingTypeStr"
                 }
               },
-              "queryRef": "AddMarketFilterTable.Addressable market",
-              "nativeQueryRef": "Addressable market",
+              "queryRef": "SelectRatingType.RatingTypeStr",
+              "nativeQueryRef": "RatingTypeStr",
               "active": true
             }
           ]
@@ -116,7 +116,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Slicer_addrMarket'"
+                  "Value": "'Slicer_futurePeriods'"
                 }
               }
             }
@@ -169,25 +169,20 @@
         }
       ]
     },
-    "syncGroup": {
-      "groupName": "Addressable market",
-      "fieldChanges": true,
-      "filterChanges": true
-    },
     "drillFilterOtherVisuals": true
   },
   "filterConfig": {
     "filters": [
       {
-        "name": "cbc88e0b1c6d00970498",
+        "name": "6fa0511add4caa086a7a",
         "field": {
           "Column": {
             "Expression": {
               "SourceRef": {
-                "Entity": "AddMarketFilterTable"
+                "Entity": "SinglePeriodFilter"
               }
             },
-            "Property": "Addressable market"
+            "Property": "Filtered"
           }
         },
         "type": "Advanced",
@@ -195,8 +190,8 @@
           "Version": 2,
           "From": [
             {
-              "Name": "a",
-              "Entity": "AddMarketFilterTable",
+              "Name": "s",
+              "Entity": "SinglePeriodFilter",
               "Type": 0
             }
           ],
@@ -211,10 +206,10 @@
                         "Column": {
                           "Expression": {
                             "SourceRef": {
-                              "Source": "a"
+                              "Source": "s"
                             }
                           },
-                          "Property": "Addressable market"
+                          "Property": "Filtered"
                         }
                       },
                       "Right": {
@@ -229,8 +224,7 @@
             }
           ]
         },
-        "isHiddenInViewMode": true,
-        "isLockedInViewMode": true
+        "howCreated": "User"
       }
     ]
   },

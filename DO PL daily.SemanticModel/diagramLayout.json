@@ -805,6 +805,15 @@
             "width": 234
           },
           "zIndex": 0
+        },
+        {
+          "location": {},
+          "nodeIndex": "SelectRatingType",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 0
         }
       ],
       "name": "All tables",
@@ -1001,6 +1010,19 @@
           },
           "nodeIndex": "SinglePeriodFilter",
           "nodeLineageTag": "5a9f891b-fff0-4058-aa09-5bd8521dcf6f",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 850,
+            "y": 209
+          },
+          "nodeIndex": "PeriodsFilter",
+          "nodeLineageTag": "e0f0eb6e-9ef5-4f0d-86a2-440a4847645a",
           "size": {
             "height": 128,
             "width": 234

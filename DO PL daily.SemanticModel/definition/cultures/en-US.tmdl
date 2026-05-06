@@ -21306,11 +21306,11 @@ cultureInfo en-US
 			        }
 			      ]
 			    },
-			    "entity__m_.sum_by_DDD_AC_all_periods": {
+			    "entity__m_.distr_sales_DDD_export": {
 			      "Definition": {
 			        "Binding": {
 			          "ConceptualEntity": "_M_",
-			          "ConceptualProperty": "SumByDDD_AC_AllPeriods"
+			          "ConceptualProperty": "Distr_Sales_DDD_Export"
 			        }
 			      },
 			      "State": "Generated",
@@ -21319,12 +21319,12 @@ cultureInfo en-US
 			      },
 			      "Terms": [
 			        {
-			          "sum by DDD AC all periods": {
+			          "distr sales DDD export": {
 			            "State": "Generated"
 			          }
 			        },
 			        {
-			          "SumByDDD_AC_AllPeriods": {
+			          "Distr_Sales_DDD_Export": {
 			            "Type": "Noun",
 			            "State": "Generated",
 			            "Weight": 0.99
@@ -21332,11 +21332,11 @@ cultureInfo en-US
 			        }
 			      ]
 			    },
-			    "entity__m_.sum_by_EUR_AC_all_periods": {
+			    "entity__m_.distr_sales_export_EUR": {
 			      "Definition": {
 			        "Binding": {
 			          "ConceptualEntity": "_M_",
-			          "ConceptualProperty": "SumByEUR_AC_AllPeriods"
+			          "ConceptualProperty": "Distr_Sales_Export_EUR"
 			        }
 			      },
 			      "State": "Generated",
@@ -21345,12 +21345,12 @@ cultureInfo en-US
 			      },
 			      "Terms": [
 			        {
-			          "sum by EUR AC all periods": {
+			          "distr sales export EUR": {
 			            "State": "Generated"
 			          }
 			        },
 			        {
-			          "SumByEUR_AC_AllPeriods": {
+			          "Distr_Sales_Export_EUR": {
 			            "Type": "Noun",
 			            "State": "Generated",
 			            "Weight": 0.99
@@ -21436,11 +21436,11 @@ cultureInfo en-US
 			        }
 			      ]
 			    },
-			    "entity__m_.sum_by_PCS_AC_all_periods": {
+			    "entity__m_.distr_sales_export_PCS": {
 			      "Definition": {
 			        "Binding": {
 			          "ConceptualEntity": "_M_",
-			          "ConceptualProperty": "SumByPCS_AC_AllPeriods"
+			          "ConceptualProperty": "Distr_Sales_Export_PCS"
 			        }
 			      },
 			      "State": "Generated",
@@ -21449,19 +21449,19 @@ cultureInfo en-US
 			      },
 			      "Terms": [
 			        {
-			          "sum by PCS AC all periods": {
+			          "distr sales export PCS": {
 			            "State": "Generated"
 			          }
 			        },
 			        {
-			          "SumByPCS_AC_AllPeriods": {
+			          "Distr_Sales_Export_PCS": {
 			            "Type": "Noun",
 			            "State": "Generated",
 			            "Weight": 0.99
 			          }
 			        },
 			        {
-			          "Distr sales, pcs": {
+			          "DO (pcs)": {
 			            "State": "Suggested",
 			            "Source": {
 			              "Type": "External",
@@ -21576,11 +21576,11 @@ cultureInfo en-US
 			        }
 			      ]
 			    },
-			    "entity__m_.sum_by_TABS_AC_all_periods": {
+			    "entity__m_.distr_sales_export_TABS": {
 			      "Definition": {
 			        "Binding": {
 			          "ConceptualEntity": "_M_",
-			          "ConceptualProperty": "SumByTABS_AC_AllPeriods"
+			          "ConceptualProperty": "Distr_Sales_Export_TABS"
 			        }
 			      },
 			      "State": "Generated",
@@ -21589,12 +21589,12 @@ cultureInfo en-US
 			      },
 			      "Terms": [
 			        {
-			          "sum by TABS AC all periods": {
+			          "distr sales export TABS": {
 			            "State": "Generated"
 			          }
 			        },
 			        {
-			          "SumByTABS_AC_AllPeriods": {
+			          "Distr_Sales_Export_TABS": {
 			            "Type": "Noun",
 			            "State": "Generated",
 			            "Weight": 0.99
@@ -21602,11 +21602,11 @@ cultureInfo en-US
 			        }
 			      ]
 			    },
-			    "entity__m_.sum_by_USD_AC_all_periods": {
+			    "entity__m_.distr_sales_export_USD": {
 			      "Definition": {
 			        "Binding": {
 			          "ConceptualEntity": "_M_",
-			          "ConceptualProperty": "SumByUSD_AC_AllPeriods"
+			          "ConceptualProperty": "Distr_Sales_Export_USD"
 			        }
 			      },
 			      "State": "Generated",
@@ -21615,12 +21615,12 @@ cultureInfo en-US
 			      },
 			      "Terms": [
 			        {
-			          "sum by USD AC all periods": {
+			          "distr sales export USD": {
 			            "State": "Generated"
 			          }
 			        },
 			        {
-			          "SumByUSD_AC_AllPeriods": {
+			          "Distr_Sales_Export_USD": {
 			            "Type": "Noun",
 			            "State": "Generated",
 			            "Weight": 0.99
@@ -22096,11 +22096,11 @@ cultureInfo en-US
 			        }
 			      ]
 			    },
-			    "entity__m_.sum_by_vol_AC_all_periods": {
+			    "entity__m_.distr_sales_export": {
 			      "Definition": {
 			        "Binding": {
 			          "ConceptualEntity": "_M_",
-			          "ConceptualProperty": "SumByVol_AC_AllPeriods"
+			          "ConceptualProperty": "Distr_Sales_Export"
 			        }
 			      },
 			      "State": "Generated",
@@ -22109,12 +22109,12 @@ cultureInfo en-US
 			      },
 			      "Terms": [
 			        {
-			          "sum by vol AC all periods": {
+			          "distr sales export": {
 			            "State": "Generated"
 			          }
 			        },
 			        {
-			          "SumByVol_AC_AllPeriods": {
+			          "Distr_Sales_Export": {
 			            "Type": "Noun",
 			            "State": "Generated",
 			            "Weight": 0.99
@@ -24675,16 +24675,6 @@ cultureInfo en-US
 			            "State": "Generated",
 			            "Weight": 0.99
 			          }
-			        },
-			        {
-			          "AC": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
 			        }
 			      ]
 			    },
@@ -24759,16 +24749,6 @@ cultureInfo en-US
 			            "Type": "Noun",
 			            "State": "Generated",
 			            "Weight": 0.99
-			          }
-			        },
-			        {
-			          "PY": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
 			          }
 			        }
 			      ]
@@ -25516,16 +25496,6 @@ cultureInfo en-US
 			            "State": "Generated",
 			            "Weight": 0.99
 			          }
-			        },
-			        {
-			          "Rank": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
 			        }
 			      ]
 			    },
@@ -25812,16 +25782,6 @@ cultureInfo en-US
 			            "State": "Generated",
 			            "Weight": 0.99
 			          }
-			        },
-			        {
-			          "Promo PL": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
 			        }
 			      ]
 			    },
@@ -26059,16 +26019,6 @@ cultureInfo en-US
 			            "Type": "Noun",
 			            "State": "Generated",
 			            "Weight": 0.99
-			          }
-			        },
-			        {
-			          "PE,%": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
 			          }
 			        }
 			      ]
@@ -26818,16 +26768,6 @@ cultureInfo en-US
 			            "Type": "Noun",
 			            "State": "Generated",
 			            "Weight": 0.99
-			          }
-			        },
-			        {
-			          "AC": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
 			          }
 			        }
 			      ]
@@ -28617,16 +28557,6 @@ cultureInfo en-US
 			            "State": "Generated",
 			            "Weight": 0.99
 			          }
-			        },
-			        {
-			          "PWD": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
 			        }
 			      ]
 			    },
@@ -28650,44 +28580,28 @@ cultureInfo en-US
 			            "State": "Generated",
 			            "Weight": 0.99
 			          }
-			        },
-			        {
-			          "Rank": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
 			        }
 			      ]
 			    },
-			    "entity__m_.stock_GR_PWD": {
+			    "entity__m_.distr_stock_GR_PWD": {
 			      "Definition": {
 			        "Binding": {
 			          "ConceptualEntity": "_M_",
-			          "ConceptualProperty": "Stock_GR_PWD"
+			          "ConceptualProperty": "Distr_Stock_GR_PWD"
 			        }
 			      },
 			      "State": "Generated",
 			      "Terms": [
 			        {
-			          "stock GR PWD": {
+			          "distr stock GR PWD": {
 			            "State": "Generated"
 			          }
 			        },
 			        {
-			          "Stock_GR_PWD": {
+			          "Distr_Stock_GR_PWD": {
 			            "Type": "Noun",
 			            "State": "Generated",
 			            "Weight": 0.99
-			          }
-			        },
-			        {
-			          "GR PWD": {
-			            "State": "Generated",
-			            "Weight": 0.97
 			          }
 			        }
 			      ]
@@ -28711,16 +28625,6 @@ cultureInfo en-US
 			            "Type": "Noun",
 			            "State": "Generated",
 			            "Weight": 0.99
-			          }
-			        },
-			        {
-			          "PWD": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
 			          }
 			        }
 			      ]
@@ -28858,6 +28762,12 @@ cultureInfo en-US
 			        },
 			        {
 			          "GR PWD": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "stock GR PWD": {
 			            "State": "Generated",
 			            "Weight": 0.97
 			          }
@@ -29164,16 +29074,6 @@ cultureInfo en-US
 			            "State": "Generated",
 			            "Weight": 0.99
 			          }
-			        },
-			        {
-			          "PRT": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
 			        }
 			      ]
 			    },
@@ -29219,16 +29119,6 @@ cultureInfo en-US
 			            "Type": "Noun",
 			            "State": "Generated",
 			            "Weight": 0.99
-			          }
-			        },
-			        {
-			          "PWD": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
 			          }
 			        }
 			      ]
@@ -30162,16 +30052,6 @@ cultureInfo en-US
 			            "State": "Generated",
 			            "Weight": 0.99
 			          }
-			        },
-			        {
-			          "Rank": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
 			        }
 			      ]
 			    },
@@ -30859,9 +30739,1027 @@ cultureInfo en-US
 			          }
 			        }
 			      ]
+			    },
+			    "entity__m_.distr_stock_PCS_export": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_M_",
+			          "ConceptualProperty": "Distr_Stock_PCS_Export"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "distr stock PCS export": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "Distr_Stock_PCS_Export": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        }
+			      ]
+			    },
+			    "entity__m_.distr_stock_TABS_export": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_M_",
+			          "ConceptualProperty": "Distr_Stock_TABS_Export"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "distr stock TABS export": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "Distr_Stock_TABS_Export": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        }
+			      ]
+			    },
+			    "entity__m_.distr_stock_DDD_export": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_M_",
+			          "ConceptualProperty": "Distr_Stock_DDD_Export"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "distr stock DDD export": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "Distr_Stock_DDD_Export": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        }
+			      ]
+			    },
+			    "entity__m_.stock_by_measure_AC_all_periods": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_M_",
+			          "ConceptualProperty": "StockByMeasure_AC_AllPeriods"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "stock by measure AC all periods": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "StockByMeasure_AC_AllPeriods": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        }
+			      ]
+			    },
+			    "entity__m_.distr_sales_export_UAH": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_M_",
+			          "ConceptualProperty": "Distr_Sales_Export_UAH"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "distr sales export UAH": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "Distr_Sales_Export_UAH": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        }
+			      ]
+			    },
+			    "entity__m_.distr_plans_export": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_M_",
+			          "ConceptualProperty": "Distr_Plans_Export"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "distr plans export": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "Distr_Plans_Export": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        }
+			      ]
+			    },
+			    "entity__m_.distr_plans_export_PCS": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_M_",
+			          "ConceptualProperty": "Distr_Plans_Export_PCS"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "distr plans export PCS": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "Distr_Plans_Export_PCS": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        }
+			      ]
+			    },
+			    "entity__m_.distr_plans_export_UAH": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_M_",
+			          "ConceptualProperty": "Distr_Plans_Export_UAH"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "distr plans export UAH": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "Distr_Plans_Export_UAH": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        }
+			      ]
+			    },
+			    "entity__m_.distr_plans_export_USD": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_M_",
+			          "ConceptualProperty": "Distr_Plans_Export_USD"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "distr plans export USD": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "Distr_Plans_Export_USD": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        }
+			      ]
+			    },
+			    "entity__m_.distr_plans_export_EUR": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_M_",
+			          "ConceptualProperty": "Distr_Plans_Export_EUR"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "distr plans export EUR": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "Distr_Plans_Export_EUR": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        }
+			      ]
+			    },
+			    "entity__m_.promo_facts_export": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_M_",
+			          "ConceptualProperty": "Promo_Facts_Export"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "promo facts export": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "Promo_Facts_Export": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "export": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "facts export": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        }
+			      ]
+			    },
+			    "entity__m_.promo_plans_export": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_M_",
+			          "ConceptualProperty": "Promo_Plans_Export"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "promo plans export": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "Promo_Plans_Export": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "export": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "plans export": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        }
+			      ]
+			    },
+			    "data_stock.tab": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "DataStock",
+			          "ConceptualProperty": "TABS"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "tab": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "data_stock.ddd": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "DataStock",
+			          "ConceptualProperty": "DDD"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "ddd": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "entity__m_.test_1": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_M_",
+			          "ConceptualProperty": "TEST1"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "test 1": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "TEST1": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        }
+			      ]
+			    },
+			    "entity__m_.visits_AC_ranked_by_select_type": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_M_",
+			          "ConceptualProperty": "Visits_AC_Ranked_By_Select_Type"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "visits AC ranked by select type": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "Visits_AC_Ranked_By_Select_Type": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "AC": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "entity__m_.visits_PY_ranked_by_select_type": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_M_",
+			          "ConceptualProperty": "Visits_PY_Ranked_By_Select_Type"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "visits PY ranked by select type": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "Visits_PY_Ranked_By_Select_Type": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "PY": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "entity__m_.visits_PL_ranked_by_select_type": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_M_",
+			          "ConceptualProperty": "Visits_PL_Ranked_By_Select_Type"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "visits PL ranked by select type": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "Visits_PL_Ranked_By_Select_Type": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "Promo PL": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "entity__m_.visits_PE_ranked_by_select_type": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_M_",
+			          "ConceptualProperty": "Visits_PE_Ranked_By_Select_Type"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "visits PE ranked by select type": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "Visits_PE_Ranked_By_Select_Type": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "PE,%": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "entity__m_.visits_rank_ranked_by_select_type": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_M_",
+			          "ConceptualProperty": "Visits_Rank_Ranked_By_Select_Type"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "visits rank ranked by select type": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "Visits_Rank_Ranked_By_Select_Type": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "Rank": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "select_rating_type": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "SelectRatingType"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "select rating type": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "SelectRatingType": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        }
+			      ]
+			    },
+			    "select_rating_type.rating_type_str": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "SelectRatingType",
+			          "ConceptualProperty": "RatingTypeStr"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "rating type str": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "RatingTypeStr": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        }
+			      ]
+			    },
+			    "select_rating_type.rating_type": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "SelectRatingType",
+			          "ConceptualProperty": "RatingType"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "rating type": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "RatingType": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        }
+			      ]
+			    },
+			    "entity__m_.is_all_ratings_by_sales": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_M_",
+			          "ConceptualProperty": "Is_All_Ratings_By_Sales"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "is all ratings by sales": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "Is_All_Ratings_By_Sales": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        }
+			      ]
+			    },
+			    "entity__m_.distr_stock_AC_ranked_by_select_rank_type": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_M_",
+			          "ConceptualProperty": "Distr_Stock_AC_Ranked_By_Select_Rank_Type"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "distr stock AC ranked by select rank type": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "Distr_Stock_AC_Ranked_By_Select_Rank_Type": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "AC": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "entity__m_.distr_stock_PWD_ranked_by_select_rank_type": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_M_",
+			          "ConceptualProperty": "Distr_Stock_PWD_Ranked_By_Select_Rank_Type"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "distr stock PWD ranked by select rank type": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "Distr_Stock_PWD_Ranked_By_Select_Rank_Type": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "PWD": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "entity__m_.distr_stock_rank_AC_ranked_by_select_rank_type": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_M_",
+			          "ConceptualProperty": "Distr_Stock_Rank_AC_Ranked_By_Select_Rank_Type"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "distr stock rank AC ranked by select rank type": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "Distr_Stock_Rank_AC_Ranked_By_Select_Rank_Type": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "Rank": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "entity__m_.distr_stock_GR_PWD_ranked_by_select_rank_type": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_M_",
+			          "ConceptualProperty": "Distr_Stock_GR_PWD_Ranked_By_Select_Rank_Type"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "distr stock GR PWD ranked by select rank type": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "Distr_Stock_GR_PWD_Ranked_By_Select_Rank_Type": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "PWD,%": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "entity__m_.PRT_AC_ranked_by_select_rank_type": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_M_",
+			          "ConceptualProperty": "PRT_AC_Ranked_By_Select_Rank_Type"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "PRT AC ranked by select rank type": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "PRT_AC_Ranked_By_Select_Rank_Type": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "PRT": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "entity__m_.PRT_PWD_ranked_by_select_rank_type": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_M_",
+			          "ConceptualProperty": "PRT_PWD_Ranked_By_Select_Rank_Type"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "PRT PWD ranked by select rank type": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "PRT_PWD_Ranked_By_Select_Rank_Type": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "PWD": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "entity__m_.PRT_rank_AC_ranked_by_select_rank_type": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_M_",
+			          "ConceptualProperty": "PRT_Rank_AC_Ranked_By_Select_Rank_Type"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "PRT rank AC ranked by select rank type": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "PRT_Rank_AC_Ranked_By_Select_Rank_Type": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "Rank": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
 			    }
 			  },
 			  "Relationships": {
+			    "data_plan_has_periods_link": {
+			      "Binding": {
+			        "ConceptualEntity": "DataPlan"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "data_plan": {
+			          "Target": {
+			            "Entity": "data_plan"
+			          }
+			        },
+			        "periods_link": {
+			          "Target": {
+			            "Entity": "periods_link"
+			          }
+			        }
+			      }
+			    },
+			    "visits_fact_has_area": {
+			      "Binding": {
+			        "ConceptualEntity": "VisitsFact"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "visits_fact": {
+			          "Target": {
+			            "Entity": "visits_fact"
+			          }
+			        },
+			        "area": {
+			          "Target": {
+			            "Entity": "area"
+			          },
+			          "Nouns": [
+			            {
+			              "client": {
+			                "State": "Generated"
+			              }
+			            }
+			          ]
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "visits_fact"
+			            },
+			            "Object": {
+			              "Role": "area"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "visits_facts_have_areas"
+			        }
+			      ]
+			    },
+			    "visits_fact_has_period": {
+			      "Binding": {
+			        "ConceptualEntity": "VisitsFact"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "visits_fact": {
+			          "Target": {
+			            "Entity": "visits_fact"
+			          }
+			        },
+			        "period": {
+			          "Target": {
+			            "Entity": "period"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "visits_fact"
+			            },
+			            "Object": {
+			              "Role": "period"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "visits_facts_have_periods"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "period"
+			            },
+			            "Object": {
+			              "Role": "visits_fact"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "periods_have_visits_facts"
+			        }
+			      ]
+			    },
+			    "visits_fact_has_drugs_ID": {
+			      "Binding": {
+			        "ConceptualEntity": "VisitsFact"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "visits_fact": {
+			          "Target": {
+			            "Entity": "visits_fact"
+			          }
+			        },
+			        "drugs_ID": {
+			          "Target": {
+			            "Entity": "drugs_ID"
+			          }
+			        }
+			      }
+			    },
+			    "translate_language_list_has_translate_addr_market": {
+			      "Binding": {
+			        "ConceptualEntity": "TranslateLanguageList"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "translate_language_list": {
+			          "Target": {
+			            "Entity": "translate_language_list"
+			          }
+			        },
+			        "translate_addr_market": {
+			          "Target": {
+			            "Entity": "translate_addr_market"
+			          }
+			        }
+			      }
+			    },
+			    "translate_addr_market_has_translate_language_list": {
+			      "Binding": {
+			        "ConceptualEntity": "TranslateAddrMarket"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "translate_addr_market": {
+			          "Target": {
+			            "Entity": "translate_addr_market"
+			          }
+			        },
+			        "translate_language_list": {
+			          "Target": {
+			            "Entity": "translate_language_list"
+			          }
+			        }
+			      }
+			    },
+			    "translate_GR_index_has_translate_addr_market": {
+			      "Binding": {
+			        "ConceptualEntity": "TranslateGRIndexes"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "translate_GR_index": {
+			          "Target": {
+			            "Entity": "translate_GR_index"
+			          }
+			        },
+			        "translate_addr_market": {
+			          "Target": {
+			            "Entity": "translate_addr_market"
+			          }
+			        }
+			      }
+			    },
 			    "t_has_translate_addr_market": {
 			      "Binding": {
 			        "ConceptualEntity": "T"
@@ -31223,6 +32121,1128 @@ cultureInfo en-US
 			          }
 			        }
 			      }
+			    },
+			    "entity__m__has_PRT_rank_AC_ranked_by_select_rank_type": {
+			      "Binding": {
+			        "ConceptualEntity": "_M_"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "entity__m_": {
+			          "Target": {
+			            "Entity": "entity__m_"
+			          }
+			        },
+			        "entity__m_.PRT_rank_AC_ranked_by_select_rank_type": {
+			          "Target": {
+			            "Entity": "entity__m_.PRT_rank_AC_ranked_by_select_rank_type"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "entity__m_"
+			            },
+			            "Object": {
+			              "Role": "entity__m_.PRT_rank_AC_ranked_by_select_rank_type"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "Phrasing_m__have_PRT_rank_AC_ranked_by_select_rank_type"
+			        }
+			      ]
+			    },
+			    "entity__m__has_PRT_PWD_ranked_by_select_rank_type": {
+			      "Binding": {
+			        "ConceptualEntity": "_M_"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "entity__m_": {
+			          "Target": {
+			            "Entity": "entity__m_"
+			          }
+			        },
+			        "entity__m_.PRT_PWD_ranked_by_select_rank_type": {
+			          "Target": {
+			            "Entity": "entity__m_.PRT_PWD_ranked_by_select_rank_type"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "entity__m_"
+			            },
+			            "Object": {
+			              "Role": "entity__m_.PRT_PWD_ranked_by_select_rank_type"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "Phrasing_m__have_PRT_PWD_ranked_by_select_rank_type"
+			        }
+			      ]
+			    },
+			    "entity__m__has_PRT_AC_ranked_by_select_rank_type": {
+			      "Binding": {
+			        "ConceptualEntity": "_M_"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "entity__m_": {
+			          "Target": {
+			            "Entity": "entity__m_"
+			          }
+			        },
+			        "entity__m_.PRT_AC_ranked_by_select_rank_type": {
+			          "Target": {
+			            "Entity": "entity__m_.PRT_AC_ranked_by_select_rank_type"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "entity__m_"
+			            },
+			            "Object": {
+			              "Role": "entity__m_.PRT_AC_ranked_by_select_rank_type"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "Phrasing_m__have_PRT_AC_ranked_by_select_rank_type"
+			        }
+			      ]
+			    },
+			    "entity__m__has_distr_stock_GR_PWD_ranked_by_select_rank_type": {
+			      "Binding": {
+			        "ConceptualEntity": "_M_"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "entity__m_": {
+			          "Target": {
+			            "Entity": "entity__m_"
+			          }
+			        },
+			        "entity__m_.distr_stock_GR_PWD_ranked_by_select_rank_type": {
+			          "Target": {
+			            "Entity": "entity__m_.distr_stock_GR_PWD_ranked_by_select_rank_type"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "entity__m_"
+			            },
+			            "Object": {
+			              "Role": "entity__m_.distr_stock_GR_PWD_ranked_by_select_rank_type"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "Phrasing_m__have_distr_stock_GR_PWD_ranked_by_select_rank_type"
+			        }
+			      ]
+			    },
+			    "entity__m__has_distr_stock_rank_AC_ranked_by_select_rank_type": {
+			      "Binding": {
+			        "ConceptualEntity": "_M_"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "entity__m_": {
+			          "Target": {
+			            "Entity": "entity__m_"
+			          }
+			        },
+			        "entity__m_.distr_stock_rank_AC_ranked_by_select_rank_type": {
+			          "Target": {
+			            "Entity": "entity__m_.distr_stock_rank_AC_ranked_by_select_rank_type"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "entity__m_"
+			            },
+			            "Object": {
+			              "Role": "entity__m_.distr_stock_rank_AC_ranked_by_select_rank_type"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "Phrasing_m__have_distr_stock_rank_AC_ranked_by_select_rank_type"
+			        }
+			      ]
+			    },
+			    "entity__m__has_distr_stock_PWD_ranked_by_select_rank_type": {
+			      "Binding": {
+			        "ConceptualEntity": "_M_"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "entity__m_": {
+			          "Target": {
+			            "Entity": "entity__m_"
+			          }
+			        },
+			        "entity__m_.distr_stock_PWD_ranked_by_select_rank_type": {
+			          "Target": {
+			            "Entity": "entity__m_.distr_stock_PWD_ranked_by_select_rank_type"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "entity__m_"
+			            },
+			            "Object": {
+			              "Role": "entity__m_.distr_stock_PWD_ranked_by_select_rank_type"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "Phrasing_m__have_distr_stock_PWD_ranked_by_select_rank_type"
+			        }
+			      ]
+			    },
+			    "entity__m__has_distr_stock_AC_ranked_by_select_rank_type": {
+			      "Binding": {
+			        "ConceptualEntity": "_M_"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "entity__m_": {
+			          "Target": {
+			            "Entity": "entity__m_"
+			          }
+			        },
+			        "entity__m_.distr_stock_AC_ranked_by_select_rank_type": {
+			          "Target": {
+			            "Entity": "entity__m_.distr_stock_AC_ranked_by_select_rank_type"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "entity__m_"
+			            },
+			            "Object": {
+			              "Role": "entity__m_.distr_stock_AC_ranked_by_select_rank_type"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "Phrasing_m__have_distr_stock_AC_ranked_by_select_rank_type"
+			        }
+			      ]
+			    },
+			    "select_rating_type_has_entity__m__is_all_ratings_by_sales": {
+			      "Binding": {
+			        "ConceptualEntity": "SelectRatingType"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "select_rating_type": {
+			          "Target": {
+			            "Entity": "select_rating_type"
+			          }
+			        },
+			        "entity__m_.is_all_ratings_by_sales": {
+			          "Target": {
+			            "Entity": "entity__m_.is_all_ratings_by_sales"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "select_rating_type"
+			            },
+			            "Object": {
+			              "Role": "entity__m_.is_all_ratings_by_sales"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "select_rating_types_have_is_all_ratings_by_sales"
+			        }
+			      ]
+			    },
+			    "select_rating_type_has_rating_type": {
+			      "Binding": {
+			        "ConceptualEntity": "SelectRatingType"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "select_rating_type": {
+			          "Target": {
+			            "Entity": "select_rating_type"
+			          }
+			        },
+			        "select_rating_type.rating_type": {
+			          "Target": {
+			            "Entity": "select_rating_type.rating_type"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "select_rating_type"
+			            },
+			            "Object": {
+			              "Role": "select_rating_type.rating_type"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "select_rating_types_have_rating_types"
+			        }
+			      ]
+			    },
+			    "select_rating_type_has_rating_type_str": {
+			      "Binding": {
+			        "ConceptualEntity": "SelectRatingType"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "select_rating_type": {
+			          "Target": {
+			            "Entity": "select_rating_type"
+			          }
+			        },
+			        "select_rating_type.rating_type_str": {
+			          "Target": {
+			            "Entity": "select_rating_type.rating_type_str"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "select_rating_type"
+			            },
+			            "Object": {
+			              "Role": "select_rating_type.rating_type_str"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "select_rating_types_have_rating_type_strs"
+			        }
+			      ]
+			    },
+			    "entity__m__has_visits_rank_ranked_by_select_type": {
+			      "Binding": {
+			        "ConceptualEntity": "_M_"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "entity__m_": {
+			          "Target": {
+			            "Entity": "entity__m_"
+			          }
+			        },
+			        "entity__m_.visits_rank_ranked_by_select_type": {
+			          "Target": {
+			            "Entity": "entity__m_.visits_rank_ranked_by_select_type"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "entity__m_"
+			            },
+			            "Object": {
+			              "Role": "entity__m_.visits_rank_ranked_by_select_type"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "Phrasing_m__have_visits_rank_ranked_by_select_type"
+			        }
+			      ]
+			    },
+			    "entity__m__has_visits_PE_ranked_by_select_type": {
+			      "Binding": {
+			        "ConceptualEntity": "_M_"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "entity__m_": {
+			          "Target": {
+			            "Entity": "entity__m_"
+			          }
+			        },
+			        "entity__m_.visits_PE_ranked_by_select_type": {
+			          "Target": {
+			            "Entity": "entity__m_.visits_PE_ranked_by_select_type"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "entity__m_"
+			            },
+			            "Object": {
+			              "Role": "entity__m_.visits_PE_ranked_by_select_type"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "Phrasing_m__have_visits_PE_ranked_by_select_type"
+			        }
+			      ]
+			    },
+			    "entity__m__has_visits_PL_ranked_by_select_type": {
+			      "Binding": {
+			        "ConceptualEntity": "_M_"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "entity__m_": {
+			          "Target": {
+			            "Entity": "entity__m_"
+			          }
+			        },
+			        "entity__m_.visits_PL_ranked_by_select_type": {
+			          "Target": {
+			            "Entity": "entity__m_.visits_PL_ranked_by_select_type"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "entity__m_"
+			            },
+			            "Object": {
+			              "Role": "entity__m_.visits_PL_ranked_by_select_type"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "Phrasing_m__have_visits_PL_ranked_by_select_type"
+			        }
+			      ]
+			    },
+			    "entity__m__has_visits_PY_ranked_by_select_type": {
+			      "Binding": {
+			        "ConceptualEntity": "_M_"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "entity__m_": {
+			          "Target": {
+			            "Entity": "entity__m_"
+			          }
+			        },
+			        "entity__m_.visits_PY_ranked_by_select_type": {
+			          "Target": {
+			            "Entity": "entity__m_.visits_PY_ranked_by_select_type"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "entity__m_"
+			            },
+			            "Object": {
+			              "Role": "entity__m_.visits_PY_ranked_by_select_type"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "Phrasing_m__have_visits_PY_ranked_by_select_type"
+			        }
+			      ]
+			    },
+			    "entity__m__has_visits_AC_ranked_by_select_type": {
+			      "Binding": {
+			        "ConceptualEntity": "_M_"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "entity__m_": {
+			          "Target": {
+			            "Entity": "entity__m_"
+			          }
+			        },
+			        "entity__m_.visits_AC_ranked_by_select_type": {
+			          "Target": {
+			            "Entity": "entity__m_.visits_AC_ranked_by_select_type"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "entity__m_"
+			            },
+			            "Object": {
+			              "Role": "entity__m_.visits_AC_ranked_by_select_type"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "Phrasing_m__have_visits_AC_ranked_by_select_type"
+			        }
+			      ]
+			    },
+			    "entity__m__has_test_1": {
+			      "Binding": {
+			        "ConceptualEntity": "_M_"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "entity__m_": {
+			          "Target": {
+			            "Entity": "entity__m_"
+			          }
+			        },
+			        "entity__m_.test_1": {
+			          "Target": {
+			            "Entity": "entity__m_.test_1"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "entity__m_"
+			            },
+			            "Object": {
+			              "Role": "entity__m_.test_1"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "Phrasing_m__have_test_1"
+			        }
+			      ]
+			    },
+			    "data_stock_has_ddd": {
+			      "Binding": {
+			        "ConceptualEntity": "DataStock"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "data_stock": {
+			          "Target": {
+			            "Entity": "data_stock"
+			          }
+			        },
+			        "data_stock.ddd": {
+			          "Target": {
+			            "Entity": "data_stock.ddd"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "data_stock"
+			            },
+			            "Object": {
+			              "Role": "data_stock.ddd"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "data_stocks_have_ddds"
+			        }
+			      ]
+			    },
+			    "data_stock_has_tab": {
+			      "Binding": {
+			        "ConceptualEntity": "DataStock"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "data_stock": {
+			          "Target": {
+			            "Entity": "data_stock"
+			          }
+			        },
+			        "data_stock.tab": {
+			          "Target": {
+			            "Entity": "data_stock.tab"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "data_stock"
+			            },
+			            "Object": {
+			              "Role": "data_stock.tab"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "data_stocks_have_tabs"
+			        }
+			      ]
+			    },
+			    "visits_plan_has_entity__m__promo_plans_export": {
+			      "Binding": {
+			        "ConceptualEntity": "VisitsPlan"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "visits_plan": {
+			          "Target": {
+			            "Entity": "visits_plan"
+			          }
+			        },
+			        "entity__m_.promo_plans_export": {
+			          "Target": {
+			            "Entity": "entity__m_.promo_plans_export"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "visits_plan"
+			            },
+			            "Object": {
+			              "Role": "entity__m_.promo_plans_export"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "visits_plans_have_promo_plans_export"
+			        }
+			      ]
+			    },
+			    "period_has_entity__m__promo_plans_export": {
+			      "Binding": {
+			        "ConceptualEntity": "Periods"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "period": {
+			          "Target": {
+			            "Entity": "period"
+			          }
+			        },
+			        "entity__m_.promo_plans_export": {
+			          "Target": {
+			            "Entity": "entity__m_.promo_plans_export"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "period"
+			            },
+			            "Object": {
+			              "Role": "entity__m_.promo_plans_export"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "periods_have_promo_plans_export"
+			        }
+			      ]
+			    },
+			    "aggr_has_entity__m__promo_plans_export": {
+			      "Binding": {
+			        "ConceptualEntity": "Aggr"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "aggr": {
+			          "Target": {
+			            "Entity": "aggr"
+			          }
+			        },
+			        "entity__m_.promo_plans_export": {
+			          "Target": {
+			            "Entity": "entity__m_.promo_plans_export"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "aggr"
+			            },
+			            "Object": {
+			              "Role": "entity__m_.promo_plans_export"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "aggrs_have_promo_plans_export"
+			        }
+			      ]
+			    },
+			    "visits_fact_has_entity__m__promo_facts_export": {
+			      "Binding": {
+			        "ConceptualEntity": "VisitsFact"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "visits_fact": {
+			          "Target": {
+			            "Entity": "visits_fact"
+			          }
+			        },
+			        "entity__m_.promo_facts_export": {
+			          "Target": {
+			            "Entity": "entity__m_.promo_facts_export"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "visits_fact"
+			            },
+			            "Object": {
+			              "Role": "entity__m_.promo_facts_export"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "visits_facts_have_promo_facts_export"
+			        }
+			      ]
+			    },
+			    "period_has_entity__m__promo_facts_export": {
+			      "Binding": {
+			        "ConceptualEntity": "Periods"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "period": {
+			          "Target": {
+			            "Entity": "period"
+			          }
+			        },
+			        "entity__m_.promo_facts_export": {
+			          "Target": {
+			            "Entity": "entity__m_.promo_facts_export"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "period"
+			            },
+			            "Object": {
+			              "Role": "entity__m_.promo_facts_export"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "periods_have_promo_facts_export"
+			        }
+			      ]
+			    },
+			    "aggr_has_entity__m__promo_facts_export": {
+			      "Binding": {
+			        "ConceptualEntity": "Aggr"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "aggr": {
+			          "Target": {
+			            "Entity": "aggr"
+			          }
+			        },
+			        "entity__m_.promo_facts_export": {
+			          "Target": {
+			            "Entity": "entity__m_.promo_facts_export"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "aggr"
+			            },
+			            "Object": {
+			              "Role": "entity__m_.promo_facts_export"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "aggrs_have_promo_facts_export"
+			        }
+			      ]
+			    },
+			    "entity__m__has_distr_plans_export_EUR": {
+			      "Binding": {
+			        "ConceptualEntity": "_M_"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "entity__m_": {
+			          "Target": {
+			            "Entity": "entity__m_"
+			          }
+			        },
+			        "entity__m_.distr_plans_export_EUR": {
+			          "Target": {
+			            "Entity": "entity__m_.distr_plans_export_EUR"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "entity__m_"
+			            },
+			            "Object": {
+			              "Role": "entity__m_.distr_plans_export_EUR"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "Phrasing_m__have_distr_plans_export_EUR"
+			        }
+			      ]
+			    },
+			    "entity__m__has_distr_plans_export_USD": {
+			      "Binding": {
+			        "ConceptualEntity": "_M_"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "entity__m_": {
+			          "Target": {
+			            "Entity": "entity__m_"
+			          }
+			        },
+			        "entity__m_.distr_plans_export_USD": {
+			          "Target": {
+			            "Entity": "entity__m_.distr_plans_export_USD"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "entity__m_"
+			            },
+			            "Object": {
+			              "Role": "entity__m_.distr_plans_export_USD"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "Phrasing_m__have_distr_plans_export_USD"
+			        }
+			      ]
+			    },
+			    "entity__m__has_distr_plans_export_UAH": {
+			      "Binding": {
+			        "ConceptualEntity": "_M_"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "entity__m_": {
+			          "Target": {
+			            "Entity": "entity__m_"
+			          }
+			        },
+			        "entity__m_.distr_plans_export_UAH": {
+			          "Target": {
+			            "Entity": "entity__m_.distr_plans_export_UAH"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "entity__m_"
+			            },
+			            "Object": {
+			              "Role": "entity__m_.distr_plans_export_UAH"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "Phrasing_m__have_distr_plans_export_UAH"
+			        }
+			      ]
+			    },
+			    "entity__m__has_distr_plans_export_PCS": {
+			      "Binding": {
+			        "ConceptualEntity": "_M_"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "entity__m_": {
+			          "Target": {
+			            "Entity": "entity__m_"
+			          }
+			        },
+			        "entity__m_.distr_plans_export_PCS": {
+			          "Target": {
+			            "Entity": "entity__m_.distr_plans_export_PCS"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "entity__m_"
+			            },
+			            "Object": {
+			              "Role": "entity__m_.distr_plans_export_PCS"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "Phrasing_m__have_distr_plans_export_PCS"
+			        }
+			      ]
+			    },
+			    "entity__m__has_distr_plans_export": {
+			      "Binding": {
+			        "ConceptualEntity": "_M_"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "entity__m_": {
+			          "Target": {
+			            "Entity": "entity__m_"
+			          }
+			        },
+			        "entity__m_.distr_plans_export": {
+			          "Target": {
+			            "Entity": "entity__m_.distr_plans_export"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "entity__m_"
+			            },
+			            "Object": {
+			              "Role": "entity__m_.distr_plans_export"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "Phrasing_m__have_distr_plans_export"
+			        }
+			      ]
+			    },
+			    "entity__m__has_distr_sales_export_UAH": {
+			      "Binding": {
+			        "ConceptualEntity": "_M_"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "entity__m_": {
+			          "Target": {
+			            "Entity": "entity__m_"
+			          }
+			        },
+			        "entity__m_.distr_sales_export_UAH": {
+			          "Target": {
+			            "Entity": "entity__m_.distr_sales_export_UAH"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "entity__m_"
+			            },
+			            "Object": {
+			              "Role": "entity__m_.distr_sales_export_UAH"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "Phrasing_m__have_distr_sales_export_UAH"
+			        }
+			      ]
+			    },
+			    "data_stock_has_entity__m__stock_by_measure_AC_all_periods": {
+			      "Binding": {
+			        "ConceptualEntity": "DataStock"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "data_stock": {
+			          "Target": {
+			            "Entity": "data_stock"
+			          }
+			        },
+			        "entity__m_.stock_by_measure_AC_all_periods": {
+			          "Target": {
+			            "Entity": "entity__m_.stock_by_measure_AC_all_periods"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "data_stock"
+			            },
+			            "Object": {
+			              "Role": "entity__m_.stock_by_measure_AC_all_periods"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "data_stocks_have_stock_by_measure_AC_all_periods"
+			        }
+			      ]
+			    },
+			    "data_stock_has_entity__m__distr_stock_DDD_export": {
+			      "Binding": {
+			        "ConceptualEntity": "DataStock"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "data_stock": {
+			          "Target": {
+			            "Entity": "data_stock"
+			          }
+			        },
+			        "entity__m_.distr_stock_DDD_export": {
+			          "Target": {
+			            "Entity": "entity__m_.distr_stock_DDD_export"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "data_stock"
+			            },
+			            "Object": {
+			              "Role": "entity__m_.distr_stock_DDD_export"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "data_stocks_have_distr_stock_DDD_export"
+			        }
+			      ]
+			    },
+			    "data_stock_has_entity__m__distr_stock_TABS_export": {
+			      "Binding": {
+			        "ConceptualEntity": "DataStock"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "data_stock": {
+			          "Target": {
+			            "Entity": "data_stock"
+			          }
+			        },
+			        "entity__m_.distr_stock_TABS_export": {
+			          "Target": {
+			            "Entity": "entity__m_.distr_stock_TABS_export"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "data_stock"
+			            },
+			            "Object": {
+			              "Role": "entity__m_.distr_stock_TABS_export"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "data_stocks_have_distr_stock_TABS_export"
+			        }
+			      ]
+			    },
+			    "data_stock_has_entity__m__distr_stock_PCS_export": {
+			      "Binding": {
+			        "ConceptualEntity": "DataStock"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "data_stock": {
+			          "Target": {
+			            "Entity": "data_stock"
+			          }
+			        },
+			        "entity__m_.distr_stock_PCS_export": {
+			          "Target": {
+			            "Entity": "entity__m_.distr_stock_PCS_export"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "data_stock"
+			            },
+			            "Object": {
+			              "Role": "entity__m_.distr_stock_PCS_export"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "data_stocks_have_distr_stock_PCS_export"
+			        }
+			      ]
 			    },
 			    "t_has_header_header_map_main_region": {
 			      "Binding": {
@@ -35298,39 +37318,6 @@ cultureInfo en-US
 			        }
 			      }
 			    },
-			    "select_measure_has_caption_caption_KPI_stock_GR_PWD": {
-			      "Binding": {
-			        "ConceptualEntity": "SelectMeasures"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "select_measure": {
-			          "Target": {
-			            "Entity": "select_measure"
-			          }
-			        },
-			        "caption.caption_KPI_stock_GR_PWD": {
-			          "Target": {
-			            "Entity": "caption.caption_KPI_stock_GR_PWD"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "select_measure"
-			            },
-			            "Object": {
-			              "Role": "caption.caption_KPI_stock_GR_PWD"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "select_measures_have_caption_KPI_stock_GR_PWD"
-			        }
-			      ]
-			    },
 			    "periods_filter_has_caption_caption_KPI_stock_GR_PWD": {
 			      "Binding": {
 			        "ConceptualEntity": "PeriodsFilter"
@@ -35480,39 +37467,6 @@ cultureInfo en-US
 			          }
 			        }
 			      }
-			    },
-			    "select_measure_has_caption_caption_KPI_stock_d_PWD": {
-			      "Binding": {
-			        "ConceptualEntity": "SelectMeasures"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "select_measure": {
-			          "Target": {
-			            "Entity": "select_measure"
-			          }
-			        },
-			        "caption.caption_KPI_stock_d_PWD": {
-			          "Target": {
-			            "Entity": "caption.caption_KPI_stock_d_PWD"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "select_measure"
-			            },
-			            "Object": {
-			              "Role": "caption.caption_KPI_stock_d_PWD"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "select_measures_have_caption_KPI_stock_d_PWD"
-			        }
-			      ]
 			    },
 			    "periods_filter_has_caption_caption_KPI_stock_d_PWD": {
 			      "Binding": {
@@ -35847,39 +37801,6 @@ cultureInfo en-US
 			        }
 			      }
 			    },
-			    "select_measure_has_entity__m__stock_d_PWD": {
-			      "Binding": {
-			        "ConceptualEntity": "SelectMeasures"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "select_measure": {
-			          "Target": {
-			            "Entity": "select_measure"
-			          }
-			        },
-			        "entity__m_.stock_d_PWD": {
-			          "Target": {
-			            "Entity": "entity__m_.stock_d_PWD"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "select_measure"
-			            },
-			            "Object": {
-			              "Role": "entity__m_.stock_d_PWD"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "select_measures_have_stock_d_PWD"
-			        }
-			      ]
-			    },
 			    "periods_filter_has_entity__m__stock_d_PWD": {
 			      "Binding": {
 			        "ConceptualEntity": "PeriodsFilter"
@@ -36045,7 +37966,7 @@ cultureInfo en-US
 			        }
 			      ]
 			    },
-			    "single_period_has_entity__m__stock_GR_PWD": {
+			    "single_period_has_entity__m__distr_stock_GR_PWD": {
 			      "Binding": {
 			        "ConceptualEntity": "SinglePeriod"
 			      },
@@ -36056,47 +37977,14 @@ cultureInfo en-US
 			            "Entity": "single_period"
 			          }
 			        },
-			        "entity__m_.stock_GR_PWD": {
+			        "entity__m_.distr_stock_GR_PWD": {
 			          "Target": {
-			            "Entity": "entity__m_.stock_GR_PWD"
+			            "Entity": "entity__m_.distr_stock_GR_PWD"
 			          }
 			        }
 			      }
 			    },
-			    "select_measure_has_entity__m__stock_GR_PWD": {
-			      "Binding": {
-			        "ConceptualEntity": "SelectMeasures"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "select_measure": {
-			          "Target": {
-			            "Entity": "select_measure"
-			          }
-			        },
-			        "entity__m_.stock_GR_PWD": {
-			          "Target": {
-			            "Entity": "entity__m_.stock_GR_PWD"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "select_measure"
-			            },
-			            "Object": {
-			              "Role": "entity__m_.stock_GR_PWD"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "select_measures_have_stock_GR_PWD"
-			        }
-			      ]
-			    },
-			    "periods_filter_has_entity__m__stock_GR_PWD": {
+			    "periods_filter_has_entity__m__distr_stock_GR_PWD": {
 			      "Binding": {
 			        "ConceptualEntity": "PeriodsFilter"
 			      },
@@ -36107,9 +37995,9 @@ cultureInfo en-US
 			            "Entity": "periods_filter"
 			          }
 			        },
-			        "entity__m_.stock_GR_PWD": {
+			        "entity__m_.distr_stock_GR_PWD": {
 			          "Target": {
-			            "Entity": "entity__m_.stock_GR_PWD"
+			            "Entity": "entity__m_.distr_stock_GR_PWD"
 			          }
 			        }
 			      },
@@ -36120,16 +38008,16 @@ cultureInfo en-US
 			              "Role": "periods_filter"
 			            },
 			            "Object": {
-			              "Role": "entity__m_.stock_GR_PWD"
+			              "Role": "entity__m_.distr_stock_GR_PWD"
 			            }
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "periods_filters_have_stock_GR_PWD"
+			          "ID": "periods_filters_have_distr_stock_GR_PWD"
 			        }
 			      ]
 			    },
-			    "period_has_entity__m__stock_GR_PWD": {
+			    "period_has_entity__m__distr_stock_GR_PWD": {
 			      "Binding": {
 			        "ConceptualEntity": "Periods"
 			      },
@@ -36140,9 +38028,9 @@ cultureInfo en-US
 			            "Entity": "period"
 			          }
 			        },
-			        "entity__m_.stock_GR_PWD": {
+			        "entity__m_.distr_stock_GR_PWD": {
 			          "Target": {
-			            "Entity": "entity__m_.stock_GR_PWD"
+			            "Entity": "entity__m_.distr_stock_GR_PWD"
 			          }
 			        }
 			      },
@@ -36153,16 +38041,16 @@ cultureInfo en-US
 			              "Role": "period"
 			            },
 			            "Object": {
-			              "Role": "entity__m_.stock_GR_PWD"
+			              "Role": "entity__m_.distr_stock_GR_PWD"
 			            }
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "periods_have_stock_GR_PWD"
+			          "ID": "periods_have_distr_stock_GR_PWD"
 			        }
 			      ]
 			    },
-			    "data_stock_has_entity__m__stock_GR_PWD": {
+			    "data_stock_has_entity__m__distr_stock_GR_PWD": {
 			      "Binding": {
 			        "ConceptualEntity": "DataStock"
 			      },
@@ -36173,9 +38061,9 @@ cultureInfo en-US
 			            "Entity": "data_stock"
 			          }
 			        },
-			        "entity__m_.stock_GR_PWD": {
+			        "entity__m_.distr_stock_GR_PWD": {
 			          "Target": {
-			            "Entity": "entity__m_.stock_GR_PWD"
+			            "Entity": "entity__m_.distr_stock_GR_PWD"
 			          }
 			        }
 			      },
@@ -36186,16 +38074,16 @@ cultureInfo en-US
 			              "Role": "data_stock"
 			            },
 			            "Object": {
-			              "Role": "entity__m_.stock_GR_PWD"
+			              "Role": "entity__m_.distr_stock_GR_PWD"
 			            }
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "data_stocks_have_stock_GR_PWD"
+			          "ID": "data_stocks_have_distr_stock_GR_PWD"
 			        }
 			      ]
 			    },
-			    "aggr_has_entity__m__stock_GR_PWD": {
+			    "aggr_has_entity__m__distr_stock_GR_PWD": {
 			      "Binding": {
 			        "ConceptualEntity": "Aggr"
 			      },
@@ -36206,9 +38094,9 @@ cultureInfo en-US
 			            "Entity": "aggr"
 			          }
 			        },
-			        "entity__m_.stock_GR_PWD": {
+			        "entity__m_.distr_stock_GR_PWD": {
 			          "Target": {
-			            "Entity": "entity__m_.stock_GR_PWD"
+			            "Entity": "entity__m_.distr_stock_GR_PWD"
 			          }
 			        }
 			      },
@@ -36219,12 +38107,12 @@ cultureInfo en-US
 			              "Role": "aggr"
 			            },
 			            "Object": {
-			              "Role": "entity__m_.stock_GR_PWD"
+			              "Role": "entity__m_.distr_stock_GR_PWD"
 			            }
 			          },
 			          "State": "Generated",
 			          "Weight": 0.99,
-			          "ID": "aggrs_have_stock_GR_PWD"
+			          "ID": "aggrs_have_distr_stock_GR_PWD"
 			        }
 			      ]
 			    },
@@ -36311,39 +38199,6 @@ cultureInfo en-US
 			          }
 			        }
 			      }
-			    },
-			    "select_measure_has_entity__m__distr_stock_PWD": {
-			      "Binding": {
-			        "ConceptualEntity": "SelectMeasures"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "select_measure": {
-			          "Target": {
-			            "Entity": "select_measure"
-			          }
-			        },
-			        "entity__m_.distr_stock_PWD": {
-			          "Target": {
-			            "Entity": "entity__m_.distr_stock_PWD"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "select_measure"
-			            },
-			            "Object": {
-			              "Role": "entity__m_.distr_stock_PWD"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "select_measures_have_distr_stock_PWD"
-			        }
-			      ]
 			    },
 			    "periods_filter_has_entity__m__distr_stock_PWD": {
 			      "Binding": {
@@ -36926,39 +38781,6 @@ cultureInfo en-US
 			          }
 			        }
 			      }
-			    },
-			    "select_measure_has_entity__m__distr_stock_dyn_PWD": {
-			      "Binding": {
-			        "ConceptualEntity": "SelectMeasures"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "select_measure": {
-			          "Target": {
-			            "Entity": "select_measure"
-			          }
-			        },
-			        "entity__m_.distr_stock_dyn_PWD": {
-			          "Target": {
-			            "Entity": "entity__m_.distr_stock_dyn_PWD"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "select_measure"
-			            },
-			            "Object": {
-			              "Role": "entity__m_.distr_stock_dyn_PWD"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "select_measures_have_distr_stock_dyn_PWD"
-			        }
-			      ]
 			    },
 			    "periods_filter_has_entity__m__distr_stock_dyn_PWD": {
 			      "Binding": {
@@ -39190,39 +41012,6 @@ cultureInfo en-US
 			        }
 			      }
 			    },
-			    "select_measure_has_header_header_dynamic_main_stock": {
-			      "Binding": {
-			        "ConceptualEntity": "SelectMeasures"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "select_measure": {
-			          "Target": {
-			            "Entity": "select_measure"
-			          }
-			        },
-			        "header.header_dynamic_main_stock": {
-			          "Target": {
-			            "Entity": "header.header_dynamic_main_stock"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "select_measure"
-			            },
-			            "Object": {
-			              "Role": "header.header_dynamic_main_stock"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "select_measures_have_header_dynamic_main_stock"
-			        }
-			      ]
-			    },
 			    "period_has_header_header_dynamic_main_stock": {
 			      "Binding": {
 			        "ConceptualEntity": "Periods"
@@ -39372,39 +41161,6 @@ cultureInfo en-US
 			          }
 			        }
 			      }
-			    },
-			    "select_measure_has_entity__m__distr_stock_AC": {
-			      "Binding": {
-			        "ConceptualEntity": "SelectMeasures"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "select_measure": {
-			          "Target": {
-			            "Entity": "select_measure"
-			          }
-			        },
-			        "entity__m_.distr_stock_AC": {
-			          "Target": {
-			            "Entity": "entity__m_.distr_stock_AC"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "select_measure"
-			            },
-			            "Object": {
-			              "Role": "entity__m_.distr_stock_AC"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "select_measures_have_distr_stock_AC"
-			        }
-			      ]
 			    },
 			    "periods_filter_has_entity__m__distr_stock_AC": {
 			      "Binding": {
@@ -39556,39 +41312,6 @@ cultureInfo en-US
 			        }
 			      }
 			    },
-			    "select_measure_has_entity__m__distr_stock_dyn_AC": {
-			      "Binding": {
-			        "ConceptualEntity": "SelectMeasures"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "select_measure": {
-			          "Target": {
-			            "Entity": "select_measure"
-			          }
-			        },
-			        "entity__m_.distr_stock_dyn_AC": {
-			          "Target": {
-			            "Entity": "entity__m_.distr_stock_dyn_AC"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "select_measure"
-			            },
-			            "Object": {
-			              "Role": "entity__m_.distr_stock_dyn_AC"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "select_measures_have_distr_stock_dyn_AC"
-			        }
-			      ]
-			    },
 			    "periods_filter_has_entity__m__distr_stock_dyn_AC": {
 			      "Binding": {
 			        "ConceptualEntity": "PeriodsFilter"
@@ -39718,39 +41441,6 @@ cultureInfo en-US
 			          "State": "Generated",
 			          "Weight": 0.99,
 			          "ID": "aggrs_have_distr_stock_dyn_AC"
-			        }
-			      ]
-			    },
-			    "select_measure_has_entity__m__sum_stock_by_measure": {
-			      "Binding": {
-			        "ConceptualEntity": "SelectMeasures"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "select_measure": {
-			          "Target": {
-			            "Entity": "select_measure"
-			          }
-			        },
-			        "entity__m_.sum_stock_by_measure": {
-			          "Target": {
-			            "Entity": "entity__m_.sum_stock_by_measure"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "select_measure"
-			            },
-			            "Object": {
-			              "Role": "entity__m_.sum_stock_by_measure"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "select_measures_have_sum_stock_by_measure"
 			        }
 			      ]
 			    },
@@ -44595,39 +46285,6 @@ cultureInfo en-US
 			          }
 			        }
 			      }
-			    },
-			    "select_measure_has_header_header_rating_main_stock": {
-			      "Binding": {
-			        "ConceptualEntity": "SelectMeasures"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "select_measure": {
-			          "Target": {
-			            "Entity": "select_measure"
-			          }
-			        },
-			        "header.header_rating_main_stock": {
-			          "Target": {
-			            "Entity": "header.header_rating_main_stock"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "select_measure"
-			            },
-			            "Object": {
-			              "Role": "header.header_rating_main_stock"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "select_measures_have_header_rating_main_stock"
-			        }
-			      ]
 			    },
 			    "period_has_header_header_rating_main_stock": {
 			      "Binding": {
@@ -49832,182 +51489,6 @@ cultureInfo en-US
 			          "ID": "headers_head"
 			        }
 			      ]
-			    },
-			    "translate_GR_index_has_translate_addr_market": {
-			      "Binding": {
-			        "ConceptualEntity": "TranslateGRIndexes"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "translate_GR_index": {
-			          "Target": {
-			            "Entity": "translate_GR_index"
-			          }
-			        },
-			        "translate_addr_market": {
-			          "Target": {
-			            "Entity": "translate_addr_market"
-			          }
-			        }
-			      }
-			    },
-			    "translate_addr_market_has_translate_language_list": {
-			      "Binding": {
-			        "ConceptualEntity": "TranslateAddrMarket"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "translate_addr_market": {
-			          "Target": {
-			            "Entity": "translate_addr_market"
-			          }
-			        },
-			        "translate_language_list": {
-			          "Target": {
-			            "Entity": "translate_language_list"
-			          }
-			        }
-			      }
-			    },
-			    "translate_language_list_has_translate_addr_market": {
-			      "Binding": {
-			        "ConceptualEntity": "TranslateLanguageList"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "translate_language_list": {
-			          "Target": {
-			            "Entity": "translate_language_list"
-			          }
-			        },
-			        "translate_addr_market": {
-			          "Target": {
-			            "Entity": "translate_addr_market"
-			          }
-			        }
-			      }
-			    },
-			    "visits_fact_has_drugs_ID": {
-			      "Binding": {
-			        "ConceptualEntity": "VisitsFact"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "visits_fact": {
-			          "Target": {
-			            "Entity": "visits_fact"
-			          }
-			        },
-			        "drugs_ID": {
-			          "Target": {
-			            "Entity": "drugs_ID"
-			          }
-			        }
-			      }
-			    },
-			    "visits_fact_has_period": {
-			      "Binding": {
-			        "ConceptualEntity": "VisitsFact"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "visits_fact": {
-			          "Target": {
-			            "Entity": "visits_fact"
-			          }
-			        },
-			        "period": {
-			          "Target": {
-			            "Entity": "period"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "visits_fact"
-			            },
-			            "Object": {
-			              "Role": "period"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "visits_facts_have_periods"
-			        },
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "period"
-			            },
-			            "Object": {
-			              "Role": "visits_fact"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "periods_have_visits_facts"
-			        }
-			      ]
-			    },
-			    "visits_fact_has_area": {
-			      "Binding": {
-			        "ConceptualEntity": "VisitsFact"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "visits_fact": {
-			          "Target": {
-			            "Entity": "visits_fact"
-			          }
-			        },
-			        "area": {
-			          "Target": {
-			            "Entity": "area"
-			          },
-			          "Nouns": [
-			            {
-			              "client": {
-			                "State": "Generated"
-			              }
-			            }
-			          ]
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "visits_fact"
-			            },
-			            "Object": {
-			              "Role": "area"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "visits_facts_have_areas"
-			        }
-			      ]
-			    },
-			    "data_plan_has_periods_link": {
-			      "Binding": {
-			        "ConceptualEntity": "DataPlan"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "data_plan": {
-			          "Target": {
-			            "Entity": "data_plan"
-			          }
-			        },
-			        "periods_link": {
-			          "Target": {
-			            "Entity": "periods_link"
-			          }
-			        }
-			      }
 			    },
 			    "data_plan_has_drugs_ID": {
 			      "Binding": {

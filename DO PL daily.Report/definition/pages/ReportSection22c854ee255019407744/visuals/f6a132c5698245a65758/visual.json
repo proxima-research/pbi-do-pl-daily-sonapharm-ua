@@ -4,10 +4,10 @@
   "position": {
     "x": 777,
     "y": 995,
-    "z": 38000,
+    "z": 39000,
     "height": 290,
     "width": 488,
-    "tabOrder": 34020
+    "tabOrder": 35000
   },
   "visual": {
     "visualType": "ZebraBITablesBAE31B370F254F808553548EFB35BFA5",
@@ -59,10 +59,10 @@
                       "Entity": "_M_"
                     }
                   },
-                  "Property": "PRT_AC_Ranked"
+                  "Property": "PRT_AC_Ranked_By_Select_Rank_Type"
                 }
               },
-              "queryRef": "_M_.PRT_AC_Ranked",
+              "queryRef": "_M_.PRT_AC_Ranked_By_Select_Rank_Type",
               "nativeQueryRef": "PRT",
               "displayName": "PRT"
             },
@@ -74,10 +74,10 @@
                       "Entity": "_M_"
                     }
                   },
-                  "Property": "PRT_Rank_AC_Ranked"
+                  "Property": "PRT_Rank_AC_Ranked_By_Select_Rank_Type"
                 }
               },
-              "queryRef": "_M_.PRT_Rank_AC_Ranked",
+              "queryRef": "_M_.PRT_Rank_AC_Ranked_By_Select_Rank_Type",
               "nativeQueryRef": "Rank",
               "displayName": "Rank"
             }
@@ -93,10 +93,10 @@
                       "Entity": "_M_"
                     }
                   },
-                  "Property": "PRT_PWD_Ranked"
+                  "Property": "PRT_PWD_Ranked_By_Select_Rank_Type"
                 }
               },
-              "queryRef": "_M_.PRT_PWD_Ranked",
+              "queryRef": "_M_.PRT_PWD_Ranked_By_Select_Rank_Type",
               "nativeQueryRef": "PWD",
               "displayName": "PWD"
             }
@@ -113,7 +113,7 @@
                     "Entity": "_M_"
                   }
                 },
-                "Property": "PRT_AC_Ranked"
+                "Property": "PRT_AC_Ranked_By_Select_Rank_Type"
               }
             },
             "direction": "Descending"
@@ -162,7 +162,7 @@
             "lastLicenseCheck": {
               "expr": {
                 "Literal": {
-                  "Value": "'1777452429558'"
+                  "Value": "'1778072327782'"
                 }
               }
             }
@@ -323,7 +323,7 @@
             "actual": {
               "expr": {
                 "Literal": {
-                  "Value": "'PRT'"
+                  "Value": "'Penetration'"
                 }
               }
             }
@@ -625,65 +625,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "e0ccc7c20094b78353e1",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Drugs"
-              }
-            },
-            "Property": "Brand"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "c133d8a69042b00650c2",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "_M_"
-              }
-            },
-            "Property": "PRT_AC_Ranked"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "1add6140acdb05074769",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "_M_"
-              }
-            },
-            "Property": "PRT_PWD_Ranked"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "d5fc10acc0198035289a",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "_M_"
-              }
-            },
-            "Property": "PRT_Rank_AC_Ranked"
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
   }
 }

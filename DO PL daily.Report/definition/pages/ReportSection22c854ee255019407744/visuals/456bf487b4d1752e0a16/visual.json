@@ -4,10 +4,10 @@
   "position": {
     "x": 281,
     "y": 696,
-    "z": 35000,
+    "z": 36000,
     "height": 290,
     "width": 488,
-    "tabOrder": 34008
+    "tabOrder": 31000
   },
   "visual": {
     "visualType": "waterfall6C9ED82ABD1F44C4A0D590CE01EB5EE7",
@@ -103,7 +103,7 @@
             "lastLicenseCheck": {
               "expr": {
                 "Literal": {
-                  "Value": "'1777452429296'"
+                  "Value": "'1778072327697'"
                 }
               }
             }
@@ -658,51 +658,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "d3ae920a5a6e835f6c89",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Periods"
-              }
-            },
-            "Property": "Period"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "ad2b100fab4b6282a3db",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "_M_"
-              }
-            },
-            "Property": "Distr_Stock_Dyn_AC"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "f23dca3e10de1a377488",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "_M_"
-              }
-            },
-            "Property": "Distr_Stock_Dyn_PWD"
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
   }
 }

@@ -180,7 +180,7 @@
             "Property": "Period"
           }
         },
-        "type": "Advanced",
+        "type": "Categorical",
         "howCreated": "User"
       },
       {

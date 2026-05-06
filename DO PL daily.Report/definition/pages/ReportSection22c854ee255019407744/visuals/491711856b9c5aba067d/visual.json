@@ -4,10 +4,10 @@
   "position": {
     "x": 777,
     "y": 100,
-    "z": 31000,
+    "z": 32000,
     "height": 290,
     "width": 488,
-    "tabOrder": 16000
+    "tabOrder": 15000
   },
   "visual": {
     "visualType": "ZebraBITablesBAE31B370F254F808553548EFB35BFA5",
@@ -196,7 +196,7 @@
             "lastLicenseCheck": {
               "expr": {
                 "Literal": {
-                  "Value": "'1777452429637'"
+                  "Value": "'1778072327829'"
                 }
               }
             }
@@ -313,24 +313,24 @@
       "sortSettings": [
         {
           "properties": {
-            "columnName": {
+            "categorySort": {
               "expr": {
                 "Literal": {
-                  "Value": "'actual'"
+                  "Value": "2D"
                 }
               }
             },
             "chartSort": {
               "expr": {
                 "Literal": {
-                  "Value": "1D"
+                  "Value": "2D"
                 }
               }
             },
-            "categorySort": {
+            "columnName": {
               "expr": {
                 "Literal": {
-                  "Value": "1D"
+                  "Value": "'Rank'"
                 }
               }
             }
@@ -624,93 +624,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "bf1ee466b64e34ee84e1",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "_M_"
-              }
-            },
-            "Property": "Distr_Sales_AC_Ranked"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "2fa6d13cee5d67d057ad",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "_M_"
-              }
-            },
-            "Property": "Distr_Sales_PY_Ranked"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "ccc632948e27c60c13dd",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "_M_"
-              }
-            },
-            "Property": "Distr_Sales_PL_Ranked"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "5f78dc39d9ab2b476e29",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "_M_"
-              }
-            },
-            "Property": "Distr_Sales_PE_Ranked"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "8825ee54659e729f07aa",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "_M_"
-              }
-            },
-            "Property": "Market_Rank_AC_Ranked"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "2d196da9ae985ba39e0d",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Drugs"
-              }
-            },
-            "Property": "Brand"
-          }
-        },
-        "type": "Categorical"
-      }
-    ]
   }
 }

@@ -95,6 +95,7 @@ ref table MapUrls
 ref table _MAP_
 ref table Keys
 ref table SelectColoredByExprMarketOverview
+ref table SelectRatingType
 
 ref cultureInfo en-US
 ref cultureInfo uk-UA

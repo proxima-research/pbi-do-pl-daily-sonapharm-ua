@@ -101,10 +101,6 @@ relationship 39327cd1-1c12-fbc4-5cb9-45b339cb90d9
 	fromColumn: VisitsPlan.PERIOD_ID
 	toColumn: Periods.PERIOD_ID
 
-relationship 3d24ebfd-748d-66b9-7b91-3530def955df
-	fromColumn: SinglePeriod.FP
-	toColumn: SinglePeriodFilter.FP
-
 relationship 98a7d681-8ec7-6975-f1d4-8c00dbe3bbac
 	toCardinality: many
 	fromColumn: DataPlan.AREA_ID
@@ -145,4 +141,8 @@ relationship e2668006-17da-5452-dcf5-db4a948631eb
 	toCardinality: many
 	fromColumn: StockClientsPeriods.CLIENT_ID
 	toColumn: Areas.CLIENT_ID
+
+relationship 3d24ebfd-748d-66b9-7b91-3530def955df
+	fromColumn: SinglePeriod.FP
+	toColumn: SinglePeriodFilter.FP
 

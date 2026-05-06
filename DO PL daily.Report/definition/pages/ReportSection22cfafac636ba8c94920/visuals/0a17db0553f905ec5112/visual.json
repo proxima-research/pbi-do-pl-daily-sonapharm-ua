@@ -7,7 +7,7 @@
     "z": 29000,
     "height": 69,
     "width": 236,
-    "tabOrder": 39002
+    "tabOrder": 26000
   },
   "visual": {
     "visualType": "slicer",
@@ -153,6 +153,13 @@
                           [
                             {
                               "Literal": {
+                                "Value": "'Stock AC'"
+                              }
+                            }
+                          ],
+                          [
+                            {
+                              "Literal": {
                                 "Value": "'Promo TS%'"
                               }
                             }
@@ -161,13 +168,6 @@
                             {
                               "Literal": {
                                 "Value": "'Stock TS%'"
-                              }
-                            }
-                          ],
-                          [
-                            {
-                              "Literal": {
-                                "Value": "'Stock AC'"
                               }
                             }
                           ]
@@ -300,23 +300,5 @@
       "filterChanges": true
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "66ac1b4ee53a1ccdd6e8",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "SelectColumns"
-              }
-            },
-            "Property": "ColumnName"
-          }
-        },
-        "type": "Categorical"
-      }
-    ]
   }
 }

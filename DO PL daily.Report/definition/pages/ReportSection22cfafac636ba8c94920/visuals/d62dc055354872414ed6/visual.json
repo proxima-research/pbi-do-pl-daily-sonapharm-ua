@@ -7,7 +7,7 @@
     "z": 27000,
     "height": 453,
     "width": 68,
-    "tabOrder": 29000
+    "tabOrder": 21000
   },
   "visual": {
     "visualType": "advancedSlicerVisual",
@@ -384,23 +384,5 @@
       "filterChanges": true
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "0ce4ed6ecbe91bd21047",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "SelectPages"
-              }
-            },
-            "Property": "Value"
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
   }
 }

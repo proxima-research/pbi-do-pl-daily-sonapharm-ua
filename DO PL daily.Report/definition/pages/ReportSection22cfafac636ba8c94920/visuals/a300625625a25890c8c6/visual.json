@@ -7,7 +7,7 @@
     "z": 20000,
     "height": 68,
     "width": 116,
-    "tabOrder": 38000
+    "tabOrder": 25000
   },
   "visual": {
     "visualType": "slicer",
@@ -231,7 +231,7 @@
   "filterConfig": {
     "filters": [
       {
-        "name": "8f2a88870ea69198c253",
+        "name": "85344275e8e7d23d5696",
         "field": {
           "Column": {
             "Expression": {

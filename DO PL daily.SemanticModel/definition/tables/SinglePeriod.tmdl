@@ -35,7 +35,6 @@ table SinglePeriod
 		annotation SummarizationSetBy = Automatic
 
 	column FP
-		formatString: 0
 		lineageTag: 7debcae0-f16b-41b1-82a5-97be0f5c2921
 		summarizeBy: none
 		isNameInferred
@@ -43,9 +42,66 @@ table SinglePeriod
 
 		annotation SummarizationSetBy = Automatic
 
+	column PeriodStr
+		dataType: string
+		lineageTag: d9fadc46-80af-4a54-b095-7687f60b63b4
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [PeriodStr]
+		sortByColumn: PeriodSort
+
+		annotation SummarizationSetBy = Automatic
+
+	column MonthStr
+		lineageTag: 90ecc71d-babe-4d75-abac-5a2190b8b286
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [MonthStr]
+		sortByColumn: MonthSort
+
+		annotation SummarizationSetBy = Automatic
+
+	column YearMonth
+		lineageTag: 80e4c62e-f85f-43b5-9e43-2afbdec12431
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [YearMonth]
+
+		annotation SummarizationSetBy = Automatic
+
+	column QuarterStr
+		lineageTag: 08b11597-9be3-41ed-aee0-3717b7fb5163
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [QuarterStr]
+		sortByColumn: QuarterSort
+
+		annotation SummarizationSetBy = Automatic
+
+	column QuarterSort = -(YEAR(SinglePeriod[Period]) * 10 + QUARTER(SinglePeriod[Period]))
+		formatString: 0
+		lineageTag: 0d985ff3-c8d5-4c07-9b24-91d7f87910d7
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column MonthSort = -(YEAR(SinglePeriod[Period]) * 100 + MONTH(SinglePeriod[Period]))
+		formatString: 0
+		lineageTag: 7c360235-fdb5-4acc-8133-9488a37fc5cc
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column PeriodSort = -int(SinglePeriod[PERIOD_ID])
+		formatString: 0
+		lineageTag: c8036391-95f5-43d7-bfb7-f9389d62ef54
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
 	partition SinglePeriod = calculated
 		mode: import
-		source = DISTINCT(SELECTCOLUMNS(Periods,"Period",[Period],"PERIOD_ID",Periods[PERIOD_ID],"PeriodMonth",Periods[PeriodMonth],"FP",Periods[FP]))
+		source = DISTINCT(SELECTCOLUMNS(Periods,"Period",[Period],"PeriodStr",Format([Period],"dd.mm.YYYY"),"MonthStr",Format([Period],"MMMM YYYY"),"QuarterStr",Format([Period],"YYYY \Qq"),"PERIOD_ID",Periods[PERIOD_ID],"PeriodMonth",Periods[PeriodMonth],"FP",Periods[FP],"YearMonth",Format([Period],"YYYY.mm")))
 
 	annotation PBI_Id = f65822f8d8024535b6fdb2e71193391f
 

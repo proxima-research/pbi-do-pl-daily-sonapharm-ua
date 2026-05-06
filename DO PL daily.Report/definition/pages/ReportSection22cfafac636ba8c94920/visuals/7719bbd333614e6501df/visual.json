@@ -7,7 +7,7 @@
     "z": 30000,
     "height": 64,
     "width": 286,
-    "tabOrder": 39003
+    "tabOrder": 27000
   },
   "visual": {
     "visualType": "slicer",
@@ -58,7 +58,7 @@
               },
               "queryRef": "Areas.LEVEL_31",
               "nativeQueryRef": "LEVEL_31",
-              "active": true
+              "active": false
             },
             {
               "field": {
@@ -73,7 +73,7 @@
               },
               "queryRef": "Areas.LEVEL_4",
               "nativeQueryRef": "LEVEL_4",
-              "active": true
+              "active": false
             }
           ]
         }
@@ -208,7 +208,6 @@
                   }
                 }
               ],
-              "isToggled": true,
               "children": [
                 {
                   "identityValues": [
@@ -231,16 +230,39 @@
                       "isToggled": true
                     }
                   ]
-                },
+                }
+              ]
+            },
+            {
+              "identityValues": [
+                {
+                  "Literal": {
+                    "Value": "'Uncovered'"
+                  }
+                }
+              ],
+              "children": [
                 {
                   "identityValues": [
                     {
                       "Literal": {
-                        "Value": "'Наталя Горблюк'"
+                        "Value": "'Uncovered'"
                       }
                     }
                   ],
-                  "isToggled": true
+                  "isToggled": true,
+                  "children": [
+                    {
+                      "identityValues": [
+                        {
+                          "Literal": {
+                            "Value": "'Uncovered'"
+                          }
+                        }
+                      ],
+                      "isToggled": true
+                    }
+                  ]
                 }
               ]
             }
@@ -266,6 +288,13 @@
         {
           "properties": {
             "strictSingleSelect": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "singleSelect": {
               "expr": {
                 "Literal": {
                   "Value": "false"
@@ -416,65 +445,5 @@
       "filterChanges": true
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "d947112c7eede16c83d6",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Areas"
-              }
-            },
-            "Property": "LEVEL_1"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "a841148b795580c8ea30",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Areas"
-              }
-            },
-            "Property": "LEVEL_2"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "24bf6141c405580542a0",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Areas"
-              }
-            },
-            "Property": "LEVEL_3"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "e1a33ced0e87c55b1ac7",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Areas"
-              }
-            },
-            "Property": "LEVEL_4"
-          }
-        },
-        "type": "Categorical"
-      }
-    ]
   }
 }

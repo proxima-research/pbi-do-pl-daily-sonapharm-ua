@@ -2,12 +2,12 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.8.0/schema.json",
   "name": "7ab326d082aa20693c1b",
   "position": {
-    "x": 8,
-    "y": 420,
+    "x": 9,
+    "y": 469,
     "z": 15000,
     "height": 66,
     "width": 272,
-    "tabOrder": 39009
+    "tabOrder": 33000
   },
   "visual": {
     "visualType": "slicer",
@@ -216,24 +216,6 @@
       "filterChanges": true
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "974cf168e8070190cb41",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "SelectColoredByExprMarketOverview"
-              }
-            },
-            "Property": "ColoredBy"
-          }
-        },
-        "type": "Categorical"
-      }
-    ]
   },
   "isHidden": true
 }

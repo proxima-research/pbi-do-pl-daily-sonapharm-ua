@@ -4,10 +4,10 @@
   "position": {
     "x": 777,
     "y": 398,
-    "z": 34000,
+    "z": 35000,
     "height": 290,
     "width": 488,
-    "tabOrder": 34001
+    "tabOrder": 29000
   },
   "visual": {
     "visualType": "ZebraBITablesBAE31B370F254F808553548EFB35BFA5",
@@ -59,10 +59,10 @@
                       "Entity": "_M_"
                     }
                   },
-                  "Property": "Visits_AC_Ranked"
+                  "Property": "Visits_AC_Ranked_By_Select_Type"
                 }
               },
-              "queryRef": "_M_.Visits_AC_Ranked",
+              "queryRef": "_M_.Visits_AC_Ranked_By_Select_Type",
               "nativeQueryRef": "AC",
               "displayName": "AC"
             },
@@ -74,10 +74,10 @@
                       "Entity": "_M_"
                     }
                   },
-                  "Property": "Visits_PE_Ranked"
+                  "Property": "Visits_PE_Ranked_By_Select_Type"
                 }
               },
-              "queryRef": "_M_.Visits_PE_Ranked",
+              "queryRef": "_M_.Visits_PE_Ranked_By_Select_Type",
               "nativeQueryRef": "PE,%",
               "displayName": "PE,%"
             },
@@ -89,31 +89,12 @@
                       "Entity": "_M_"
                     }
                   },
-                  "Property": "Visits_Rank_AC_Ranked"
+                  "Property": "Visits_Rank_Ranked_By_Select_Type"
                 }
               },
-              "queryRef": "_M_.Visits_Rank_AC_Ranked",
+              "queryRef": "_M_.Visits_Rank_Ranked_By_Select_Type",
               "nativeQueryRef": "Rank",
               "displayName": "Rank"
-            }
-          ]
-        },
-        "PreviousYear": {
-          "projections": [
-            {
-              "field": {
-                "Measure": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "_M_"
-                    }
-                  },
-                  "Property": "Visits_PY_Ranked"
-                }
-              },
-              "queryRef": "_M_.Visits_PY_Ranked",
-              "nativeQueryRef": "PY",
-              "displayName": "PY"
             }
           ]
         },
@@ -127,12 +108,31 @@
                       "Entity": "_M_"
                     }
                   },
-                  "Property": "Visits_PL_Ranked"
+                  "Property": "Visits_PL_Ranked_By_Select_Type"
                 }
               },
-              "queryRef": "_M_.Visits_PL_Ranked",
+              "queryRef": "_M_.Visits_PL_Ranked_By_Select_Type",
               "nativeQueryRef": "Promo PL",
               "displayName": "Promo PL"
+            }
+          ]
+        },
+        "PreviousYear": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_M_"
+                    }
+                  },
+                  "Property": "Visits_PY_Ranked_By_Select_Type"
+                }
+              },
+              "queryRef": "_M_.Visits_PY_Ranked_By_Select_Type",
+              "nativeQueryRef": "PY",
+              "displayName": "PY"
             }
           ]
         }
@@ -147,7 +147,7 @@
                     "Entity": "_M_"
                   }
                 },
-                "Property": "Visits_AC_Ranked"
+                "Property": "Visits_AC_Ranked_By_Select_Type"
               }
             },
             "direction": "Descending"
@@ -196,7 +196,7 @@
             "lastLicenseCheck": {
               "expr": {
                 "Literal": {
-                  "Value": "'1777452429472'"
+                  "Value": "'1778072327656'"
                 }
               }
             }
@@ -313,24 +313,24 @@
       "sortSettings": [
         {
           "properties": {
-            "columnName": {
+            "categorySort": {
               "expr": {
                 "Literal": {
-                  "Value": "'actual'"
+                  "Value": "2D"
                 }
               }
             },
             "chartSort": {
               "expr": {
                 "Literal": {
-                  "Value": "1D"
+                  "Value": "2D"
                 }
               }
             },
-            "categorySort": {
+            "columnName": {
               "expr": {
                 "Literal": {
-                  "Value": "1D"
+                  "Value": "'Rank'"
                 }
               }
             }
@@ -645,79 +645,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "b023d97d105eb5d07031",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "_M_"
-              }
-            },
-            "Property": "Visits_AC_Ranked"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "542e0b3be891b6d770f4",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "_M_"
-              }
-            },
-            "Property": "Visits_PY_Ranked"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "2600bdd36f0f1ca9e1da",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "_M_"
-              }
-            },
-            "Property": "Visits_Rank_AC_Ranked"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "ebe6651f40465d76f2df",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "_M_"
-              }
-            },
-            "Property": "Visits_PL_Ranked"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "6a4c0d4e3883ba913e59",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "_M_"
-              }
-            },
-            "Property": "Visits_PE_Ranked"
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
   }
 }

@@ -7,7 +7,7 @@
     "z": 21000,
     "height": 68,
     "width": 162,
-    "tabOrder": 35000
+    "tabOrder": 24000
   },
   "visual": {
     "visualType": "slicer",
@@ -101,7 +101,7 @@
                           [
                             {
                               "Literal": {
-                                "Value": "'Last 60 days'"
+                                "Value": "'Last 30 days'"
                               }
                             }
                           ]
@@ -231,7 +231,7 @@
   "filterConfig": {
     "filters": [
       {
-        "name": "b5fbaca03488553be590",
+        "name": "bd6dc1c515548cecc4a4",
         "field": {
           "Column": {
             "Expression": {

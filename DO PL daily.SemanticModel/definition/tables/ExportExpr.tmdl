@@ -52,12 +52,17 @@ table ExportExpr
 				
 				var curName=SELECTEDVALUE(_CURRENCY_[_CURRENCY_])
 				return {
-				    ("Distr sales, "&curName, NAMEOF('_M_'[SumByVol_AC_AllPeriods]), 0),
-				    ("Distr sales, "&"USD", NAMEOF('_M_'[SumByUSD_AC_AllPeriods]), 1),
-				    ("Distr sales, "&"EUR", NAMEOF('_M_'[SumByEUR_AC_AllPeriods]), 2),
-				    ("Distr sales, "&"pcs", NAMEOF('_M_'[SumByPCS_AC_AllPeriods]), 3),
-				    ("Distr sales, "&"tabs", NAMEOF('_M_'[SumByTABS_AC_AllPeriods]), 4),
-				    ("Distr sales, "&"DDD", NAMEOF('_M_'[SumByDDD_AC_AllPeriods]), 5)
+				    ("DO (pcs)", NAMEOF('_M_'[Distr_Sales_Export_PCS]), 1),
+				    ("DO (UAH)", NAMEOF('_M_'[Distr_Sales_Export_UAH]), 2),
+				    ("DO (USD)", NAMEOF('_M_'[Distr_Sales_Export_USD]), 3),
+				    ("DO (EUR)", NAMEOF('_M_'[Distr_Sales_Export_EUR]), 4),
+				    ("DO PL(pcs)", NAMEOF('_M_'[Distr_Plans_Export_PCS]), 5),
+				    ("DO PL(UAH)", NAMEOF('_M_'[Distr_Plans_Export_UAH]), 6),
+				    ("DO PL(USD)", NAMEOF('_M_'[Distr_Plans_Export_USD]), 7),
+				    ("DO PL(EUR)", NAMEOF('_M_'[Distr_Plans_Export_EUR]), 8),
+				    ("Stock (pcs)", NAMEOF('_M_'[Distr_Stock_PCS_Export]), 9),
+				    ("Promotions", NAMEOF('_M_'[Promo_Facts_Export]), 10),
+				    ("Promotions PL", NAMEOF('_M_'[Promo_Plans_Export]), 11)
 				}
 
 	annotation PBI_Id = 401e6ff8d3e14c21acfffbe11abed201

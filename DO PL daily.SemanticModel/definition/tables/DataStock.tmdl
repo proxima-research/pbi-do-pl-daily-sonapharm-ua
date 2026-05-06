@@ -47,6 +47,26 @@ table DataStock
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
+	column TABS
+		dataType: double
+		lineageTag: 1760dbe4-e3e0-4d99-935c-360e9bbdcc8b
+		summarizeBy: sum
+		sourceColumn: TABS
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column DDD
+		dataType: double
+		lineageTag: ab22a80f-a2da-4bad-acdb-5072a5eb7ad5
+		summarizeBy: sum
+		sourceColumn: DDD
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
 	partition DataStock = m
 		mode: import
 		source =
@@ -54,9 +74,16 @@ table DataStock
 				    Source = PowerPlatform.Dataflows(null),
 				    SO_MONTHLY_ = Source{[Id="Workspaces"]}[Data]{[workspaceId=_WS_ID_]}[Data]{[dataflowId=_DATA_FLOW_ID_]}[Data]{[entity="STOCK_DAILY",version=""]}[Data],
 				    #"Added Custom" = Table.AddColumn(SO_MONTHLY_, "DT", each 3),
-				    #"Changed Type" = Table.TransformColumnTypes(#"Added Custom",{{"DT", Int64.Type}})
+				    #"Changed Type" = Table.TransformColumnTypes(#"Added Custom",{{"DT", Int64.Type}}),
+				    DistinctDrugs=Table.Distinct(Table.SelectColumns(Drugs,{"DRUGS_ID","DRUG_FORM_NUMBER","DDD_AMOUNT"}),"DRUGS_ID"),
+				    #"Merged Queries" = Table.NestedJoin(#"Changed Type", {"DRUGS_ID"}, DistinctDrugs, {"DRUGS_ID"}, "Drugs", JoinKind.Inner),
+				    #"Expanded Drugs" = Table.ExpandTableColumn(#"Merged Queries", "Drugs", {"DRUG_FORM_NUMBER", "DDD_AMOUNT"}, {"Drugs.DRUG_FORM_NUMBER", "Drugs.DDD_AMOUNT"}),
+				    #"Added Custom2" = Table.AddColumn(#"Expanded Drugs", "TABS", each [PCS]*[Drugs.DRUG_FORM_NUMBER]),
+				    #"Added Custom1" = Table.AddColumn(#"Added Custom2", "DDD", each [PCS]*[Drugs.DDD_AMOUNT]),
+				    #"Changed Type2" = Table.TransformColumnTypes(#"Added Custom1",{{"TABS", type number}, {"DDD", type number}}),
+				    #"Removed Columns" = Table.RemoveColumns(#"Changed Type2",{"Drugs.DRUG_FORM_NUMBER", "Drugs.DDD_AMOUNT"})
 				in
-				    #"Changed Type"
+				    #"Removed Columns"
 
 	annotation PBI_NavigationStepName = Navigation
 

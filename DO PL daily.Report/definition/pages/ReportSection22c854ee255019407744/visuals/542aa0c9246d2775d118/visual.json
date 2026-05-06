@@ -4,9 +4,10 @@
   "position": {
     "x": 16,
     "y": 446,
-    "z": 23500,
+    "z": 23000,
     "height": 80,
-    "width": 252.76825969341749
+    "width": 252.76825969341749,
+    "tabOrder": 38000
   },
   "visualGroup": {
     "displayName": "KPI_PRT",

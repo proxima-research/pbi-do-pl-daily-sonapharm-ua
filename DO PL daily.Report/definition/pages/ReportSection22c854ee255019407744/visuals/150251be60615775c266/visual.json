@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.8.0/schema.json",
   "name": "150251be60615775c266",
   "position": {
     "x": 124.56340288924558,
@@ -7,7 +7,7 @@
     "z": 4250,
     "height": 45,
     "width": 122,
-    "tabOrder": 34015
+    "tabOrder": 4000
   },
   "visual": {
     "visualType": "shape",
@@ -126,7 +126,7 @@
                                       "Entity": "_M_"
                                     }
                                   },
-                                  "Property": "Stock_GR_PWD"
+                                  "Property": "Distr_Stock_GR_PWD"
                                 }
                               },
                               "Right": {
@@ -153,7 +153,7 @@
                                       "Entity": "_M_"
                                     }
                                   },
-                                  "Property": "Stock_GR_PWD"
+                                  "Property": "Distr_Stock_GR_PWD"
                                 }
                               },
                               "Right": {

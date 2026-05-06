@@ -4,10 +4,10 @@
   "position": {
     "x": 279,
     "y": 995,
-    "z": 37000,
+    "z": 38000,
     "height": 290,
     "width": 488,
-    "tabOrder": 34019
+    "tabOrder": 34000
   },
   "visual": {
     "visualType": "deneb7E15AEF80B9E4D4F8E12924291ECE89A",
@@ -343,65 +343,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "0030ad3540119913d762",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Periods"
-              }
-            },
-            "Property": "Period"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "92a3799556400316c001",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Drugs"
-              }
-            },
-            "Property": "Brand"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "aeb35c35aa723ca7a058",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "_M_"
-              }
-            },
-            "Property": "PRT_Dyn_AC_Ranked_All_Periods"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "f67827860da3d180c703",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Dimensions"
-              }
-            },
-            "Property": "DimName"
-          }
-        },
-        "type": "Categorical"
-      }
-    ]
   }
 }

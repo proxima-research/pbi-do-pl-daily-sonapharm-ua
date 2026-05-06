@@ -7,7 +7,7 @@
     "z": 31000,
     "height": 69,
     "width": 141,
-    "tabOrder": 39004
+    "tabOrder": 28000
   },
   "visual": {
     "visualType": "slicer",
@@ -274,23 +274,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "d318a3d201ae9c177988",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "RegionLevel"
-              }
-            },
-            "Property": "RegionLevel"
-          }
-        },
-        "type": "Categorical"
-      }
-    ]
   }
 }
