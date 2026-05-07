@@ -3,9 +3,9 @@
   "name": "7ab326d082aa20693c1b",
   "position": {
     "x": 9,
-    "y": 469,
+    "y": 419,
     "z": 15000,
-    "height": 66,
+    "height": 63,
     "width": 272,
     "tabOrder": 33000
   },
@@ -216,6 +216,24 @@
       "filterChanges": true
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "227ce10a0ce99359233b",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "SelectColoredByExprMarketOverview"
+              }
+            },
+            "Property": "ColoredBy"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
   },
   "isHidden": true
 }

@@ -55,7 +55,6 @@ table Periods
 		annotation SummarizationSetBy = Automatic
 
 	column FP
-		formatString: 0
 		lineageTag: bead967f-4102-4edb-acc0-c2cd022e7004
 		summarizeBy: none
 		isNameInferred
@@ -72,12 +71,36 @@ table Periods
 
 		annotation PBI_FormatHint = {"isDateTimeCustom":true}
 
+	column MonthStr
+		lineageTag: 460f4170-795c-40c5-a936-10a866646207
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [MonthStr]
+
+		annotation SummarizationSetBy = Automatic
+
+	column QuarterStr
+		lineageTag: 7631d5b1-a56a-46d0-8501-6f228037d4dc
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [QuarterStr]
+
+		annotation SummarizationSetBy = Automatic
+
+	column PeriodStr
+		lineageTag: 37bb4c3c-ce60-4e56-811e-7c5a72ebbb24
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [PeriodStr]
+
+		annotation SummarizationSetBy = Automatic
+
 	partition Periods = calculated
 		mode: import
 		source =
 				ADDCOLUMNS(
 				        SELECTCOLUMNS(PeriodsLinks,"PERIOD_ID",PeriodsLinks[PERIOD_ID],"Date",PeriodsLinks[Period],"DatePY",PeriodsLinks[PeriodPY],"FP",PeriodsLinks[FP]),
-				        "Year",FORMAT([Date],"YYYY")
+				        "Year",FORMAT([Date],"YYYY"),"MonthStr",Format([Date],"MMMM YYYY"),"QuarterStr",Format([Date],"YYYY \Qq"),"PeriodStr",Format([Date],"dd.mm.YYYY")
 				    )
 
 	annotation PBI_Id = 08fea2e3e15144d280e0334487d3e254

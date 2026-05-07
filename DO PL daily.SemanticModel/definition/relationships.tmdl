@@ -85,22 +85,6 @@ relationship 4825cfad-8537-e008-3bf9-3ba955e91ac9
 	fromColumn: VisitsPlan.BRAND_ID
 	toColumn: DrugsID.BRAND_ID
 
-relationship f3ee761d-af49-68ba-5f75-d410fb8a9c26
-	fromColumn: Data.PERIOD_ID
-	toColumn: Periods.PERIOD_ID
-
-relationship 60e1b7ef-4dde-ae14-c8ad-25f734f26faf
-	fromColumn: VisitsFact.PERIOD_ID
-	toColumn: Periods.PERIOD_ID
-
-relationship 4135cfb6-f64f-d48a-a721-b2c5fbe41061
-	fromColumn: DataPlan.PERIOD_ID
-	toColumn: Periods.PERIOD_ID
-
-relationship 39327cd1-1c12-fbc4-5cb9-45b339cb90d9
-	fromColumn: VisitsPlan.PERIOD_ID
-	toColumn: Periods.PERIOD_ID
-
 relationship 98a7d681-8ec7-6975-f1d4-8c00dbe3bbac
 	toCardinality: many
 	fromColumn: DataPlan.AREA_ID
@@ -129,14 +113,6 @@ relationship b0c72906-e236-7175-aa13-1aacd8db47eb
 	fromColumn: DataStock.DRUGS_ID
 	toColumn: DrugsID.DRUGS_ID
 
-relationship e7be2c83-82b9-7f7a-7b7c-025a8a257646
-	fromColumn: DataStock.PERIOD_ID
-	toColumn: Periods.PERIOD_ID
-
-relationship 2a4fcbba-678e-fab6-428c-85c1bbf9e40d
-	fromColumn: StockClientsPeriods.PERIOD_ID
-	toColumn: Periods.PERIOD_ID
-
 relationship e2668006-17da-5452-dcf5-db4a948631eb
 	toCardinality: many
 	fromColumn: StockClientsPeriods.CLIENT_ID
@@ -145,4 +121,28 @@ relationship e2668006-17da-5452-dcf5-db4a948631eb
 relationship 3d24ebfd-748d-66b9-7b91-3530def955df
 	fromColumn: SinglePeriod.FP
 	toColumn: SinglePeriodFilter.FP
+
+relationship f3ee761d-af49-68ba-5f75-d410fb8a9c26
+	fromColumn: Data.PERIOD_ID
+	toColumn: Periods.PERIOD_ID
+
+relationship 60e1b7ef-4dde-ae14-c8ad-25f734f26faf
+	fromColumn: VisitsFact.PERIOD_ID
+	toColumn: Periods.PERIOD_ID
+
+relationship 4135cfb6-f64f-d48a-a721-b2c5fbe41061
+	fromColumn: DataPlan.PERIOD_ID
+	toColumn: Periods.PERIOD_ID
+
+relationship 39327cd1-1c12-fbc4-5cb9-45b339cb90d9
+	fromColumn: VisitsPlan.PERIOD_ID
+	toColumn: Periods.PERIOD_ID
+
+relationship e7be2c83-82b9-7f7a-7b7c-025a8a257646
+	fromColumn: DataStock.PERIOD_ID
+	toColumn: Periods.PERIOD_ID
+
+relationship 2a4fcbba-678e-fab6-428c-85c1bbf9e40d
+	fromColumn: StockClientsPeriods.PERIOD_ID
+	toColumn: Periods.PERIOD_ID
 

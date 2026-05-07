@@ -168,7 +168,8 @@
         "howCreated": "User"
       },
       {
-        "name": "cceccd65097dc5aa5ce8",
+        "name": "83773f08f912af21fa4e",
+        "displayName": "Quarter",
         "ordinal": 6,
         "field": {
           "Column": {
@@ -177,7 +178,41 @@
                 "Entity": "Periods"
               }
             },
-            "Property": "Period"
+            "Property": "QuarterStr"
+          }
+        },
+        "type": "Categorical",
+        "howCreated": "User"
+      },
+      {
+        "name": "2d9646f1faea167be6c4",
+        "displayName": "Month",
+        "ordinal": 7,
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Periods"
+              }
+            },
+            "Property": "MonthStr"
+          }
+        },
+        "type": "Categorical",
+        "howCreated": "User"
+      },
+      {
+        "name": "b3c8a5b7226cec052f02",
+        "displayName": "Period",
+        "ordinal": 8,
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Periods"
+              }
+            },
+            "Property": "PeriodStr"
           }
         },
         "type": "Categorical",
@@ -186,7 +221,7 @@
       {
         "name": "Filterd061c84940030956776d",
         "displayName": "Category",
-        "ordinal": 7,
+        "ordinal": 9,
         "field": {
           "Column": {
             "Expression": {
@@ -202,7 +237,7 @@
       },
       {
         "name": "Filter9f0b3b141ca0a15d2e4b",
-        "ordinal": 8,
+        "ordinal": 10,
         "field": {
           "Column": {
             "Expression": {
@@ -218,7 +253,7 @@
       },
       {
         "name": "Filter0dc1f83a350288e15d04",
-        "ordinal": 9,
+        "ordinal": 11,
         "field": {
           "Column": {
             "Expression": {
@@ -234,7 +269,7 @@
       },
       {
         "name": "Filter37f8dbec2490ad180263",
-        "ordinal": 10,
+        "ordinal": 12,
         "field": {
           "Column": {
             "Expression": {
@@ -250,7 +285,7 @@
       },
       {
         "name": "Filterd1f355c029d193294478",
-        "ordinal": 11,
+        "ordinal": 13,
         "field": {
           "Column": {
             "Expression": {
@@ -266,7 +301,7 @@
       },
       {
         "name": "Filter04b712e973c823e0edd0",
-        "ordinal": 12,
+        "ordinal": 14,
         "field": {
           "Column": {
             "Expression": {
@@ -282,7 +317,7 @@
       },
       {
         "name": "Filtere980ff6b647b078e9840",
-        "ordinal": 13,
+        "ordinal": 15,
         "field": {
           "Column": {
             "Expression": {
@@ -298,7 +333,7 @@
       },
       {
         "name": "Filterba59b95ab8cba06b5250",
-        "ordinal": 14,
+        "ordinal": 16,
         "field": {
           "Column": {
             "Expression": {
@@ -314,7 +349,7 @@
       },
       {
         "name": "Filterc244a686d6ca86b34794",
-        "ordinal": 15,
+        "ordinal": 17,
         "field": {
           "Column": {
             "Expression": {
@@ -331,7 +366,7 @@
       {
         "name": "Filter6ad3f49f01b140c23d73",
         "displayName": "SKU",
-        "ordinal": 16,
+        "ordinal": 18,
         "field": {
           "Column": {
             "Expression": {
@@ -348,7 +383,7 @@
       {
         "name": "Filtered863103bab20764c270",
         "displayName": "Drug name",
-        "ordinal": 17,
+        "ordinal": 19,
         "field": {
           "Column": {
             "Expression": {
@@ -365,7 +400,7 @@
       {
         "name": "Filter69299251d88b67c24948",
         "displayName": "Drug dosage",
-        "ordinal": 18,
+        "ordinal": 20,
         "field": {
           "Column": {
             "Expression": {
@@ -382,7 +417,7 @@
       {
         "name": "Filter8d7b063f959b98051996",
         "displayName": "Drug form №",
-        "ordinal": 19,
+        "ordinal": 21,
         "field": {
           "Column": {
             "Expression": {
@@ -398,7 +433,7 @@
       },
       {
         "name": "Filter45629abc68756855cd61",
-        "ordinal": 20,
+        "ordinal": 22,
         "field": {
           "Column": {
             "Expression": {
@@ -414,7 +449,7 @@
       },
       {
         "name": "Filter76081cf732001008040d",
-        "ordinal": 21,
+        "ordinal": 23,
         "field": {
           "Column": {
             "Expression": {
@@ -430,7 +465,7 @@
       },
       {
         "name": "Filterf92ada75842c17d06a6d",
-        "ordinal": 22,
+        "ordinal": 24,
         "field": {
           "Column": {
             "Expression": {
@@ -446,7 +481,7 @@
       },
       {
         "name": "Filter5c6765819a45e607beda",
-        "ordinal": 23,
+        "ordinal": 25,
         "field": {
           "Column": {
             "Expression": {
@@ -462,7 +497,7 @@
       },
       {
         "name": "Filter084122fb48576315d9e8",
-        "ordinal": 24,
+        "ordinal": 26,
         "field": {
           "Column": {
             "Expression": {
@@ -478,7 +513,7 @@
       },
       {
         "name": "Filter5e61ce4b3d380b2e51e4",
-        "ordinal": 25,
+        "ordinal": 27,
         "field": {
           "Column": {
             "Expression": {
@@ -494,7 +529,7 @@
       },
       {
         "name": "Filterb2604ea2c17578eb92a8",
-        "ordinal": 26,
+        "ordinal": 28,
         "field": {
           "Column": {
             "Expression": {
@@ -510,7 +545,7 @@
       },
       {
         "name": "Filter21b3dbbdb13e305ed493",
-        "ordinal": 27,
+        "ordinal": 29,
         "field": {
           "Column": {
             "Expression": {
@@ -526,7 +561,7 @@
       },
       {
         "name": "Filtera81ffc49729ad5b5ce06",
-        "ordinal": 28,
+        "ordinal": 30,
         "field": {
           "Column": {
             "Expression": {
@@ -542,7 +577,7 @@
       },
       {
         "name": "Filter93438f006c95aa505641",
-        "ordinal": 29,
+        "ordinal": 31,
         "field": {
           "Column": {
             "Expression": {
@@ -558,7 +593,7 @@
       },
       {
         "name": "Filter2416fb40a8041db7a5c0",
-        "ordinal": 30,
+        "ordinal": 32,
         "field": {
           "Column": {
             "Expression": {
@@ -575,7 +610,7 @@
       {
         "name": "e61d1bbdd79853be49b3",
         "displayName": "Group name",
-        "ordinal": 31,
+        "ordinal": 33,
         "field": {
           "Column": {
             "Expression": {
@@ -592,7 +627,7 @@
       {
         "name": "Filter62bf66cb0c3839276dc0",
         "displayName": "Comp group L1",
-        "ordinal": 32,
+        "ordinal": 34,
         "field": {
           "Column": {
             "Expression": {
@@ -609,7 +644,7 @@
       {
         "name": "Filter6b93f630a82050d74693",
         "displayName": "Comp group L2",
-        "ordinal": 33,
+        "ordinal": 35,
         "field": {
           "Column": {
             "Expression": {
@@ -626,7 +661,7 @@
       {
         "name": "Filter552e7d50b8b9c5714eb1",
         "displayName": "Comp group L3",
-        "ordinal": 34,
+        "ordinal": 36,
         "field": {
           "Column": {
             "Expression": {
@@ -643,7 +678,7 @@
       {
         "name": "83303e170ce00c7d1046",
         "displayName": "Comp group L4",
-        "ordinal": 35,
+        "ordinal": 37,
         "field": {
           "Column": {
             "Expression": {
@@ -660,7 +695,7 @@
       {
         "name": "d64c73154959b88e3a21",
         "displayName": "Comp group L5",
-        "ordinal": 36,
+        "ordinal": 38,
         "field": {
           "Column": {
             "Expression": {
@@ -677,7 +712,7 @@
       {
         "name": "c046d0ed2287e5716d3e",
         "displayName": "Group tag",
-        "ordinal": 37,
+        "ordinal": 39,
         "field": {
           "Column": {
             "Expression": {
@@ -694,7 +729,7 @@
       {
         "name": "a7333ff77ded9c877629",
         "displayName": "NFC (1)",
-        "ordinal": 38,
+        "ordinal": 40,
         "field": {
           "Column": {
             "Expression": {
@@ -711,7 +746,7 @@
       {
         "name": "20c650fd0cd8c45f959e",
         "displayName": "NFC (2)",
-        "ordinal": 39,
+        "ordinal": 41,
         "field": {
           "Column": {
             "Expression": {
@@ -728,7 +763,7 @@
       {
         "name": "331d2204049f8887ba3f",
         "displayName": "NFC (3)",
-        "ordinal": 40,
+        "ordinal": 42,
         "field": {
           "Column": {
             "Expression": {
@@ -744,7 +779,7 @@
       },
       {
         "name": "2ce8ecb27d6acffa05c7",
-        "ordinal": 41,
+        "ordinal": 43,
         "field": {
           "Column": {
             "Expression": {
@@ -760,7 +795,7 @@
       },
       {
         "name": "54accc294e01dc61229a",
-        "ordinal": 42,
+        "ordinal": 44,
         "field": {
           "Column": {
             "Expression": {
@@ -776,7 +811,7 @@
       },
       {
         "name": "28db77198c17eb40a695",
-        "ordinal": 43,
+        "ordinal": 45,
         "field": {
           "Column": {
             "Expression": {
@@ -792,7 +827,7 @@
       },
       {
         "name": "032268a42f6cd3ca098e",
-        "ordinal": 44,
+        "ordinal": 46,
         "field": {
           "Column": {
             "Expression": {
@@ -808,7 +843,7 @@
       },
       {
         "name": "c4a56aacf98d10c176f7",
-        "ordinal": 45,
+        "ordinal": 47,
         "field": {
           "Column": {
             "Expression": {
@@ -824,7 +859,7 @@
       },
       {
         "name": "731ca1e4c0724e359eec",
-        "ordinal": 46,
+        "ordinal": 48,
         "field": {
           "Column": {
             "Expression": {
@@ -840,7 +875,7 @@
       },
       {
         "name": "84939ee3a554c5c64402",
-        "ordinal": 47,
+        "ordinal": 49,
         "field": {
           "Column": {
             "Expression": {
@@ -856,7 +891,7 @@
       },
       {
         "name": "9260fc06558009c8fb0b",
-        "ordinal": 48,
+        "ordinal": 50,
         "field": {
           "Column": {
             "Expression": {
@@ -872,7 +907,7 @@
       },
       {
         "name": "59674aa5f7ff6ab782d4",
-        "ordinal": 49,
+        "ordinal": 51,
         "field": {
           "Column": {
             "Expression": {
@@ -889,7 +924,7 @@
       {
         "name": "78f4d3b9a3bea3e72a70",
         "displayName": "PTM",
-        "ordinal": 50,
+        "ordinal": 52,
         "field": {
           "Column": {
             "Expression": {
@@ -906,7 +941,7 @@
       {
         "name": "5d440ae6598730c5292d",
         "displayName": "Region level 1",
-        "ordinal": 51,
+        "ordinal": 53,
         "field": {
           "Column": {
             "Expression": {
@@ -923,7 +958,7 @@
       {
         "name": "b835f218d9ce83ed3b11",
         "displayName": "Region level 2",
-        "ordinal": 52,
+        "ordinal": 54,
         "field": {
           "Column": {
             "Expression": {
@@ -940,7 +975,7 @@
       {
         "name": "07c393b6e2c25b30c5c2",
         "displayName": "Region level 3",
-        "ordinal": 53,
+        "ordinal": 55,
         "field": {
           "Column": {
             "Expression": {
@@ -957,7 +992,7 @@
       {
         "name": "94abeb5767ab080751b1",
         "displayName": "Region level 4",
-        "ordinal": 54,
+        "ordinal": 56,
         "field": {
           "Column": {
             "Expression": {

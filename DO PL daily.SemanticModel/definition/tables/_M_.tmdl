@@ -421,12 +421,13 @@ table _M_
 			 var FilteredRegionlevel2=IF(ISFILTERED(Areas[LEVEL_2]),"Reg. level 2:"&CONCATENATEX(FILTERS(Areas[LEVEL_2]),Areas[LEVEL_2],","),BLANK())
 			 var FilteredRegionlevel3=IF(ISFILTERED(Areas[LEVEL_3]),"Reg. level 3:"&CONCATENATEX(FILTERS(Areas[LEVEL_3]),Areas[LEVEL_3],","),BLANK())
 			 var FilteredRegionlevel4=IF(ISFILTERED(Areas[LEVEL_4]),"Reg. level 4:"&CONCATENATEX(FILTERS(Areas[LEVEL_4]),Areas[LEVEL_4],","),BLANK())
-			var FilteredSalestype=IF(ISFILTERED(ECom[E-com]),"Sales type:"&CONCATENATEX(FILTERS(ECom[E-com]),ECom[E-com],","),BLANK())
-			//var FilteredSupplier=IF(ISFILTERED(Suppliers[SUPPLIER_NAME]),"Supplier:"&CONCATENATEX(FILTERS(Suppliers[SUPPLIER_NAME]),Suppliers[SUPPLIER_NAME],","),BLANK())
 			var FilteredDrugName=IF(ISFILTERED(Drugs[DRUG_NAME]),"Drug Name:"&CONCATENATEX(FILTERS(Drugs[DRUG_NAME]),Drugs[DRUG_NAME],","),BLANK())
 			var FilteredDrugDosage=IF(ISFILTERED(Drugs[doze]),"Drug Dosage:"&CONCATENATEX(FILTERS(Drugs[doze]),Drugs[doze],","),BLANK())
 			var FilteredDrugPack=IF(ISFILTERED(Drugs[DRUG_FORM_NUMBER]),"Drug Form №:"&CONCATENATEX(FILTERS(Drugs[DRUG_FORM_NUMBER]),Drugs[DRUG_FORM_NUMBER],","),BLANK())
-			
+			var FilteredYear=IF(ISFILTERED(Periods[Year]),"Year:"&CONCATENATEX(FILTERS(Periods[Year]),Periods[Year],","),BLANK())
+			var FilteredQuarter=IF(ISFILTERED(Periods[QuarterStr]),"Quarter:"&CONCATENATEX(FILTERS(Periods[QuarterStr]),Periods[QuarterStr],","),BLANK())
+			var FilteredMonth=IF(ISFILTERED(Periods[MonthStr]),"Month:"&CONCATENATEX(FILTERS(Periods[MonthStr]),Periods[MonthStr],","),BLANK())
+			var FilteredPeriod=IF(ISFILTERED(Periods[PeriodStr]),"Period:"&CONCATENATEX(FILTERS(Periods[PeriodStr]),Periods[PeriodStr],","),BLANK())
 			var tbl={
 			    FilteredAddrMarket, 
 			    FilteredCorporation,
@@ -435,53 +436,22 @@ table _M_
 			    FilteredBrand_MarketOrg,
 			    FilteredBrand_Corporation,
 			    FilteredSKU,
-			    FilteredINN,
-			    FilteredCompetitvegroup1,
-			    FilteredCompetitvegroup2,
-			    FilteredCompetitvegroup3,
-			    FilteredCompetitvegroup4,
-			    FilteredCompetitvegroup5,
-			    FilteredCompGroupName, 
-			    FilteredCompGroupTag,
-			    FilteredCategory,
-			    FilteredRx_OTC,
-			    FilteredATC1,
-			    FilteredATC2,
-			    FilteredATC3,
-			    FilteredATC4,
-			    FilteredATC5,
-			    FilteredEphMRA1,
-			    FilteredEphMRA2,
-			    FilteredEphMRA3,
-			    FilteredEphMRA4,
-			    FilteredNFC1,
-			    FilteredNFC2,
-			    FilteredNFC3,
-			    FilteredDomestic_Foreign_maker_,
-			    FilteredMaker,
-			    FilteredCosmetic1,
-			    FilteredCosmetic2,
-			    FilteredCosmetic3,
-			    FilteredCosmetic4,
-			    FilteredCosmetic5,
-			    FilteredBad1,
-			    FilteredBad2,
-			    FilteredMC1,
-			    FilteredMC2,
-			    FilteredMC3,
-			    FilteredMC4,
+			    FilteredINN,FilteredCategory,FilteredRx_OTC,
+			    FilteredCompetitvegroup1,FilteredCompetitvegroup2,FilteredCompetitvegroup3,FilteredCompetitvegroup4,FilteredCompetitvegroup5,FilteredCompGroupName,FilteredCompGroupTag,
+			    FilteredATC1,FilteredATC2,FilteredATC3,FilteredATC4,FilteredATC5,
+			    FilteredEphMRA1,FilteredEphMRA2,FilteredEphMRA3,FilteredEphMRA4,
+			    FilteredNFC1,FilteredNFC2,FilteredNFC3,
+			    FilteredDomestic_Foreign_maker_,FilteredMaker,
+			    FilteredCosmetic1,FilteredCosmetic2,FilteredCosmetic3,FilteredCosmetic4,FilteredCosmetic5,
+			    FilteredBad1,FilteredBad2,
+			    FilteredMC1,FilteredMC2,FilteredMC3,FilteredMC4,
 			    FilteredMarketstatus,
-			 FilteredArea,   
-			 FilteredRegionlevel1,
-			 FilteredRegionlevel2,
-			 FilteredRegionlevel3,
-			 FilteredRegionlevel4,
-			    FilteredSalestype,
-			//    FilteredSupplier,
+			    FilteredArea,FilteredRegionlevel1,FilteredRegionlevel2,FilteredRegionlevel3,FilteredRegionlevel4,
 			    FilteredVTM,
 			    FilteredDrugName,
 			    FilteredDrugDosage,
-			    FilteredDrugPack
+			    FilteredDrugPack,
+			    FilteredYear,FilteredQuarter,FilteredMonth,FilteredPeriod
 			    }
 			
 			var resultString=CONCATENATEX(FILTER(tbl,[Value]<>BLANK()),[Value],"; ")
