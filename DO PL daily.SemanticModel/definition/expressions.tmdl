@@ -33,7 +33,7 @@ expression _HISTORY_LENGTH_ = 3 meta [IsParameterQuery=true, Type="Number", IsPa
 
 	annotation PBI_NavigationStepName = Navigation
 
-expression _WS_ID_ = "17126092-67e2-49e1-8e65-edd5cd74357f" meta [IsParameterQuery=true, Type="Text", IsParameterQueryRequired=true]
+expression _WS_ID_ = "2a74471e-ccb6-416b-8514-ce3d76e1a78f" meta [IsParameterQuery=true, Type="Text", IsParameterQueryRequired=true]
 	lineageTag: f4eddc84-e3b5-42f5-b207-4f75a1a1843b
 	queryGroup: FLOW_ID
 
@@ -41,7 +41,7 @@ expression _WS_ID_ = "17126092-67e2-49e1-8e65-edd5cd74357f" meta [IsParameterQue
 
 	annotation PBI_ResultType = Text
 
-expression _FLOWS_FLOW_ID_ = "f9f3b2f7-48ad-4162-8652-05c212d2209c" meta [IsParameterQuery=true, Type="Text", IsParameterQueryRequired=true]
+expression _FLOWS_FLOW_ID_ = "a30a7da1-122a-4c27-a3eb-332539ab8547" meta [IsParameterQuery=true, Type="Text", IsParameterQueryRequired=true]
 	lineageTag: 3178f851-89bc-414f-ae82-3d788e910c45
 	queryGroup: FLOW_ID
 

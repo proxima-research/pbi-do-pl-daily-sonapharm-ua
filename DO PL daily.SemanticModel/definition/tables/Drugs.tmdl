@@ -1114,22 +1114,6 @@ table Drugs
 
 		annotation SummarizationSetBy = Automatic
 
-	column CLN_1
-		dataType: string
-		lineageTag: 26fe85f0-2f28-41ef-af3f-c9e972b00401
-		summarizeBy: none
-		sourceColumn: CLN_1
-
-		annotation SummarizationSetBy = Automatic
-
-	column CLN_2
-		dataType: string
-		lineageTag: e2f30a9b-5f91-49ff-b991-97c8095add71
-		summarizeBy: none
-		sourceColumn: CLN_2
-
-		annotation SummarizationSetBy = Automatic
-
 	partition Drugs = m
 		mode: import
 		source = ```
